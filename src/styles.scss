@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+@import "./assets/styles/themes/laranjinha/theme.scss";
+@import './assets/styles/costume-material.scss';
+@import './assets/styles/standard-class.scss';
+@import './assets/styles/costume-color-components-material.scss';

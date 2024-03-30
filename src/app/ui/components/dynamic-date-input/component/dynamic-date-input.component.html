@@ -1,0 +1,27 @@
+<mat-form-field appearance="fill" class="{{editStyle}}">
+  <mat-label>
+    {{config.title}}
+  </mat-label>
+  <input #dateInput
+    class="date-input"
+    [min]="minDate" 
+    [max]="maxDate"
+    [formControl]="config.formControl"
+    [maxLength]="mask.length"
+    (dateChange)="writeValue($event.value)"
+    [attr.placeholder]="config.placeholder || null"
+    [matDatepicker]="picker"
+    matInput
+    >
+  <mat-hint *ngIf="config.showHint" class="hint">
+    {{config.mask}}
+  </mat-hint>
+  <mat-datepicker-toggle [for]="picker" matSuffix>
+    <!--<fa-icon class="icon" matDatepickerToggleIcon [icon]="['fas', 'calendar-alt']"></fa-icon>-->
+  </mat-datepicker-toggle>
+  <mat-datepicker 
+    #picker  
+    [startView]="TYPE_CALENDA" 
+    (monthSelected)="setMonthAndYear($event, picker)">
+  </mat-datepicker>
+</mat-form-field> 

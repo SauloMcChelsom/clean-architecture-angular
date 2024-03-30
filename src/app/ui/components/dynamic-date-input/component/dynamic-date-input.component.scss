@@ -1,0 +1,17 @@
+.hint {
+    margin-top: 16px;
+}
+
+.icon {
+    font-size: medium;
+    color: lavender;
+}
+
+::ng-deep mat-form-field {
+    .mat-form-field-wrapper {
+        .mat-form-field-flex {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+}

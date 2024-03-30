@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+
+table {
+  width: 100%;
+}
+
+.density-settings-1 {
+  @include mat.table-density(-1);
+}
+
+.density-settings-2 {
+  @include mat.table-density(-2);
+}
+
+.density-settings-3 {
+  @include mat.table-density(-3);
+}
+
+.density-settings-4 {
+  @include mat.table-density(-4);
+}

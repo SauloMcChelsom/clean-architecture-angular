@@ -1,0 +1,53 @@
+@use '@angular/material' as mat;
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.density-settings-1 {
+  @include mat.icon-button-density(-1);
+}
+
+.density-settings-2 {
+  @include mat.icon-button-density(-2);
+}
+
+.density-settings-3 {
+  @include mat.icon-button-density(-3);
+}
+
+.density-settings-4 {
+  @include mat.icon-button-density(-4);
+}
+
+.density-settings-5 {
+  @include mat.icon-button-density(-5);
+}

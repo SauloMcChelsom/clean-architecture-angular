@@ -1,0 +1,37 @@
+@mixin mat-button($primary, $accent, $warn, $name) {
+    .mdc-button.mat-#{$name},
+    .mat-mdc-stroked-button.mat-#{$name} {
+        color: $primary;
+    }
+
+    .mat-mdc-unelevated-button.mat-#{$name}:hover,
+    .mat-mdc-raised-button.mat-#{$name}:hover {
+        color: $accent;
+        background-color: $primary;
+    }
+
+    .mat-mdc-unelevated-button:not(:disabled, :hover).mat-#{$name},
+    .mat-mdc-raised-button.mat-#{$name},
+    .mat-mdc-fab.mat-#{$name},
+    .mat-mdc-mini-fab.mat-#{$name} {
+        color: $accent;
+        background-color: $primary;
+    }
+
+    .mat-mdc-icon-button.mat-#{$name} {
+        color: $primary;
+    }
+}
+
+@mixin mat-chip-listbox($primary, $accent, $warn, $name) {
+    .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-#{$name}, 
+    .mat-mdc-standard-chip.mat-mdc-chip-highlighted.mat-#{$name} {
+        background-color: $primary;
+    }
+}
+
+
+body {
+    @include mat-button(#536dfe, #eee, #ff4081, "action");
+    @include mat-chip-listbox(#536dfe, #eee, #ff4081, "action");
+}

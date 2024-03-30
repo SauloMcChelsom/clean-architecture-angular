@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap');
+
+$font-family: 'Comfortaa', sans-serif;
+
+* {
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+}

@@ -1,0 +1,8 @@
+.err {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    flex-direction: row;
+    align-content: center !important;
+    flex-wrap: wrap;
+}
