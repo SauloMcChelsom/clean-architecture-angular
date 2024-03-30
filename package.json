@@ -1,6 +1,6 @@
 {
-  "name": "note-beans-learn",
-  "version": "0.0.0",
+  "name": "note-beans",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
