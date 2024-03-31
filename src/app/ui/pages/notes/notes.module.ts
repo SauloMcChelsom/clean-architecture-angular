@@ -18,11 +18,6 @@ import { UpdateNotesComponent } from './pages/update-notes/update-notes.componen
 import { ViewNotesComponent } from './pages/view-notes/view-notes.component';
 import { CardComponent } from './components/card/card.component';
 import { AngularMaterialModule } from '../../theme/angular-material.module';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { ListFoldersComponent } from './components/list-folders/list-folders.component';
-import { FolderComponent } from './components/folder/folder.component';
-import { NavFolderComponent } from './components/nav-folder/nav-folder.component';
-import { NavOrderingComponent } from './components/nav-ordering/nav-ordering.component';
 import { NavBarAddComponent } from './components/nav-bar-add/nav-bar-add.component';
 import { HotInputComponent } from '../../components/input/input.component';
 import { HotTextareaComponent } from '../../components/textarea/textarea.component';
@@ -32,7 +27,6 @@ import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/impleme
 import { NavBarReadComponent } from './components/nav-bar-read/nav-bar-read.component';
 import { NoteStore } from '../../stores/add_store';
 import { NavBarUpdateComponent } from './components/nav-bar-update/nav-bar-update.component';
-import { ControlFolderComponent } from './components/control-folder/control-folder.component';
 
 @NgModule({
   declarations: [
@@ -42,16 +36,10 @@ import { ControlFolderComponent } from './components/control-folder/control-fold
     AddNotesComponent,
     ViewNotesComponent,
     CardComponent,
-    NavBarComponent,
     NavBarUpdateComponent,
-    ListFoldersComponent,
-    FolderComponent,
-    NavFolderComponent,
-    NavOrderingComponent,
     NavBarAddComponent,
     ReadOneNotesComponent,
-    NavBarReadComponent,
-    ControlFolderComponent
+    NavBarReadComponent
   ],
   imports: [
     CommonModule,
