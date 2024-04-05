@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subject, delay, find, of, switchMap, tap, throwError } from 'rxjs';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
 import { v4 as uuidv4 } from 'uuid';
-import { INotesHttpDatasource } from '../notes_http_datasource';
+import { INotesRepository } from 'src/app/domain/repositories/notes_repository';
 
-@Injectable({ providedIn: 'any' })
-export class NotesLocalDatasourceImp implements INotesHttpDatasource {
+@Injectable({ providedIn: 'root' })
+export class NotesLocalDatasourceImp implements INotesRepository {
 
     private _notes: NotesEntity[] = [];
     private _notes$: ReplaySubject<NotesEntity[]> = new ReplaySubject()

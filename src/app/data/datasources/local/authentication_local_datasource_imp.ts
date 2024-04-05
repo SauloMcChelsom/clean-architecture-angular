@@ -6,15 +6,16 @@ import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { UserRoleEnum } from 'src/app/domain/helpers/enums/user_role_enum';
 import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
 import { v4 as uuidv4 } from 'uuid';
-import { IAuthenticationHttpDatasource } from '../authentication_http_datasource';
 import { code } from 'src/app/domain/helpers/enums/code_enum';
+import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 interface UserDataBase extends UserEntity {
     password:string,
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationLocalDatasourceImp implements IAuthenticationHttpDatasource {
+export class AuthenticationLocalDatasourceImp implements IAuthenticationRepository {
+
 
     private tokenInCloud!: AuthorizationEntity | undefined;
     private userInCloud!: UserEntity | undefined;
@@ -98,8 +99,9 @@ export class AuthenticationLocalDatasourceImp implements IAuthenticationHttpData
         return of(res);
     }
 
-    public getCurrentUser(toke: AuthorizationEntity): Observable<UserEntity> {
-        return this.validToken(toke).pipe(
+    public getCurrentUser(): Observable<UserEntity> {
+        let toke: AuthorizationEntity
+        return this.validToken(toke!).pipe(
             switchMap(() => of(this.userInCloud!))
         );
     }
@@ -143,8 +145,10 @@ export class AuthenticationLocalDatasourceImp implements IAuthenticationHttpData
         return of(this.tokenInCloud!);
     }
 
-    public logout(content: AuthorizationEntity): Observable<boolean> {
-        return this.revokeToken(content).pipe(
+    public logout(): Observable<boolean> {
+        let content: AuthorizationEntity;
+
+        return this.revokeToken(content!).pipe(
             mergeMap((isRevokeToken) => {
                 if (isRevokeToken) {
                     this.userInCloud = undefined;
@@ -155,6 +159,10 @@ export class AuthenticationLocalDatasourceImp implements IAuthenticationHttpData
                 return of(false);
             })
         );
+    }
+
+    public isAuthenticated(): Observable<boolean> {
+        throw new Error('Method not implemented.');
     }
 
     private async generateToken(payload: any, iat:any): Promise<string> {

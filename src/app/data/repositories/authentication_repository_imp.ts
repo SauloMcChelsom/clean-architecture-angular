@@ -4,22 +4,21 @@ import { AuthenticationEntity } from 'src/app/domain/entities/authentication_ent
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
-import { IAuthenticationHttpDatasource } from '../datasources/http/authentication_http_datasource';
-import { IAuthenticationCacheDatasource } from '../datasources/cache/authentication_cache_datasource';
+import { AuthenticationStoreDatasourceImp } from '../datasources/store/implements/authentication_store_datasource_imp';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationRepositoryImp implements IAuthenticationRepository {
 
-    constructor(private datasource: IAuthenticationHttpDatasource, private cache: IAuthenticationCacheDatasource) { }
+    constructor(private datasource: IAuthenticationRepository, private store: AuthenticationStoreDatasourceImp) { }
 
     createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity> {
         return this.datasource.createNewAccount(content)
-            .pipe(tap((token) => this.cache.setCurrentTokenLocalStorege(token)));
+            .pipe(tap((token) => this.store.setCurrentTokenLocalStorege(token)));
     }
 
     signInWithEmailAndPassword(email: string, password: string): Observable<AuthorizationEntity> {
         return this.datasource.signInWithEmailAndPassword(email, password)
-            .pipe(tap((token) => this.cache.setCurrentTokenLocalStorege(token)));
+            .pipe(tap((token) => this.store.setCurrentTokenLocalStorege(token)));
     }
 
     validToken(content: AuthorizationEntity): Observable<boolean> {
@@ -29,7 +28,7 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     isAuthenticated(): Observable<boolean> {
         return of([]).pipe(
             switchMap(() => {
-                return this.cache.getCurrentTokenLocalStorege().pipe(
+                return this.store.getCurrentTokenLocalStorege().pipe(
                     switchMap((token) => {
                         if (!token) {
                             return throwError(() => 'Você deve logar');
@@ -49,7 +48,7 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     getCurrentUser(): Observable<UserEntity> {
         return of([]).pipe(
             switchMap(() => {
-                return this.cache.getCurrentTokenLocalStorege().pipe(
+                return this.store.getCurrentTokenLocalStorege().pipe(
                     switchMap((token) => {
                         if (!token) {
                             return throwError(() => 'Você deve logar');
@@ -65,21 +64,21 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
                 )
             }),
             switchMap((token) => {
-                return this.cache.getCurrentUserLocalStorege()
+                return this.store.getCurrentUserLocalStorege()
                     .pipe(
                         switchMap((user) => {
                             if (user) {
                                 return of(user);
                             }
 
-                            return this.datasource.getCurrentUser(token).pipe(
-                                tap((user) => this.cache.setCurrentUserLocalStorege(user))
+                            return this.datasource.getCurrentUser().pipe(
+                                tap((user) => this.store.setCurrentUserLocalStorege(user))
                             );
                         }),
                     )
             }),
             catchError(error => throwError(() => {
-                this.cache.deletCurrentUserLocalStorege()
+                this.store.deletCurrentUserLocalStorege()
                 return error;
             }))
         );
@@ -90,7 +89,7 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     }
 
     getCurrentToken(): Observable<AuthorizationEntity> {
-        return this.cache.getCurrentTokenLocalStorege().pipe(
+        return this.store.getCurrentTokenLocalStorege().pipe(
             switchMap((token) => {
                 if (!token) {
                     return throwError(() => 'Você deve logar')
@@ -103,7 +102,7 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     revokeToken(content: AuthorizationEntity): Observable<boolean> {
         return of([]).pipe(
             switchMap(() => {
-                return this.cache.getCurrentTokenLocalStorege().pipe(
+                return this.store.getCurrentTokenLocalStorege().pipe(
                     switchMap((value) => {
                         if (!value) {
                             return throwError(() => 'Você deve logar');
@@ -121,7 +120,7 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     refreshToken(content: AuthorizationEntity): Observable<AuthorizationEntity> {
         return of([]).pipe(
             switchMap(() => {
-                return this.cache.getCurrentTokenLocalStorege().pipe(
+                return this.store.getCurrentTokenLocalStorege().pipe(
                     switchMap((value) => {
                         if (!value) {
                             return throwError(() => 'Você deve logar');
@@ -137,15 +136,15 @@ export class AuthenticationRepositoryImp implements IAuthenticationRepository {
     logout(): Observable<boolean> {
         return of([]).pipe(
             switchMap(() => {
-                return this.cache.getCurrentTokenLocalStorege().pipe(
+                return this.store.getCurrentTokenLocalStorege().pipe(
                     switchMap((value) => {
                         if (!value) {
                             return throwError(() => 'Você ja esta deslogado');
                         }
 
-                        return this.datasource.logout(value).pipe(
-                            tap(() => this.cache.deletCurrentUserLocalStorege()),
-                            tap(() => this.cache.deleteCurrentTokenLocalStorege())
+                        return this.datasource.logout().pipe(
+                            tap(() => this.store.deletCurrentUserLocalStorege()),
+                            tap(() => this.store.deleteCurrentTokenLocalStorege())
                         );
                     })
                 )

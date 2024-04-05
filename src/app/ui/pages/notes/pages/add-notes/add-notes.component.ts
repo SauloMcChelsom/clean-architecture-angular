@@ -55,7 +55,7 @@ export class AddNotesComponent implements OnInit {
 
   createInputText(): void {
     this.config_title = {
-      formControl: new FormControl<string | undefined>(undefined, [Validators.required, Validators.minLength(5)]),
+      formControl: new FormControl<string | undefined>("saulo", [Validators.required, Validators.minLength(5)]),
       title: 'Titulo',
       placeholder: 'Informe o titulo do seu notes'
     };
@@ -63,7 +63,7 @@ export class AddNotesComponent implements OnInit {
 
   createInputTextarea(): void {
     this.config_description = {
-      formControl: new FormControl<string | undefined>(undefined, [Validators.required, Validators.minLength(5)]),
+      formControl: new FormControl<string | undefined>("saulo", [Validators.required, Validators.minLength(5)]),
       placeholder: 'Escreva aqui tudo que precisa...'
     };
   }
@@ -72,7 +72,7 @@ export class AddNotesComponent implements OnInit {
     this.spinner = true;
 
     this.create.createNewNotes(this.notaForm.value).subscribe({
-      next: () => {
+      next: (v) => {
         this.notaForm.reset({
           current_position: 0,
           is_favorite: false
@@ -83,6 +83,8 @@ export class AddNotesComponent implements OnInit {
           typeScoreboardColor: ScoreboardColor.SUCCESS,
           time: CloseSnackBarInNow.in_5_seconds
         }
+
+        console.log(v)
       },
       error: (err) => {
         this.spinner = false;

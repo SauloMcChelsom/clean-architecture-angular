@@ -8,8 +8,7 @@ import { ICreateNewNotesUseCase, IDeleteNotesUseCase, IFindNotesByLinkUseCase, I
 import { GetAllNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/get_all_notes_usecase';
 import { INotesRepository } from 'src/app/domain/repositories/notes_repository';
 import { NotesRepositoryImp } from 'src/app/data/repositories/notes_repository_imp';
-import { INotesHttpDatasource } from 'src/app/data/datasources/http/notes_http_datasource';
-import { NotesLocalDatasourceImp } from 'src/app/data/datasources/http/local/notes_local_datasource_imp';
+import { NotesLocalDatasourceImp } from 'src/app/data/datasources/local/notes_local_datasource_imp';
 import { CreateNewNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/create_new_notes_usecase';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeleteNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/delete_notes_usecase';
@@ -51,35 +50,7 @@ import { NavBarUpdateComponent } from './components/nav-bar-update/nav-bar-updat
     HotSnackBarModule
   ],
   providers:[
-    NoteStore,
-    {
-      provide: ICreateNewNotesUseCase,
-      useClass: CreateNewNotesUseCaseImp
-    },
-    {
-      provide: IGetAllNotesUseCase,
-      useClass: GetAllNotesUseCaseImp
-    },
-    {
-      provide: INotesRepository,
-      useClass: NotesRepositoryImp 
-    },
-    {
-      provide: INotesHttpDatasource,
-      useClass: NotesLocalDatasourceImp 
-    },
-    {
-      provide: IDeleteNotesUseCase,
-      useClass: DeleteNotesUseCaseImp 
-    },
-    {
-      provide: IUpdateNotesUseCase,
-      useClass: UpdateNotesUseCaseImp 
-    },
-    {
-      provide: IFindNotesByLinkUseCase,
-      useClass: FindNotesByLinkUseCaseImp
-    }
+    NoteStore
   ]
 })
 export class NotesModule { }

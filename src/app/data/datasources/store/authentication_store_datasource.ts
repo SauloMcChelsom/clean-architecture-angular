@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 
-export abstract class IAuthenticationCacheDatasource {
+export abstract class IAuthenticationStoreDatasource {
 
     abstract setCurrentTokenLocalStorege(content: AuthorizationEntity): Observable<boolean>;
 

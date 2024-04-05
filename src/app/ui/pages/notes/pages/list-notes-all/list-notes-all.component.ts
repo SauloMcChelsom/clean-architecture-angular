@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
-import { IDeleteNotesUseCase, IGetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { IDeleteNotesUseCase, IFindNotesByLinkUseCase, IGetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 
 @Component({
   selector: 'app-list-notes-all',
@@ -17,7 +17,8 @@ export class ListNotesAllComponent implements OnInit {
 
   constructor(
     private getNotes:IGetAllNotesUseCase,
-    private _delete:IDeleteNotesUseCase
+    private findNotesByLink: IFindNotesByLinkUseCase,
+    private _delete: IDeleteNotesUseCase,
   ) { }
 
   ngOnInit() {
@@ -33,6 +34,7 @@ export class ListNotesAllComponent implements OnInit {
           return;
         }
         this.notesList = notes
+        console.log('getAllNotes_SUCCESSO -->', notes);      
       },
       error:(err) => {
         console.log('getAllNotesERROR -->', err);
@@ -41,18 +43,6 @@ export class ListNotesAllComponent implements OnInit {
         console.log('complete');
       }
     })
-  }
-
-  update(note:NotesEntity) {
-    this.newItemEvent.emit(note);
-  }
-
-  view(note:NotesEntity) {
-    this.viewItemEvent.emit(note);
-  }
-
-  delete(note:NotesEntity) {
-    this._delete.deleteNotes(note.uid!);
   }
 
   ngOnDestroy() {

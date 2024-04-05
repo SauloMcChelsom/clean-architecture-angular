@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, switchMap, tap, throwError } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
-import { IAuthenticationCacheDatasource } from '../authentication_cache_datasource';
+import { IAuthenticationStoreDatasource } from '../authentication_store_datasource';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationCacheInMemoryDatasourceImp implements IAuthenticationCacheDatasource {
+export class AuthenticationStoreDatasourceImp implements IAuthenticationStoreDatasource {
 
     private userLocalStorege!: UserEntity | undefined;
     private tokenLocalStorege!: AuthorizationEntity | undefined;
