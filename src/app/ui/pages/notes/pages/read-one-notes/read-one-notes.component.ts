@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router, Routes } from '@angular/router';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
 import { DeleteNotesUseCase, FindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { NoteStore } from 'src/app/ui/stores/add_store';
 
 @Component({
   selector: 'app-read-one-notes',

@@ -24,7 +24,6 @@ import { HotSnackBarModule } from '../../components/snack-bar/snack-bar.module';
 import { ReadOneNotesComponent } from './pages/read-one-notes/read-one-notes.component';
 import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/implements/find_notes_by_link_usecase';
 import { NavBarReadComponent } from './components/nav-bar-read/nav-bar-read.component';
-import { NoteStore } from '../../stores/add_store';
 import { NavBarUpdateComponent } from './components/nav-bar-update/nav-bar-update.component';
 
 @NgModule({
@@ -48,9 +47,6 @@ import { NavBarUpdateComponent } from './components/nav-bar-update/nav-bar-updat
     HotInputComponent,
     HotTextareaComponent,
     HotSnackBarModule
-  ],
-  providers:[
-    NoteStore
   ]
 })
 export class NotesModule { }

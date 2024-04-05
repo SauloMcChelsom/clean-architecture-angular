@@ -5,7 +5,6 @@ import { CreateNewNotesUseCase, FindNotesByLinkUseCase, UpdateNotesUseCase } fro
 import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
-import { NoteStore } from 'src/app/ui/stores/add_store';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
