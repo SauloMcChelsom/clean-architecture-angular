@@ -23,3 +23,4 @@ export class HideIfLoggedInDirective {
 
     }
 }
+//<button appHideIfLoggedIn>add</button>

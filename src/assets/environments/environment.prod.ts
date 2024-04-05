@@ -1,8 +1,8 @@
-import { Port, Protocol, TLD, preview, version } from "src/app/infra/http/http_adapter";
+import { Port, Protocol, TLD, preview, version } from "src/app/infra/http/model/url.model";
 
 export const environment = {
   production: true,
-  Domain: 'note-beans',
+  Domain: 'api-note-beans',
   Protocol: Protocol.HTTPS,
   TLD: [TLD.COM, TLD.BR],
   version: version.v1,
