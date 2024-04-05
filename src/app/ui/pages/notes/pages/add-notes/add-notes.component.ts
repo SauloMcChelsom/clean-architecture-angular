@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ICreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { CreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
@@ -21,7 +21,7 @@ export class AddNotesComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private create: ICreateNewNotesUseCase
+    private create: CreateNewNotesUseCase
   ) {}
 
   ngOnInit() { 

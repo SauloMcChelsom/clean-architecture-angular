@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
-import { INotesRepository } from "src/app/domain/repositories/notes_repository";
-import { IUpdateNotesUseCase } from "../notes_usecase";
+import { NotesRepository } from "src/app/domain/repositories/notes_repository";
+import { UpdateNotesUseCase } from "../notes_usecase";
 import { Observable, catchError, concatMap, last, map, of, switchMap, throwError } from "rxjs";
 import { NotesEntity } from "src/app/domain/entities/notes.entity";
 import { TransformTitleTo } from "src/app/domain/helpers/transform/transform_title_to";
 
 @Injectable({ providedIn: 'root' })
-export class UpdateNotesUseCaseImp implements IUpdateNotesUseCase {
+export class UpdateNotesUseCaseImp implements UpdateNotesUseCase {
 
-    constructor(private _notes: INotesRepository) { }
+    constructor(private _notes: NotesRepository) { }
 
     public updateNotes(notes: NotesEntity): Observable<NotesEntity> {
         const isValidTitle = of([]).pipe(switchMap(() => this.isValidTitle(notes.title)));

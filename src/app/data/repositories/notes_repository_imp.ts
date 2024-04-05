@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
-import { INotesRepository } from 'src/app/domain/repositories/notes_repository';
+import { NotesRepository } from 'src/app/domain/repositories/notes_repository';
 
 
 @Injectable({ providedIn: 'root' })
-export class NotesRepositoryImp implements INotesRepository {
+export class NotesRepositoryImp implements NotesRepository {
 
-    constructor(private datasource: INotesRepository) { }
+    constructor(private datasource: NotesRepository) { }
 
     public findByLinkNotes(link: string): Observable<NotesEntity> {
         return this.datasource.findByLinkNotes(link);

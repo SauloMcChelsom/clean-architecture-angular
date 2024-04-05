@@ -3,7 +3,7 @@ import { AuthenticationEntity } from "../entities/authentication_entity";
 import { AuthorizationEntity } from "../entities/authorization_entity";
 import { UserEntity } from "../entities/user.entity";
 
-export abstract class IAuthenticationRepository {
+export abstract class AuthenticationRepository {
 
     abstract createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity>;
 

@@ -3,17 +3,17 @@ import { Observable } from 'rxjs';
 import { AuthenticationEntity } from 'src/app/domain/entities/authentication_entity';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
-import { IHttpAdapter } from 'src/app/infra/http/http_adapter';
+import { HttpAdapter } from 'src/app/infra/http/http_adapter';
 import { CREATE_NEW_ACCOUNT_ENDPOINT_CONFIG, FORGOT_PASSWORD_ENDPOINT_CONFIG, GET_CURRENT_ENDPOINT_CONFIG, GET_CURRENT_TOKEN_ENDPOINT_CONFIG, IS_EMAIL_ALREADY_ENDPOINT_CONFIG, LOGOUT_ENDPOINT_CONFIG, REFRESH_TPOKEN_ENDPOINT_CONFIG, REVOKE_TOKEN_ENDPOINT_CONFIG, SIGN_IN_WITH_EMAIL_AND_PASSWORD_ENDPOINT_CONFIG } from 'src/config/endpoints/endpoint';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationRemotoDatasourceImp implements IAuthenticationRepository {
+export class AuthenticationRemotoDatasourceImp implements AuthenticationRepository {
 
     constructor(
-        private userRequest: IHttpAdapter<UserEntity>,
-        private isRequest: IHttpAdapter<boolean>,
-        private authorizationRequest: IHttpAdapter<AuthorizationEntity>
+        private userRequest: HttpAdapter<UserEntity>,
+        private isRequest: HttpAdapter<boolean>,
+        private authorizationRequest: HttpAdapter<AuthorizationEntity>
     ) { }
 
     public isAuthenticated(): Observable<boolean> {

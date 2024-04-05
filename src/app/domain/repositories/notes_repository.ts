@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { NotesEntity } from "../entities/notes.entity";
 
-export abstract class INotesRepository {
+export abstract class NotesRepository {
 
     abstract createNewNotes(user: NotesEntity): Observable<NotesEntity>;
 

@@ -3,13 +3,13 @@ import { Observable, catchError, of, switchMap, tap, throwError } from 'rxjs';
 import { AuthenticationEntity } from 'src/app/domain/entities/authentication_entity';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { AuthenticationStoreDatasourceImp } from '../datasources/store/implements/authentication_store_datasource_imp';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationRepositoryImp implements IAuthenticationRepository {
+export class AuthenticationRepositoryImp implements AuthenticationRepository {
 
-    constructor(private datasource: IAuthenticationRepository, private store: AuthenticationStoreDatasourceImp) { }
+    constructor(private datasource: AuthenticationRepository, private store: AuthenticationStoreDatasourceImp) { }
 
     createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity> {
         return this.datasource.createNewAccount(content)

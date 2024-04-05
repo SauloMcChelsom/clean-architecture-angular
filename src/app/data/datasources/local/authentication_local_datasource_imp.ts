@@ -7,14 +7,14 @@ import { UserRoleEnum } from 'src/app/domain/helpers/enums/user_role_enum';
 import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
 import { v4 as uuidv4 } from 'uuid';
 import { code } from 'src/app/domain/helpers/enums/code_enum';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 interface UserDataBase extends UserEntity {
     password:string,
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationLocalDatasourceImp implements IAuthenticationRepository {
+export class AuthenticationLocalDatasourceImp implements AuthenticationRepository {
 
 
     private tokenInCloud!: AuthorizationEntity | undefined;

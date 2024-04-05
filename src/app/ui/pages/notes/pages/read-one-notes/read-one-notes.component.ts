@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router, Routes } from '@angular/router';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
-import { IDeleteNotesUseCase, IFindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { DeleteNotesUseCase, FindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 import { NoteStore } from 'src/app/ui/stores/add_store';
 
 @Component({
@@ -18,8 +18,8 @@ export class ReadOneNotesComponent implements OnInit {
   protected textErr:string = '';
 
   constructor(
-    private findNotesByLink: IFindNotesByLinkUseCase,
-    private _delete: IDeleteNotesUseCase,
+    private findNotesByLink: FindNotesByLinkUseCase,
+    private _delete: DeleteNotesUseCase,
     private route: ActivatedRoute,
     private router: Router
   ) { }

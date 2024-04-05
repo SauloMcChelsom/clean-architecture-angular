@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
-import { ICreateNewNotesUseCase, IFindNotesByLinkUseCase, IUpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { CreateNewNotesUseCase, FindNotesByLinkUseCase, UpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
@@ -29,8 +29,8 @@ export class UpdateNotesComponent implements OnInit {
   
     constructor(
       private fb: FormBuilder,
-      private _update: IUpdateNotesUseCase,
-      private findNotesByLink: IFindNotesByLinkUseCase,
+      private _update: UpdateNotesUseCase,
+      private findNotesByLink: FindNotesByLinkUseCase,
       private route: ActivatedRoute,
       private router: Router
     ) {}

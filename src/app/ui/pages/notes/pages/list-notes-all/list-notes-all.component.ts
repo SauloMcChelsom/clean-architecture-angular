@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { NotesEntity } from 'src/app/domain/entities/notes.entity';
-import { IDeleteNotesUseCase, IFindNotesByLinkUseCase, IGetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { DeleteNotesUseCase, FindNotesByLinkUseCase, GetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 
 @Component({
   selector: 'app-list-notes-all',
@@ -16,9 +16,9 @@ export class ListNotesAllComponent implements OnInit {
   private unsubscribe$ = new Subject<void>();
 
   constructor(
-    private getNotes:IGetAllNotesUseCase,
-    private findNotesByLink: IFindNotesByLinkUseCase,
-    private _delete: IDeleteNotesUseCase,
+    private getNotes:GetAllNotesUseCase,
+    private findNotesByLink: FindNotesByLinkUseCase,
+    private _delete: DeleteNotesUseCase,
   ) { }
 
   ngOnInit() {

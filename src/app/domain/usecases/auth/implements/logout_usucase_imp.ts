@@ -1,12 +1,12 @@
 import { Observable } from 'rxjs';
 import { Inject, Injectable } from '@angular/core';
-import { ILogoutUseCase } from '../auth_usecase';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { LogoutUseCase } from '../auth_usecase';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 @Injectable({ providedIn: 'root' })
-export class LogoutUseCaseImp implements ILogoutUseCase {
+export class LogoutUseCaseImp implements LogoutUseCase {
 
-    constructor(private _authenticationRepository: IAuthenticationRepository) { }
+    constructor(private _authenticationRepository: AuthenticationRepository) { }
 
     public logout(): Observable<boolean> {
         return this._authenticationRepository.logout();

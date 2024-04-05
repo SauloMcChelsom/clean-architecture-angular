@@ -1,15 +1,15 @@
 import { Observable } from "rxjs";
 import { NotesEntity } from "../../entities/notes.entity";
 
-export abstract class ICreateNewNotesUseCase {
+export abstract class CreateNewNotesUseCase {
     abstract createNewNotes(notes: NotesEntity): Observable<NotesEntity>;
 }
 
-export abstract class IDeleteNotesUseCase {
+export abstract class DeleteNotesUseCase {
     abstract deleteNotes(uid: string): Observable<boolean>;
 }
 
-export abstract class IUpdateNotesUseCase {
+export abstract class UpdateNotesUseCase {
     abstract updateNotes(notes: NotesEntity): Observable<NotesEntity>;
 }
 
@@ -21,11 +21,11 @@ export abstract class IFindNotesByTitleUseCase {
     abstract findByTitleNotes(title: string): Observable<NotesEntity>;
 }
 
-export abstract class IFindNotesByLinkUseCase {
+export abstract class FindNotesByLinkUseCase {
     abstract findByLinkNotes(link: string): Observable<NotesEntity>;
 }
 
-export abstract class IGetAllNotesUseCase {
+export abstract class GetAllNotesUseCase {
     abstract getAllNotes(): Observable<NotesEntity[]>;
 }
 

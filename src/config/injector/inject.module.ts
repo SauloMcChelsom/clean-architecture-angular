@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { AuthenticationRepositoryImp } from 'src/app/data/repositories/authentication_repository_imp';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
-import { ICreateNewAccountUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { IGetCurrentTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { IGetCurrentUserUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { IIsAuthenticatedUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { ILogoutUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { IRefreshTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { IRevokeTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
-import { ISignInWithEmailAndPassworUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { CreateNewAccountUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { GetCurrentTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { GetCurrentUserUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { IsAuthenticatedUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { LogoutUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { RefreshTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { RevokeTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { SignInWithEmailAndPassworUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
 import { CreateNewAccountUseCaseImp } from 'src/app/domain/usecases/auth/implements/create_new_account_usecase_imp';
 import { GetCurrentTokenUseCaseImp } from 'src/app/domain/usecases/auth/implements/get_current_token_usucase_imp';
 import { GetCurrentUserUseCaseImp } from 'src/app/domain/usecases/auth/implements/get_current_user_usucase_imp';
@@ -17,19 +17,19 @@ import { LogoutUseCaseImp } from 'src/app/domain/usecases/auth/implements/logout
 import { RefreshTokenUseCaseImp } from 'src/app/domain/usecases/auth/implements/refresh_token_usucase_imp';
 import { RevokeTokenUseCaseImp } from 'src/app/domain/usecases/auth/implements/revoke_token_usucase_imp';
 import { SignInWithEmailAndPasswordUseCaseImp } from 'src/app/domain/usecases/auth/implements/sign_in_with_email_and_password_usecase_imp';
-import { ILocalStorageAdapter } from 'src/app/infra/cache/local_storage_adapter';
+import { LocalStorageAdapter } from 'src/app/infra/cache/local_storage_adapter';
 import { LocalStorageAdapterImp } from 'src/app/infra/cache/local_storage_adapter_imp';
-import { IHttpAdapter } from 'src/app/infra/http/http_adapter';
+import { HttpAdapter } from 'src/app/infra/http/http_adapter';
 import { HttpClientAdapterImp } from 'src/app/infra/http/implements/http_client_adapter_imp';
-import { ICreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { IDeleteNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { IFindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { IGetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { IUpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { CreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { DeleteNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { FindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { GetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
+import { UpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 import { CreateNewNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/create_new_notes_usecase';
 import { DeleteNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/delete_notes_usecase';
 import { NotesLocalDatasourceImp } from 'src/app/data/datasources/local/notes_local_datasource_imp';
-import { INotesRepository } from 'src/app/domain/repositories/notes_repository';
+import { NotesRepository } from 'src/app/domain/repositories/notes_repository';
 import { NotesRepositoryImp } from 'src/app/data/repositories/notes_repository_imp';
 import { GetAllNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/get_all_notes_usecase';
 import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/implements/find_notes_by_link_usecase';
@@ -38,75 +38,75 @@ import { UpdateNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/
 @NgModule({
     providers: [
         {
-            provide: ILogoutUseCase,
+            provide: LogoutUseCase,
             useClass: LogoutUseCaseImp,
         },
         {
-            provide: IRefreshTokenUseCase,
+            provide: RefreshTokenUseCase,
             useClass: RefreshTokenUseCaseImp,
         },
         {
-            provide: IRevokeTokenUseCase,
+            provide: RevokeTokenUseCase,
             useClass: RevokeTokenUseCaseImp,
         },
         {
-            provide: IGetCurrentTokenUseCase,
+            provide: GetCurrentTokenUseCase,
             useClass: GetCurrentTokenUseCaseImp,
         },
         {
-            provide: IIsAuthenticatedUseCase,
+            provide: IsAuthenticatedUseCase,
             useClass: IsAuthenticatedUseCaseImp,
         },
         {
-            provide: IGetCurrentUserUseCase,
+            provide: GetCurrentUserUseCase,
             useClass: GetCurrentUserUseCaseImp,
         },
         {
-            provide: ICreateNewAccountUseCase,
+            provide: CreateNewAccountUseCase,
             useClass: CreateNewAccountUseCaseImp,
         },
         {
-            provide: ISignInWithEmailAndPassworUseCase,
+            provide: SignInWithEmailAndPassworUseCase,
             useClass: SignInWithEmailAndPasswordUseCaseImp,
         },
         {
-            provide: IAuthenticationRepository,
+            provide: AuthenticationRepository,
             useClass: AuthenticationRepositoryImp,
         },
         {
-            provide: ILocalStorageAdapter,
+            provide: LocalStorageAdapter,
             useClass: LocalStorageAdapterImp
         },
         {
-            provide: IHttpAdapter,
+            provide: HttpAdapter,
             useClass: HttpClientAdapterImp
         },
         {
-            provide: ICreateNewNotesUseCase,
+            provide: CreateNewNotesUseCase,
             useClass: CreateNewNotesUseCaseImp
         },
         {
-            provide: IDeleteNotesUseCase,
+            provide: DeleteNotesUseCase,
             useClass: DeleteNotesUseCaseImp
         },
         {
-            provide: IUpdateNotesUseCase,
+            provide: UpdateNotesUseCase,
             useClass: UpdateNotesUseCaseImp
         },
         {
-            provide: IFindNotesByLinkUseCase,
+            provide: FindNotesByLinkUseCase,
             useClass: FindNotesByLinkUseCaseImp
         },
         {
-            provide: IGetAllNotesUseCase,
+            provide: GetAllNotesUseCase,
             useClass: GetAllNotesUseCaseImp
         },
         {
-            provide: INotesRepository,
+            provide: NotesRepository,
             useClass: NotesRepositoryImp
         },
         {
-            provide: INotesRepository,
+            provide: NotesRepository,
             useClass: NotesLocalDatasourceImp
         },
     ]
