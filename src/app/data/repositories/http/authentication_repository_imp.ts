@@ -12,7 +12,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
 
     constructor(
         private auth: AuthenticationRepository, 
-        private user: UserRepository<UserEntity>,
+        private user: UserRepository,
         private toke: TokenRepository
     ) { }
 

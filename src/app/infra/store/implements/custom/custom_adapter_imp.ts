@@ -11,7 +11,6 @@ export class CustomAdapterImp<T> implements StoreAdapter<T> {
     this.state$ = new BehaviorSubject<T>(initialState);
   }
 
-
   select<R>(selector: (state: T) => R): Observable<R> {
     return this.state$.asObservable().pipe(
       map(selector)

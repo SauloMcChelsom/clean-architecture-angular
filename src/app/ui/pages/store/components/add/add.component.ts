@@ -11,7 +11,7 @@ import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
 })
 export class AddComponent implements OnInit {
 
-  constructor(private user:UserRepository<UserEntity>) { }
+  constructor(private user:UserRepository) { }
 
   ngOnInit(): void { }
 

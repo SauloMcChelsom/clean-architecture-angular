@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 import { UserRepository } from '../../models/user.model';
+import { StoreRepository } from 'src/app/infra/store/store_repository';
 
 
 export const enum LoadingState {
@@ -31,14 +32,19 @@ function getError(callState: CallState): LoadingState | string | null {
 }
 
 @Injectable()
-export class UserCacheNgRxDatasourceImp implements UserRepository {
+export class UserCacheNgRxDatasourceImp implements StoreRepository<UserEntity> {
 
-  constructor(private store: NgRxAdapterImp<AppState>) {
+  public store = new NgRxAdapterImp<AppState>({
+    user: [],
+    callState: LoadingState.INIT
+  });
+
+ /* constructor(private store: NgRxAdapterImp<AppState>) {
     this.store.initialState = {
       user: [],
       callState: LoadingState.INIT
     }
-  }
+  }*/
 
   public select(): Observable<UserEntity[]> {
     return this.store.select(state => state.user);

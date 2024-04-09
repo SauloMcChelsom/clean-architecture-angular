@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { UserRepository } from '../../models/user.model';
+import { StoreRepository } from 'src/app/infra/store/store_repository';
 
 
 export const enum LoadingState {
@@ -31,7 +32,7 @@ function getError(callState: CallState): LoadingState | string | null {
 }
 
 @Injectable()
-export class UserCacheDatasourceImp implements UserRepository<UserEntity> {
+export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
 
    public store = new CustomAdapterImp<AppState>({
      user: [],

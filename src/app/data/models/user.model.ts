@@ -1,3 +1,14 @@
-import { StoreRepository } from "src/app/infra/store/store_repository";
+import { Observable } from "rxjs";
+import { UserEntity } from "src/app/domain/entities/user.entity";
 
-export abstract class UserRepository<T> extends StoreRepository<T> {}
+export abstract class UserRepository {
+    abstract select(): Observable<UserEntity[]>;
+
+    abstract save(content: UserEntity): Observable<any>;
+  
+    abstract update(content: UserEntity): Observable<any>;
+  
+    abstract deletById(uid: string): Observable<any>;
+  
+    abstract delete(): Observable<any>;
+}
