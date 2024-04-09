@@ -1,6 +1,13 @@
 import { NotesEntity } from "src/app/domain/entities/notes.entity";
+import { RESPONSE_STATUS_CODE } from "src/app/domain/helpers/enums/response_status_code.enum";
 
-export interface NoteDTO {
+interface NoteDTO {
+    status: number,
+    result: string,
+    data:Note[]
+}
+
+interface Note {
     uid?: string;
     title: string;
     link: string;
@@ -10,7 +17,7 @@ export interface NoteDTO {
     timestamp?: string;
 }
 
-export class NoteModel {
+export class NoteMapping {
     static toEntity(dto:NoteDTO): NotesEntity {
         throw new Error('Method not implemented.');
     }

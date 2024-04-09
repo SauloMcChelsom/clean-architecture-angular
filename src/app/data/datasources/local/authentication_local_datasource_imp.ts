@@ -6,7 +6,7 @@ import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { UserRoleEnum } from 'src/app/domain/helpers/enums/user_role_enum';
 import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
 import { v4 as uuidv4 } from 'uuid';
-import { code } from 'src/app/domain/helpers/enums/code_enum';
+import { RESPONSE_STATUS_CODE } from 'src/app/domain/helpers/enums/response_status_code.enum';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 interface UserDataBase extends UserEntity {
@@ -112,12 +112,12 @@ export class AuthenticationLocalDatasourceImp implements AuthenticationRepositor
 
     public validToken(content: AuthorizationEntity): Observable<boolean> {
         if (content == undefined) {
-            return throwError(() => code.TOKE_NULL)
+            return throwError(() => RESPONSE_STATUS_CODE.TOKE_NULL)
         }
         
         const token = content;
         if (new Date(token.expires_in) < new Date()) {
-            return throwError(() => code.TOKE_EXPIRES)
+            return throwError(() => RESPONSE_STATUS_CODE.TOKE_EXPIRES)
         }
         return of(true);
     }
@@ -130,12 +130,12 @@ export class AuthenticationLocalDatasourceImp implements AuthenticationRepositor
 
     public refreshToken(content: AuthorizationEntity): Observable<AuthorizationEntity> {
         if (!content) {
-            return throwError(() => code.TOKEN_IS_NULL)
+            return throwError(() => RESPONSE_STATUS_CODE.TOKEN_IS_NULL)
         }
 
         const token = this.tokenRevoked.find((token) => token == content.refresh_token)
         if (token) {
-            return throwError(() => code.TOKEN_NOT_UNAUTHORRIZED)
+            return throwError(() => RESPONSE_STATUS_CODE.TOKEN_NOT_UNAUTHORRIZED)
         }
 
         return this.generateTokenRoot(content.refresh_token)
