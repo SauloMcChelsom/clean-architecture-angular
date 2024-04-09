@@ -3,20 +3,28 @@ import { UserRepository } from 'src/app/data/models/user.model';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { UserRoleEnum } from 'src/app/domain/helpers/enums/user_role_enum';
 import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
-import { StoreRepository } from 'src/app/infra/store/store_repository';
 
 @Component({
-  selector: 'app-store-component',
-  templateUrl: './store-component.component.html',
-  styleUrls: ['./store-component.component.css']
+  selector: 'app-add',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.css']
 })
-export class StoreComponentComponent implements OnInit {
+export class AddComponent implements OnInit {
 
   constructor(private user:UserRepository<UserEntity>) { }
 
-  ngOnInit() {
-    this.user.select().subscribe((v)=>{
-      console.log("STORE: ", v)
+  ngOnInit(): void { }
+
+  add() {
+    this.user.save({
+      email: 'saulo',
+      is_active: true,
+      uid:'',
+      user_name:'',
+      providers:'',
+      type:UserTypeEnum.USER,
+      roles: [UserRoleEnum.VALID_EMAIL_ACCOUNT],
+      timestamp: new Date().toString()
     })
   }
 

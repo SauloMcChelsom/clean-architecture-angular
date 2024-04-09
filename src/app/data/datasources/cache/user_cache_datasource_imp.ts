@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
-import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { UserRepository } from '../../models/user.model';
 
 
@@ -32,19 +31,19 @@ function getError(callState: CallState): LoadingState | string | null {
 }
 
 @Injectable()
-export class UserCacheDatasourceImp implements UserRepository {
+export class UserCacheDatasourceImp implements UserRepository<UserEntity> {
 
-  // public store = new CustomAdapterImp<AppState>({
-  //   user: [],
-  //   callState: LoadingState.INIT
-  // });
+   public store = new CustomAdapterImp<AppState>({
+     user: [],
+     callState: LoadingState.INIT
+   });
 
-  constructor(private store: CustomAdapterImp<AppState>) {
+  /*constructor(private store: CustomAdapterImp<AppState>) {
     this.store.initialState = {
       user: [],
       callState: LoadingState.INIT
     }
-  }
+  }*/
 
   public select(): Observable<UserEntity[]> {
     return this.store.select(state => state.user);
