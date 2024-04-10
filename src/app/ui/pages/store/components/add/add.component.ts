@@ -13,19 +13,29 @@ export class AddComponent implements OnInit {
 
   constructor(private user:UserRepository) { }
 
-  ngOnInit(): void { }
-
-  add() {
+  ngOnInit(): void {
     this.user.save({
-      email: 'saulo',
+      email: '2033.xyz@gmail.com.br',
       is_active: true,
-      uid:'',
-      user_name:'',
-      providers:'',
+      uid:'df89d86-dfdsfds8jkuk-f87gf8hgf',
+      user_name:'Saulo McChelsom',
+      providers:'google.com',
       type:UserTypeEnum.USER,
       roles: [UserRoleEnum.VALID_EMAIL_ACCOUNT],
       timestamp: new Date().toString()
     })
   }
 
+  add() {
+    this.user.save({
+      email: 'maellibatista@gmail.com.br',
+      is_active: true,
+      uid:'1209b84a-980d-4102-9494-b8e1c3d3c23a',
+      user_name:'Maelli Batista',
+      providers:'local.com',
+      type:UserTypeEnum.USER,
+      roles: [UserRoleEnum.VALID_EMAIL_ACCOUNT],
+      timestamp: new Date().toString()
+    })
+  }
 }

@@ -56,7 +56,8 @@ export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
   }
 
   public update(content: UserEntity): Observable<boolean> {
-    this.store.update((state: AppState) => ({ ...state, user: [...state.user, content] }));
+    this.store.update((state: AppState) => ({ ...state, user: state.user.map(item => (item.uid === content.uid ? content : item))
+    }));
     return of(true);
   }
 
