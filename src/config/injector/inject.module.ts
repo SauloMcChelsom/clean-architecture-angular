@@ -39,6 +39,8 @@ import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 import { UserRepository } from 'src/app/data/models/user.model';
+import { UserCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/user_cache_NgRx_datasource_imp';
+import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 
 @NgModule({
     providers: [
@@ -116,11 +118,11 @@ import { UserRepository } from 'src/app/data/models/user.model';
         },
         {
             provide: StoreAdapter,
-            useClass: CustomAdapterImp
+            useClass: NgRxAdapterImp
         },
         {
             provide: UserRepository,
-            useClass: UserCacheDatasourceImp
+            useClass: UserCacheNgRxDatasourceImp
         },
 
     ]
