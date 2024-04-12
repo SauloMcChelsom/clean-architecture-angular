@@ -17,8 +17,8 @@ import { LogoutUseCaseImp } from 'src/app/domain/usecases/auth/implements/logout
 import { RefreshTokenUseCaseImp } from 'src/app/domain/usecases/auth/implements/refresh_token_usucase_imp';
 import { RevokeTokenUseCaseImp } from 'src/app/domain/usecases/auth/implements/revoke_token_usucase_imp';
 import { SignInWithEmailAndPasswordUseCaseImp } from 'src/app/domain/usecases/auth/implements/sign_in_with_email_and_password_usecase_imp';
-import { LocalStorageAdapter } from 'src/app/infra/local_storage/local_storage_adapter';
-import { LocalStorageAdapterImp } from 'src/app/infra/local_storage/local_storage_adapter_imp';
+import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
+import { StorageAdapterImp } from 'src/app/infra/storage/local_storage/local_storage_adapter_imp';
 import { HttpAdapter } from 'src/app/infra/http/http_adapter';
 import { HttpClientAdapterImp } from 'src/app/infra/http/implements/http_client_adapter_imp';
 import { CreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
@@ -81,8 +81,8 @@ import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter
             useClass: AuthenticationRepositoryImp,
         },
         {
-            provide: LocalStorageAdapter,
-            useClass: LocalStorageAdapterImp
+            provide: StorageAdapter,
+            useClass: StorageAdapterImp
         },
         {
             provide: HttpAdapter,

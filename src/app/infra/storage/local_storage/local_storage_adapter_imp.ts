@@ -1,6 +1,6 @@
-import { LocalStorageAdapter } from "./local_storage_adapter";
+import { StorageAdapter } from "../storage_adapter";
 
-export class LocalStorageAdapterImp implements LocalStorageAdapter<any> {
+export class StorageAdapterImp implements StorageAdapter<any> {
 
     async save(key: string, value: any): Promise<boolean> {
         await localStorage.removeItem(key);
