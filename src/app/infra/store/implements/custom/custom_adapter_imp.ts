@@ -1,18 +1,18 @@
-import { Inject, Injectable, Injector } from '@angular/core';
+import { Inject, Injectable, Injector, Optional } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { StoreAdapter } from '../../store_adapter';
 import { CryptoAdapterImp } from 'src/app/infra/crypto/implements/CryptoJS/cryptojs_adapter_imp';
 import { AppState } from '../../model/app-state.model';
 import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
-import { StorageAdapterImp } from 'src/app/infra/storage/local_storage/local_storage_adapter_imp';
 
 @Injectable()
 export class CustomAdapterImp<T> implements StoreAdapter<T> {
 
-  private state$: BehaviorSubject<T>;
-  private storage = new StorageAdapterImp();
+  private state$!: BehaviorSubject<T>;
 
-  constructor(@Inject('') public initialState: T,) {
+  constructor(private storage: StorageAdapter<T>) {}
+
+  init(initialState: T): void {
     this.state$ = new BehaviorSubject<T>(initialState);
   }
 

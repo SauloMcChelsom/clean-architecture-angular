@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { AppState, LoadingState } from 'src/app/infra/store/model/app-state.model';
+import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { environment } from 'src/assets/environments/enviroment';
 
@@ -11,6 +12,7 @@ interface AppStateUser extends AppState<UserEntity> { }
 @Injectable()
 export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
 
+  /*
   public store = new CustomAdapterImp<AppStateUser>({
     items: [],
     callState: LoadingState.INIT,
@@ -20,10 +22,23 @@ export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
       storageStrategy: environment.payloadStorage.user.storageStrategy,
       ttl: environment.payloadStorage.user.ttl || 1209600,
     }
-  });
+  });*/
+
+  constructor(private store: StoreAdapter<AppStateUser>) {
+    this.store.init({
+      items: [],
+      callState: LoadingState.INIT,
+      storage: {
+        encryptionKey: environment.payloadStorage.user.encryptionKey,
+        tableName: environment.payloadStorage.user.tableName,
+        storageStrategy: environment.payloadStorage.user.storageStrategy,
+        ttl: environment.payloadStorage.user.ttl || 1209600,
+      }
+    })
+  }
 
   public select(): Observable<UserEntity[]> {
-    return this.store.select(state => state.items);
+    return this.store.select(state => state.items as any);
   }
 
   public save(content: UserEntity): Observable<boolean> {

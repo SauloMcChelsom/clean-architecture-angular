@@ -8,6 +8,9 @@ export class NgRxAdapterImp<T> extends ComponentStore<any> implements StoreAdapt
   constructor(@Inject('') public initialState: T) {
     super(initialState);
   }
+   init(initialState: T): void {
+    throw new Error('Method not implemented.');
+  }
 
   public save = (updateFn: (state: T) => T) => {
     const run = this.updater(updateFn);
