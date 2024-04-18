@@ -17,7 +17,6 @@ export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
     storage: {
       encryptionKey: environment.payloadStorage.user.encryptionKey,
       tableName: environment.payloadStorage.user.tableName,
-      stateKey: environment.payloadStorage.user.stateKey,
       storageStrategy: environment.payloadStorage.user.storageStrategy,
       ttl: environment.payloadStorage.user.ttl || 1209600,
     }

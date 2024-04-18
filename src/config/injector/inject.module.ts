@@ -81,7 +81,7 @@ import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter
             useClass: AuthenticationRepositoryImp,
         },
         {
-            provide: StorageAdapter,
+            provide: 'LOCAL_STORAGE',
             useClass: StorageAdapterImp
         },
         {
@@ -118,11 +118,11 @@ import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter
         },
         {
             provide: StoreAdapter,
-            useClass: NgRxAdapterImp
+            useClass: CustomAdapterImp
         },
         {
             provide: UserRepository,
-            useClass: UserCacheNgRxDatasourceImp
+            useClass: UserCacheDatasourceImp
         },
 
     ]
