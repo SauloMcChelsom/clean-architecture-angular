@@ -5,10 +5,11 @@ import { StoreAdapter } from '../../store_adapter';
 @Injectable()
 export class NgRxAdapterImp<T> extends ComponentStore<any> implements StoreAdapter<T> {
 
-  constructor(@Inject('') public initialState: T) {
-    super(initialState);
+  constructor(@Inject('') public initialStates: T) {
+    super(initialStates);
   }
-   init(initialState: T): void {
+  
+  initialState(initialState: T): void {
     throw new Error('Method not implemented.');
   }
 

@@ -6,6 +6,5 @@ export enum  StorageStrategy {
 export interface StorageModel {
     tableName: string, 
     storageStrategy: StorageStrategy,
-    encryptionKey?: string,
-    ttl?: number    
+    encryptionKey?: string  
 }

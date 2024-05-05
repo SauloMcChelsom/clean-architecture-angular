@@ -15,7 +15,6 @@ export class StoreComponentComponent implements OnInit {
 
   ngOnInit() {
     this.user.select().subscribe((v)=>{
-      console.log("STORE: ", v)
       this.store = v;
     })
   }

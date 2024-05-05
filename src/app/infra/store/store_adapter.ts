@@ -1,6 +1,6 @@
 export abstract class StoreAdapter<T> {
 
-  abstract init(initialState: T): void;
+  abstract initialState(initialState: T): void;
 
   abstract select(selector: (state: T) => T): any;
 

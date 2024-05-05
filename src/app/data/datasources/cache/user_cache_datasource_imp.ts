@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
-import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { AppState, LoadingState } from 'src/app/infra/store/model/app-state.model';
 import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
@@ -12,27 +11,14 @@ interface AppStateUser extends AppState<UserEntity> { }
 @Injectable()
 export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
 
-  /*
-  public store = new CustomAdapterImp<AppStateUser>({
-    items: [],
-    callState: LoadingState.INIT,
-    storage: {
-      encryptionKey: environment.payloadStorage.user.encryptionKey,
-      tableName: environment.payloadStorage.user.tableName,
-      storageStrategy: environment.payloadStorage.user.storageStrategy,
-      ttl: environment.payloadStorage.user.ttl || 1209600,
-    }
-  });*/
-
   constructor(private store: StoreAdapter<AppStateUser>) {
-    this.store.init({
+    this.store.initialState({
       items: [],
       callState: LoadingState.INIT,
       storage: {
         encryptionKey: environment.payloadStorage.user.encryptionKey,
         tableName: environment.payloadStorage.user.tableName,
-        storageStrategy: environment.payloadStorage.user.storageStrategy,
-        ttl: environment.payloadStorage.user.ttl || 1209600,
+        storageStrategy: environment.payloadStorage.user.storageStrategy
       }
     })
   }

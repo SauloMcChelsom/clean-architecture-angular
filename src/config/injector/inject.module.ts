@@ -41,6 +41,7 @@ import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 import { UserRepository } from 'src/app/data/models/user.model';
 import { UserCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/user_cache_NgRx_datasource_imp';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
+import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session_storage_adapter_imp';
 
 @NgModule({
     providers: [
@@ -81,8 +82,12 @@ import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter
             useClass: AuthenticationRepositoryImp,
         },
         {
-            provide: StorageAdapter,
+            provide: "STOREGE",
             useClass: StorageAdapterImp
+        },
+        {
+            provide: "SESSION",
+            useClass: SessionAdapterImp
         },
         {
             provide: HttpAdapter,
