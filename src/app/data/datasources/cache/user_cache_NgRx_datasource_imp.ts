@@ -2,71 +2,47 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
-import { UserRepository } from '../../models/user.model';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
+import { AppState, LoadingState } from 'src/app/infra/store/model/app-state.model';
+import { environment } from 'src/assets/environments/enviroment';
 
 
-export const enum LoadingState {
-  INIT = "INIT",
-  LOADING = "LOADING",
-  LOADED = "LOADED"
-}
-
-export interface ErrorState {
-  errorMsg: string;
-}
-
-export type CallState = LoadingState | ErrorState;
-
-export interface AppState {
-  user: UserEntity[];
-  callState: CallState;
-}
-
-function getError(callState: CallState): LoadingState | string | null {
-  if ((callState as ErrorState).errorMsg !== undefined) {
-    return (callState as ErrorState).errorMsg;
-  }
-
-  return null;
-}
+interface AppStateUser extends AppState<UserEntity> { }
 
 @Injectable()
 export class UserCacheNgRxDatasourceImp implements StoreRepository<UserEntity> {
 
-  public store = new NgRxAdapterImp<AppState>({
-    user: [],
-    callState: LoadingState.INIT
+  public store = new NgRxAdapterImp<AppStateUser>({
+    items: [],
+    callState: LoadingState.INIT,
+    storage: {
+      encryptionKey: environment.payloadStorage.user.encryptionKey,
+      tableName: environment.payloadStorage.user.tableName,
+      storageStrategy: environment.payloadStorage.user.storageStrategy
+    }
   });
 
- /* constructor(private store: NgRxAdapterImp<AppState>) {
-    this.store.initialState = {
-      user: [],
-      callState: LoadingState.INIT
-    }
-  }*/
-
   public select(): Observable<UserEntity[]> {
-    return this.store.select(state => state.user);
+    return this.store.select(state => state.items);
   }
 
   public save(content: UserEntity): Observable<boolean> {
-    this.store.save((state: AppState) => ({ ...state, user: [...state.user, content] }));
+    this.store.save((state: AppStateUser) => ({ ...state, items: [...state.items, content] }));
     return of(true);
   }
 
   public update(content: UserEntity): Observable<boolean> {
-    this.store.update((state: AppState) => ({ ...state, user: state.user.map(item => (item.uid === content.uid ? content : item))}));
+    this.store.update((state: AppStateUser) => ({ ...state, items: state.items.map(item => (item.uid === content.uid ? content : item))}));
     return of(true);
   }
 
   public deletById(uid: string): Observable<boolean> {
-    this.store.deletById((state: AppState) => ({ ...state, user: state.user.filter(item => item.uid !== uid) }));
+    this.store.deletById((state: AppStateUser) => ({ ...state, items: state.items.filter(item => item.uid !== uid) }));
     return of(true);
   }
 
   public delete(): Observable<boolean> {
-    this.store.delete((state: AppState) => ({ ...state, user: state.user = [] }));
+    this.store.delete((state: AppStateUser) => ({ ...state, items: state.items = [] }));
     return of(true);
   }
 }
