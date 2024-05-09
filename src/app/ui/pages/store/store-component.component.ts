@@ -14,7 +14,7 @@ export class StoreComponentComponent implements OnInit {
   constructor(private user:UserRepository) { }
 
   ngOnInit() {
-    this.user.select().subscribe((v)=>{
+    this.user.results().subscribe((v)=>{
       this.store = v;
     })
   }

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { NotesRepository } from 'src/app/domain/repositories/notes_repository';
 
 @Injectable({ providedIn: 'root' })
-export class NotesLocalDatasourceImp implements NotesRepository {
+export class NotesMockDatasourceImp implements NotesRepository {
 
     private _notes: NotesEntity[] = [];
     private _notes$: ReplaySubject<NotesEntity[]> = new ReplaySubject()

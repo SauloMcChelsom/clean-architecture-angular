@@ -2,7 +2,7 @@ import { Observable } from "rxjs";
 
 export abstract class StoreRepository<T> {
 
-  abstract select(): Observable<T[]>;
+  abstract results(): Observable<T[]>;
 
   abstract save(content: T): Observable<any>;
 

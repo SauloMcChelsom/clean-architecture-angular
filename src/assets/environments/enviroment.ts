@@ -11,7 +11,7 @@ export const environment = {
 
   payloadStorage: {
     user:{
-      encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb'
+      encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
       tableName: 'c3e79ae0b160',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE

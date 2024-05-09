@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AuthenticationRepositoryImp } from 'src/app/data/repositories/http/authentication_repository_imp';
+import { AuthenticationRepositoryImp } from 'src/app/data/repositories/authentication_repository_imp';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { CreateNewAccountUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
 import { GetCurrentTokenUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
@@ -27,9 +27,9 @@ import { GetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase'
 import { UpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
 import { CreateNewNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/create_new_notes_usecase';
 import { DeleteNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/delete_notes_usecase';
-import { NotesLocalDatasourceImp } from 'src/app/data/datasources/local/notes_local_datasource_imp';
+import { NotesMockDatasourceImp } from 'src/app/data/datasources/mock/notes_mock_datasource_imp';
 import { NotesRepository } from 'src/app/domain/repositories/notes_repository';
-import { NotesRepositoryImp } from 'src/app/data/repositories/http/notes_repository_imp';
+import { NotesRepositoryImp } from 'src/app/data/repositories/notes_repository_imp';
 import { GetAllNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/get_all_notes_usecase';
 import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/implements/find_notes_by_link_usecase';
 import { UpdateNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/update_notes_usecase';
@@ -41,6 +41,7 @@ import { UserRepository } from 'src/app/data/models/user.model';
 import { UserCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/user_cache_NgRx_datasource_imp';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session_storage_adapter_imp';
+import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
 
 @NgModule({
     providers: [
@@ -118,7 +119,7 @@ import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session
         },
         {
             provide: NotesRepository,
-            useClass: NotesLocalDatasourceImp
+            useClass: NotesMockDatasourceImp
         },
         {
             provide: StoreAdapter,

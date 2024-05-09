@@ -4,8 +4,8 @@ import { AuthenticationEntity } from 'src/app/domain/entities/authentication_ent
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
-import { UserRepository } from '../../models/user.model';
-import { TokenRepository } from '../../models/toke.model';
+import { UserRepository } from '../models/user.model';
+import { TokenRepository } from '../models/toke.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationRepositoryImp implements AuthenticationRepository {
@@ -33,7 +33,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
     isAuthenticated(): Observable<boolean> {
         return of([]).pipe(
             switchMap(() => {
-                return this.user.select().pipe(
+                return this.user.results().pipe(
                     switchMap((token) => {
                         if (!token) {
                             return throwError(() => 'Você deve logar');
@@ -69,7 +69,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                 )
             }),
             switchMap((token) => {
-                return this.user.select()
+                return this.user.results()
                     .pipe(
                         switchMap((user) => {
                             if (user) {

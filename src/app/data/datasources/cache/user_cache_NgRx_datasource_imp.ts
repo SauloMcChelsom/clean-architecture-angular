@@ -5,25 +5,27 @@ import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { AppState, LoadingState } from 'src/app/infra/store/model/app-state.model';
 import { environment } from 'src/assets/environments/enviroment';
-
+import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 
 interface AppStateUser extends AppState<UserEntity> { }
 
 @Injectable()
 export class UserCacheNgRxDatasourceImp implements StoreRepository<UserEntity> {
 
-  public store = new NgRxAdapterImp<AppStateUser>({
-    items: [],
-    callState: LoadingState.INIT,
-    storage: {
-      encryptionKey: environment.payloadStorage.user.encryptionKey,
-      tableName: environment.payloadStorage.user.tableName,
-      storageStrategy: environment.payloadStorage.user.storageStrategy
-    }
-  });
+  constructor(private store: StoreAdapter<AppStateUser>) {
+    this.store = new NgRxAdapterImp<AppStateUser>({
+      items: [],
+      callState: LoadingState.INIT,
+      storage: {
+        encryptionKey: environment.payloadStorage.user.encryptionKey,
+        tableName: environment.payloadStorage.user.tableName,
+        storageStrategy: environment.payloadStorage.user.storageStrategy
+      }
+    })
+  }
 
-  public select(): Observable<UserEntity[]> {
-    return this.store.select(state => state.items);
+  public results(): Observable<UserEntity[]> {
+    return this.store.results((state:AppStateUser) => state.items as any);
   }
 
   public save(content: UserEntity): Observable<boolean> {

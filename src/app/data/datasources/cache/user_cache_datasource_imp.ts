@@ -23,8 +23,8 @@ export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
     })
   }
 
-  public select(): Observable<UserEntity[]> {
-    return this.store.select(state => state.items as any);
+  public results(): Observable<UserEntity[]> {
+    return this.store.results((state: AppStateUser) => state.items as any);
   }
 
   public save(content: UserEntity): Observable<boolean> {

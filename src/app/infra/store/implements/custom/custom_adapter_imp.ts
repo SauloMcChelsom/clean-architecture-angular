@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { CryptoAdapterImp } from 'src/app/infra/crypto/implements/CryptoJS/cryptojs_adapter_imp';
 import { StorageStrategy } from 'src/app/infra/storage/models/storage.model';
 import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
-import { AppState } from '../../model/app-state.model';
+import { AppState, LoadingState } from '../../model/app-state.model';
 import { StoreAdapter } from '../../store_adapter';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class CustomAdapterImp<T> implements StoreAdapter<T> {
     this.state$ = new BehaviorSubject<T>(initialState);
   }
 
-  select<R>(selector: (state: T) => R): Observable<R> {
+  results<R>(selector: (state: T) => R): Observable<R> {
     this.decrypt()
     return this.state$.asObservable().pipe(
       map(selector),

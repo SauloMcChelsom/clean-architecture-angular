@@ -2,7 +2,7 @@ import { Observable } from "rxjs";
 import { UserEntity } from "src/app/domain/entities/user.entity";
 
 export abstract class UserRepository {
-    abstract select(): Observable<UserEntity[]>;
+    abstract results(): Observable<UserEntity[]>;
 
     abstract save(content: UserEntity): Observable<any>;
   

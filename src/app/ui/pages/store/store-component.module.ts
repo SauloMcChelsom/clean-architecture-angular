@@ -5,6 +5,7 @@ import { StoreRouteModule } from './store-component.routing.module';
 import { AddComponent } from './components/add/add.component';
 import { UpdadeComponent } from './components/updade/updade.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { BaseComponent } from '../../components/exemplo/base.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DeleteComponent } from './components/delete/delete.component';
   ],
   imports: [
     CommonModule,
-    StoreRouteModule
+    StoreRouteModule,
+    BaseComponent
   ],
   providers: []
 })
