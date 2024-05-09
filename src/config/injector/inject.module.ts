@@ -33,7 +33,7 @@ import { NotesRepositoryImp } from 'src/app/data/repositories/notes_repository_i
 import { GetAllNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/get_all_notes_usecase';
 import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/implements/find_notes_by_link_usecase';
 import { UpdateNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/update_notes_usecase';
-import { UserCacheDatasourceImp } from 'src/app/data/datasources/cache/user_cache_datasource_imp';
+import { UserCacheCustomeDatasourceImp } from 'src/app/data/datasources/cache/user_cache_custome_datasource_imp';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { StoreAdapter } from 'src/app/infra/store/store_adapter';
@@ -127,7 +127,7 @@ import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
         },
         {
             provide: UserRepository,
-            useClass: UserCacheNgRxDatasourceImp //UserCacheDatasourceImp
+            useClass: UserCacheNgRxDatasourceImp //UserCacheCustomeDatasourceImp
         },
 
     ]

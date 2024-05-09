@@ -9,7 +9,7 @@ import { environment } from 'src/assets/environments/enviroment';
 interface AppStateUser extends AppState<UserEntity> { }
 
 @Injectable()
-export class UserCacheDatasourceImp implements StoreRepository<UserEntity> {
+export class UserCacheCustomeDatasourceImp implements StoreRepository<UserEntity> {
 
   constructor(private store: StoreAdapter<AppStateUser>) {
     this.store.initialState({
