@@ -1,4 +1,4 @@
-import { NotesEntity } from "src/app/domain/entities/notes.entity";
+import { NoteEntity } from "src/app/domain/entities/note.entity";
 import { RESPONSE_STATUS_CODE } from "src/app/domain/helpers/enums/response_status_code.enum";
 
 interface NoteDTO {
@@ -18,11 +18,11 @@ interface Note {
 }
 
 export class NoteMapping {
-    static toEntity(dto:NoteDTO): NotesEntity {
+    static toEntity(dto:NoteDTO): NoteEntity {
         throw new Error('Method not implemented.');
     }
 
-    static toDTO(entity:NotesEntity): NoteDTO {
+    static toDTO(entity:NoteEntity): NoteDTO {
         throw new Error('Method not implemented.');
     }
 }

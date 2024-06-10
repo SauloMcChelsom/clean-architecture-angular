@@ -1,0 +1,26 @@
+<body class="mat-typography mat-app-background">
+  <div class="container">
+    <div class="row" *ngIf="isReady">
+      <hot-nav-bar-read 
+        (onAdd)="edit()"
+        (onDelete)="delete()"
+        (onView)="view()"
+      ></hot-nav-bar-read>
+      <h1> 
+       <b>{{ note.title }}</b> 
+      </h1>
+      <br /> <br />
+      <p>
+        {{ note.text }}
+      </p>
+    </div>
+  </div>
+</body>
+
+<div *ngIf="isReady == false && isErr == true" class="err">
+  <h1>{{ textErr }}</h1>
+</div>
+
+<div *ngIf="isReady == false && isErr == false && isLoad == true" class="err">
+  <h1>Carregando....</h1>
+</div>

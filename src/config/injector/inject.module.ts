@@ -20,19 +20,19 @@ import { SignInWithEmailAndPasswordUseCaseImp } from 'src/app/domain/usecases/au
 import { StorageAdapterImp } from 'src/app/infra/storage/local_storage/local_storage_adapter_imp';
 import { HttpAdapter } from 'src/app/infra/http/http_adapter';
 import { HttpClientAdapterImp } from 'src/app/infra/http/implements/http_client_adapter_imp';
-import { CreateNewNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { DeleteNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { FindNotesByLinkUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { GetAllNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { UpdateNotesUseCase } from 'src/app/domain/usecases/notes/notes_usecase';
-import { CreateNewNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/create_new_notes_usecase';
-import { DeleteNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/delete_notes_usecase';
-import { NotesMockDatasourceImp } from 'src/app/data/datasources/mock/notes_mock_datasource_imp';
-import { NotesRepository } from 'src/app/domain/repositories/notes_repository';
-import { NotesRepositoryImp } from 'src/app/data/repositories/notes_repository_imp';
-import { GetAllNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/get_all_notes_usecase';
-import { FindNotesByLinkUseCaseImp } from 'src/app/domain/usecases/notes/implements/find_notes_by_link_usecase';
-import { UpdateNotesUseCaseImp } from 'src/app/domain/usecases/notes/implements/update_notes_usecase';
+import { CreateNewNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
+import { DeleteNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
+import { FindNoteByLinkUseCase } from 'src/app/domain/usecases/note/note_usecase';
+import { GetAllNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
+import { UpdateNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
+import { CreateNewNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/create_new_note_usecase';
+import { DeleteNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/delete_note_usecase';
+import { NoteMockDatasourceImp } from 'src/app/data/datasources/mock/note_mock_datasource_imp';
+import { NoteRepository } from 'src/app/domain/repositories/note_repository';
+import { NoteRepositoryImp } from 'src/app/data/repositories/note_repository_imp';
+import { GetAllNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/get_all_note_usecase';
+import { FindNoteByLinkUseCaseImp } from 'src/app/domain/usecases/note/implements/find_note_by_link_usecase';
+import { UpdateNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/update_note_usecase';
 import { UserCacheCustomeDatasourceImp } from 'src/app/data/datasources/cache/user_cache_custome_datasource_imp';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
@@ -94,32 +94,32 @@ import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
             useClass: HttpClientAdapterImp
         },
         {
-            provide: CreateNewNotesUseCase,
-            useClass: CreateNewNotesUseCaseImp
+            provide: CreateNewNoteUseCase,
+            useClass: CreateNewNoteUseCaseImp
         },
         {
-            provide: DeleteNotesUseCase,
-            useClass: DeleteNotesUseCaseImp
+            provide: DeleteNoteUseCase,
+            useClass: DeleteNoteUseCaseImp
         },
         {
-            provide: UpdateNotesUseCase,
-            useClass: UpdateNotesUseCaseImp
+            provide: UpdateNoteUseCase,
+            useClass: UpdateNoteUseCaseImp
         },
         {
-            provide: FindNotesByLinkUseCase,
-            useClass: FindNotesByLinkUseCaseImp
+            provide: FindNoteByLinkUseCase,
+            useClass: FindNoteByLinkUseCaseImp
         },
         {
-            provide: GetAllNotesUseCase,
-            useClass: GetAllNotesUseCaseImp
+            provide: GetAllNoteUseCase,
+            useClass: GetAllNoteUseCaseImp
         },
         {
-            provide: NotesRepository,
-            useClass: NotesRepositoryImp
+            provide: NoteRepository,
+            useClass: NoteRepositoryImp
         },
         {
-            provide: NotesRepository,
-            useClass: NotesMockDatasourceImp
+            provide: NoteRepository,
+            useClass: NoteMockDatasourceImp
         },
         {
             provide: StoreAdapter,

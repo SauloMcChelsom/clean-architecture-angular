@@ -1,0 +1,18 @@
+<body class="mat-typography mat-app-background">
+  <div class="container">
+    <div class="row title">
+      Note Beans
+    </div>
+    <div class="row sub-title">
+      1 Folders, 24 note
+    </div>
+    <div class="row">
+      <app-list-note-all (newItemEvent)="addItem($event)" (viewItemEvent)="viewItem($event)"></app-list-note-all>
+    </div>
+    <div class="example-button-container absolute" style="display: flex;">
+      <button mat-fab color="primary" routerLink="/note/add" class="botoes-acao" aria-label="Example icon button with a delete icon">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+</body>
