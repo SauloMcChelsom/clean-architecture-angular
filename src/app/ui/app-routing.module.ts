@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notes/notes.module').then(m => m.NotesModule),
   },
   {
-    path: 'store',
-    loadChildren: () => import('./pages/store/store-component.module').then(m => m.StoreModule),
-  },
-  {
     path: '**',
     redirectTo: 'page-not-found'
   }

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { NotesComponent } from './pages/notes.component'
-import { AddNotesComponent } from './pages/add-notes/add-notes.component'
-import { ReadOneNotesComponent } from './pages/read-one-notes/read-one-notes.component'
-import { UpdateNotesComponent } from './pages/update-notes/update-notes.component'
+import { NotesComponent } from './notes.component'
+import { AddNotesComponent } from './add-notes/add-notes.component'
+import { ReadOneNotesComponent } from './read-one-notes/read-one-notes.component'
+import { UpdateNotesComponent } from './update-notes/update-notes.component'
 
 export const ROUTES: Routes = [
     {

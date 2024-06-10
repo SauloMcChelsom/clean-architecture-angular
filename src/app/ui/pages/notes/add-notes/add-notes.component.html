@@ -1,0 +1,14 @@
+<body class="mat-typography mat-app-background">
+  <hot-snack-bar [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></hot-snack-bar>
+  <div class="container">
+    <div class="row">
+      <NavBar (onClick)="add()" [spinner]="spinner"></NavBar>
+      <div style="padding-bottom: 25px;">
+        <hot-input [config]="config_title"></hot-input>
+      </div>
+      <div>
+        <hot-textarea [config]="config_description"></hot-textarea>
+      </div>
+    </div>
+  </div>
+</body>
