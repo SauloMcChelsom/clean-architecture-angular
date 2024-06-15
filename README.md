@@ -328,11 +328,6 @@ npm run start
 #NOTE-3311: descricao do ajuste
 ```
 
-# Padrao do comitado 
-```bash
-#NOTE-3311: descricao do ajuste
-```
-
 # Padrao criacao de branch 
 feature
 ```bash
