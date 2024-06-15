@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { NoteComponent } from './note.component'
-import { AddNoteComponent } from './add-note/add-note.component'
-import { ReadOneNoteComponent } from './read-one-note/read-one-note.component'
-import { UpdateNoteComponent } from './update-note/update-note.component'
+import { PageNoteComponent } from './note.component'
+import { PageNoteAddComponent } from './add/add.component'
+import { PageNoteReadOneComponent } from './read-one/read-one.component'
+import { PageNoteUpdateComponent } from './update/update.component'
 
 export const ROUTES: Routes = [
     {
         path: '',
-        component: NoteComponent,
+        component: PageNoteComponent,
     },
     {
         path: 'add',
-        component: AddNoteComponent,
+        component: PageNoteAddComponent,
     },
     {
         path: 'update/:title',
-        component: UpdateNoteComponent,
+        component: PageNoteUpdateComponent,
     },
     {
         path: 'read/:title',
-        component: ReadOneNoteComponent,
+        component: PageNoteReadOneComponent,
     }
 ]
 

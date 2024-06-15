@@ -6,11 +6,11 @@ import { CloseSnackBarInNow, ScoreboardColor, SnackBarModel } from 'src/app/ui/c
 import { TextareaInputConfig } from 'src/app/ui/components/less/textarea/enuns/dynamic-date-input.types';
 
 @Component({
-  selector: 'app-add-note',
-  templateUrl: './add-note.component.html',
-  styleUrls: ['./add-note.component.scss']
+  selector: 'PageNoteAdd',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
-export class AddNoteComponent implements OnInit {
+export class PageNoteAddComponent implements OnInit {
 
   public notaForm!: FormGroup;
   public config_title!: TextInputConfig;

@@ -4,11 +4,11 @@ import { NoteEntity } from 'src/app/domain/entities/note.entity';
 import { DeleteNoteUseCase, FindNoteByLinkUseCase } from 'src/app/domain/usecases/note/note_usecase';
 
 @Component({
-  selector: 'app-read-one-note',
-  templateUrl: './read-one-note.component.html',
-  styleUrls: ['./read-one-note.component.css']
+  selector: 'PageNoteReadOne',
+  templateUrl: './read-one.component.html',
+  styleUrls: ['./read-one.component.scss']
 })
-export class ReadOneNoteComponent implements OnInit {
+export class PageNoteReadOneComponent implements OnInit {
 
   protected note!: NoteEntity;
   protected isReady:boolean = false;

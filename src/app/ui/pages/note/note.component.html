@@ -7,7 +7,7 @@
       1 Folders, 24 note
     </div>
     <div class="row">
-      <app-list-note-all (newItemEvent)="addItem($event)" (viewItemEvent)="viewItem($event)"></app-list-note-all>
+      <NoteCardListAll [noteList]="noteList" (newItemEvent)="addItem($event)" (viewItemEvent)="viewItem($event)"></NoteCardListAll>
     </div>
     <div class="example-button-container absolute" style="display: flex;">
       <button mat-fab color="primary" routerLink="/note/add" class="botoes-acao" aria-label="Example icon button with a delete icon">

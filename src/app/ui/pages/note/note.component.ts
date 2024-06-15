@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { NoteEntity } from 'src/app/domain/entities/note.entity';
+import { GetAllNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
 
 @Component({
-  selector: 'app-note',
+  selector: 'PageNote',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css']
+  styleUrls: ['./note.component.scss']
 })
-export class NoteComponent implements OnInit {
+export class PageNoteComponent implements OnInit {
+  public noteList: NoteEntity[] = [];
 
   public note: NoteEntity = {
     is_favorite: false,
@@ -26,9 +29,15 @@ export class NoteComponent implements OnInit {
     link: ""
   }
 
-  constructor() { }
+  private unsubscribe$ = new Subject<void>();
 
-  ngOnInit() { }
+  constructor( private getNote:GetAllNoteUseCase) { }
+
+  ngOnInit() {
+    setTimeout(()=>{
+      this.getAllNote();
+    },200)
+  }
 
   addItem($event:NoteEntity) {
     this.note = $event;
@@ -38,4 +47,26 @@ export class NoteComponent implements OnInit {
     this.view_note = $event;
   }
 
+  getAllNote() {
+    this.getNote.getAllNote().pipe(takeUntil(this.unsubscribe$)).subscribe({
+      next: (note: NoteEntity[]) => {
+        if(!note){
+          return;
+        }
+        this.noteList = note
+        console.log('getAllNote_SUCCESSO -->', note);      
+      },
+      error:(err) => {
+        console.log('getAllNoteERROR -->', err);
+      },
+      complete: ()=> {
+        console.log('complete');
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 }

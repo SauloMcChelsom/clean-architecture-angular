@@ -3,7 +3,9 @@
 <body class="mat-typography mat-app-background">
   <div class="container">
     <div class="row">
-      <hot-nav-bar-update (onUpdate)="update()" (onBack)="back()" [spinner]="spinner"></hot-nav-bar-update>
+      <NoteNavBar>
+        <NoteNavBarUpdate (onUpdate)="update()" (onBack)="back()" [spinner]="spinner"></NoteNavBarUpdate>
+      </NoteNavBar>
       <div style="padding-bottom: 25px;">
         <hot-input [config]="config_title"></hot-input>
       </div>

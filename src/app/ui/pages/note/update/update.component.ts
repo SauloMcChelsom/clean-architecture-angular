@@ -8,11 +8,11 @@ import { TextareaInputConfig } from 'src/app/ui/components/less/textarea/enuns/d
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-note',
-  templateUrl: './update-note.component.html',
-  styleUrls: ['./update-note.component.css']
+  selector: 'PageNoteUpdate',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.scss']
 })
-export class UpdateNoteComponent implements OnInit {
+export class PageNoteUpdateComponent implements OnInit {
     
   protected isReady:boolean = false;
   protected isErr:boolean = false;

@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteEntity } from 'src/app/domain/entities/note.entity';
 
 @Component({
-  selector: 'app-view-note',
-  templateUrl: './view-note.component.html',
-  styleUrls: ['./view-note.component.css']
+  selector: 'PageNoteView',
+  templateUrl: './view.component.html',
+  styleUrls: ['./view.component.scss']
 })
-export class ViewNoteComponent implements OnInit {
+export class PageNoteViewComponent implements OnInit {
 
   @Input() date!: NoteEntity;
   public notaForm: FormGroup;

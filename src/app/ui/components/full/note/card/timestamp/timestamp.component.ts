@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'NoteCardTimestamp',
   templateUrl: './timestamp.component.html',
-  styleUrls: ['./timestamp.component.css'],
+  styleUrls: ['./timestamp.component.scss'],
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -20,6 +20,6 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule
   ]
 })
-export class TimestampComponent {
+export class NoteCardTimestampComponent {
   @Input() value!:string;
 }

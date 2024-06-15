@@ -24,7 +24,7 @@ import { NoteEntity } from 'src/app/domain/entities/note.entity';
     RouterModule
   ]
 })
-export class CardComponent implements OnChanges {
+export class NoteCardComponent implements OnChanges {
 
   @Input() link!: string;
 

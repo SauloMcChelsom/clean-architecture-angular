@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'NoteCardText',
   templateUrl: './text.component.html',
-  styleUrls: ['./text.component.css'],
+  styleUrls: ['./text.component.scss'],
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -20,6 +20,6 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule
   ]
 })
-export class TextComponent {
+export class NoteCardTextComponent {
   @Input() value!:string;
 }

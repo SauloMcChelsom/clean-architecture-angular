@@ -1,19 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'NavBar',
+  selector: 'NoteNavBar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  styleUrls: ['./nav-bar.component.scss'],
+  standalone: true,
+  imports:[
+    CommonModule
+  ],
 })
-export class NavBarAddComponent {
-  @Output() onClick: EventEmitter<any> = new EventEmitter();
-  @Input() spinner: boolean = false;
-
-  add() {
-    this.onClick.emit();
-  }
-
-  goBack() {
-    window.history.back();
-  }
-}
+export class NoteNavBarComponent {}

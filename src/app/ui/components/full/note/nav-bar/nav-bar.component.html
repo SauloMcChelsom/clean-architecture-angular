@@ -1,16 +1,4 @@
-<div [ngClass]="'transparent-toolbar'">
-  <button mat-icon-button (click)="goBack()" aria-label="Example icon-button with menu icon">
-    <mat-icon>west</mat-icon>
-  </button>
-  <span>Adicionar uma nova notas</span>
-  <button mat-icon-button *ngIf="!spinner" (click)="add()" aria-label="Example icon-button with menu icon">
-    <mat-icon>
-      add
-    </mat-icon>
-  </button>
-  <button mat-icon-button *ngIf="spinner" aria-label="Example icon-button with menu icon">
-    <mat-icon>
-      <mat-spinner diameter="24"></mat-spinner>
-    </mat-icon>
-  </button>
+<div>
+  <ng-content></ng-content>
 </div>
+
