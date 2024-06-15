@@ -55,7 +55,7 @@ export class PageNoteAddComponent implements OnInit {
 
   createInputText(): void {
     this.config_title = {
-      formControl: new FormControl<string | undefined>("saulo", [Validators.required, Validators.minLength(5)]),
+      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(5)]),
       title: 'Titulo',
       placeholder: 'Informe o titulo do seu note'
     };
@@ -63,7 +63,7 @@ export class PageNoteAddComponent implements OnInit {
 
   createInputTextarea(): void {
     this.config_description = {
-      formControl: new FormControl<string | undefined>("saulo", [Validators.required, Validators.minLength(5)]),
+      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(5)]),
       placeholder: 'Escreva aqui tudo que precisa...'
     };
   }

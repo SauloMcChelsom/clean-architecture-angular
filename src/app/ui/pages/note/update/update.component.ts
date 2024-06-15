@@ -18,13 +18,13 @@ export class PageNoteUpdateComponent implements OnInit {
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
   protected textErr:string = '';
-    public notaForm!: FormGroup;
-    public config_title!: TextInputConfig;
-    public config_description!: TextareaInputConfig;
-    protected openSnackBar!:SnackBarModel;
-    protected closeSnackBar!:any;
-    protected spinner:boolean = false;
-    private link = "/"
+  public notaForm!: FormGroup;
+  public config_title!: TextInputConfig;
+  public config_description!: TextareaInputConfig;
+  protected openSnackBar!:SnackBarModel;
+  protected closeSnackBar!:any;
+  protected spinner:boolean = false;
+  private link = "/"
   
     constructor(
       private fb: FormBuilder,

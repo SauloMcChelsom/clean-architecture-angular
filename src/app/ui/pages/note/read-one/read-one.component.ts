@@ -50,13 +50,10 @@ export class PageNoteReadOneComponent implements OnInit {
 
   delete() {
     this._delete.deleteNote(this.note.uid!).subscribe({
-      error: (err) => {
-        
-      },
       complete: () => {
         this.router.navigate(["/note"]);
       },
-    })
+    }).unsubscribe()
   }
 
   view() {
