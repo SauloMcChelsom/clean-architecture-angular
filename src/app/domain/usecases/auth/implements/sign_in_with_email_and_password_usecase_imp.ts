@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, forkJoin, map, throwError } from 'rxjs';
 import { EmailValidate } from 'src/app/domain/helpers/validate/email_validate';
 import { PasswordValidate } from 'src/app/domain/helpers/validate/password_validate';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
-import { ISignInWithEmailAndPassworUseCase } from '../auth_usecase';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { SignInWithEmailAndPassworUseCase } from '../auth_usecase';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 
 
 @Injectable({ providedIn: 'root' })
-export class SignInWithEmailAndPasswordUseCaseImp implements ISignInWithEmailAndPassworUseCase {
+export class SignInWithEmailAndPasswordUseCaseImp implements SignInWithEmailAndPassworUseCase {
 
-    constructor(private _auth: IAuthenticationRepository) { }
+    constructor(private _auth: AuthenticationRepository) { }
 
     public signInWithEmailAndPassword(email: string, password: string): Observable<AuthorizationEntity> {
 

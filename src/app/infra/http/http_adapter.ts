@@ -22,6 +22,6 @@ export type Options = {
     paramsUrl?:string[]
 }
 
-export abstract class IHttpAdapter<T> {
+export abstract class HttpAdapter<T> {
     abstract createAndStartRequest(config: EndpointConfig, params?: string, options?: Options): Observable<T>;
 }

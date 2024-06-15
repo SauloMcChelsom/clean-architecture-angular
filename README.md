@@ -292,7 +292,7 @@ Pontos a serem levados em consideração antes de introduzir uma nova feature:
 │           ├── guards
 │           ├── interceptors
 │           ├── pages
-│           │   └── notes
+│           │   └── note
 │           │      ├── components
 │           │      ├── pages
 │           │      │   ├── add

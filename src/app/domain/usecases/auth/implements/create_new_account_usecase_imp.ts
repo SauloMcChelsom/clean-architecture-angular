@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, catchError, forkJoin, map, throwError } from 'rxjs';
-import { ICreateNewAccountUseCase } from '../auth_usecase';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { CreateNewAccountUseCase } from '../auth_usecase';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { AuthenticationEntity } from 'src/app/domain/entities/authentication_entity';
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { EmailValidate } from 'src/app/domain/helpers/validate/email_validate';
@@ -9,9 +9,9 @@ import { UserValidate } from 'src/app/domain/helpers/validate/user_validade';
 import { PasswordValidate } from 'src/app/domain/helpers/validate/password_validate';
 
 @Injectable({ providedIn: 'root' })
-export class CreateNewAccountUseCaseImp implements ICreateNewAccountUseCase {
+export class CreateNewAccountUseCaseImp implements CreateNewAccountUseCase {
 
-    constructor(private _auth: IAuthenticationRepository) { }
+    constructor(private _auth: AuthenticationRepository) { }
 
     public createNewAccount(user: AuthenticationEntity): Observable<AuthorizationEntity> {
         return forkJoin({

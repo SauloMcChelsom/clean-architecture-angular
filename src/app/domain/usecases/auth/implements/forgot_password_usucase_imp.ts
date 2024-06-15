@@ -2,13 +2,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, catchError, forkJoin, map, throwError } from 'rxjs';
 import { IForgotPasswordUseCase } from '../auth_usecase';
-import { IAuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { EmailValidate } from 'src/app/domain/helpers/validate/email_validate';
 
 @Injectable({ providedIn: 'root' })
 export class ForgotPasswordUseCaseImp implements IForgotPasswordUseCase {
 
-    constructor(private _auth: IAuthenticationRepository) { }
+    constructor(private _auth: AuthenticationRepository) { }
 
     public forgotPassword(email: string): Observable<boolean> {
         return forkJoin({

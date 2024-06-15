@@ -1,6 +1,6 @@
 import { Observable, shareReplay } from "rxjs";
 import { HttpClient } from '@angular/common/http';
-import { IHttpAdapter, Options } from "../http_adapter";
+import { HttpAdapter, Options } from "../http_adapter";
 import { Injectable } from "@angular/core";
 import { Url } from "../model/url.model";
 import { EndpointConfig } from "../model/end-point.model";
@@ -10,7 +10,7 @@ export function createUrl(url:Url, params?: string):string {
 }
 
 @Injectable({ providedIn: 'root' })
-export class HttpClientAdapterImp implements IHttpAdapter<any> {
+export class HttpClientAdapterImp implements HttpAdapter<any> {
 
     constructor(private http: HttpClient) {}
 
