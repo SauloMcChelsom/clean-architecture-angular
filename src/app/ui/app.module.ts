@@ -6,10 +6,12 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularMaterialModule } from '../ui/theme/angular-material.module';
+import { InjectModule } from 'src/config/injector/inject.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    InjectModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -19,7 +21,6 @@ import { AngularMaterialModule } from '../ui/theme/angular-material.module';
     AngularMaterialModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

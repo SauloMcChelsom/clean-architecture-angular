@@ -4,10 +4,11 @@ import { NoPreloading, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/notes/notes.module').then(m => m.NotesModule),  },
+    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),  
+  },
   {
-    path: 'notes',
-    loadChildren: () => import('./pages/notes/notes.module').then(m => m.NotesModule),
+    path: 'note',
+    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),
   },
   {
     path: '**',

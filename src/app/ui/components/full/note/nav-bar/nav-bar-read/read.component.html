@@ -1,0 +1,15 @@
+<div [ngClass]="'transparent-toolbar'">
+  <button mat-icon-button routerLink="/note" aria-label="Example icon-button with menu icon">
+    <mat-icon>west</mat-icon>
+  </button>
+  <button mat-icon-button (click)="delete()" aria-label="Example icon-button with menu icon">
+    <mat-icon>
+      delete
+    </mat-icon>
+  </button>
+  <button mat-icon-button (click)="edit()" aria-label="Example icon-button with menu icon">
+    <mat-icon>
+      mode_edit
+    </mat-icon>
+  </button>
+</div>
