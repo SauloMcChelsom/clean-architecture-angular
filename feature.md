@@ -1,4 +1,4 @@
-# [/] nome de componente
+# [ok] nome de componente
  1 - renomear os nome file da pagina exemplo [named as its location]`C:\workspace\maelly-develop\clean-architecture-angular\src\app\ui\pages\note\add\add-note.component.html` com o video de javascript verificar se o padrao de nome de componente e pagina estao ok
 
  2 - verificar se em `components\full\note\card`precisa de criar pasta content e colocar os conteudo para dentro, pois podemos criar outras pasta como base `componente base` 
