@@ -323,6 +323,10 @@ Iniciar aplicação
 ```bash
 npm run start
 ```
+# Padrao do comitado 
+```bash
+#NOTE-3311: descricao do ajuste
+```
 
 # Dicas
 
