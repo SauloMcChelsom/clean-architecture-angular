@@ -53,7 +53,12 @@ export class PageNoteComponent implements OnInit {
         if(!note){
           return;
         }
-        this.noteList = note
+        this.noteList = note.map((note) => {
+          return {
+            ...note,
+            link: `read/${note.link}`
+          };
+        })
         console.log('getAllNote_SUCCESSO -->', note);      
       },
       error:(err) => {

@@ -5,13 +5,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
-import { NoteEntity } from 'src/app/domain/entities/note.entity';
-
 
 @Component({
   selector: 'NoteCard',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  styleUrls: ['./card.component.scss'],
   standalone: true,
   imports: [
     ReactiveFormsModule,
