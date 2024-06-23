@@ -1,11 +1,14 @@
-<div class="row">
-  <div class="w col-sm-12 col-md-6 col-lg-4" *ngFor="let note of noteList">
-    <NoteCard [link]="note.link">
-      <div>
-        <NoteCardTitle [value]="note.title"></NoteCardTitle>
-        <NoteCardTimestamp [value]="note.timestamp!"></NoteCardTimestamp>
-        <NoteCardText [value]="note.text"></NoteCardText>
-      </div>
-    </NoteCard>
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 pt-3 p-0 md:p-1 lg:p-1" 
+     *ngFor="let note of noteList;">
+     <div>
+      <NoteCard [link]="note.link">
+        <div>
+          <NoteCardTitle [value]="note.title"></NoteCardTitle>
+          <NoteCardTimestamp [value]="note.timestamp!"></NoteCardTimestamp>
+          <NoteCardText [value]="note.text"></NoteCardText>
+        </div>
+      </NoteCard>
+     </div>
   </div>
 </div>

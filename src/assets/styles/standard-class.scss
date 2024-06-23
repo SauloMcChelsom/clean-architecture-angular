@@ -11,6 +11,18 @@ $font-family: 'Comfortaa', sans-serif;
   margin: 0px;
 }
 
-body {
+.grid {
+  margin-right: 0rem;
+  margin-left: 0rem;
+}
+
+.box {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 4px;
+  margin: .5rem;
+}
+
+.container-box {
   height: 100vh;
 }

@@ -15,12 +15,11 @@
     color: #666;
 }
 
-.absolute {
+.container-button-add {
     position: absolute;
     bottom: 70px;
     right: 70px;
-}
-
-.botoes-acao {
-    position: fixed;
+    button {
+        position: fixed;
+    }
 }

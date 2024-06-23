@@ -1,0 +1,42 @@
+.box-200 {
+    background-color: #cce4f7;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4px;
+    color: #30383c;
+    margin: .5rem;
+}
+
+.box-300 {
+    background: #efefef;
+}
+
+.card {
+    background: #f8f9fa;
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+h5 {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.box {
+    background-color: #cce4f7;
+    color: #30383c;
+}
+
+.vertical-container {
+    margin: 0;
+    height: 200px;
+    background: #efefef;
+    border-radius: 4px;
+}
+
+.box-stretched {
+    height: 90%;
+    box-sizing: border-box;
+}

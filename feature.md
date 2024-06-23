@@ -4,11 +4,12 @@
  2 - [ok] verificar se em `components\full\note\card`precisa de criar pasta content e colocar os conteudo para dentro, pois podemos criar outras pasta como base `componente base` 
 
 # [/] layout
-  1 - organizar o layout mobile esta quebrado
-  2 - melhor o layout pois esta muito espacoso 
-  3 - melhorar o card
+  1 - [ok] organizar o layout mobile esta quebrado
+  2 - [ok] melhor o layout pois esta muito espacoso 
+  3 - [ok] melhorar o card
   4 - [ok] remover nome fixo em cadastro
   5 - [ok] navegacao para atualizar fica em branco
+  6 - [ok] remover bootstrap
   
 # [x] login
   1 - criar funcionalidade login

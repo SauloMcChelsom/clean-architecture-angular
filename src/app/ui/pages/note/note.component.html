@@ -1,16 +1,21 @@
 <body class="mat-typography mat-app-background">
-  <div class="container">
+  <div class="container-box">
     <div class="row title">
       Note Beans
     </div>
-    <div class="row sub-title">
+    <div class="row mb-3 sub-title">
       1 Folders, 24 note
     </div>
-    <div class="row">
-      <NoteCardListAll [noteList]="noteList" (newItemEvent)="addItem($event)" (viewItemEvent)="viewItem($event)"></NoteCardListAll>
+    <div>
+      <NoteCardListAll 
+        [noteList]="noteList" 
+        (newItemEvent)="addItem($event)" 
+        (viewItemEvent)="viewItem($event)"
+        >
+      </NoteCardListAll>
     </div>
-    <div class="example-button-container absolute" style="display: flex;">
-      <button mat-fab color="primary" routerLink="/note/add" class="botoes-acao" aria-label="Example icon button with a delete icon">
+    <div class="container-button-add flex">
+      <button mat-fab color="primary" routerLink="/note/add">
         <mat-icon>add</mat-icon>
       </button>
     </div>

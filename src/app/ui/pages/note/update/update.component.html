@@ -1,8 +1,8 @@
 <div *ngIf="isReady">
   <hot-snack-bar [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></hot-snack-bar>
   <body class="mat-typography mat-app-background">
-    <div class="container">
-      <div class="row">
+    <div class="mx-3">
+      <div class="container-box">
         <NoteNavBar>
           <NoteNavBarUpdate (onUpdate)="update()" (onBack)="back()" [spinner]="spinner"></NoteNavBarUpdate>
         </NoteNavBar>
@@ -21,6 +21,6 @@
   <h1>{{ textErr }}</h1>
 </div>
 
-<body class="mat-typography mat-app-background" *ngIf="isReady == false && isErr == false && isLoad == true">
+<body class="mat-typography mat-app-background container-box" *ngIf="isReady == false && isErr == false && isLoad == true">
   <h1>Carregando....</h1>
 </body>
