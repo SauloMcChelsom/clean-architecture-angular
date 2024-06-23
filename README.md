@@ -323,6 +323,26 @@ Iniciar aplicação
 ```bash
 npm run start
 ```
+# Padrao do comitado 
+```bash
+#NOTE-3311: descricao do ajuste
+```
+
+# Padrao criacao de branch 
+feature
+```bash
+feature/note-3311
+```
+
+bugs
+```bash
+bugfix/note-3311
+```
+
+# Padrao titulo da PR 
+```bash
+WIP:#NOTE-3311 - name da PR
+```
 
 # Dicas
 

@@ -1,26 +1,26 @@
 <div *ngIf="isReady">
-<hot-snack-bar [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></hot-snack-bar>
-<body class="mat-typography mat-app-background">
-  <div class="container">
-    <div class="row">
-      <NoteNavBar>
-        <NoteNavBarUpdate (onUpdate)="update()" (onBack)="back()" [spinner]="spinner"></NoteNavBarUpdate>
-      </NoteNavBar>
-      <div style="padding-bottom: 25px;">
-        <hot-input [config]="config_title"></hot-input>
-      </div>
-      <div>
-        <hot-textarea [config]="config_description"></hot-textarea>
+  <hot-snack-bar [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></hot-snack-bar>
+  <body class="mat-typography mat-app-background">
+    <div class="mx-3">
+      <div class="container-box">
+        <NoteNavBar>
+          <NoteNavBarUpdate (onUpdate)="update()" (onBack)="back()" [spinner]="spinner"></NoteNavBarUpdate>
+        </NoteNavBar>
+        <div style="padding-bottom: 25px;">
+          <hot-input [config]="config_title"></hot-input>
+        </div>
+        <div>
+          <hot-textarea [config]="config_description"></hot-textarea>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </div>
 
-<div *ngIf="isReady == false && isErr == true" class="err">
+<div *ngIf="isReady == false && isErr == true">
   <h1>{{ textErr }}</h1>
 </div>
 
-<div *ngIf="isReady == false && isErr == false && isLoad == true" class="err">
+<body class="mat-typography mat-app-background container-box" *ngIf="isReady == false && isErr == false && isLoad == true">
   <h1>Carregando....</h1>
-</div>
+</body>

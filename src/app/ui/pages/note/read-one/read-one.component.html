@@ -1,6 +1,6 @@
 <body class="mat-typography mat-app-background">
-  <div class="container">
-    <div class="row" *ngIf="isReady">
+  <div class="mx-3">
+    <div class="container-box" *ngIf="isReady">
       <NoteNavBar>
         <NoteNavBarRead 
           (onAdd)="edit()" 
@@ -20,10 +20,10 @@
   </div>
 </body>
 
-<div *ngIf="isReady == false && isErr == true" class="err">
+<div *ngIf="isReady == false && isErr == true" class="mat-typography mat-app-background container-box">
   <h1>{{ textErr }}</h1>
 </div>
 
-<div *ngIf="isReady == false && isErr == false && isLoad == true" class="err">
+<div *ngIf="isReady == false && isErr == false && isLoad == true" class="mat-typography mat-app-background container-box">
   <h1>Carregando....</h1>
 </div>

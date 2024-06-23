@@ -22,15 +22,6 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
-export class NoteCardComponent implements OnChanges {
-
+export class NoteCardComponent {
   @Input() link!: string;
-
-  public card_style: string = '';
-  public card_content_style = '';
-
-  ngOnChanges() {
-    this.card_content_style = "font-size: 15px;"
-    this.card_style = "width: 300px; min-height: auto; max-height: 200px; overflow: hidden; text-overflow: ellipsis; white-space: normal; margin: 15px;"
-  }
 }

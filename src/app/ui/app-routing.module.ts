@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),
   },
   {
+    path: 'flex-grid',
+    loadChildren: () => import('./pages/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
+  },
+  {
     path: '**',
     redirectTo: 'page-not-found'
   }
