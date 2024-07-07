@@ -20,6 +20,7 @@ import { PageNoteReadOneComponent } from './read-one/read-one.component';
 import { PageNoteUpdateComponent } from './update/update.component';
 import { PageNoteViewComponent } from './view/view.component';
 import { NoteCardListAllComponent } from '../../components/full/note/card/list-all/list-all.component';
+import { CardModule } from '../../components/full/card-p/card';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NoteCardListAllComponent } from '../../components/full/note/card/list-a
     PageNoteUpdateComponent,
     PageNoteAddComponent,
     PageNoteViewComponent,
-    PageNoteReadOneComponent
+    PageNoteReadOneComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { NoteCardListAllComponent } from '../../components/full/note/card/list-a
     NoteNavBarComponent,
     NoteNavBarAddComponent,
     NoteNavBarUpdateComponent,
-    NoteNavBarReadComponent
-  ]
+    NoteNavBarReadComponent,
+    CardModule,
+  ],
 })
 export class NoteModule { }
