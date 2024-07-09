@@ -21,7 +21,7 @@ import { PageNoteUpdateComponent } from './update/update.component';
 import { PageNoteViewComponent } from './view/view.component';
 import { NoteCardListAllComponent } from '../../components/full/note/card/list-all/list-all.component';
 import { CardModule } from '../../components/full/card-p/card';
-
+//import { CardModule } from 'my-lib';
 @NgModule({
   declarations: [
     PageNoteComponent,

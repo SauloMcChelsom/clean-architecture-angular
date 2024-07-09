@@ -1,0 +1,9 @@
+{
+  "name": "card-beans",
+  "version": "1.0.0",
+  "main": "bundles/card-beans.umd.js",
+  "module": "fesm5/card-beans.js",
+  "es2015": "fesm2015/card-beans.js",
+  "typings": "card-beans.d.ts",
+  "sideEffects": false
+}
