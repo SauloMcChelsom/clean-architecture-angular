@@ -20,20 +20,24 @@
   2 - themas
 
 # [/] propriedades padrao
-  1 - padronizar margens e padding dentro de componente como cards, conteiner, botoes, acordions,
-  compos... para desktop e mobile.
-  80px, 24px, 16px, 12px, 8px
-  content: Width (780px + 316px gap8) (960px)
-
-  text/medium: Weight 500, Size 16px, line height 24px, Letter 0.15px
-  textbody/medium:Weight 400, Size 14px, line height 20px, Letter 0.25px
-  text/body/large: Weight 400, Size 16px, line height 24px, Letter 0.5px
-
-  
-  4 - brakpoint
+  1 - padronizar desktop:
+   - 80px, 24px, 16px, 12px, 8px
+   - content: Width (780px + 316px gap8) (960px)
+   - text/medium: Weight 500, Size 16px, line height 24px, Letter 0.15px
+   - text/body/medium:Weight 400, Size 14px, line height 20px, Letter 0.25px
+   - text/body/large: Weight 400, Size 16px, line height 24px, Letter 0.5px
+  4 - brakpoint:
 
 # [x] idiomas
   1 - implementar esse funcionalidade 
+
+# [x] componentizacao
+  1 - agora temos dois componente card-p e note:
+    -  qual a melhor arbordagem?
+    - comparado com o conteudo do react com conteiner, faz sentido? exemplo temos micros componentes
+    como head picture, o conteiner seria o componente completo como o card de vagas, card de anucio, card de
+    empresa, isso sao componentes conteiner que reutiliza de diversos micros conteiner para contruir um todo. isso
+    faz setido?
 
 # Desafio
   1 - Implementar uma estrutura de arvores que permite enxertar componentes em nodes, e busca-lo atraves de controles.
