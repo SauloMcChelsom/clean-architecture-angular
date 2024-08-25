@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
+@import '../Style/typography.scss';
+
+* {
+  font-family: $font-family-Roboto;
+  font-size: var(--body-font-size-default);
+  font-weight: var(--body-font-weight-300);
+  line-height: var(--body-line-height);
+  margin: 0px;
+}
+
+.grid {
+  margin-right: 0rem;
+  margin-left: 0rem;
+}
+
+.box {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 4px;
+  margin: .5rem;
+}
+
+.container-box {
+  height: 100vh;
+}
+
+.title-small {
+  font-size: var(--body-font-size-default);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-100);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+
+.title-default {
+  font-size: var(--body-font-size-default);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.title-medium {
+  font-size: var(--body-font-size-medium);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-500);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.title-large {
+  font-size: var(--body-font-size-big);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.title-large-big {
+  font-size: var(--body-font-size-xbig);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.title-large-huge {
+  font-size: var(--body-font-size-huge);
+  font-family: $font-family-comfortaa;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+mat-card-content:last-child.mat-text-body {
+  padding: 0px; 
+  overflow: hidden;              
+  display: -webkit-box;          
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 5;        
+  line-height: 20px;
+  text-overflow: ellipsis;
+}

@@ -8,6 +8,6 @@ import { Component, Renderer2 } from '@angular/core';
 export class AppComponent {
   constructor(private renderer: Renderer2) {
     this.renderer.addClass(document.body, 'theme-laranjinha');
-    this.renderer.addClass(document.body, 'dark');
+    this.renderer.addClass(document.body, 'light');//dark/light
   }
 }
