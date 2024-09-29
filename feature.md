@@ -27,7 +27,7 @@
    - text/body/medium:Weight 400, Size 14px, line height 20px, Letter 0.25px
    - text/body/large: Weight 400, Size 16px, line height 24px, Letter 0.5px
   4 - [ok] brakpoint
-  5 - [/]implementar padrao
+  5 - [ok]implementar padrao
 
 # [x] idiomas
   1 - implementar esse funcionalidade 

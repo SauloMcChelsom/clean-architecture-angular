@@ -1,0 +1,25 @@
+<body class="mat-typography mat-app-background">
+  <SnackBar 
+    [openSnackBar]="openSnackBar" 
+    [closeSnackBar]="closeSnackBar"
+  >
+  </SnackBar>
+  <div class="container-box">
+    <div class="mx-3">
+      <NavBar>
+        <ButtonCancat icon="west" left routerLink="/"></ButtonCancat>
+        <TitleSimple center title="Adicionar uma nova notas" class="title-medium"></TitleSimple>
+        <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()"></ButtonCancat>
+      </NavBar>
+      <div style="padding-bottom: 25px;">
+        <Inputs [config]="config_title"></Inputs>
+      </div>
+      <div>
+        <Textareas 
+          [config]="config_description"
+        >
+        </Textareas>
+      </div>
+    </div>
+  </div>
+</body>

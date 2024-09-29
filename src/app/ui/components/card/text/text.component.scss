@@ -1,0 +1,9 @@
+mat-card-content:last-child  {
+    padding: 0px; 
+    overflow: hidden;              
+    display: -webkit-box;          
+    -webkit-box-orient: vertical;  
+    -webkit-line-clamp: 5;        
+    line-height: 20px;
+    text-overflow: ellipsis;
+}

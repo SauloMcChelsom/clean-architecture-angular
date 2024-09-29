@@ -22,3 +22,13 @@ mat-form-field.mat-mdc-form-field.ett-field {
     height: 0px;
   }
 }
+
+mat-card-content:last-child.mat-text-body {
+  padding: 0px; 
+  overflow: hidden;              
+  display: -webkit-box;          
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 5;        
+  line-height: 20px;
+  text-overflow: ellipsis;
+}

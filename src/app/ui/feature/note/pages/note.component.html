@@ -1,0 +1,19 @@
+<body class="mat-app-background">
+  <div class="container-box">
+    <Header></Header>
+    <div>
+      <Notes
+        [noteList]="noteList" 
+        (onClickEvent)="addItem($event)"
+      ></Notes>
+    </div>
+    <div class="container-button-add flex">
+      <ButtonFab 
+        icon="add" 
+        color="primary" 
+        routerLink="/note/add"
+        >
+      </ButtonFab>
+    </div>
+  </div>
+</body>

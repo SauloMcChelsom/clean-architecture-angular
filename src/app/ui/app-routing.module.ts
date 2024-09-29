@@ -4,15 +4,15 @@ import { NoPreloading, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),  
+    loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),  
   },
   {
     path: 'note',
-    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),
+    loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),
   },
   {
     path: 'flex-grid',
-    loadChildren: () => import('./pages/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
+    loadChildren: () => import('./feature/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
   },
   {
     path: '**',

@@ -1,0 +1,12 @@
+<ButtonIcon 
+  [icon]="icon"
+  *ngIf="!spinner" 
+  [routerLink]="routerLink"
+  (click)="onClickEvent()"
+>
+</ButtonIcon>
+<ButtonIconSpinner 
+  *ngIf="spinner" 
+  diameter="24"
+>
+</ButtonIconSpinner>

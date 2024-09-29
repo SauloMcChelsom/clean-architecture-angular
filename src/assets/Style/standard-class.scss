@@ -73,13 +73,3 @@
   letter-spacing: var(--body-letter-spacing);
   line-height: var(--body-line-height);
 }
-
-mat-card-content:last-child.mat-text-body {
-  padding: 0px; 
-  overflow: hidden;              
-  display: -webkit-box;          
-  -webkit-box-orient: vertical;  
-  -webkit-line-clamp: 5;        
-  line-height: 20px;
-  text-overflow: ellipsis;
-}
