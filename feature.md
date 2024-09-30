@@ -29,10 +29,7 @@
   4 - [ok] brakpoint
   5 - [ok]implementar padrao
 
-# [x] idiomas
-  1 - implementar esse funcionalidade 
-
-# [x] componentizacao
+# [ok] componentizacao
   1 - agora temos dois componente card-p e note/card:
     -  qual a melhor arbordagem?
     - comparado com o conteudo do react com conteiner, faz sentido? exemplo temos micros componentes
@@ -54,6 +51,16 @@
   `
   exemplo aqui temos diretiva  mat-icon-button e um compenente do angular material <mat-icon>. isso nao e bom caso queira atualizar ou trocar de UI
 
+# [x] idiomas
+  1 - implementar esse funcionalidade 
+
+# [x] url/link
+  1 - implementar esse funcionalidade 
+
+
+# [/] espaçamento
+  1 - implementar esse funcionalidade 
+ 
 # Desafio
   1 - Implementar uma estrutura de arvores que permite enxertar componentes em nodes, e busca-lo atraves de controles.
   exemplo servira para step de compenentes, irar redenrizar o componente e abaixo botoes

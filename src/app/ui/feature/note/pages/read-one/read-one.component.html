@@ -6,13 +6,8 @@
         <ButtonCancat icon="delete" center  (onClick)="delete()"></ButtonCancat>
         <ButtonCancat icon="edit" right  (onClick)="edit()"></ButtonCancat>
       </NavBar>
-      <h1>
-        <b>{{ note.title }}</b>
-      </h1>
-      <br /> <br />
-      <p>
-        {{ note.text }}
-      </p>
+      <TitleSimple [title]="note.title" class="flex justify-content-start title-default mb-3"></TitleSimple>
+      <TitleSimple [title]="note.text" class="flex justify-content-start title-small"></TitleSimple>
     </div>
   </div>
 </body>

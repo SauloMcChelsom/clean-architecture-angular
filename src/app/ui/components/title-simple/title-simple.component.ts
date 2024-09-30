@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class TitleSimpleComponent {
   @Input() title: string = '';
   @Input() class!: string;
+  @Input() id!: string;
 }

@@ -8,6 +8,7 @@ import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
+import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-simple.component';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -20,7 +21,8 @@ import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.compo
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    ButtonCancatComponent
+    ButtonCancatComponent,
+    TitleSimpleComponent
 ]
 })
 export class PageReadOneComponent implements OnInit {
