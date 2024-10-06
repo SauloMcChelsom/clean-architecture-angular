@@ -19,6 +19,7 @@
 }
 
 .container-box {
+  @extend .conteiner-margin;
   height: 100vh;
 }
 

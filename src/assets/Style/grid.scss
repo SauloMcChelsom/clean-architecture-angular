@@ -1,14 +1,19 @@
 //https://primeflex.org/installation
 @import '../../../node_modules/primeflex/primeflex.scss';
 @import 'breakpoints.scss';
+@import 'spacing.scss';
+
+.conteiner-margin {
+  margin-right: $space-big;
+  margin-left: $space-big;
+}
 
 .grid {
-    margin-right: 80px;
-    margin-left: 80px;
+ @extend .conteiner-margin;
 }
 
 @media (max-width: $tablet) {
-    .grid {
+    .conteiner-margin {
       margin-right: 0rem;
       margin-left: 0rem;
     }
