@@ -8,7 +8,7 @@ import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-simple.component';
+import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -22,7 +22,7 @@ import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-s
     InputComponent,
     NavBarComponent,
     ButtonCancatComponent,
-    TitleSimpleComponent
+    TextComponent
 ]
 })
 export class PageReadOneComponent implements OnInit {
@@ -32,6 +32,9 @@ export class PageReadOneComponent implements OnInit {
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
   protected textErr:string = '';
+  Tag=Tag;
+  Flex=Flex;
+  Title=Title;
 
   constructor(
     private findNoteByLink: FindNoteByLinkUseCase,

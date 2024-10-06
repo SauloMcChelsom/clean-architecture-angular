@@ -9,7 +9,7 @@ import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-simple.component';
+import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 
 @Component({
   selector: 'PageNoteAdd',
@@ -21,7 +21,7 @@ import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-s
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    TitleSimpleComponent,
+    TextComponent,
     ButtonCancatComponent
   ]
 })
@@ -33,6 +33,9 @@ export class PageAddComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   protected spinner: boolean = false;
+  Tag=Tag;
+  Flex=Flex;
+  Title=Title;
 
   constructor(
     private fb: FormBuilder,

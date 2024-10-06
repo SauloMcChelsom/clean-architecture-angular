@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-simple.component';
+import { Flex, Tag, TextComponent, Title } from 'src/app/ui/components/text/text.component';
 
 @Component({
   selector: 'Header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports:[TitleSimpleComponent]
+  imports:[TextComponent]
 })
 export class HeaderComponent implements OnInit {
 
@@ -14,5 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  Tag = Tag;
+  Flex = Flex;
+  Title = Title
 }

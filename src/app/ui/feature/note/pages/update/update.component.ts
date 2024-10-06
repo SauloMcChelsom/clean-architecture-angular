@@ -10,9 +10,9 @@ import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-
 import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
+import { Flex, Tag, TextComponent, Title } from 'src/app/ui/components/text/text.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-simple.component';
 
 @Component({
   selector: 'PageNoteUpdate',
@@ -25,7 +25,7 @@ import { TitleSimpleComponent } from 'src/app/ui/components/title-simple/title-s
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    TitleSimpleComponent,
+    TextComponent,
     ButtonCancatComponent
 ]
 })
@@ -42,6 +42,9 @@ export class PageUpdateComponent implements OnInit {
   protected closeSnackBar!:any;
   protected spinner:boolean = false;
   private link = "/"
+  Tag=Tag
+  Flex=Flex
+  Title=Title
   
     constructor(
       private fb: FormBuilder,

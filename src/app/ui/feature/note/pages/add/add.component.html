@@ -8,7 +8,7 @@
     <div class="ml-small mr-small">
       <NavBar>
         <ButtonCancat icon="west" left routerLink="/"></ButtonCancat>
-        <TitleSimple center title="Adicionar uma nova notas" class="title-medium"></TitleSimple>
+        <Text center text="Adicionar uma nova notas" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default"></Text>
         <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()"></ButtonCancat>
       </NavBar>
       <div class="pb-xmedium">

@@ -54,10 +54,10 @@
 # [x] idiomas
   1 - implementar esse funcionalidade 
 
-# [x] url/link
+# [/] url/link
   1 - implementar esse funcionalidade 
 
-# [x] espaçamento
+# [ok] espaçamento
   1 - implementar esse funcionalidade 
 
 # [x] jasmine para jest
@@ -69,7 +69,7 @@
 # [x] acessibilidade
   1 - implementar esse funcionalidade 
 
-# [/] refatora Titlesemple para Text
+# [ok] refatora Titlesemple para Text
   1 - implementar esse funcionalidade
   2 - tag, texto, aceaibilida class-title-small 
 

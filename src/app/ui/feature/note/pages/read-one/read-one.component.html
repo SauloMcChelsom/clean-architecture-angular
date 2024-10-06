@@ -6,8 +6,8 @@
         <ButtonCancat icon="delete" center  (onClick)="delete()"></ButtonCancat>
         <ButtonCancat icon="edit" right  (onClick)="edit()"></ButtonCancat>
       </NavBar>
-      <TitleSimple [title]="note.title" class="flex justify-content-start title-default mb-3"></TitleSimple>
-      <TitleSimple [title]="note.text" class="flex justify-content-start title-small"></TitleSimple>
+      <Text [text]="note.title" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.default" class="mb-default"></Text>
+      <Text [text]="note.text" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.small"></Text>
     </div>
   </div>
 </body>

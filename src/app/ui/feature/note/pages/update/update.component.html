@@ -5,9 +5,8 @@
       <div class="container-box">
         <NavBar>
           <ButtonCancat icon="west" left routerLink="/"></ButtonCancat>
-          <TitleSimple center title="Atualizar uma nova notas"></TitleSimple>
+          <Text center text="Atualizar uma nova notas" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default"></Text>
           <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()"></ButtonCancat>
-
         </NavBar>
         <div class="pb-xmedium">
           <Inputs [config]="config_title"></Inputs>
