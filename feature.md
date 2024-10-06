@@ -57,10 +57,22 @@
 # [x] url/link
   1 - implementar esse funcionalidade 
 
+# [x] espaçamento
+  1 - implementar esse funcionalidade 
 
-# [/] espaçamento
+# [x] jasmine para jest
+  1 - implementar esse funcionalidade 
+
+# [x] refatora o projeto para adequar ao padrão
   1 - implementar esse funcionalidade 
  
+# [x] acessibilidade
+  1 - implementar esse funcionalidade 
+
+# [/] refatora Titlesemple para Text
+  1 - implementar esse funcionalidade
+  2 - tag, texto, aceaibilida class-title-small 
+
 # Desafio
   1 - Implementar uma estrutura de arvores que permite enxertar componentes em nodes, e busca-lo atraves de controles.
   exemplo servira para step de compenentes, irar redenrizar o componente e abaixo botoes

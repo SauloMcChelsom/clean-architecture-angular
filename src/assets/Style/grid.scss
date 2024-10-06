@@ -1,2 +1,18 @@
 //https://primeflex.org/installation
 @import '../../../node_modules/primeflex/primeflex.scss';
+@import 'breakpoints.scss';
+
+.grid {
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
+@media (max-width: $tablet) {
+    .grid {
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+    .col-12 {
+      padding: 0rem;
+    }
+}

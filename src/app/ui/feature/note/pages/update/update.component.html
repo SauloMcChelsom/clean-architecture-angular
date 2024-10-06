@@ -1,7 +1,7 @@
 <div *ngIf="isReady">
   <SnackBar [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></SnackBar>
   <body class="mat-typography mat-app-background">
-    <div class="mx-3">
+    <div class="ml-small mr-small">
       <div class="container-box">
         <NavBar>
           <ButtonCancat icon="west" left routerLink="/"></ButtonCancat>
@@ -9,7 +9,7 @@
           <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()"></ButtonCancat>
 
         </NavBar>
-        <div style="padding-bottom: 25px;">
+        <div class="pb-xmedium">
           <Inputs [config]="config_title"></Inputs>
         </div>
         <div>

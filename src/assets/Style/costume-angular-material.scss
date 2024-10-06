@@ -1,21 +1,23 @@
+@import 'breakpoints.scss';
+
 .mdc-button.mat-primary.mat-mdc-button-base {
-  border-radius: 7px;
+  border-radius: $radius-xbig;
 }
 
 .mdc-button.mat-accent.mat-mdc-button-base {
-  border-radius: 7px;
+  border-radius: $radius-xbig;
 }
 
 .mdc-button.mat-warn.mat-mdc-button-base {
-  border-radius: 7px;
+  border-radius: $radius-xbig;
 }
 
 .mdc-button.mat-unthemed.mat-mdc-button-base {
-  border-radius: 7px;
+  border-radius: $radius-xbig;
 }
 
 mat-form-field.mat-mdc-form-field.ett-field {
-  border-radius: 7px;
+  border-radius: $radius-xbig;
   width: 100%;
 
   div.mat-mdc-form-field-subscript-wrapper {

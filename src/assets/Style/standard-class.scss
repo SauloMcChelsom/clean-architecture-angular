@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
 @import '../Style/typography.scss';
+@import 'spacing.scss';
 
 * {
   font-family: $font-family-Roboto;
@@ -7,18 +8,14 @@
   font-weight: var(--body-font-weight-300);
   line-height: var(--body-line-height);
   margin: 0px;
-}
-
-.grid {
-  margin-right: 0rem;
-  margin-left: 0rem;
+  padding: 0px;
 }
 
 .box {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: 4px;
-  margin: .5rem;
+  padding-top: $space-default;;
+  padding-bottom: $space-default;;
+  border-radius: $radius-medium;
+  margin: $space-default;
 }
 
 .container-box {

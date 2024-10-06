@@ -1,3 +1,5 @@
+@import 'spacing.scss';
+
 .warn {
     background-color: red;
 }
@@ -16,13 +18,13 @@
 }
 
 .hot-scoreboard {
-    padding: 15px;
+    padding: $space-default;;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     opacity: 0;
-    max-height: 15px;
+    max-height: $space-default;;
     overflow: hidden;
     transition: opacity 0.5s ease-out, max-height 1s ease;
 }

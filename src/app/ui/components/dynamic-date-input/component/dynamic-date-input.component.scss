@@ -1,5 +1,7 @@
+@import 'spacing.scss';
+
 .hint {
-    margin-top: 16px;
+    margin-top: $space-default;
 }
 
 .icon {
