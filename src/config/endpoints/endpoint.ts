@@ -2,122 +2,156 @@ import { EndpointConfig } from "src/app/infra/http/model/end-point.model";
 import { preview, version } from "src/app/infra/http/model/url.model";
 import { environment } from "src/assets/environments/enviroment";
 
-export const IS_EMAIL_ALREADY_ENDPOINT_CONFIG: EndpointConfig = {
+export function createUrl(url:EndpointConfig):string {
+    return `${url.property.protocol}${url.property.subdomain ? url.property.subdomain : ''}${url.property.domain}${url.property.TLD ? url.property.TLD.join('') : ''}${url.property.port ? url.property.port : ''}${url.property.version ? url.property.version : ''}${url.property.preview ? url.property.preview : ''}${url.property.subdirectory ? url.property.subdirectory : ''}`;
+}
+
+export const IS_EMAIL_ALREADY: EndpointConfig = {
     method: 'POST',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/is-email-already'
+        subdirectory: '/auth/is-email-already'
+    },
+    api: ():string => {
+        return createUrl(IS_EMAIL_ALREADY)
     }
 }
 
-export const CREATE_NEW_ACCOUNT_ENDPOINT_CONFIG: EndpointConfig = {
+export const CREATE_NEW_ACCOUNT: EndpointConfig = {
     method: 'POST',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/create-new-account'
+        subdirectory: '/auth/create-new-account'
+    },
+    api: ():string => {
+        return createUrl(CREATE_NEW_ACCOUNT)
     }
 }
 
-export const REFRESH_TPOKEN_ENDPOINT_CONFIG: EndpointConfig = {
+export const REFRESH_TOKEN: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/refresh-token'
+        subdirectory: '/auth/refresh-token'
+    },
+    api: ():string => {
+        return createUrl(REFRESH_TOKEN)
     }
 }
 
-export const SIGN_IN_WITH_EMAIL_AND_PASSWORD_ENDPOINT_CONFIG: EndpointConfig = {
+export const SIGN_IN_WITH_EMAIL_AND_PASSWORD: EndpointConfig = {
     method: 'POST',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/sign-in-with-email-and-password'
+        subdirectory: '/auth/sign-in-with-email-and-password'
+    },
+    api: ():string => {
+        return createUrl(SIGN_IN_WITH_EMAIL_AND_PASSWORD)
     }
 }
 
-export const GET_CURRENT_ENDPOINT_CONFIG: EndpointConfig = {
+export const GET_CURRENT: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/get-current-user'
+        subdirectory: '/auth/get-current-user'
+    },
+    api: ():string => {
+        return createUrl(GET_CURRENT)
     }
 }
 
-export const FORGOT_PASSWORD_ENDPOINT_CONFIG: EndpointConfig = {
+export const FORGOT_PASSWORD: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/forgot-password'
+        subdirectory: '/auth/forgot-password'
+    },
+    api: ():string => {
+        return createUrl(FORGOT_PASSWORD)
     }
 }
 
-export const VALID_TOKEN_ENDPOINT_CONFIG: EndpointConfig = {
+export const VALID_TOKEN: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/valid-token'
+        subdirectory: '/auth/valid-token'
+    },
+    api: ():string => {
+        return createUrl(VALID_TOKEN)
     }
 }
 
-export const REVOKE_TOKEN_ENDPOINT_CONFIG: EndpointConfig = {
+export const REVOKE_TOKEN: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/revoke-token'
+        subdirectory: '/auth/revoke-token'
+    },
+    api: ():string => {
+        return createUrl(REVOKE_TOKEN)
     }
 }
 
-export const GET_CURRENT_TOKEN_ENDPOINT_CONFIG: EndpointConfig = {
+export const GET_CURRENT_TOKEN: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/get-current-token'
+        subdirectory: '/auth/get-current-token'
+    },
+    api: ():string => {
+        return createUrl(GET_CURRENT_TOKEN)
     }
 }
 
-export const LOGOUT_ENDPOINT_CONFIG: EndpointConfig = {
+export const LOGOUT: EndpointConfig = {
     method: 'GET',
-    url: {
-        protocol: environment.Protocol,
-        Domain: environment.Domain,
-        Port: environment.Port,
+    property: {
+        protocol: environment.protocol,
+        domain: environment.domain,
+        port: environment.port,
         preview:preview.public,
         version:version.v1,
-        Subdirectory: '/auth/logout'
+        subdirectory: '/auth/logout'
+    },
+    api: ():string => {
+        return createUrl(LOGOUT)
     }
 }

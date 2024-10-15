@@ -36,7 +36,6 @@ export class SnackBarComponent {
 
   @Input()
   set openSnackBar(model:SnackBarModel ) {
-    console.log(model)
     
     if(!model) {
       return;

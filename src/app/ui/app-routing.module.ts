@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { NoPreloading, RouterModule, Routes } from '@angular/router';
+import { ROUTER_LINKS } from '../../config/endpoints/router-links';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ROUTER_LINKS.ROOT,
     loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),  
   },
   {
-    path: 'note',
+    path: ROUTER_LINKS.NOTE,
     loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),
   },
   {
-    path: 'flex-grid',
+    path: ROUTER_LINKS.FLEX_GRID,
     loadChildren: () => import('./feature/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
   },
   {
-    path: '**',
+    path: ROUTER_LINKS.PAGE_NOT_FOUND,
     redirectTo: 'page-not-found'
   }
 ];

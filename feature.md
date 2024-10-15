@@ -69,6 +69,9 @@
 # [x] acessibilidade
   1 - implementar esse funcionalidade 
 
+# [x] resolver stilos no modo dark
+  1 - implementar esse funcionalidade 
+
 # [ok] refatora Titlesemple para Text
   1 - implementar esse funcionalidade
   2 - tag, texto, aceaibilida class-title-small 

@@ -6,6 +6,7 @@ import { GetAllNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
 import { NotesComponent } from '../components/notes/notes.component';
 import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNote',
@@ -21,6 +22,7 @@ import { HeaderComponent } from '../components/header/header.component';
 })
 export class NoteComponent implements OnInit {
   public noteList: NoteEntity[] = [];
+  public linkRedirectToAddScreen = `${ROUTER_LINKS.NOTE_ADD}`
 
   public note: NoteEntity = {
     is_favorite: false,
@@ -67,17 +69,12 @@ export class NoteComponent implements OnInit {
         this.noteList = note.map((note) => {
           return {
             ...note,
-            link: `read/${note.link}`
+            link: ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', note.link)
           };
-        })
-        console.log('getAllNote_SUCCESSO -->', note);      
+        })   
       },
-      error:(err) => {
-        console.log('getAllNoteERROR -->', err);
-      },
-      complete: ()=> {
-        console.log('complete');
-      }
+      error:(err) => {},
+      complete: ()=> {}
     })
   }
 

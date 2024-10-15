@@ -4,5 +4,6 @@ type Methd = 'POST' | 'GET'
 
 export interface EndpointConfig {
     method: Methd,
-    url: Url
+    property: Url,
+    api: () => string
 }

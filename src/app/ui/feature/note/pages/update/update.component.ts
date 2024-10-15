@@ -13,6 +13,7 @@ import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel }
 import { Flex, Tag, TextComponent, Title } from 'src/app/ui/components/text/text.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
+import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNoteUpdate',
@@ -30,7 +31,6 @@ import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.compo
 ]
 })
 export class PageUpdateComponent implements OnInit {
-    
   protected isReady:boolean = false;
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
@@ -41,7 +41,8 @@ export class PageUpdateComponent implements OnInit {
   protected openSnackBar!:SnackBarModel;
   protected closeSnackBar!:any;
   protected spinner:boolean = false;
-  private link = "/"
+  protected ROOT = ROUTER_LINKS.ROOT;
+  private titleLink:string = '';
   Tag=Tag
   Flex=Flex
   Title=Title
@@ -64,15 +65,13 @@ export class PageUpdateComponent implements OnInit {
       const title = this.route.snapshot.params['title'];
       this.findNoteByLink.findByLinkNote(title).subscribe({
         next: (note) => {
-          console.log(note);
           this.createInputText(note.title);
           this.createInputTextarea(note.text);
           this.buildForm(note);
-          this.link = note.link;
+          this.titleLink = note.link;
           this.isReady = true;
         },
         error: (err) => {
-          console.log(err);
           this.isErr = true;
           this.textErr = err;
         },
@@ -95,13 +94,12 @@ export class PageUpdateComponent implements OnInit {
     }
 
     back() {
-      console.log('back ',this.link)
-      if(this.link === "/") {
+      if(!this.titleLink) {
         window.history.back();
         return;
       }
 
-      this.router.navigate([`/note/read/${this.link}`])
+      this.router.navigate([ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', this.titleLink)])
     }
 
     createInputText(title: string): void {
@@ -136,7 +134,6 @@ export class PageUpdateComponent implements OnInit {
   
     atualizarNota() {
       this.spinner = true;
-      console.log(this.notaForm.value) 
   
       this._update.updateNote(this.notaForm.value).pipe(delay(5000)).subscribe({
         next: (note) => {
@@ -146,8 +143,7 @@ export class PageUpdateComponent implements OnInit {
             typeScoreboardColor: ScoreboardColor.SUCCESS,
             time: CloseSnackBarInNow.in_5_seconds
           }
-          this.link = note.link
-          console.log("Sucesso ", note)
+          this.titleLink = note.link
         },
         error: (err) => {
           this.spinner = false;
@@ -155,7 +151,6 @@ export class PageUpdateComponent implements OnInit {
             mensagem: err,
             typeScoreboardColor: ScoreboardColor.WARN
           }
-          console.log("Error em atualizar ", err)
         },
       })
     }

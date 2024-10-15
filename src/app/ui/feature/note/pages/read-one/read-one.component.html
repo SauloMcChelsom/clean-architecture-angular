@@ -2,7 +2,7 @@
   <div class="mx-3">
     <div class="container-box" *ngIf="isReady">
       <NavBar>
-        <ButtonCancat icon="west" left routerLink="/"></ButtonCancat>
+        <ButtonCancat icon="west" left [routerLink]="ROOT"></ButtonCancat>
         <ButtonCancat icon="delete" center  (onClick)="delete()"></ButtonCancat>
         <ButtonCancat icon="edit" right  (onClick)="edit()"></ButtonCancat>
       </NavBar>

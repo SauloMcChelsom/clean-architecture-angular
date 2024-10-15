@@ -21,6 +21,7 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
+      "@link/*": ["app/ui/core"],
       "@app/*": ["app/*"],
       "@env*": ["environments/*"],
       "@shared/*": ["app/shared/*"],

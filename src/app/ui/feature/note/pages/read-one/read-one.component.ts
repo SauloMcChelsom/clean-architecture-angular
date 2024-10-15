@@ -9,6 +9,8 @@ import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
+import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { IS_EMAIL_ALREADY } from 'src/config/endpoints/endpoint';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -32,6 +34,7 @@ export class PageReadOneComponent implements OnInit {
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
   protected textErr:string = '';
+  ROOT = ROUTER_LINKS.ROOT
   Tag=Tag;
   Flex=Flex;
   Title=Title;
@@ -49,12 +52,10 @@ export class PageReadOneComponent implements OnInit {
     const title = this.route.snapshot.params['title'];
     this.findNoteByLink.findByLinkNote(title).subscribe({
       next: (value) => {
-        console.log(value);
         this.note = value;
         this.isReady = true;
       },
       error: (err) => {
-        console.log(err);
         this.isErr = true;
         this.textErr = err;
       },
@@ -65,13 +66,13 @@ export class PageReadOneComponent implements OnInit {
   }
 
   edit() {
-    this.router.navigate([`/note/update/${this.note.link}`])
+    this.router.navigate([ROUTER_LINKS.NOTE_UPDATE_BY_TITLE.replace(':title', this.note.link)])
   }
 
   delete() {
     this._delete.deleteNote(this.note.uid!).subscribe({
       complete: () => {
-        this.router.navigate(["/note"]);
+        this.router.navigate([ROUTER_LINKS.NOTE]);
       },
     }).unsubscribe()
   }

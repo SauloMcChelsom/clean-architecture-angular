@@ -3,11 +3,11 @@ import { StorageStrategy } from "src/app/infra/storage/models/storage.model";
 
 export const environment = {
   production: false,
-  Domain: 'localhost',
-  Protocol: Protocol.HTTP,
+  domain: 'localhost',
+  protocol: Protocol.HTTP,
   version: version.v1,
   preview: preview.private,
-  Port: Port._3000,
+  port: Port._3000,
 
   payloadStorage: {
     user:{

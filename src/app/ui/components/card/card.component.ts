@@ -28,7 +28,4 @@ import { RouterModule } from '@angular/router';
 })
 export class CardComponent { 
     @Input() link: string | undefined;
-    ngOnInit(){
-        console.log(this.link)
-    }
 }

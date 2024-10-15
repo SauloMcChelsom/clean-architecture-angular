@@ -10,6 +10,7 @@ import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel }
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
+import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNoteAdd',
@@ -33,6 +34,7 @@ export class PageAddComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   protected spinner: boolean = false;
+  ROOT = ROUTER_LINKS.ROOT
   Tag=Tag;
   Flex=Flex;
   Title=Title;
@@ -101,8 +103,6 @@ export class PageAddComponent implements OnInit {
           typeScoreboardColor: ScoreboardColor.SUCCESS,
           time: CloseSnackBarInNow.in_5_seconds
         }
-
-        console.log(v)
       },
       error: (err) => {
         this.spinner = false;
