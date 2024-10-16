@@ -5,4 +5,6 @@ export interface TextInputConfig {
     title?: string;
     placeholder?: string;
     valueDefault?: string;
+    erroRequired?: string;
+    erroFill?: string;
 }

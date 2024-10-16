@@ -11,6 +11,7 @@ import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynami
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'PageNoteAdd',
@@ -18,6 +19,7 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
   styleUrls: ['./add.component.scss'],
   standalone: true,
   imports: [
+    TranslateModule,
     SnackBarComponent,
     TextareaComponent,
     InputComponent,
@@ -34,14 +36,16 @@ export class PageAddComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   protected spinner: boolean = false;
-  ROOT = ROUTER_LINKS.ROOT
+  ROOT = ROUTER_LINKS.ROOT;
+  private charactersLong = 5;
   Tag=Tag;
   Flex=Flex;
   Title=Title;
 
   constructor(
     private fb: FormBuilder,
-    private create: CreateNewNoteUseCase
+    private create: CreateNewNoteUseCase,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
@@ -64,7 +68,7 @@ export class PageAddComponent implements OnInit {
 
     if (this.notaForm.valid === false) {
       this.openSnackBar = {
-        mensagem: "Formulario Invalido",
+        mensagem:  this.translate.instant('NOTE.LABEL_FORM_INVALID'),
         typeScoreboardColor: ScoreboardColor.WARN
       }
       return;
@@ -75,16 +79,20 @@ export class PageAddComponent implements OnInit {
 
   createInputText(): void {
     this.config_title = {
-      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(5)]),
-      title: 'Titulo',
-      placeholder: 'Informe o titulo do seu note'
+      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(this.charactersLong)]),
+      title: this.translate.instant('NOTE.LABEL_NAME_TITLE'),
+      placeholder: this.translate.instant('NOTE.LABEL_REPORT_TITLE'),
+      erroFill: this.translate.instant('NOTE.LABEL_NAME_FIVE', { NUM: this.charactersLong }),
+      erroRequired:  this.translate.instant('NOTE.LABEL_FILLING_REQUIRED')
     };
   }
 
   createInputTextarea(): void {
     this.config_description = {
-      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(5)]),
-      placeholder: 'Escreva aqui tudo que precisa...'
+      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(this.charactersLong)]),
+      placeholder:  this.translate.instant('NOTE.LABEL_WRITE_HERE'),
+      erroFill: this.translate.instant('NOTE.LABEL_NAME_FIVE', { NUM: this.charactersLong }),
+      erroRequired:  this.translate.instant('NOTE.LABEL_FILLING_REQUIRED')
     };
   }
 
@@ -99,7 +107,7 @@ export class PageAddComponent implements OnInit {
         });
         this.spinner = false;
         this.openSnackBar = {
-          mensagem: "Salvo com sucesso",
+          mensagem: this.translate.instant('NOTE.LABEL_SAVE_WITH_SUCCESS'),
           typeScoreboardColor: ScoreboardColor.SUCCESS,
           time: CloseSnackBarInNow.in_5_seconds
         }

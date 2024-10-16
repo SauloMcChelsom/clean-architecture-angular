@@ -1,2 +1,2 @@
-<Text text="Note Beans" [tag]="Tag.p" [flex]="Flex.centerAndcenter" [title]="Title.large" class="mb-default mt-default"></Text>
-<Text text="1 Folders, 24 note" [tag]="Tag.p" [flex]="Flex.centerAndcenter" [title]="Title.medium" class="mb-default theme-dark-color-black-100"></Text>
+<Text [text]="'NOTE.HOME.TITLE' | translate" [tag]="Tag.p" [flex]="Flex.centerAndcenter" [title]="Title.large" class="mb-default mt-default"></Text>
+<Text [text]="'NOTE.HOME.SUBTITLE' | translate:{ NUM_FOLDER: folderCount, NUM_NOTE: noteCount }" [tag]="Tag.p" [flex]="Flex.centerAndcenter" [title]="Title.medium" class="mb-default theme-dark-color-black-100"></Text>

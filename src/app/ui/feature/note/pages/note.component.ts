@@ -7,7 +7,7 @@ import { NotesComponent } from '../components/notes/notes.component';
 import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
-
+import {TranslateModule} from "@ngx-translate/core";
 @Component({
   selector: 'PageNote',
   templateUrl: './note.component.html',
@@ -15,6 +15,7 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
   standalone: true,
   imports:[
     CommonModule,
+    TranslateModule,
     HeaderComponent,
     NotesComponent,
     ButtonFabComponent

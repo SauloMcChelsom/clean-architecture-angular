@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { delay } from 'rxjs';
 import { NoteEntity } from 'src/app/domain/entities/note.entity';
 import { FindNoteByLinkUseCase, UpdateNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
@@ -22,6 +23,7 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
   standalone:true,
   imports: [
     CommonModule,
+    TranslateModule,
     SnackBarComponent,
     TextareaComponent,
     InputComponent,
@@ -43,6 +45,7 @@ export class PageUpdateComponent implements OnInit {
   protected spinner:boolean = false;
   protected ROOT = ROUTER_LINKS.ROOT;
   private titleLink:string = '';
+  private charactersLong = 5;
   Tag=Tag
   Flex=Flex
   Title=Title
@@ -52,7 +55,8 @@ export class PageUpdateComponent implements OnInit {
       private _update: UpdateNoteUseCase,
       private findNoteByLink: FindNoteByLinkUseCase,
       private route: ActivatedRoute,
-      private router: Router
+      private router: Router,
+      private translate: TranslateService
     ) {}
   
     ngOnInit() { 
@@ -104,16 +108,20 @@ export class PageUpdateComponent implements OnInit {
 
     createInputText(title: string): void {
       this.config_title = {
-        formControl: new FormControl<string>(title, [Validators.required, Validators.minLength(5)]),
-        title: 'Titulo',
-        placeholder: 'Informe o titulo do seu note'
+        formControl: new FormControl<string>(title, [Validators.required, Validators.minLength(this.charactersLong)]),
+        title: this.translate.instant('NOTE.LABEL_NAME_TITLE'),
+        placeholder: this.translate.instant('NOTE.LABEL_REPORT_TITLE'),
+        erroFill: this.translate.instant('NOTE.LABEL_NAME_FIVE', { NUM: this.charactersLong }),
+        erroRequired:  this.translate.instant('NOTE.LABEL_FILLING_REQUIRED')
       };
     }
   
     createInputTextarea(text: string): void {
       this.config_description = {
-        formControl: new FormControl<string>(text, [Validators.required, Validators.minLength(5)]),
-        placeholder: 'Escreva aqui tudo que precisa...',
+        formControl: new FormControl<string>(text, [Validators.required, Validators.minLength(this.charactersLong)]),
+        placeholder:  this.translate.instant('NOTE.LABEL_WRITE_HERE'),
+        erroFill: this.translate.instant('NOTE.LABEL_NAME_FIVE', { NUM: this.charactersLong }),
+        erroRequired:  this.translate.instant('NOTE.LABEL_FILLING_REQUIRED'),
         rows: 18
       };
     }
@@ -123,7 +131,7 @@ export class PageUpdateComponent implements OnInit {
       
       if(this.notaForm.valid === false) {
         this.openSnackBar = {
-          mensagem: "Formulario Invalido",
+          mensagem: this.translate.instant('NOTE.LABEL_FORM_INVALID'),
           typeScoreboardColor: ScoreboardColor.WARN
         }
         return;
@@ -139,7 +147,7 @@ export class PageUpdateComponent implements OnInit {
         next: (note) => {
           this.spinner = false;
           this.openSnackBar = {
-            mensagem: "Atualizado com sucesso",
+            mensagem: this.translate.instant('NOTE.LABEL_SAVE_WITH_SUCCESS'),
             typeScoreboardColor: ScoreboardColor.SUCCESS,
             time: CloseSnackBarInNow.in_5_seconds
           }

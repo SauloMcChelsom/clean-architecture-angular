@@ -7,9 +7,9 @@
     
     ></textarea>
     <mat-error *ngIf="config.formControl.hasError('required') && config.formControl.touched">
-        Preenchimento obrigatório.
+        {{ config.erroRequired }}
     </mat-error>
     <mat-error *ngIf="config.formControl.hasError('minlength') && config.formControl.touched">
-        O nome deve ter pelo menos 5 caracteres.
+        {{ config.erroFill }}
     </mat-error>
 </mat-form-field>

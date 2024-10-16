@@ -6,4 +6,6 @@ export interface TextareaInputConfig {
     valueDefault?: string;
     rows?: number;
     scrollHeight?: number;
+    erroRequired?: string;
+    erroFill?: string;
 }

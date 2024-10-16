@@ -54,7 +54,7 @@
 # [x] idiomas
   1 - implementar esse funcionalidade 
 
-# [/] url/link
+# [ok] url/link
   1 - implementar esse funcionalidade 
 
 # [ok] espaçamento

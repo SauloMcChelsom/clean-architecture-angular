@@ -1,0 +1,16 @@
+{
+    "NOTE.TITLE_CHANGE_LANG": "Cambiar idioma",
+    "NOTE.OPTION_EMPY": "Ningún índice seleccionado",
+    "NOTE.HOME.TITLE": "Notas",
+    "NOTE.HOME.SUBTITLE": "{{NUM_FOLDER}} Carpetas, {{NUM_NOTE}} Notas",
+    "NOTE.SUBTITLE_UPDATE_NEW_NOTE": "Actualizar nueva nota",
+    "NOTE.SUBTITLE_ADD_NEW_NOTE": "Agregar una nueva nota",
+    "NOTE.LABEL_FILLING_REQUIRED": "Relleno requerido",
+    "NOTE.LABEL_WRITE_HERE": "Escribe aquí todo lo que necesites...",
+    "NOTE.LABEL_REPORT_TITLE": "Ingresa el título de tu nota",
+    "NOTE.LABEL_NAME_TITLE": "Título",
+    "NOTE.LABEL_FORM_INVALID": "Formulario no válido",
+    "NOTE.LABEL_NAME_FIVE": "El nombre debe tener al menos {{NUM}} caracteres",
+    "NOTE.LABEL_SAVE_WITH_SUCCESS": "Guardado exitosamente",
+    "NOTE.LABEL_loading": "Cargando...."
+   }
