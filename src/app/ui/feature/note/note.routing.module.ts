@@ -10,18 +10,22 @@ export const ROUTES: Routes = [
     {
         path: ROUTER_LINKS.ROOT,
         component: NoteComponent,
+        data: { title: 'NOTE.HOME' }
     },
     {
         path: ROUTER_LINKS.NOTE_ADD,
         component: PageAddComponent,
+        data: { title: 'NOTE.PAGE_ADD' }
     },
     {
         path: ROUTER_LINKS.NOTE_UPDATE_BY_TITLE,
         component: PageUpdateComponent,
+        data: { title: 'NOTE.PAGE_UPDATE' }
     },
     {
         path: ROUTER_LINKS.NOTE_READ_BY_TITLE,
         component: PageReadOneComponent,
+        data: { title: 'NOTE.PAGE_READ_ONE' }
     }
 ]
 

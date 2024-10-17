@@ -2,6 +2,8 @@
   mat-icon-button 
   (click)="onClickEvent()" 
   [routerLink]="routerLink"
+  [attr.aria-label]="ariaLabel"
+  tabindex="0"
 >
   <mat-icon>
     {{icon}}

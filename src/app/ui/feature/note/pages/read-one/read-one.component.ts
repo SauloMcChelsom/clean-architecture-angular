@@ -11,6 +11,7 @@ import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.compo
 import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 import { IS_EMAIL_ALREADY } from 'src/config/endpoints/endpoint';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -19,6 +20,7 @@ import { IS_EMAIL_ALREADY } from 'src/config/endpoints/endpoint';
   standalone:true,
   imports: [
     CommonModule,
+    TranslateModule,
     SnackBarComponent,
     TextareaComponent,
     InputComponent,

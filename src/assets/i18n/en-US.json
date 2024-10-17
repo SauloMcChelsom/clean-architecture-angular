@@ -1,4 +1,15 @@
 {
+  "NOTE.SCREEN_UPDATE_NOTE": "Tela de atualizar o seu caderno",
+  "NOTE.LABEL_UPDATE_THIS_NOTE": "Atualizar notas",
+  "NOTE.LABEL_NAME_TITLE_NOTE": "Nome do titulo do caderno!",
+  "NOTE.LABEL_NAME_DESCRIPTION_NOTE": "Descrição do caderno",
+  "NOTE.BUTTON_DELETE": "Deletar",
+  "NOTE.BUTTON_SAVING": "Saving",
+  "NOTE.BUTTON_BACK": "Back",
+  "NOTE.HOME": "Note Beans - With Note Beans you can create notes containing texts, images with footnotes, voice recordings, and music",
+  "NOTE.PAGE ADD": "Add a new note", 
+  "NOTE.PAGE UPDATE": "Update your note", 
+  "NOTE.PAGE_READ_ONE": "Read your note",
   "NOTE.TITLE_CHANGE_LANG": "Change language",
   "NOTE.OPTION_EMPY": "No Index Selected",
   "NOTE.HOME.TITLE": "Note Beans",
@@ -12,5 +23,5 @@
   "NOTE.LABEL_FORM_INVALID": "Invalid form",
   "NOTE.LABEL_NAME_FIVE": "Name must be at least {{NUM}} characters long", 
   "NOTE.LABEL_SAVE_WITH_SUCCESS": "Saved successfully",
-  "NOTE.LABEL_loading": "Loading...."
-  }
+  "NOTE.LABEL_LOADING": "Loading...."
+}

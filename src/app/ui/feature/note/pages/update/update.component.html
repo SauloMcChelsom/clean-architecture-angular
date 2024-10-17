@@ -4,9 +4,9 @@
     <div class="ml-small mr-small">
       <div class="container-box">
         <NavBar>
-          <ButtonCancat icon="west" left [routerLink]="ROOT"></ButtonCancat>
-          <Text center [text]="'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default"></Text>
-          <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()"></ButtonCancat>
+          <ButtonCancat  icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
+          <Text center [text]="'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default" [ariaLabel]="'NOTE.SCREEN_UPDATE_NOTE' | translate"></Text>
+          <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()" [ariaLabel]="'NOTE.LABEL_UPDATE_THIS_NOTE' | translate"></ButtonCancat>
         </NavBar>
         <div class="pb-xmedium">
           <Inputs [config]="config_title"></Inputs>

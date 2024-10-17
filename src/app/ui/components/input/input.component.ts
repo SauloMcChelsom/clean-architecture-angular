@@ -22,8 +22,9 @@ import { TextInputConfig } from './enuns/dynamic-date-input.types';
 })
 export class InputComponent {
   @Input() config!: TextInputConfig;
-
+  @Input() ariaLabel!:string;
   public isReady: boolean = false;
+  
   ngOnChanges() {
     setTimeout(() => {
       this.isReady = true;

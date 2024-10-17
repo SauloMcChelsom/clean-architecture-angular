@@ -21,7 +21,8 @@ import { RouterModule } from '@angular/router';
 export class ButtonIconSpinnerComponent {
   @Output() onClick: EventEmitter<any> = new EventEmitter();
   @Input() diameter: string = '24';
-
+  @Input() ariaLabel!:string;
+  
   onClickEvent() {
     this.onClick.emit();
   }

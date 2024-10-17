@@ -12,12 +12,14 @@ import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.compo
 import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AutofocusDirective } from 'src/app/ui/directives/autofocus.directive';
 
 @Component({
   selector: 'PageNoteAdd',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
   standalone: true,
+  providers:[AutofocusDirective],
   imports: [
     TranslateModule,
     SnackBarComponent,

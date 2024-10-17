@@ -1,5 +1,7 @@
 <body class="mat-typography mat-app-background">
   <SnackBar 
+    appAutofocus
+    tabindex="0"
     [openSnackBar]="openSnackBar" 
     [closeSnackBar]="closeSnackBar"
   >
@@ -7,16 +9,17 @@
   <div class="container-box">
     <div class="ml-small mr-small">
       <NavBar>
-        <ButtonCancat icon="west" left [routerLink]="ROOT"></ButtonCancat>
+        <ButtonCancat icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
         <Text center [text]="'NOTE.SUBTITLE_ADD_NEW_NOTE' | translate" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default"></Text>
-        <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()"></ButtonCancat>
+        <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()" [ariaLabelSpinner]="'NOTE.BUTTON_SAVING' | translate"  [ariaLabel]="'NOTE.PAGE_ADD' | translate"></ButtonCancat>
       </NavBar>
       <div class="pb-xmedium">
-        <Inputs [config]="config_title"></Inputs>
+        <Inputs  [ariaLabel]="config_title.title!" [config]="config_title"></Inputs>
       </div>
       <div>
         <Textareas 
           [config]="config_description"
+          [ariaLabel]="config_description.placeholder!"
         >
         </Textareas>
       </div>

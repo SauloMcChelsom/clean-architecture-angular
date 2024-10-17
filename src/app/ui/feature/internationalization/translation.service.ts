@@ -6,7 +6,6 @@ import { DEFAULT_LANG } from 'src/config/constant';
 @Injectable({
     providedIn: 'root'
 })
-
 export class TranslationService {
     defaultLang = DEFAULT_LANG;
 

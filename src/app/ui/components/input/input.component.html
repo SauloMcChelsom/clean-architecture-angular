@@ -6,11 +6,13 @@
             [formControl]="config.formControl"
             [placeholder]="config.placeholder!"
             [value]="config.valueDefault"
+            [attr.aria-label]="ariaLabel" 
+            tabindex="0"
         >
-        <mat-error *ngIf="config.formControl.hasError('required') && config.formControl.touched">
+        <mat-error  tabindex="0" *ngIf="config.formControl.hasError('required') && config.formControl.touched">
             {{ config.erroRequired }}
         </mat-error>
-        <mat-error *ngIf="config.formControl.hasError('minlength') && config.formControl.touched">
+        <mat-error  tabindex="0" *ngIf="config.formControl.hasError('minlength') && config.formControl.touched">
             {{ config.erroFill }}
         </mat-error>
     </mat-form-field>

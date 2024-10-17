@@ -1,41 +1,41 @@
 <ng-container [ngSwitch]="tag">
-  <div *ngSwitchCase="Tag.div" [id]="id" [ngClass]="[class, flex, title]" >
+  <div  tabindex="0" *ngSwitchCase="Tag.div" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </div>
   
-  <p *ngSwitchCase="Tag.p" [id]="id" [ngClass]="[class, flex, title]" >
+  <p  tabindex="0" *ngSwitchCase="Tag.p" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </p>
   
-  <span *ngSwitchCase="Tag.span" [id]="id" [ngClass]="[class, flex, title]" >
+  <span  tabindex="0" *ngSwitchCase="Tag.span" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </span>
   
-  <h1 *ngSwitchCase="Tag.h1" [id]="id" [ngClass]="[class, flex, title]" >
+  <h1  tabindex="0" *ngSwitchCase="Tag.h1" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h1>
   
-  <h2 *ngSwitchCase="Tag.h2" [id]="id" [ngClass]="[class, flex, title]" >
+  <h2  tabindex="0" *ngSwitchCase="Tag.h2" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h2>
   
-  <h3 *ngSwitchCase="Tag.h3" [id]="id" [ngClass]="[class, flex, title]" >
+  <h3  tabindex="0" *ngSwitchCase="Tag.h3" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h3>
   
-  <h4 *ngSwitchCase="Tag.h4" [id]="id" [ngClass]="[class, flex, title]" >
+  <h4  tabindex="0" *ngSwitchCase="Tag.h4" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h4>
   
-  <h5 *ngSwitchCase="Tag.h5" [id]="id" [ngClass]="[class, flex, title]" >
+  <h5  tabindex="0" *ngSwitchCase="Tag.h5" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h5>
   
-  <h6 *ngSwitchCase="Tag.h6" [id]="id" [ngClass]="[class, flex, title]" >
+  <h6  tabindex="0" *ngSwitchCase="Tag.h6" [id]="id" [ngClass]="[class, flex, title]" >
     {{ text }}
   </h6>
   
-  <div *ngSwitchDefault [id]="id" [ngClass]="[class, flex, title]">
+  <div  tabindex="0" *ngSwitchDefault [id]="id" [ngClass]="[class, flex, title]">
     {{ text }}
   </div>
 </ng-container>

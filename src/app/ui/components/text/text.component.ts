@@ -44,6 +44,5 @@ export class TextComponent {
   @Input() id: string = '';
   @Input() flex: Flex = Flex.none;
   @Input() title: Title = Title.small;
-
   Tag = Tag;
 }

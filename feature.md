@@ -51,7 +51,7 @@
   `
   exemplo aqui temos diretiva  mat-icon-button e um compenente do angular material <mat-icon>. isso nao e bom caso queira atualizar ou trocar de UI
 
-# [x] idiomas
+# [ok] idiomas
   1 - implementar esse funcionalidade 
 
 # [ok] url/link
@@ -66,7 +66,7 @@
 # [x] refatora o projeto para adequar ao padrão
   1 - implementar esse funcionalidade 
  
-# [x] acessibilidade
+# [/] acessibilidade
   1 - implementar esse funcionalidade 
 
 # [x] resolver stilos no modo dark

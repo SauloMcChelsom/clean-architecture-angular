@@ -21,8 +21,9 @@ import { TextareaInputConfig } from './enuns/dynamic-date-input.types';
 })
 export class TextareaComponent {
   @Input() config!: TextareaInputConfig;
-
+  @Input() ariaLabel!:string;
   public isReady: boolean = false;
+  
   ngOnChanges() {
     const group_components_in_screen = 260;
     const screen_height = window.innerHeight;

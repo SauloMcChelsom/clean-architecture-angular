@@ -21,14 +21,14 @@ import { ButtonIconSpinnerComponent } from '../button-icon-spinner/button-icon-s
   ]
 })
 export class ButtonCancatComponent {
-
   @Output() onClick: EventEmitter<any> = new EventEmitter();
   @Input() spinner: boolean = false;
   @Input() icon: string = '';
   @Input() routerLink!:string;
+  @Input() ariaLabel!:string;
+  @Input() ariaLabelSpinner!:string;
   
   onClickEvent() {
     this.onClick.emit();
   }
-
 }

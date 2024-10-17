@@ -22,6 +22,7 @@ export class ButtonFabComponent {
   @Input() icon: string = '';
   @Input() routerLink!:string;
   @Input() color: string = 'primary';
+  @Input() ariaLabel!:string;
   
   onClickEvent() {
     this.onClick.emit();
