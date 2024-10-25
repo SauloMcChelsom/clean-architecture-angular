@@ -1,0 +1,6 @@
+<div *ngIf="config">
+  <DynamicDate [config]="config"></DynamicDate>
+  <p>
+    Valor de saida: {{config.formControl.getRawValue() | json}}
+  </p>
+</div>

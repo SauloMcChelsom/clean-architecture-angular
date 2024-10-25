@@ -17,7 +17,7 @@ interface LOCALE_LIST {
   selector: 'app-date-input',
   templateUrl: './date-input.component.html',
   styleUrls: ['./date-input.component.css'],
-  providers: [
+  providers: [ 
     {provide: MAT_DATE_LOCALE, useValue: 'pt-br'},
     {
       provide: DateAdapter,

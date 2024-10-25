@@ -20,8 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('./feature/change-language/change-language.module').then(m => m.ChangeLanguageModule),
   },
   {
-    path: ROUTER_LINKS.SHOW_CASE,
+    path: 'show-case',
     loadChildren: () => import('./feature/show-case/show-case.module').then(m => m.ShowCaseModule),
+  },
+  {
+    path: ROUTER_LINKS.SHOWCASE,
+    loadChildren: () => import('./feature/showcase/showcase.module').then(m => m.ShowcaseModule),
   },
   {
     path: ROUTER_LINKS.PAGE_NOT_FOUND,
