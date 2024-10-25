@@ -66,10 +66,10 @@
 # [x] refatora o projeto para adequar ao padrão
   1 - implementar esse funcionalidade 
  
-# [/] acessibilidade
+# [ok] acessibilidade
   1 - implementar esse funcionalidade 
 
-# [x] resolver stilos no modo dark
+# [/] resolver stilos no modo dark
   1 - implementar esse funcionalidade 
 
 # [ok] refatora Titlesemple para Text

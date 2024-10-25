@@ -8,5 +8,6 @@ export const ROUTER_LINKS = {
     NOTE_READ_BY_TITLE: 'note/read/:title',
     FLEX_GRID: 'flex-grid',
     CHANGE_LANGUAGE: 'change-language',
+    SHOW_CASE: 'show-case',
     PAGE_NOT_FOUND: '**'
 }

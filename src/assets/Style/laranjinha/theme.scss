@@ -1,155 +1,74 @@
 @use '@angular/material' as mat;
-@import "../../Style/colors.scss";
-@import "./dark.scss";
-@import "./light.scss";
 
-$mat-light-theme-foreground: (
-  base: $color-black,
-  divider: $color-black,
-  dividers: $color-black,
-  disabled: $color-black,
-  disabled-button: $color-black,
-  disabled-text: $color-black,
-  elevation: $color-black,
-  hint-text: $color-black,
-  secondary-text: $color-black,
-  accent-text: $color-black,
-  icon: $color-black,
-  icons: $color-black,
-  text: $light-text,
-  slider-min: $color-black,
-  slider-off: $color-black,
-  slider-off-active: $color-black,
-  sss:$color-black
-);
+@import "./colors.scss";
+@import "./component/mat-select.scss";
+@import "./component/mat-input.scss";
+@import "./component/mat-textareas.scss";
+@import "./component/mat-card.scss";
+@import "./component/mat-menu.scss";
+@import "./component/mat-checkbox.scss";
+@import "./component/mat-button-toggle-group.scss";
+@import "./component/mat-radio-button.scss";
+@import "./component/mat-switch-selected.scss";
+@import "./component/mat-chip-option.scss";
+@import "./component/mat-progress-bar.scss";
+@import "./component/mat-button-slider.scss";
+@import "./component/mat-tab-group.scss";
+@import "./component/mat-button-fab.scss";
+@import "./component/mat-button-basic.scss";
+@import "./component/mat-button-raised.scss";
+@import "./component/mat-button-stroked.scss";
+@import "./component/mat-button-flat.scss";
 
-$mat-light-theme-background: (
-  background: $color-white,
-  status-bar: $color-black,
-  app-bar: $color-black,
-  hover: $color-black,
-  card: $light-card-background,
-  dialog: $color-black,
-  tooltip: $color-black,
-  disabled-button: $color-black,
-  raised-button: $color-black,
-  focused-button: $color-black,
-  selected-button: $color-black,
-  selected-disabled-button: $color-black,
-  disabled-button-toggle: $color-black,
-  unselected-chip: $color-black,
-  disabled-list-option: $color-black,
-);
-
-$mat-dark-theme-foreground: (
-  base: $color-black,
-  divider: $color-black,
-  dividers: $color-black,
-  disabled: $color-black,
-  disabled-button: $color-black,
-  disabled-text: $color-black,
-  elevation: $color-black,
-  hint-text: $color-black,
-  secondary-text: $color-black,
-  accent-text: $color-black,
-  icon: $color-black,
-  icons: $color-black,
-  text: $dark-text,
-  slider-min: $color-black,
-  slider-off: $color-black,
-  slider-off-active: $color-black,
-);
-
-$mat-dark-theme-background: (
-  background: $dark-background,
-  status-bar: $color-black,
-  app-bar: $color-black,
-  hover: $color-black,
-  card: $dark-card-background,
-  dialog: $color-black,
-  tooltip: $color-black,
-  disabled-button: $color-black,
-  raised-button: $color-black,
-  focused-button: $color-black,
-  selected-button: $color-black,
-  selected-disabled-button: $color-black,
-  disabled-button-toggle: $color-black,
-  unselected-chip: $color-black,
-  disabled-list-option: $color-black,
-);
-
-$ui-primary: (
-  main: $color-primary,//bottom, label
-  lighter: $color-primary,
-  darker: $color-primary-100,
-  200: $color-primary-200,
-  contrast : (main: $color-white,
-    lighter: $color-black,
-    darker: $color-white,
-  )
-);
-
-$ui-accent: (
-  main: $color-green,
-  lighter: $color-primary,
-  darker: $color-primary-100,
-  200: $color-primary-200,
-  contrast : (main: $color-white,
-    lighter: $color-black,
-    darker: $color-white,
-  )
-);
-
-$ui-warn: (
-  main: $color-warn,
-  lighter: $color-warn-lighter,
-  darker: $color-warn-100,
-  200: $color-warn-200,
-  contrast : (main: $color-white,
-    lighter: $color-black,
-    darker: $color-white,
-  )
-);
-
-$ui-theme-primary: mat.define-palette($ui-primary, main, lighter, darker);
-$ui-theme-accent: mat.define-palette($ui-accent, main, lighter, darker);
-$ui-theme-warn: mat.define-palette($ui-warn, main, lighter, darker);
-
-$ui-theme-light: (
-  primary: $ui-theme-primary,
-  accent: $ui-theme-accent,
-  warn: $ui-theme-warn,
-  is-dark: false,
-  foreground: $mat-light-theme-foreground,
-  background: $mat-light-theme-background
-);
-
-$ui-theme-dark: (
-  primary: $ui-theme-primary,
-  accent: $ui-theme-accent,
-  warn: $ui-theme-warn,
-  is-dark: true,
-  foreground: $mat-dark-theme-foreground,
-  background: $mat-dark-theme-background,
-);
-
-$laranjinha: mat.define-light-theme($ui-theme-light);
-$laranjinha-dark: mat.define-dark-theme($ui-theme-dark);
-
-
-
-
-/**
-
-  custom component Angular Material UI component library
-
-*/
-
-
-.theme-laranjinha.light {
-  @include mat.all-component-themes($laranjinha);
+@mixin theme-mat-extensions {
+  @extend .theme-mat-select;
+  @extend .theme-mat-input;
+  @extend .theme-mat-textareas;
+  @extend .theme-mat-card;
+  @extend .theme-mat-menu;
+  @extend .theme-mat-checkbox;
+  @extend .theme-mat-button-toggle-group;
+  @extend .theme-mat-radio-button;
+  @extend .theme-mat-switch-selected;
+  @extend .theme-mat-chip-option;
+  @extend .theme-mat-progress-bar;
+  @extend .theme-mat-button-slider;
+  @extend .theme-mat-tab-group;
+  @extend .theme-mat-button-fab;
+  @extend .theme-mat-button-basic;
+  @extend .theme-mat-button-raised;
+  @extend .theme-mat-button-stroked;
+  @extend .theme-mat-button-flat;
 }
 
-.theme-laranjinha.dark {
+.laranjinha.light {
+  @include theme-mat-extensions;
+}
+
+.laranjinha.dark {
+  @include theme-mat-extensions;
+}
+
+$laranjinha-light: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$blue-palette),
+    accent: mat.define-palette(mat.$blue-palette),
+    warn: mat.define-palette(mat.$red-palette)
+  )
+));
+
+$laranjinha-dark: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$blue-palette),
+    accent: mat.define-palette(mat.$blue-palette),
+    warn: mat.define-palette(mat.$red-palette)
+  )
+));
+
+.laranjinha.light {
+  @include mat.all-component-themes($laranjinha-light);
+}
+
+.laranjinha.dark {
   @include mat.all-component-themes($laranjinha-dark);
 }

@@ -1,0 +1,131 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <mat-card>
+        <div class="titles">
+          <b>
+            Configurações:
+          </b>
+        </div>
+        <br/>
+        <form [formGroup]="form" class="flex flex-column">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label for="label">Label</mat-label>
+            <input
+              aria-label="title"
+              formControlName="title"
+              matInput
+              name="title"
+              type="text"
+            />
+          </mat-form-field>
+          <div class="row align-items-start">
+            <div class="col-12 col-md-4">
+              <mat-form-field appearance="fill"  class="w-100">
+                <mat-label for="placeholder">Data Min</mat-label>
+                <input
+                  aria-label="datamin"
+                  #datamin
+                  formControlName="dataminselected"
+                  matInput
+                  name="datamin"
+                  type="text"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-12 col-md-4">
+              <mat-form-field appearance="fill"  class="w-100">
+                <mat-label for="placeholder">Data Max</mat-label>
+                <input
+                  aria-label="datamax"
+                  #datamax
+                  formControlName="datamaxselected"
+                  matInput
+                  name="datamax"
+                  type="text"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-12 col-md-4">
+              <mat-form-field appearance="fill"  class="w-100">
+                <mat-label>languages</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option *ngFor="let locale of LOCALE_LIST" [value]="locale.cod">
+                    {{locale.country}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label for="placeholder">Placeholder</mat-label>
+            <input
+              aria-label="placeholder"
+              formControlName="placeholder"
+              matInput
+              name="placeholder"
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label for="placeholder">Mascara</mat-label>
+            <input
+              aria-label="mask"
+              formControlName="mask"
+              matInput
+              name="mask"
+              type="text"
+            />
+          </mat-form-field>
+          <div class="d-flex flex-column">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label for="placeholder">Valor inicial da data</mat-label>
+              <input
+                aria-label="initialdata"
+                formControlName="dateselected"
+                matInput
+                name="initialdata"
+                type="text"
+              />
+            </mat-form-field>
+            <mat-checkbox
+              (change)="setShowHint($event.checked)"
+              [checked]="form.get('showHint')!.value">
+              Mostrar Hint
+            </mat-checkbox>
+            <mat-checkbox
+              (change)="setRequiredField($event.checked)"
+              [checked]="form.get('requiredField')!.value">
+              Campo obrigatório?
+            </mat-checkbox>
+          </div>
+        </form>
+        <div class="d-flex flex-column mt-2">
+          <p>
+            Ao aplicar as modificações o componente
+            será recriado com as configurações atuais.
+          </p>
+          <button mat-stroked-button (click)="createInputDate()">
+            Aplicar Modificações
+          </button>
+          <button mat-stroked-button (click)="resetInputDate()" class="mt-2" editStyle="outlined">
+            Resetar
+          </button>
+        </div>
+      </mat-card>
+      <mat-card *ngIf="config" class="w-100 mt-3" editStyle="card-default card-faq">
+        <div class="titles">
+          <div>Apresentação:</div>
+          <br/>
+        </div>
+        <DynamicDate [config]="config" editStyle="w-100"></DynamicDate>
+      </mat-card>
+      <mat-card *ngIf="config" class="w-100 mt-3" editStyle="card-default card-faq">
+        <p>
+          Valor do formControl: {{config.formControl.getRawValue() | json}}
+        </p>
+        <p>You selected: {{selected}}</p>
+      </mat-card>
+    </div>
+  </div>
+</div>

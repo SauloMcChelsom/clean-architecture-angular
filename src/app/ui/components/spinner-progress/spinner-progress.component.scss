@@ -1,0 +1,29 @@
+.spinner-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .progress-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #404d95;
+  }
+
+  /* Arredondar as pontas */
+  ::ng-deep .mat-progress-spinner circle {
+    stroke-linecap: round; /* Arredonda as pontas */
+  }
+
+  /* Cor de fundo do círculo não preenchido (circulo externo) */
+  ::ng-deep .mat-progress-spinner .mat-progress-spinner-circle {
+    stroke: #d3d3d3; /* Cor de fundo */
+  }
+
+  /* Cor do círculo preenchido (circulo interno que representa o progresso) */
+  ::ng-deep .mat-progress-spinner .mat-progress-spinner-path {
+    stroke: #76c7c0; /* Cor do progresso */
+  }

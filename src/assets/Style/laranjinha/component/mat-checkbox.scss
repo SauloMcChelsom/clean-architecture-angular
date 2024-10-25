@@ -1,0 +1,14 @@
+.theme-mat-checkbox {
+    .mdc-checkbox .mdc-checkbox__native-control:enabled~.mdc-checkbox__background .mdc-checkbox__checkmark {
+        color: var(--app-surface) !important;
+    }
+
+    --mdc-checkbox-selected-icon-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-focus-icon-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-hover-icon-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-icon-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-pressed-icon-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-focus-state-layer-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-hover-state-layer-color: var(--app-primary) !important;
+    --mdc-checkbox-selected-pressed-state-layer-color: var(--app-primary) !important;
+}

@@ -1,0 +1,32 @@
+.theme-mat-card {
+    mat-card:last-child.card {
+        color: var(--app-surface) !important;
+        background-color: var(--app-primary) !important;
+    }
+
+    mat-card-content:last-child.mat-card-timestamp {
+        color: var(--app-primary) !important;
+    }
+
+    mat-card-content:last-child.mat-card-head {
+        color: var(--app-surface) !important;
+    }
+
+    mat-card-content:last-child.mat-card-body {
+        color: var(--app-surface) !important;
+    }
+
+    mat-card-content:last-child.mat-card-timestamp {
+        color: var(--app-primary-100) !important;
+    }
+
+    mat-card-content:last-child.mat-text-body {
+        padding: 0px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        line-height: 20px;
+        text-overflow: ellipsis;
+    }
+}

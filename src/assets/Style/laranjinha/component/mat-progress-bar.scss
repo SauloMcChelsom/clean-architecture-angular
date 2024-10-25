@@ -1,0 +1,11 @@
+
+.theme-mat-progress-bar {
+    .mat-mdc-progress-bar {
+        --mdc-linear-progress-active-indicator-color: var(--app-primary) !important;
+        --mdc-linear-progress-track-color: var(--app-primary-100) !important;
+    }
+
+    .mat-mdc-progress-spinner {
+        --mdc-circular-progress-active-indicator-color: var(--app-primary) !important;
+    }
+}

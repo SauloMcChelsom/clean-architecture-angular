@@ -12,7 +12,7 @@ import { DateInputConfig } from "../enuns/dynamic-date-input.types";
 import { startViewCalendar } from '../enuns/dynamic-date-input.enum';
 
 @Component({
-  selector: 'app-dynamic-date-input',
+  selector: 'DynamicDate',
   templateUrl: './dynamic-date-input.component.html',
   styleUrls: ['./dynamic-date-input.component.scss'],
   providers: [

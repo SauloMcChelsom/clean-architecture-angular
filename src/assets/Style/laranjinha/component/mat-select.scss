@@ -1,0 +1,35 @@
+.theme-mat-select {
+    selectoption {
+        .mdc-text-field--outlined {
+            background-color: var(--app-neutral-50) !important;
+        }
+    }
+
+    .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+        color: var(--app-primary) !important;
+    }
+
+    .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+    .theme.light .mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+        color: var(--app-primary) !important;
+    }
+
+    --mat-select-focused-arrow-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-outline-width: 1px;
+    --mdc-outlined-text-field-focus-outline-color: var(--app-primary) !important;
+    
+    --mdc-outlined-text-field-container-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-caret-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-focus-outline-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-focus-label-text-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-outline-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-hover-outline-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-label-text-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-input-text-color: var(--app-primary) !important;
+
+    --mat-option-selected-state-label-text-color: var(--app-primary) !important;
+    --mat-select-enabled-trigger-text-color: var(--app-primary) !important;
+}

@@ -1,0 +1,10 @@
+.theme-mat-chip-option {
+    .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-primary {
+        --mdc-chip-elevated-container-color: var(--app-primary) !important;
+        --mdc-chip-elevated-disabled-container-color: var(--app-primary) !important;
+    }
+    .mat-mdc-standard-chip.mat-mdc-chip-selected.mat-accent {
+        --mdc-chip-elevated-container-color: var(--app-primary) !important;
+        --mdc-chip-elevated-disabled-container-color: var(--app-primary) !important;
+    }
+}

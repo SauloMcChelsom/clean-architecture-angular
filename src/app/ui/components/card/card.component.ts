@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 @Component({
     selector: 'Card',
     template: `
-        <mat-card [routerLink]="link">
+        <mat-card class="card" [routerLink]="link">
             <ng-content></ng-content>
         </mat-card>
     `,

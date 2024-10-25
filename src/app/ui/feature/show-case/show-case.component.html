@@ -1,0 +1,340 @@
+<body class="mat-app-background">
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+        <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <SelectOption [labelSelectEmpy]="selectEmpy" [selections]="selections" [default]="default"></SelectOption>
+        </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+        <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Textareas 
+            [config]="config_description"
+        >
+        </Textareas>
+        </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+        <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Inputs [config]="config_title"></Inputs>
+        </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+        <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Card>
+            <div>
+              <TitleCard value="controle de contas"  class="white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head title-medium"></TitleCard>
+              <TimestampCard value="10/10/2024"  class="flex justify-content-end mat-card-timestamp title-default"></TimestampCard>
+              <TextCard  value="Hoje, quero compartilhar uma notícia boa com todos vocês, que estou embarcando em" class="mat-card-body title-small"></TextCard>
+            </div>
+          </Card>
+        </div>
+    </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <app-date-input></app-date-input>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Radio></Radio>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Menu></Menu>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Checkbox></Checkbox>
+      </div>
+  </div>
+</div>
+
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonToggle></ButtonToggle>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ChipOption></ChipOption>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <SpinnerProgress title="Livros" subtitle="Um novo livro para ler em casa"></SpinnerProgress>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <SlideToggle></SlideToggle>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <BottomSheet></BottomSheet>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <DialogModal></DialogModal>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <ExpansionPanel></ExpansionPanel>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Icon></Icon>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Paginator></Paginator>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ProgressBar></ProgressBar>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Spinner></Spinner>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Drawer></Drawer>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <Slider></Slider>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <SnackBarPosition></SnackBarPosition>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Tabs></Tabs>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonCancat icon="add" [spinner]="spinner" (onClick)="add()" ></ButtonCancat>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonFab icon="add"></ButtonFab>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <ButtonIcon icon="add"></ButtonIcon>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <ButtonIconSpinner></ButtonIconSpinner>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.default"  class="mb-default"></Text>
+          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.small"  class="mb-default"></Text>
+          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.medium"  class="mb-default"></Text>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <NavBar>
+          <ButtonCancat icon="west" left  ></ButtonCancat>
+          <ButtonCancat icon="delete" center   ></ButtonCancat>
+          <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()" ></ButtonCancat> 
+        </NavBar>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <SnackBar     [openSnackBar]="openSnackBar" 
+          [closeSnackBar]="closeSnackBar"></SnackBar>
+          <button (click)="sucsessSnackBar()">Sucesso</button><br/>
+          <button (click)="errSnackBar()">Error</button><br/>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        
+      </div>
+  </div>
+</div>
+
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          <ButtonBasic color="primary">
+            <div class="flex flex-row flex-wrap align-items-center">
+              <Icon></Icon>
+              <Text text="Texto simples para exemplificar" [tag]="Tag.div" [title]="Title.medium"></Text>
+            </div>
+          </ButtonBasic>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonRaised color="primary">
+          <div class="flex flex-row flex-wrap align-items-center">
+            <Icon></Icon>
+            <Text text="Texto simples para exemplificar" [tag]="Tag.div" [title]="Title.medium"></Text>
+          </div>
+        </ButtonRaised>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonStroked color="primary">
+          <div class="flex flex-row flex-wrap align-items-center">
+            <Icon></Icon>
+            <Text text="Texto simples para exemplificar" [tag]="Tag.div" [title]="Title.medium"></Text>
+          </div>
+        </ButtonStroked>
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        <ButtonFlat color="primary">
+          <div class="flex flex-row flex-wrap align-items-center">
+            <Icon></Icon>
+            <Text text="Texto simples para exemplificar" [tag]="Tag.div" [title]="Title.medium"></Text>
+          </div>
+        </ButtonFlat>
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        
+      </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+          
+      </div>
+  </div>
+  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
+      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+        
+      </div>
+  </div>
+</div>
+</body>
