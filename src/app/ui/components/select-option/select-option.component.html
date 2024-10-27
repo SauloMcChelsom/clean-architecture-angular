@@ -1,7 +1,7 @@
 <mat-form-field appearance="outline" class="ett-field" >
-    <mat-select [formControl]="config.formControl">
-        <mat-option disabled value="">{{ config.selectEmpy }}</mat-option>
-        <mat-option  *ngFor="let selection of config.selections" [value]="selection.cod">
+    <mat-select [formControl]="formControl">
+        <mat-option disabled value="">{{ placeholder }}</mat-option>
+        <mat-option (click)="onClickEvent(selection.cod)" *ngFor="let selection of options" [value]="selection.cod">
             <Text [text]="selection.description"  class="color-white white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head title-medium"></Text>
         </mat-option>
     </mat-select>

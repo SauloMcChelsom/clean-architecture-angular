@@ -25,11 +25,11 @@ interface LOCALE_LIST {
 })
 export class DateInputComponent {
   panelOpenState = false;
-  dateControl = new FormControl<Date | undefined>(undefined);
+  
   config?: DateInputConfig = {
     formControl: new FormControl('2020-10-13'),
     locale: "pt-br",
-    mask: "DD/MM/YYYY",
+    mask: "dd/mm/yyyy",
     maxDate: new Date('Thu Oct 10 2024 00:00:00 GMT-0300'),
     minDate: new Date('Wed Oct 10 1990 00:00:00 GMT-0300 '),
     placeholder: "Informe sua data",

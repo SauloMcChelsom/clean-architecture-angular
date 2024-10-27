@@ -1,0 +1,10 @@
+<SelectOption 
+  [formControl] = "formControl"
+  [placeholder] = "selectEmpy"
+  [isRequired] = "requiredField"
+  [isDisabled] = "disableField"
+  [options] = "selections"
+></SelectOption>
+<p>
+  Valor de saida: {{ formControl.getRawValue() | json }}
+</p>

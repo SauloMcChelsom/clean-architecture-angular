@@ -1,1 +1,6 @@
-<!--<SelectOption [labelSelectEmpy]="selectEmpy" [selections]="selections" [default]="default" (onSelect)="selected($event)"></SelectOption>-->
+<SelectOption 
+    [formControl] = "formControl"
+    [placeholder]="selectEmpy" 
+    [options]="selections" 
+    (onSelect)="selected($event)"
+></SelectOption>

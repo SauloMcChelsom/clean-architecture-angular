@@ -11,7 +11,7 @@ import { TitleCardComponent } from '../../components/card/title/title.component'
 import { TextInputConfig } from '../../components/input/enuns/dynamic-date-input.types';
 import { InputComponent } from '../../components/input/input.component';
 import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
-import { SelectionModel, SelectOptionComponent } from '../../components/select-option/select-option.component';
+import { SelectOptionComponent } from '../../components/select-option/select-option.component';
 import { ScoreboardColor, SnackBarComponent, SnackBarModel } from '../../components/snack-bar/snack-bar.component';
 import { Flex, Tag, TextComponent, Title } from '../../components/text/text.component';
 import { TextareaInputConfig } from '../../components/textarea/enuns/dynamic-date-input.types';
@@ -42,6 +42,7 @@ import { ButtonBasicComponent } from '../../components/button-basic/button-basic
 import { ButtonRaisedComponent } from '../../components/button-raised/button-raised.component';
 import { ButtonStrokedComponent } from '../../components/button-stroked/button-stroked.component';
 import { ButtonFlatComponent } from '../../components/button-flat/button-flat.component';
+import { SelectionModel } from '../../components/select-option/models';
 
 @Component({
   selector: 'app-show-case',
