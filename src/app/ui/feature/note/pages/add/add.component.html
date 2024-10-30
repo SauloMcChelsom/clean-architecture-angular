@@ -24,7 +24,13 @@
       </div>
       <div>
         <Textareas 
-          [config]="config_description"
+          [formControl]="config_description.formControl" 
+          [title]="config_description.title"
+          [placeholder]="config_description.placeholder!"
+          [erroFill]="config_description.erroFill!" 
+          [erroRequired]="config_description.erroRequired!" 
+          [isRequired]="true" 
+          [minLength]="5"
           [ariaLabel]="config_description.placeholder!"
         >
         </Textareas>

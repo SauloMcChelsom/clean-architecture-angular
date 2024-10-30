@@ -22,7 +22,7 @@ export class SelectOptionShowcaseComponent {
   config: SelectOptionModel = {
     formControl: new FormControl(''),
     selectEmpy: this.translate.instant('NOTE.OPTION_EMPY'),
-    requiredField: false,
+    requiredField: true,
     disableField: false,
     selections: [
       { description: 'Portuguese (Brazil)', cod: 'pt-BR' },
@@ -35,4 +35,14 @@ export class SelectOptionShowcaseComponent {
   
   constructor(private translate: TranslateService) {}
 
+  reset(){
+    this.selectOptionComponent.resetToInitialState()
+  }
+
+  disable(){
+    this.selectOptionComponent.disable()
+  }
+  enable(){
+    this.selectOptionComponent.enable()
+  }
 }

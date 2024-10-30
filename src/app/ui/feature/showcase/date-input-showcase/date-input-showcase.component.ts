@@ -43,4 +43,15 @@ export class DateInputShowcaseComponent {
 
   @ViewChild(DynamicDateInputComponent) DynamicDateInputComponent!: DynamicDateInputComponent;
 
+
+  reset(){
+    this.DynamicDateInputComponent.resetToInitialState()
+  }
+
+  disable(){
+    this.DynamicDateInputComponent.disable()
+  }
+  enable(){
+    this.DynamicDateInputComponent.enable()
+  }
 }

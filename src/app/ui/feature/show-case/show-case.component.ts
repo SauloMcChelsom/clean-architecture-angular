@@ -129,12 +129,7 @@ export class ShowCaseComponent implements OnInit {
   }
 
   createInputTextarea(): void {
-    this.config_description = {
-      formControl: new FormControl<string | undefined>("", [Validators.required, Validators.minLength(5)]),
-      placeholder: "Escreva aqui tudo que precisa...",
-      erroFill: "O nome deve ter pelo menos {{NUM}} caracteres",
-      erroRequired: "Preenchimento obrigatório"
-    };
+
   }
 
   add(){

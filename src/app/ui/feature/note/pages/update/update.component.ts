@@ -119,6 +119,7 @@ export class PageUpdateComponent implements OnInit {
     createInputTextarea(text: string): void {
       this.config_description = {
         formControl: new FormControl<string>(text, [Validators.required, Validators.minLength(this.charactersLong)]),
+        title:this.translate.instant('NOTE.LABEL_NAME_DESCRIPTION'),
         placeholder:  this.translate.instant('NOTE.LABEL_WRITE_HERE'),
         erroFill: this.translate.instant('NOTE.LABEL_NAME_FIVE', { NUM: this.charactersLong }),
         erroRequired:  this.translate.instant('NOTE.LABEL_FILLING_REQUIRED'),

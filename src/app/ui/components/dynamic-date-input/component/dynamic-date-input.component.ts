@@ -78,7 +78,7 @@ export class DynamicDateInputComponent implements OnInit, AfterViewInit {
     this.insertMaskInTheField()
     this.minDateOrMaxDateIsFilled()
     this.setIntervalDateTime()
-    this.setRequired(this.requiredField);
+    
 
 
 
@@ -88,6 +88,7 @@ export class DynamicDateInputComponent implements OnInit, AfterViewInit {
   
     this.applyRequiredValidator(this.isRequired);
     this.applyDisabledState(this.isDisabled);
+    this.setRequired(this.requiredField);
   }
 
   insertTranslationInCalendar() {

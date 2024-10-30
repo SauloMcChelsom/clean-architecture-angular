@@ -1,17 +1,17 @@
 <mat-form-field appearance="outline" class="ett-field">
+    <mat-label>{{ title }}</mat-label>
     <textarea 
         id="textarea-content"
         matInput 
-        [formControl]="config.formControl"
-        [placeholder]="config.placeholder!"
-        [value]="config.valueDefault"
+        [formControl]="formControl"
+        [placeholder]="placeholder!"
         [attr.aria-label]="ariaLabel" 
         tabindex="0"
     ></textarea>
-    <mat-error tabindex="0" *ngIf="config.formControl.hasError('required') && config.formControl.touched">
-        {{ config.erroRequired }}
+    <mat-error tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
+        {{ erroRequired }}
     </mat-error>
-    <mat-error tabindex="0" *ngIf="config.formControl.hasError('minlength') && config.formControl.touched">
-        {{ config.erroFill }}
+    <mat-error tabindex="0" *ngIf="formControl.hasError('minlength') && formControl.touched">
+        {{ erroFill }}
     </mat-error>
 </mat-form-field>

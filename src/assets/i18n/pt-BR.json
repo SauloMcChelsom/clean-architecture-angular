@@ -20,6 +20,7 @@
   "NOTE.LABEL_WRITE_HERE": "Escreva aqui tudo que precisa...",
   "NOTE.LABEL_REPORT_TITLE": "Informe o titulo do seu note",
   "NOTE.LABEL_NAME_TITLE": "Titulo",
+  "NOTE.LABEL_NAME_DESCRIPTION": "Descrição",
   "NOTE.LABEL_FORM_INVALID": "Formulario Invalido",
   "NOTE.LABEL_NAME_FIVE": "O nome deve ter pelo menos {{NUM}} caracteres",
   "NOTE.LABEL_SAVE_WITH_SUCCESS": "Salvo com sucesso",
