@@ -4,6 +4,7 @@ import { SelectOptionShowcaseComponent } from './select-option-showcase/select-o
 import { DateInputShowcaseComponent } from './date-input-showcase/date-input-showcase.component';
 import { TextInputShowcaseComponent } from './text-input-showcase/text-input-showcase.component';
 import { TextareasInputShowcaseComponent } from './textareas-input-showcase/textareas-input-showcase.component';
+import { CardShowcaseComponent } from './card-showcase/card-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -15,7 +16,8 @@ import { TextareasInputShowcaseComponent } from './textareas-input-showcase/text
     SelectOptionShowcaseComponent,
     DateInputShowcaseComponent,
     TextInputShowcaseComponent,
-    TextareasInputShowcaseComponent
+    TextareasInputShowcaseComponent,
+    CardShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
