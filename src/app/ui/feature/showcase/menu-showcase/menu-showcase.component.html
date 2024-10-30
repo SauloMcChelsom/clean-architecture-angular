@@ -1,0 +1,17 @@
+<Menu
+    [mainMenuLabel]="'Options'"
+    [menuItems]="menuOptions"
+    #dynamicMenu
+    (onSelect)="onSelect($event)"
+>
+</Menu>
+<button mat-button [matMenuTriggerFor]="dynamicMenu.menu">
+    Menu
+</button>
+<button mat-icon-button [matMenuTriggerFor]="dynamicMenu.menu">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+<p>
+    Valor de saida: {{selected}}
+</p>

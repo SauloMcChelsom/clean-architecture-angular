@@ -6,6 +6,7 @@ import { TextInputShowcaseComponent } from './text-input-showcase/text-input-sho
 import { TextareasInputShowcaseComponent } from './textareas-input-showcase/textareas-input-showcase.component';
 import { CardShowcaseComponent } from './card-showcase/card-showcase.component';
 import { RadioInputShowcaseComponent } from './radio-input-showcase/radio-input-showcase.component';
+import { MenuShowcaseComponent } from './menu-showcase/menu-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -19,7 +20,8 @@ import { RadioInputShowcaseComponent } from './radio-input-showcase/radio-input-
     TextInputShowcaseComponent,
     TextareasInputShowcaseComponent,
     CardShowcaseComponent,
-    RadioInputShowcaseComponent
+    RadioInputShowcaseComponent,
+    MenuShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
