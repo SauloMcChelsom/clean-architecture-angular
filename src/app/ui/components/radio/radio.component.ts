@@ -1,13 +1,9 @@
-import { FormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
+import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { RadioModel } from './models';
 
-/**
- * @title Radios with ngModel
- */
 @Component({
   selector: 'Radio',
   templateUrl: './radio.component.html',
@@ -17,16 +13,68 @@ import { CommonModule, NgFor } from '@angular/common';
   imports: [
     MatRadioModule,
     FormsModule,
+    ReactiveFormsModule,
     NgFor,
     CommonModule,
-    MatFormFieldModule,
-    MatSelectModule,
   ],
 })
-export class RadioComponent {
-  selected = '';
-  options = [...Array(4).keys()].map((x) => -x);
+export class RadioComponent implements OnInit {
+  @Input() options: RadioModel[] = [];
+  @Input() formControl!: FormControl;
+  @Input() initialSelection: string = '';
+  @Input() isRequired: boolean = false;
+  @Input() isDisabled: boolean = false;
+  @Output() onSelect: EventEmitter<any> = new EventEmitter();
 
-  favoriteSeason!: string;
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  ngOnInit(): void {
+    if (!this.formControl.value && this.initialSelection) {
+      this.formControl.setValue(this.initialSelection);
+    }
+
+    this.initialControlValue = this.formControl.value;
+    this.initialDisabledState = this.isDisabled;
+    this.initialValidator = this.isRequired ? Validators.required : null;
+
+    this.applyDisabledState(this.isDisabled);
+    this.applyRequiredValidator(this.isRequired);
+  }
+
+  private initialControlValue: any;
+  private initialDisabledState!: boolean;
+  private initialValidator: any;
+
+
+  public resetToInitialState(): void {
+    this.formControl.patchValue(this.initialControlValue);
+    this.applyRequiredValidator(this.initialValidator !== null);
+    this.applyDisabledState(this.initialDisabledState);
+    this.formControl.markAsUntouched();
+    this.formControl.updateValueAndValidity();
+  }
+
+  public enable(): void {
+    this.formControl.enable();
+  }
+
+  public disable(): void {
+    this.formControl.disable();
+  }
+
+  private applyDisabledState(shouldDisable: boolean): void {
+    shouldDisable ? this.disable() : this.enable();
+  }
+
+  private applyRequiredValidator(isRequired: boolean): void {
+    if (isRequired) {
+      this.formControl.setValidators(Validators.required);
+    } else {
+      this.formControl.clearValidators();
+    }
+
+    this.formControl.updateValueAndValidity();
+  }
+
+  protected onClickEvent(cod:string) {
+    this.onSelect.emit(cod);
+  }
 }

@@ -1,0 +1,13 @@
+
+<div *ngIf="config">
+  <Radio
+    [formControl]="config.formControl" 
+    [options]="config.options" 
+    [initialSelection]="config.initialSelection"
+    (onSelect)="onSelect($event)"
+  ></Radio>
+  <p>
+      Valor de saida: {{config.formControl.getRawValue() | json}}
+  </p>
+  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+</div>
