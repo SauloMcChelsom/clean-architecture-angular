@@ -9,7 +9,13 @@
           <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()" [ariaLabel]="'NOTE.LABEL_UPDATE_THIS_NOTE' | translate"></ButtonCancat>
         </NavBar>
         <div class="pb-xmedium">
-          <Inputs [config]="config_title"></Inputs>
+          <Inputs
+            [ariaLabel]="config_title.title!"    
+            [formControl] = "config_title.formControl"
+            [placeholder] = "config_title.placeholder!"
+            [erroFill] = "config_title.erroFill!",
+            [erroRequired] = "config_title.erroRequired!"
+          ></Inputs>
         </div>
         <div>
           <Textareas [config]="config_description"></Textareas>

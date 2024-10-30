@@ -1,0 +1,16 @@
+<div *ngIf="config">
+    <Inputs 
+        [formControl]="config.formControl" 
+        [title]="config.title" 
+        [placeholder]="config.placeholder"
+        [erroFill]="config.erroFill" 
+        [erroRequired]="config.erroRequired" 
+        [isRequired]="true" 
+        [minLength]="5"
+    ></Inputs>
+    <p>
+        Valor de saida: {{config.formControl.getRawValue() | json}}
+    </p>
+    <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+
+</div>
