@@ -13,13 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DateInputComponent } from './date-input.component';
-import { DynamicDateInputModule } from 'src/app/ui/components/dynamic-date-input/dynamic-date-input.modules';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    DynamicDateInputModule,
     FormsModule,
     MatAutocompleteModule,
     MatDatepickerModule,

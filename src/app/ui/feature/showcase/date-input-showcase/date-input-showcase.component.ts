@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DynamicDateInputComponent } from 'src/app/ui/components/dynamic-date-input/component/dynamic-date-input.component';
 import { DateInputConfig } from 'src/app/ui/components/dynamic-date-input/enuns/dynamic-date-input.types';
 
-interface LOCALE_LIST {
-  country: string;
-  cod: string;
-}
-
 @Component({
-  selector: 'app-date-input',
-  templateUrl: './date-input.component.html',
-  styleUrls: ['./date-input.component.scss'],
+  selector: 'app-date-input-showcase',
+  templateUrl: './date-input-showcase.component.html',
+  styleUrls: ['./date-input-showcase.component.scss'],
+  standalone: true,
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-br'},
     {
@@ -22,11 +20,16 @@ interface LOCALE_LIST {
     },
     {provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
   ],
+  imports:[
+    CommonModule,
+    DynamicDateInputComponent
+  ]
 })
-export class DateInputComponent {
+export class DateInputShowcaseComponent {
+
   panelOpenState = false;
   
-  config?: DateInputConfig = {
+  config: DateInputConfig = {
     formControl: new FormControl('2020-10-13'),
     locale: "pt-br",
     mask: "dd/mm/yyyy",
@@ -37,4 +40,18 @@ export class DateInputComponent {
     showHint: false,
     title: "Data de Nascimento"
   };
+
+  @ViewChild(DynamicDateInputComponent) DynamicDateInputComponent!: DynamicDateInputComponent;
+
+
+  reset(){
+    this.DynamicDateInputComponent.resetToInitialState()
+  }
+
+  disable(){
+    this.DynamicDateInputComponent.disable()
+  }
+  enable(){
+    this.DynamicDateInputComponent.enable()
+  }
 }

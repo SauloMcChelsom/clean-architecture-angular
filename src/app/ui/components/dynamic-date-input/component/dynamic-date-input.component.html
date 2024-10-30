@@ -1,20 +1,20 @@
 <mat-form-field appearance="outline" class="{{editStyle}}">
   <mat-label>
-    {{config.title}}
+    {{title}}
   </mat-label>
   <input #dateInput
     class="date-input"
     [min]="minDate" 
     [max]="maxDate"
-    [formControl]="config.formControl"
+    [formControl]="formControl"
     [maxLength]="mask.length"
     (dateChange)="writeValue($event.value)"
-    [attr.placeholder]="config.placeholder || null"
+    [attr.placeholder]="placeholder || null"
     [matDatepicker]="picker"
     matInput
     >
-  <mat-hint *ngIf="config.showHint" class="hint">
-    {{config.mask}}
+  <mat-hint *ngIf="showHint" class="hint">
+    {{mask}}
   </mat-hint>
   <mat-datepicker-toggle [for]="picker" matSuffix>
     <!--<fa-icon class="icon" matDatepickerToggleIcon [icon]="['fas', 'calendar-alt']"></fa-icon>-->

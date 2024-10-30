@@ -1,0 +1,16 @@
+<div *ngIf="config">
+  <DynamicDate 
+    [formControl] = "config.formControl"
+    [locale] = "config.locale!"
+    [mask] = "config.mask"
+    [maxDate] = "config.maxDate"
+    [minDate] = "config.minDate"
+    placeholder = "config.placeholder"
+    [requiredField] = "config.requiredField"
+    [title] = "config.title"
+  ></DynamicDate>
+  <p>
+    Valor de saida: {{config.formControl.getRawValue() | json}}
+  </p>
+  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+</div>

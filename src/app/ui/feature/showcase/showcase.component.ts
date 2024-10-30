@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { DateInputModule } from './date-input/date-input.module';
 import { SelectOptionShowcaseComponent } from './select-option-showcase/select-option-showcase.component';
+import { DateInputShowcaseComponent } from './date-input-showcase/date-input-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -10,8 +10,8 @@ import { SelectOptionShowcaseComponent } from './select-option-showcase/select-o
   standalone: true,
   imports: [
     CommonModule,
-    DateInputModule,
-    SelectOptionShowcaseComponent
+    SelectOptionShowcaseComponent,
+    DateInputShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
