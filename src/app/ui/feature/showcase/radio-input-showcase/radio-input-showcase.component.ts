@@ -18,8 +18,9 @@ export class RadioInputShowcaseComponent {
   config = {
     formControl: new FormControl<string | undefined>(""),
     options: [
-      {label: 'Pagamento por PIX', cod:'pix'}, 
-      {label: 'Pagamento por cartao de credito', cod:'card' }
+      {label: 'Pagamento por PIX', cod:'pix', disabled: false}, 
+      {label: 'Pagamento por cartao de credito', cod:'card', disabled: false },
+      {label: 'Pagamento por cartao de debito', cod:'debit', disabled: false }
     ],
     initialSelection: 'pix',
   };

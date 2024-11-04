@@ -1,0 +1,10 @@
+<Checkbox 
+    [formControl]="formControl" 
+    [items]="task" 
+    (onSelect)="onSelect($event)"
+    [isRequired]="true"
+></Checkbox>
+<p>
+    Valor de saida: {{formControl.getRawValue() | json}} {{formControl.status}}
+</p>
+<button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>

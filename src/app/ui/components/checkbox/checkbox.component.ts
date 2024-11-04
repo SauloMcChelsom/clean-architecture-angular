@@ -1,21 +1,10 @@
-import { Component } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { Task } from './models';
 
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
-
-/**
- * @title Basic checkboxes
- */
 @Component({
   selector: 'Checkbox',
   templateUrl: './checkbox.component.html',
@@ -26,52 +15,92 @@ export interface Task {
     NgFor,
     FormsModule,
     CommonModule,
-    MatFormFieldModule,
-    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule,
   ],
 })
 export class CheckboxComponent {
-  selected = '';
-  options = [...Array(4).keys()].map((x) => -x);
+  @Output() onSelect: EventEmitter<any> = new EventEmitter();
+  @Input() formControl!: FormControl;
+  @Input() items: Task[] = [];
+  @Input() isRequired: boolean = false;
+  @Input() isDisabled: boolean = false;
 
-  task: Task = {
-    name: 'Indeterminate',
-    completed: false,
-    color: 'primary',
-    subtasks: [
-      { name: 'Primary', completed: false, color: 'primary' },
-      { name: 'Accent', completed: false, color: 'accent' },
-      { name: 'Warn', completed: false, color: 'warn' },
-    ],
-  };
+  formControls: { [key: string]: FormControl } = {};
+  formGroup!: FormGroup;
+  initialStates: { [key: string]: { value: boolean; disabled: boolean } } = {};
 
-  allComplete: boolean = false;
+  ngOnInit(): void {
+    this.items.forEach(item => {
+      this.formControls[item.cod] = new FormControl(
+        { value: item.checked, disabled: item.disabled }
+      );
 
-  updateAllComplete() {
-    this.allComplete =
-      this.task.subtasks != null &&
-      this.task.subtasks.every((t) => t.completed);
+      this.initialStates[item.cod] = { value: item.checked, disabled: item.disabled };
+    });
+
+    this.formGroup = new FormGroup(this.formControls);
+    if (this.formControl) {
+      this.formControl.setValue(this.formGroup.value);
+      this.formGroup.valueChanges.subscribe(value => {
+        this.applyRequiredValidator();
+        this.formControl.setValue(value);
+      });
+    }
+
+    this.applyRequiredValidator();
   }
 
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
-      return false;
-    }
-    return (
-      this.task.subtasks.filter((t) => t.completed).length > 0 &&
-      !this.allComplete
-    );
+  private requiredTrueValidator(): any {
+    return (control: FormControl) => {
+      return this.hasTrueValue(control.value) === true ? null : { requiredTrue: true };
+    };
   }
 
-  setAll(completed: boolean) {
-    this.allComplete = completed;
-    if (this.task.subtasks == null) {
-      return;
+  private hasTrueValue(obj: any) {
+    return Object.values(obj).some(valor => valor === true);
+  }
+
+  private applyRequiredValidator(): void {
+    if (this.isRequired) {
+      this.formControl.addValidators(this.requiredTrueValidator());
     }
-    this.task.subtasks.forEach((t) => (t.completed = completed));
+    this.formControl.updateValueAndValidity();
+  }
+
+  resetToInitialState() {
+    Object.keys(this.formControls).forEach(key => {
+      const initialState = this.initialStates[key];
+      const control = this.formControls[key];
+
+      // Resetar o valor e o estado de habilitado/desabilitado do checkbox
+      control.setValue(initialState.value);
+      initialState.disabled ? control.disable() : control.enable();
+    });
+  }
+
+  disable(): void {
+    this.items.forEach(item => {
+      this.formControls[item.cod].disable();
+    });
+  }
+
+  enable(): void {
+    this.items.forEach(item => {
+      if (!item.disabled) {
+        this.formControls[item.cod].enable();
+      }
+    });
+  }
+
+  getCheckboxValues(): { [key: string]: boolean } {
+    return Object.keys(this.formControls).reduce((result, key) => {
+      result[key] = this.formControls[key].value;
+      return result;
+    }, {} as { [key: string]: boolean });
+  }
+
+  protected onClickEvent(cod: string) {
+    this.onSelect.emit(this.getCheckboxValues());
   }
 }
-
-/**  Copyright 2023 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at https://angular.io/license */

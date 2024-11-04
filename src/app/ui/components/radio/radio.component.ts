@@ -25,6 +25,9 @@ export class RadioComponent implements OnInit {
   @Input() isRequired: boolean = false;
   @Input() isDisabled: boolean = false;
   @Output() onSelect: EventEmitter<any> = new EventEmitter();
+  private initialControlValue: any;
+  private initialDisabledState!: boolean;
+  private initialValidator: any;
 
   ngOnInit(): void {
     if (!this.formControl.value && this.initialSelection) {
@@ -38,11 +41,6 @@ export class RadioComponent implements OnInit {
     this.applyDisabledState(this.isDisabled);
     this.applyRequiredValidator(this.isRequired);
   }
-
-  private initialControlValue: any;
-  private initialDisabledState!: boolean;
-  private initialValidator: any;
-
 
   public resetToInitialState(): void {
     this.formControl.patchValue(this.initialControlValue);

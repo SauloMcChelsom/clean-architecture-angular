@@ -1,29 +1,9 @@
-<section class="example-section">
-  <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-  <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
-</section>
-
-<section class="example-section">
-  <span class="example-list-section">
-    <mat-checkbox class="example-margin" [checked]="allComplete" [color]="task.color" [indeterminate]="someComplete()"
-      (change)="setAll($event.checked)">
-      {{task.name}}
-    </mat-checkbox>
-  </span>
-  <span class="example-list-section">
-    <ul>
-      <li *ngFor="let subtask of task.subtasks">
-        <mat-checkbox [(ngModel)]="subtask.completed" [color]="subtask.color" (ngModelChange)="updateAllComplete()">
-          {{subtask.name}}
-        </mat-checkbox>
-      </li>
-    </ul>
-  </span>
-</section>
-
-<section class="example-section">
-  <h4>Select your toppings:</h4>
-  <p><mat-checkbox>Pepperoni</mat-checkbox></p>
-  <p><mat-checkbox>Extra Cheese</mat-checkbox></p>
-  <p><mat-checkbox>Mushroom</mat-checkbox></p>
-</section>
+<div *ngFor="let item of items">
+  <mat-checkbox 
+    [formControl]="formControls[item.cod]" 
+    [color]="item.color" 
+    [disabled]="item.disabled"
+    (change)="onClickEvent(item.cod)">
+    {{ item.name }} {{ item.disabled }}
+  </mat-checkbox>
+</div>

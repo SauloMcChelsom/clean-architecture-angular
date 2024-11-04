@@ -5,9 +5,10 @@
     [options]="config.options" 
     [initialSelection]="config.initialSelection"
     (onSelect)="onSelect($event)"
+    [isRequired]="true"
   ></Radio>
   <p>
-      Valor de saida: {{config.formControl.getRawValue() | json}}
+      Valor de saida: {{config.formControl.getRawValue() | json}} {{config.formControl.status}}
   </p>
   <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
 </div>

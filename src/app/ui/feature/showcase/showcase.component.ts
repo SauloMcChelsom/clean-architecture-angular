@@ -7,6 +7,7 @@ import { TextareasInputShowcaseComponent } from './textareas-input-showcase/text
 import { CardShowcaseComponent } from './card-showcase/card-showcase.component';
 import { RadioInputShowcaseComponent } from './radio-input-showcase/radio-input-showcase.component';
 import { MenuShowcaseComponent } from './menu-showcase/menu-showcase.component';
+import { CheckboxInputShowcaseComponent } from './checkbox-input-showcase/checkbox-input-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -21,7 +22,8 @@ import { MenuShowcaseComponent } from './menu-showcase/menu-showcase.component';
     TextareasInputShowcaseComponent,
     CardShowcaseComponent,
     RadioInputShowcaseComponent,
-    MenuShowcaseComponent
+    MenuShowcaseComponent,
+    CheckboxInputShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
