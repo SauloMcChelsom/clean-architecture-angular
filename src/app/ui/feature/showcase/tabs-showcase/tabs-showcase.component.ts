@@ -1,22 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TabsComponent } from 'src/app/ui/components/tabs/tabs.component';
+import { TabOneComponent } from './Tab.component';
 
 @Component({
   selector: 'app-tabs-showcase',
   templateUrl: './tabs-showcase.component.html',
-  styleUrls: ['./tabs-showcase.component.css'],
+  styleUrls: ['./tabs-showcase.component.scss'],
   standalone: true,
-  imports:[
+  imports: [
     CommonModule,
-    TabsComponent
+    TabsComponent,
+    TabOneComponent
   ]
 })
-export class TabsShowcaseComponent implements OnInit {
+export class TabsShowcaseComponent {
 
-  constructor() { }
+  currentTab = 1
 
-  ngOnInit() {
+  @ViewChild(TabsComponent) component!: TabsComponent;
+
+  onCurrentTabChange($event: number) {
+    this.currentTab = $event;
   }
 
+  reset() {
+    this.component.resetToInitialState()
+  }
 }

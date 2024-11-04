@@ -1,17 +1,17 @@
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="1000ms">
-  <mat-tab label="First">
-    <ng-template matTabContent>
-      Content 1 - Loaded: {{getTimeLoaded(1) | date:'medium'}}
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Second">
-    <ng-template matTabContent>
-      Content 2 - Loaded: {{getTimeLoaded(2) | date:'medium'}}
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Third">
-    <ng-template matTabContent>
-      Content 3 - Loaded: {{getTimeLoaded(3) | date:'medium'}}
-    </ng-template>
-  </mat-tab>
+<mat-tab-group 
+[selectedIndex]="currentIndex"
+mat-stretch-tabs="false" 
+mat-align-tabs="start" 
+animationDuration="1000ms" 
+(selectedTabChange)="onTabChange($event.index)">
+
+<mat-tab *ngFor="let tab of tabs; let i = index" 
+         [label]="tab.label" 
+         [disabled]="tab.disabled">
+  <ng-template matTabContent>
+    <ng-container *ngIf="loadedTabs[i]">
+      <ng-template [ngTemplateOutlet]="tab.content"></ng-template>
+    </ng-container>
+  </ng-template>
+</mat-tab>
 </mat-tab-group>

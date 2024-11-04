@@ -1,1 +1,26 @@
-<Tabs></Tabs>
+<ng-template matTabContent #tab1Content>
+  <p>hello world</p>
+</ng-template>
+
+<ng-template matTabContent #tab2Content>
+  <p>Olá Mundo</p>
+</ng-template>
+
+<ng-template matTabContent #tab3Content>
+  <app-tab-one></app-tab-one>
+</ng-template>
+
+<Tabs 
+  [defaultIndex]="currentTab"
+  [tabs]="[
+    { label: 'US', content: tab1Content, disabled: false },
+    { label: 'BR', content: tab2Content, disabled: false },
+    { label: 'CO', content: tab3Content, disabled: false }
+  ]"
+  (currentTabChange)="onCurrentTabChange($event)">
+</Tabs>
+<p>
+  Valor de saida: {{ currentTab }}
+</p>
+<button (click)="reset()">reset</button>
+  

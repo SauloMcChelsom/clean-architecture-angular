@@ -4,14 +4,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'SlideToggle',
-  template: `
-    <mat-slide-toggle 
-      [formControl]="formControl"
-      [color]="color"
-      (change)="onToggle($event.checked)">
-      {{ label }}
-    </mat-slide-toggle>
-  `,
+  templateUrl: './slide-toggle.component.html',
   styleUrls: ['./slide-toggle.component.scss'],
   standalone: true,
   imports: [MatSlideToggleModule, ReactiveFormsModule],
