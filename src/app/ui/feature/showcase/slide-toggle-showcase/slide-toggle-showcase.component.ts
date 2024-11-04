@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { SlideToggleComponent } from 'src/app/ui/components/slide-toggle/slide-toggle.component';
 
 @Component({
@@ -12,11 +13,26 @@ import { SlideToggleComponent } from 'src/app/ui/components/slide-toggle/slide-t
     SlideToggleComponent
   ]
 })
-export class SlideToggleShowcaseComponent implements OnInit {
+export class SlideToggleShowcaseComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  config = {
+    formControl:  new FormControl(true, Validators.requiredTrue)
   }
 
+  onToggleChange(value: boolean) {
+    console.log('Toggle State:', value);
+  }
+
+  @ViewChild(SlideToggleComponent) component!: SlideToggleComponent;
+  
+  reset(){
+    this.component.resetToInitialState()
+  }
+
+  disable(){
+    this.component.disable()
+  }
+  enable(){
+    this.component.enable()
+  }
 }

@@ -1,1 +1,13 @@
-<SlideToggle></SlideToggle>
+<div *ngIf="config">
+    <SlideToggle 
+    [formControl]="config.formControl"
+    label="Ativar recurso"
+    color="accent"
+    (toggleChange)="onToggleChange($event)">
+</SlideToggle>
+<p>
+    Valor de saida: {{ config.formControl.getRawValue() | json }} {{config.formControl.status}}
+  </p>
+  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+  
+</div>
