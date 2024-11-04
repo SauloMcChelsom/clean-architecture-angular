@@ -8,6 +8,10 @@ import { CardShowcaseComponent } from './card-showcase/card-showcase.component';
 import { RadioInputShowcaseComponent } from './radio-input-showcase/radio-input-showcase.component';
 import { MenuShowcaseComponent } from './menu-showcase/menu-showcase.component';
 import { CheckboxInputShowcaseComponent } from './checkbox-input-showcase/checkbox-input-showcase.component';
+import { ButtonToggleShowcaseComponent } from './button-toggle-showcase/button-toggle-showcase.component';
+import { ChipOptionShowcaseComponent } from './chip-option-showcase/chip-option-showcase.component';
+import { SlideToggleShowcaseComponent } from './slide-toggle-showcase/slide-toggle-showcase.component';
+import { TabsShowcaseComponent } from './tabs-showcase/tabs-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -23,7 +27,11 @@ import { CheckboxInputShowcaseComponent } from './checkbox-input-showcase/checkb
     CardShowcaseComponent,
     RadioInputShowcaseComponent,
     MenuShowcaseComponent,
-    CheckboxInputShowcaseComponent
+    CheckboxInputShowcaseComponent,
+    ButtonToggleShowcaseComponent,
+    ChipOptionShowcaseComponent,
+    SlideToggleShowcaseComponent,
+    TabsShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
