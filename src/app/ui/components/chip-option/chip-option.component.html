@@ -1,8 +1,12 @@
 <div class="container">
-  <mat-chip-listbox aria-label="Fish selection" class="matChipListbox">
-      <mat-chip-option>One fish</mat-chip-option>
-      <mat-chip-option>Two fish</mat-chip-option>
-      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-      <mat-chip-option color="warn">Warn fish</mat-chip-option>
-  </mat-chip-listbox>
-</div>
+  <mat-chip-listbox aria-label="Chip selection" class="matChipListbox" [disabled]="isDisabled">
+      <mat-chip-option *ngFor="let chip of chips"
+                       [color]="chip.color || 'primary'"
+                       [selected]="formControl.value?.includes(chip.cod)"
+                       [disabled]="chip.disabled"
+                       (selectionChange)="toggleSelection(chip.cod, $event)"
+                    >
+        {{ chip.label }}
+      </mat-chip-option>
+    </mat-chip-listbox>
+  </div>

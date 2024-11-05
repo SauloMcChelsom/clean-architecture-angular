@@ -1,1 +1,13 @@
-<ChipOption></ChipOption>
+
+<div *ngIf="config">
+    <ChipOption 
+        [chips]="chipList" 
+        [formControl]="config.formControl"
+        [isRequired]="true"
+        [isDisabled]="false"
+    ></ChipOption>
+    <p>
+        Valor de saida: {{config.formControl.getRawValue() | json}} {{config.formControl.status}}
+    </p>
+    <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+</div>
