@@ -84,5 +84,4 @@ export class ChipOptionComponent implements OnInit {
     this.formControl.markAsUntouched();
     this.formControl.updateValueAndValidity();
   }
-
 }

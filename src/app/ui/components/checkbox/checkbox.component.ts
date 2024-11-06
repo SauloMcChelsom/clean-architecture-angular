@@ -73,7 +73,6 @@ export class CheckboxComponent {
       const initialState = this.initialStates[key];
       const control = this.formControls[key];
 
-      // Resetar o valor e o estado de habilitado/desabilitado do checkbox
       control.setValue(initialState.value);
       initialState.disabled ? control.disable() : control.enable();
     });
