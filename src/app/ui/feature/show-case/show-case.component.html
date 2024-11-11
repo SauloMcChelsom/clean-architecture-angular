@@ -1,30 +1,6 @@
 <body class="mat-app-background">
 
 
-
-<div class="grid">
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <BottomSheet></BottomSheet>
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <DialogModal></DialogModal>
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          <ExpansionPanel></ExpansionPanel>
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <Icon></Icon>
-      </div>
-  </div>
-</div>
-
 <div class="grid">
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
       <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
@@ -43,7 +19,7 @@
   </div>
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
       <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <Drawer></Drawer>
+        <ExpansionPanel></ExpansionPanel>
       </div>
   </div>
 </div>
@@ -56,15 +32,18 @@
   </div>
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
       <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <SnackBarPosition></SnackBarPosition>
+        <Icon></Icon>
       </div>
   </div>
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-
+    <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+      <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.default"  class="mb-default"></Text>
+      <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.small"  class="mb-default"></Text>
+      <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.medium"  class="mb-default"></Text>
+  </div>
   </div>
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
       <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        <ButtonCancat icon="add" [spinner]="spinner" (onClick)="add()" ></ButtonCancat>
       </div>
   </div>
 </div>
@@ -86,11 +65,9 @@
       </div>
   </div>
   <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.default"  class="mb-default"></Text>
-          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.small"  class="mb-default"></Text>
-          <Text text="Texto simples para exemplificar" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.medium"  class="mb-default"></Text>
-      </div>
+    <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
+      <ButtonCancat icon="add" [spinner]="spinner" (onClick)="add()" ></ButtonCancat>
+    </div>
   </div>
 </div>
 
@@ -168,95 +145,4 @@
   </div>
 </div>
 
-<div class="grid">
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        
-      </div>
-  </div>
-</div>
-
-<div class="grid">
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        
-      </div>
-  </div>
-</div>
-
-<div class="grid">
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        
-      </div>
-  </div>
-</div>
-
-<div class="grid">
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-          
-      </div>
-  </div>
-  <div class="col-12 md:col-6 lg:col-3 py-3 p-0 md:p-1 lg:p-1">
-      <div class="box border-noround text-center m-0 md:m-1 lg:m-1">
-        
-      </div>
-  </div>
-</div>
 </body>

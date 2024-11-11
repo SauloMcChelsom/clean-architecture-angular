@@ -24,7 +24,7 @@ export interface DialogData {
     MatDialogModule,
   ],
 })
-export class DialogComponent{
+export class DialogModalComponent{
 
   animal!: string;
   name!: string;

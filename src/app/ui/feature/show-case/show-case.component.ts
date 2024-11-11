@@ -25,7 +25,7 @@ import { ChipOptionComponent } from '../../components/chip-option/chip-option.co
 import { SpinnerProgressComponent } from '../../components/spinner-progress/spinner-progress.component';
 import { SlideToggleComponent } from '../../components/slide-toggle/slide-toggle.component';
 import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet.component';
-import { DialogComponent } from '../../components/dialog/dialog.component';
+import { DialogModalComponent } from '../../components/dialog/dialog.component';
 import { ExpansionPanelComponent } from '../../components/expansion-panel/expansion-panel.component';
 import { IconComponent } from '../../components/icon/icon.component';
 import { PaginatorComponent } from '../../components/paginator/paginator.component';
@@ -73,7 +73,7 @@ import { SelectionModel } from '../../components/select-option/models';
     SpinnerProgressComponent,
     SlideToggleComponent,
     BottomSheetComponent,
-    DialogComponent,
+    DialogModalComponent,
     ExpansionPanelComponent,
     IconComponent,
     PaginatorComponent,

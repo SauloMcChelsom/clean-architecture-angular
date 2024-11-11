@@ -12,6 +12,14 @@ import { ButtonToggleShowcaseComponent } from './button-toggle-showcase/button-t
 import { ChipOptionShowcaseComponent } from './chip-option-showcase/chip-option-showcase.component';
 import { SlideToggleShowcaseComponent } from './slide-toggle-showcase/slide-toggle-showcase.component';
 import { TabsShowcaseComponent } from './tabs-showcase/tabs-showcase.component';
+import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet.component';
+import { DialogModalComponent } from '../../components/dialog/dialog.component';
+import { DrawerComponent } from '../../components/drawer/drawer.component';
+import { SnackBarPositionComponent } from '../../components/snack-bar-position/snack-bar-position.component';
+import { BottomSheetShowcaseComponent } from './bottom-sheet-showcase/bottom-sheet-showcase.component';
+import { SnackBarPositionShowcaseComponent } from './snack-bar-position-showcase/snack-bar-position-showcase.component';
+import { DrawerShowcaseComponent } from './drawer-showcase/drawer-showcase.component';
+import { DialogModalShowcaseComponent } from './dialog-modal-showcase/dialog-modal-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -31,7 +39,16 @@ import { TabsShowcaseComponent } from './tabs-showcase/tabs-showcase.component';
     ButtonToggleShowcaseComponent,
     ChipOptionShowcaseComponent,
     SlideToggleShowcaseComponent,
-    TabsShowcaseComponent
+    TabsShowcaseComponent,
+    BottomSheetComponent,
+    DialogModalComponent,
+    DrawerComponent,
+    SnackBarPositionComponent,
+    BottomSheetShowcaseComponent,
+    SnackBarPositionShowcaseComponent,
+    DrawerShowcaseComponent,
+    DialogModalShowcaseComponent,
+    BottomSheetShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
