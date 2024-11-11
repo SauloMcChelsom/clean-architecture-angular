@@ -14,9 +14,14 @@ import { ToggleOptionModel } from './models';
         [name]="groupName"
         [multiple]="multiple"
         (change)="onSelectionChange($event)">
-        <mat-button-toggle *ngFor="let option of options" [value]="option.value">
+        
+        <mat-button-toggle 
+          *ngFor="let option of options" 
+          [value]="option.value" 
+          [disabled]="option.disabled">
           {{ option.label }}
         </mat-button-toggle>
+        
       </mat-button-toggle-group>
   </div>
   `,
