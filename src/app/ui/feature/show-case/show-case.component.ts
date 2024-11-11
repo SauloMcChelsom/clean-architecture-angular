@@ -20,7 +20,7 @@ import { DateInputModule } from './date-input/date-input.module';
 import { RadioComponent } from '../../components/radio/radio.component';
 import { MenuComponent } from '../../components/menu/menu.component';
 import { CheckboxComponent } from '../../components/checkbox/checkbox.component';
-import { ButtonToggleComponent } from '../../components/button-toggle/button-toggle.component';
+import { ButtonToggleGroupComponent } from '../../components/button-toggle/button-toggle.component';
 import { ChipOptionComponent } from '../../components/chip-option/chip-option.component';
 import { SpinnerProgressComponent } from '../../components/spinner-progress/spinner-progress.component';
 import { SlideToggleComponent } from '../../components/slide-toggle/slide-toggle.component';
@@ -68,7 +68,7 @@ import { SelectionModel } from '../../components/select-option/models';
     RadioComponent,
     MenuComponent,
     CheckboxComponent,
-    ButtonToggleComponent,
+    ButtonToggleGroupComponent,
     ChipOptionComponent,
     SpinnerProgressComponent,
     SlideToggleComponent,
