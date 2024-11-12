@@ -5,16 +5,8 @@ import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetModule } from '@angular/material/b
 
 @Component({
   selector: 'BottomSheet',
-  template: `
-    <div class="bottom-sheet-container">
-      <ng-container *ngComponentOutlet="data.component"></ng-container>
-    </div>
-  `,
-  styles: [`
-    .bottom-sheet-container {
-      padding: 16px;
-    }
-  `],
+  templateUrl: './bottom-sheet.component.html',
+  styleUrls: ['./bottom-sheet.component.scss'],
   standalone: true,
   imports: [CommonModule, MatBottomSheetModule]
 })

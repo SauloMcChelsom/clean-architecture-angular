@@ -1,14 +1,13 @@
-import { Injectable, Type } from '@angular/core';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { BottomSheetComponent } from './bottom-sheet.component';
+import { Injectable, inject, Type } from '@angular/core';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Injectable({ providedIn: 'root' })
 export class BottomSheetService {
-  constructor(private bottomSheet: MatBottomSheet) { }
+  private bottomSheet = inject(MatBottomSheet);
 
-  openBottomSheet(component: Type<any>) {
-    this.bottomSheet.open(BottomSheetComponent, {
-      data: { component }
+  openBottomSheet<T>(component: Type<T>, data?: any): MatBottomSheetRef<T> {
+    return this.bottomSheet.open(component, {
+      data: data
     });
   }
 }

@@ -1,16 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, Inject } from '@angular/core';
+import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { BottomSheetComponent } from 'src/app/ui/components/bottom-sheet/bottom-sheet.component';
 import { BottomSheetService } from 'src/app/ui/components/bottom-sheet/bottom-sheet.service';
 
-
 @Component({
   selector: 'app-custom',
   template: `
-  <b> {{ nome }} </b>
+ <b> {{ data.nome }} </b>
   <mat-nav-list>
   <a mat-list-item (click)="openLink('Google Keep')">
     <span matListItemTitle>Google Keep</span>
@@ -42,12 +41,13 @@ import { BottomSheetService } from 'src/app/ui/components/bottom-sheet/bottom-sh
 })
 export class CustomComponent {
 
-  constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>) { }
-  @Input() nome!:string;
-  @Output() currentOpenLink = new EventEmitter<string>(); 
+  constructor(
+    private _bottomSheetRef: MatBottomSheetRef<CustomComponent>,
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { nome: string }
+  ) { }
 
   openLink(link: string): void {
-    this.currentOpenLink.emit(link)
+    this._bottomSheetRef.dismiss(link);
   }
 
   close(event: MouseEvent): void {
@@ -57,7 +57,7 @@ export class CustomComponent {
 }
 @Component({
   selector: 'app-bottom-sheet-showcase',
-  template: `<button mat-raised-button (click)="openBottomSheet()">Open BottomSheet</button>`,
+  templateUrl: './bottom-sheet-showcase.component.html',
   styleUrls: ['./bottom-sheet-showcase.component.scss'],
   standalone: true,
   imports: [
@@ -72,6 +72,12 @@ export class BottomSheetShowcaseComponent {
   constructor(private bottomSheetService: BottomSheetService) { }
 
   openBottomSheet() {
-    this.bottomSheetService.openBottomSheet(CustomComponent);
+    const bottomSheetRef = this.bottomSheetService.openBottomSheet(CustomComponent, { nome: 'Nome Exemplo' });
+
+    bottomSheetRef.afterDismissed().subscribe(result => {
+      if (result) {
+        console.log('Link selecionado:', result);
+      }
+    });
   }
 }
