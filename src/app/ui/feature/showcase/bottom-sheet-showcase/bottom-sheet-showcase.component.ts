@@ -54,6 +54,14 @@ export class CustomComponent {
     this._bottomSheetRef.dismiss();
     event.preventDefault();
   }
+
+  ngOnInit(){
+    console.log('ngOnInit')
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy')
+  }
 }
 @Component({
   selector: 'app-bottom-sheet-showcase',
