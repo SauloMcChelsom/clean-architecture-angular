@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -9,26 +9,23 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-/**
- * @title Snack-bar with configurable position
- */
 @Component({
   selector: 'SnackBarPosition',
-  templateUrl: './snack-bar-position.component.html',
+  template: ``,
   styleUrls: ['./snack-bar-position.component.scss'],
   standalone: true,
   imports: [MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule],
 })
 export class SnackBarPositionComponent {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  @Input() horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  @Input() verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   constructor(private _snackBar: MatSnackBar) {}
 
-  openSnackBar() {
-    this._snackBar.open('Cannonball!!', 'Splash', {
+  openSnackBar(message:string, action:string) {
+    this._snackBar.open(message, action, {
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
+      verticalPosition: this.verticalPosition
     });
   }
 }

@@ -1,1 +1,8 @@
 <SnackBarPosition></SnackBarPosition>
+<mat-form-field>
+    <mat-label>What's your name?</mat-label>
+    <input matInput [(ngModel)]="name">
+</mat-form-field>
+<br/>
+<button mat-raised-button (click)="openSnackBar()">Open SnackBar</button>
+<br/>
