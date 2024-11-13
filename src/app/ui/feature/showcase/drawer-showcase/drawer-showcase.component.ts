@@ -26,8 +26,6 @@ export class DrawerService {
       this.drawer.open();
       this.drawerContent.clear();
       const componentRef = this.drawerContent.createComponent(component);
-
-      // Atribui os dados ao componente dinâmico
       Object.assign(componentRef.instance, data);
     } else {
       console.error("Drawer ou DrawerContent não foram inicializados.");
@@ -43,18 +41,17 @@ export class DrawerService {
 @Component({
   selector: 'drawer',
   template: `
-    <mat-drawer-container [hasBackdrop]="true" style="height: 200px;">
-      <mat-drawer #drawer mode="over" [(opened)]="isOpen">
+    <mat-drawer-container [hasBackdrop]="true" class="hidden-container"
+     [ngClass]="{'full-screen-container': isOpen === true}">
+      <mat-drawer #drawer mode="side" [(opened)]="isOpen" (openedStart)="open()" class="full-screen-drawer">
         <ng-container #drawerContent></ng-container>
       </mat-drawer>
-      <mat-drawer-content>
-        <ng-content></ng-content>
-      </mat-drawer-content>
     </mat-drawer-container>
+    {{ isOpen }}
   `,
   styleUrls:['./drawer-showcase.component.scss'],
   standalone: true,
-  imports: [MatSidenavModule, MatFormFieldModule, MatSelectModule, MatButtonModule],
+  imports: [CommonModule, MatSidenavModule, MatFormFieldModule, MatSelectModule, MatButtonModule],
 })
 export class DrawerComponent implements OnInit {
   @ViewChild('drawer', { static: true }) drawer!: MatSidenav;
@@ -73,6 +70,10 @@ export class DrawerComponent implements OnInit {
 
   closeDrawer() {
     this.drawerService.close();
+  }
+
+  open(){
+    this.isOpen = true;
   }
 
   close() {
