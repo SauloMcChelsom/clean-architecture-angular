@@ -20,6 +20,10 @@ import { BottomSheetShowcaseComponent } from './bottom-sheet-showcase/bottom-she
 import { SnackBarPositionShowcaseComponent } from './snack-bar-position-showcase/snack-bar-position-showcase.component';
 import { DrawerShowcaseComponent } from './drawer-showcase/drawer-showcase.component';
 import { DialogModalShowcaseComponent } from './dialog-modal-showcase/dialog-modal-showcase.component';
+import { ButtonStrokedShowcaseComponent } from './button-stroked-showcase/button-stroked-showcase.component';
+import { ButtonRaisedShowcaseComponent } from './button-raised-showcase/button-raised-showcase.component';
+import { ButtonFlatShowcaseComponent } from './button-flat-showcase/button-flat-showcase.component';
+import { ButtonBasicShowcaseComponent } from './button-basic-showcase/button-basic-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -48,7 +52,11 @@ import { DialogModalShowcaseComponent } from './dialog-modal-showcase/dialog-mod
     SnackBarPositionShowcaseComponent,
     DrawerShowcaseComponent,
     DialogModalShowcaseComponent,
-    BottomSheetShowcaseComponent
+    BottomSheetShowcaseComponent,
+    ButtonStrokedShowcaseComponent,
+    ButtonRaisedShowcaseComponent,
+    ButtonFlatShowcaseComponent,
+    ButtonBasicShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
