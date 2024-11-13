@@ -1,135 +1,29 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, Input, Injectable, Type, ViewChild, ViewContainerRef, Output, EventEmitter, ComponentRef } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
+import { DrawerComponent } from 'src/app/ui/components/drawer/drawer.component';
+import { DrawerService } from 'src/app/ui/components/drawer/drawer.service';
+import { PageComponent } from './page/page.component';
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenav } from '@angular/material/sidenav';
-import { MatSidenavModule } from '@angular/material/sidenav';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class DrawerService {
-  private drawer?: MatSidenav;
-  private drawerContent?: ViewContainerRef;
-
-  setDrawer(drawer: MatSidenav, drawerContent: ViewContainerRef) {
-    this.drawer = drawer;
-    this.drawerContent = drawerContent;
-  }
-
-  open(component: Type<any>, data: { [key: string]: any } = {}) {
-    if (this.drawer && this.drawerContent) {
-      this.drawer.open();
-      this.drawerContent.clear();
-      const componentRef = this.drawerContent.createComponent(component);
-      Object.assign(componentRef.instance, data);
-    } else {
-      console.error("Drawer ou DrawerContent não foram inicializados.");
-    }
-  }
-
-  close() {
-    this.drawer?.close();
-    this.drawerContent?.clear();
-  }
-}
-
-@Component({
-  selector: 'drawer',
-  template: `
-    <mat-drawer-container [hasBackdrop]="true" class="hidden-container"
-     [ngClass]="{'full-screen-container': isOpen === true}">
-      <mat-drawer #drawer mode="side" [(opened)]="isOpen" (openedStart)="open()" class="full-screen-drawer">
-        <ng-container #drawerContent></ng-container>
-      </mat-drawer>
-    </mat-drawer-container>
-    {{ isOpen }}
-  `,
-  styleUrls:['./drawer-showcase.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MatSidenavModule, MatFormFieldModule, MatSelectModule, MatButtonModule],
-})
-export class DrawerComponent implements OnInit {
-  @ViewChild('drawer', { static: true }) drawer!: MatSidenav;
-  @ViewChild('drawerContent', { read: ViewContainerRef }) drawerContent!: ViewContainerRef;
-  isOpen = false;
-
-  constructor(private drawerService: DrawerService) {}
-
-  ngOnInit() {
-    this.drawerService.setDrawer(this.drawer, this.drawerContent);
-  }
-
-  ngAfterViewInit() {
-    this.drawerService.setDrawer(this.drawer, this.drawerContent);
-  }
-
-  closeDrawer() {
-    this.drawerService.close();
-  }
-
-  open(){
-    this.isOpen = true;
-  }
-
-  close() {
-    this.isOpen = false;
-  }
-}
-
-@Component({
-  selector: 'app-custom-drawer-content',
-  template: `
-    <h1 mat-dialog-title>Hi {{name}}</h1>
-    <div mat-dialog-content>
-      <p>What's your favorite animal?</p>
-      <mat-form-field>
-        <mat-label>Favorite Animal</mat-label>
-        <input matInput [(ngModel)]="animal">
-      </mat-form-field>
-    </div>
-    <button mat-button (click)="onSubmit()">Enviar</button>
-    <button mat-button (click)="onCancel()">Cancelar</button>
-  `,
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule]
-})
-export class CustomDrawerContentComponent {
-  @Input() name!: string;
-  @Input() animal!: string;
-
-  @Input() outputEmitter!: EventEmitter<string>;
-  @Input() onCancelEmitter!: EventEmitter<boolean>;
-
-  constructor(private drawerService: DrawerService) {}
-
-  onSubmit(): void {
-    if (this.outputEmitter) {
-      this.outputEmitter.emit(this.animal);
-    }
-  }
-
-  onCancel() {
-    this.drawerService.close();
-    this.onCancelEmitter.emit(true)
-  }
-}
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-drawer-showcase',
-  template: `
-    <drawer></drawer>
-    <button (click)="openDrawer()">Abrir Drawer</button>
-    <button (click)="closeDrawer()">Fechar Drawer</button>
-  `,
+  templateUrl: './drawer-showcase.component.html',
   standalone: true,
-  imports: [DrawerComponent]
+  imports: [
+    DrawerComponent,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    NgIf
+  ]
 })
 export class DrawerShowcaseComponent {
+  animal!: string;
+  name!: string;
   @ViewChild(DrawerComponent) component!: DrawerComponent;
 
   outputEmitter = new EventEmitter<string>();
@@ -137,18 +31,19 @@ export class DrawerShowcaseComponent {
 
   constructor(private drawerService: DrawerService) {
     this.outputEmitter.subscribe((value) => {
-      console.log('Evento recebido do componente dinâmico:', value);
+      this.animal = value;
+      this.closeDrawer()
     });
 
     this.onCancelEmitter.subscribe((value) => {
-      console.log('Evento recebido do componente dinâmico:', value);
+      this.closeDrawer()
     });
   }
 
   openDrawer() {
-    this.drawerService.open(CustomDrawerContentComponent, {
-      name: 'Saulo',
-      animal: 'Gato',
+    this.drawerService.open(PageComponent, {
+      name: this.name,
+      animal: this.animal,
       outputEmitter: this.outputEmitter,
       onCancelEmitter: this.onCancelEmitter
     });

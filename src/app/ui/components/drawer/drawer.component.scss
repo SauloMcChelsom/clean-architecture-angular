@@ -1,13 +1,24 @@
-.example-container {
-    width: 400px;
-    height: 200px;
-    margin: 12px;
-    border: 1px solid #555;
+.hidden-container {
+    width: 0px;
+    height: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
 }
 
-mat-drawer-content {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.full-screen-drawer {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.full-screen-container {
+    @extend .hidden-container;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #ffffff00;
 }

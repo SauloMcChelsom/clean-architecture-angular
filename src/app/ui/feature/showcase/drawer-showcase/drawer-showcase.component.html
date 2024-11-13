@@ -1,1 +1,11 @@
+<drawer></drawer>
+<mat-form-field>
+    <mat-label>What's your name?</mat-label>
+    <input matInput [(ngModel)]="name">
+</mat-form-field>
+<br/>
 <button mat-raised-button (click)="openDrawer()">Open Drawer</button>
+<br/>
+<div *ngIf="animal">
+    You chose: <em>{{animal}}</em>
+</div>
