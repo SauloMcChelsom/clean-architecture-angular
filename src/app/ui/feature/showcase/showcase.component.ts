@@ -24,6 +24,12 @@ import { ButtonStrokedShowcaseComponent } from './button-stroked-showcase/button
 import { ButtonRaisedShowcaseComponent } from './button-raised-showcase/button-raised-showcase.component';
 import { ButtonFlatShowcaseComponent } from './button-flat-showcase/button-flat-showcase.component';
 import { ButtonBasicShowcaseComponent } from './button-basic-showcase/button-basic-showcase.component';
+import { ButtonCancatShowcaseComponent } from './button-cancat-showcase/button-cancat-showcase.component';
+import { ButtonFabShowcaseComponent } from './button-fab-showcase/button-fab-showcase.component';
+import { ButtonIconShowcaseComponent } from './button-icon-showcase/button-icon-showcase.component';
+import { ButtonIconSpinnerShowcaseComponent } from './button-icon-spinner-showcase/button-icon-spinner-showcase.component';
+import { SliderShowcaseComponent } from './slider-showcase/slider-showcase.component';
+import { IconShowcaseComponent } from './icon-showcase/icon-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -56,7 +62,13 @@ import { ButtonBasicShowcaseComponent } from './button-basic-showcase/button-bas
     ButtonStrokedShowcaseComponent,
     ButtonRaisedShowcaseComponent,
     ButtonFlatShowcaseComponent,
-    ButtonBasicShowcaseComponent
+    ButtonBasicShowcaseComponent,
+    ButtonCancatShowcaseComponent,
+    ButtonFabShowcaseComponent,
+    ButtonIconShowcaseComponent,
+    ButtonIconSpinnerShowcaseComponent,
+    SliderShowcaseComponent,
+    IconShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {

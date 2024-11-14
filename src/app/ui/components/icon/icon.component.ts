@@ -1,17 +1,24 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
+import { IconSizes } from './models';
+import { CommonModule } from '@angular/common';
 
-/**
- * @title Basic icons
- */
 @Component({
   selector: 'Icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
   standalone: true,
-  imports: [MatIconModule],
+  imports: [CommonModule, MatIconModule],
 })
 export class IconComponent {
-  size!:number;
-  color!:string;
+  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  @Input() fontIcon: string = '';
+  @Input() color!: string;
+  @Input() ariaLabel:string =''
+  @Input() size: IconSizes = IconSizes.MEDIUM;
+  IconSizes=IconSizes;
+  
+  onClickEvent() {
+    this.onClick.emit();
+  }
 }

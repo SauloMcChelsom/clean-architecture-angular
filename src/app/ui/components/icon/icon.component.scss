@@ -1,0 +1,18 @@
+$small-size: 16px;
+$medium-size: 24px;
+$large-size: 36px;
+
+.small {
+    height: $small-size;
+    width: $small-size;
+}
+
+.medium {
+    height: $medium-size;
+    width: $medium-size;
+}
+
+.large {
+  height: $large-size;
+  width: $large-size;
+}

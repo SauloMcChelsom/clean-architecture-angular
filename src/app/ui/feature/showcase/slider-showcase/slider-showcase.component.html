@@ -1,0 +1,14 @@
+<Slider 
+    [formControl]="sliderControl" 
+    [min]="0" 
+    [max]="100" 
+    [step]="10"
+    [isRequired]="true"
+    [initialValue]="30"
+></Slider>
+
+  <p>
+    Valor de saida: {{ sliderControl.getRawValue() | json }} {{ sliderControl.status }}
+  </p>
+  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+  
