@@ -1,1 +1,7 @@
-<Paginator></Paginator>
+<Paginator
+    [totalItems]="items.length"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    [pagesToShow]="3"
+    (pageChange)="onPageChange($event)"
+></Paginator>

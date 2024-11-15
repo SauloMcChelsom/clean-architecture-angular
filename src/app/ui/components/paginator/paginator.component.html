@@ -1,5 +1,19 @@
-<mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-</mat-paginator>
+<div class="paginator">
+  <button mat-icon-button (click)="goToPrevious()" [disabled]="currentPage === 1">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <ng-container *ngFor="let page of visiblePages">
+    <button mat-flat-button color="primary" (click)="goToPage(page)" *ngIf="page === currentPage">
+      <b>{{ page }}</b>
+    </button>
+
+    <button mat-button color="primary" (click)="goToPage(page)" *ngIf="page !== currentPage">
+      <b>{{ page }}</b>
+    </button>
+  </ng-container>
+
+  <button mat-icon-button (click)="goToNext()" [disabled]="currentPage === totalPages">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

@@ -28,9 +28,7 @@ import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet
 import { DialogModalComponent } from '../../components/dialog/dialog.component';
 import { ExpansionPanelComponent } from '../../components/expansion-panel/expansion-panel.component';
 import { IconComponent } from '../../components/icon/icon.component';
-import { PaginatorComponent } from '../../components/paginator/paginator.component';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
-import { SpinnerComponent } from '../../components/spinner/spinner.component';
 import { DrawerComponent } from '../../components/drawer/drawer.component';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { SnackBarPositionComponent } from '../../components/snack-bar-position/snack-bar-position.component';
@@ -76,9 +74,7 @@ import { SelectionModel } from '../../components/select-option/models';
     DialogModalComponent,
     ExpansionPanelComponent,
     IconComponent,
-    PaginatorComponent,
     ProgressBarComponent,
-    SpinnerComponent,
     DrawerComponent,
     SliderComponent,
     SnackBarPositionComponent,

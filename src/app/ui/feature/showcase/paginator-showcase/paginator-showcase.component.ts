@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { PaginatorComponent } from 'src/app/ui/components/paginator/paginator.component';
 
 @Component({
@@ -9,14 +12,20 @@ import { PaginatorComponent } from 'src/app/ui/components/paginator/paginator.co
   standalone: true,
   imports:[
     CommonModule,
-    PaginatorComponent
+    PaginatorComponent,
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule
   ]
 })
-export class PaginatorShowcaseComponent implements OnInit {
+export class PaginatorShowcaseComponent {
 
-  constructor() { }
+  items = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília', 'Fortaleza'];
+  itemsPerPage = 2;
+  currentPage = 1;
+  pagesToShow = 3;
 
-  ngOnInit() {
+  onPageChange(page: number): void {
+    console.log('Current page:', page);
   }
-
 }
