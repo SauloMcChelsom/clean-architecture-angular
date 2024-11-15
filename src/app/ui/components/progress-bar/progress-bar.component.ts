@@ -1,15 +1,29 @@
-
-import {Component} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {Component, Input} from '@angular/core';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
-/**
- * @title Determinate progress-bar
- */
+
+export enum ProgressBarModeEnum {
+  INDETERMINATE = 'indeterminate',
+  DETERMINATE = 'determinate',
+  QUERY = 'query',
+  BUFFER = 'buffer'
+}
+
 @Component({
   selector: 'ProgressBar',
-  templateUrl: './progress-bar.component.html',
+  template: `
+  <mat-progress-bar [mode]="mode"  [value]="percentage" [bufferValue]='bufferValue'></mat-progress-bar>
+  `,
   styleUrls: ['./progress-bar.component.scss'],
   standalone: true,
-  imports: [MatProgressBarModule],
+  imports: [
+    CommonModule,
+    MatProgressBarModule
+  ],
 })
-export class ProgressBarComponent {}
+export class ProgressBarComponent {
+  @Input() mode:ProgressBarModeEnum = ProgressBarModeEnum.DETERMINATE;
+  @Input() percentage:number = 0;
+  @Input() bufferValue:number = 0;
+}

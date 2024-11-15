@@ -1,1 +1,31 @@
-<ProgressBar></ProgressBar>
+<ProgressBar
+    [mode]="mode" 
+    [percentage]='progress.current' 
+    [bufferValue]='progress.buffer'
+></ProgressBar>
+<br />
+<button (click)="determinate()">
+    <Icon fontIcon="linear_scale"></Icon>
+</button>
+<button (click)="indeterminate()">
+    <Icon fontIcon="sync"></Icon>
+</button>
+<button (click)="query()">
+    <Icon fontIcon="search"></Icon>
+</button>
+<button (click)="buffer()">
+    <Icon fontIcon="more_horiz"></Icon>
+</button>
+
+
+<br />
+<button (click)="decrementProgress()">
+    <Icon fontIcon="remove"></Icon>
+</button>
+&nbsp;&nbsp;&nbsp;
+<button (click)="incrementProgress()">
+    <Icon fontIcon="add"></Icon>
+</button>
+<p>
+    Valor de saida: {{ progress.current }}
+</p>
