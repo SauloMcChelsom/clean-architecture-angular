@@ -4,19 +4,7 @@ import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'Slider',
-  template: `
-    <mat-slider
-      [min]="min"
-      [max]="max"
-      [step]="step"
-      [disabled]="isDisabled"
-      showTickMarks
-      discrete
-      [displayWith]="formatLabel"
-    >
-      <input matSliderThumb [formControl]="formControl">
-    </mat-slider>
-  `,
+  templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
   standalone: true,
   imports: [MatSliderModule, ReactiveFormsModule],

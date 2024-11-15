@@ -1,0 +1,17 @@
+<SpinnerSteps 
+    [title]="title" 
+    [subtitle]="subtitle" 
+    [currentStep]="currentStep" 
+    [totalSteps]="totalSteps"
+></SpinnerSteps>
+<br />
+<button (click)="decrement()">
+    <Icon fontIcon="remove"></Icon>
+</button>
+&nbsp;&nbsp;&nbsp;
+<button (click)="increment()">
+    <Icon fontIcon="add"></Icon>
+</button>
+<p>
+    Valor de saida: {{ currentStep }}
+</p>
