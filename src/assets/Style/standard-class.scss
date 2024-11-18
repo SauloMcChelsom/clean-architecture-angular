@@ -23,7 +23,7 @@
   height: 100vh;
 }
 
-.title-small {
+.text-small {
   font-size: var(--body-font-size-default);
   font-family: $font-family-Roboto;
   font-weight: var(--body-font-weight-100);
@@ -32,7 +32,7 @@
 }
 
 
-.title-default {
+.text-default {
   font-size: var(--body-font-size-default);
   font-family: $font-family-Roboto;
   font-weight: var(--body-font-weight-bolder);
@@ -40,7 +40,7 @@
   line-height: var(--body-line-height);
 }
 
-.title-medium {
+.text-medium {
   font-size: var(--body-font-size-medium);
   font-family: $font-family-Roboto;
   font-weight: var(--body-font-weight-500);
@@ -48,7 +48,7 @@
   line-height: var(--body-line-height);
 }
 
-.title-large {
+.text-large {
   font-size: var(--body-font-size-big);
   font-family: $font-family-Roboto;
   font-weight: var(--body-font-weight-bolder);
@@ -56,7 +56,7 @@
   line-height: var(--body-line-height);
 }
 
-.title-large-big {
+.text-large-big {
   font-size: var(--body-font-size-xbig);
   font-family: $font-family-Roboto;
   font-weight: var(--body-font-weight-bolder);
@@ -64,7 +64,7 @@
   line-height: var(--body-line-height);
 }
 
-.title-large-huge {
+.text-large-huge {
   font-size: var(--body-font-size-huge);
   font-family: $font-family-comfortaa;
   font-weight: var(--body-font-weight-bolder);

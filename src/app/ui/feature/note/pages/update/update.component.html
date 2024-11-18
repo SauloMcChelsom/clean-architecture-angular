@@ -3,13 +3,13 @@
   <body class="mat-typography mat-app-background">
     <div class="ml-small mr-small">
       <div class="container-box">
-        <NavBar>
+        <NavBarItens>
           <ButtonCancat  icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
-          <div center class="flex align-items-center justify-content-center title-medium">
+          <div center class="flex align-items-center justify-content-center text-medium">
             {{ 'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate }}
          </div>
           <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()" [ariaLabel]="'NOTE.LABEL_UPDATE_THIS_NOTE' | translate"></ButtonCancat>
-        </NavBar>
+        </NavBarItens>
         <div class="pb-xmedium">
           <Inputs
             [ariaLabel]="config_title.title!"    

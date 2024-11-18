@@ -8,13 +8,13 @@
   </SnackBar>
   <div class="container-box">
     <div class="ml-small mr-small">
-      <NavBar>
+      <NavBarItens>
         <ButtonCancat icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
-        <div center class="flex flex align-items-center justify-content-center title-default">
+        <div center class="flex flex align-items-center justify-content-center text-default">
           {{ 'NOTE.SUBTITLE_ADD_NEW_NOTE' | translate }}
         </div>
         <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()" [ariaLabelSpinner]="'NOTE.BUTTON_SAVING' | translate"  [ariaLabel]="'NOTE.PAGE_ADD' | translate"></ButtonCancat>
-      </NavBar>
+      </NavBarItens>
       <div class="pb-xmedium">
         <Inputs  
           [ariaLabel]="config_title.title!"    

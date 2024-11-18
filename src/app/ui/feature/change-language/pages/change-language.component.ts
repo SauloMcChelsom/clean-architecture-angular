@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ListLanguageComponent } from '../components/list-language.component';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
-import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
+import { NavBarItensComponent } from 'src/app/ui/components/nav-bar/nav-bar-itens.component';
+import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ListLanguageComponent } from '../components/list-language.component';
 
 @Component({
   selector: 'app-change-language',
@@ -15,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     TranslateModule,
     ListLanguageComponent,
-    NavBarComponent,
+    NavBarItensComponent,
     ButtonCancatComponent
   ]
 })

@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { NoteEntity } from 'src/app/domain/entities/note.entity';
 import { DeleteNoteUseCase, FindNoteByLinkUseCase } from 'src/app/domain/usecases/note/note_usecase';
 import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
 import { InputComponent } from 'src/app/ui/components/input/input.component';
-import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
+import { NavBarItensComponent } from 'src/app/ui/components/nav-bar/nav-bar-itens.component';
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -22,7 +22,7 @@ import { TranslateModule } from '@ngx-translate/core';
     SnackBarComponent,
     TextareaComponent,
     InputComponent,
-    NavBarComponent,
+    NavBarItensComponent,
     ButtonCancatComponent
 ]
 })

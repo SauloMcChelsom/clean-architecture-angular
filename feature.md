@@ -74,7 +74,7 @@
 
 # [ok] refatora Titlesemple para Text
   1 - implementar esse funcionalidade
-  2 - tag, texto, aceaibilida class-title-small 
+  2 - tag, texto, aceaibilida class-text-small 
 
 # Desafio
   1 - Implementar uma estrutura de arvores que permite enxertar componentes em nodes, e busca-lo atraves de controles.
