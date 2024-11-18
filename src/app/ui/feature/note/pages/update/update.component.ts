@@ -11,7 +11,6 @@ import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-
 import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
-import { Flex, Tag, TextComponent, Title } from 'src/app/ui/components/text/text.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
@@ -28,7 +27,6 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    TextComponent,
     ButtonCancatComponent
 ]
 })
@@ -46,9 +44,6 @@ export class PageUpdateComponent implements OnInit {
   protected ROOT = ROUTER_LINKS.ROOT;
   private titleLink:string = '';
   private charactersLong = 5;
-  Tag=Tag
-  Flex=Flex
-  Title=Title
   
     constructor(
       private fb: FormBuilder,

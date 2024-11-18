@@ -9,7 +9,6 @@ import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AutofocusDirective } from 'src/app/ui/directives/autofocus.directive';
@@ -26,7 +25,6 @@ import { AutofocusDirective } from 'src/app/ui/directives/autofocus.directive';
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    TextComponent,
     ButtonCancatComponent
   ]
 })
@@ -40,9 +38,7 @@ export class PageAddComponent implements OnInit {
   protected spinner: boolean = false;
   ROOT = ROUTER_LINKS.ROOT;
   private charactersLong = 5;
-  Tag=Tag;
-  Flex=Flex;
-  Title=Title;
+
 
   constructor(
     private fb: FormBuilder,

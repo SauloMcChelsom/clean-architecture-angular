@@ -7,17 +7,23 @@
         <ButtonCancat icon="edit" right  (onClick)="edit()" [ariaLabel]="'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate"></ButtonCancat>
       </NavBar>
       <div [attr.aria-label]="'NOTE.LABEL_NAME_TITLE_NOTE' | translate" tabindex="0">
-        <Text [text]="note.title" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.default"  class="mb-default"></Text>
+        <div class="flex justify-content-start title-default mb-default">
+          {{ note.title }}
+        </div>
       </div>
       <div [attr.aria-label]="'NOTE.LABEL_NAME_DESCRIPTION_NOTE' | translate" tabindex="0">
-        <Text [text]="note.text" [tag]="Tag.div" [flex]="Flex.justifyContentStart" [title]="Title.small"></Text>
+        <div class="flex justify-content-start title-small">
+          {{ note.text }}
+        </div>
       </div>
     </div>
   </div>
 </body>
 
 <div *ngIf="isReady == false && isErr == true" class="mat-typography mat-app-background container-box">
-  <Text [text]="textErr" [tag]="Tag.h1" [flex]="Flex.justifyContentStart" [title]="Title.small"></Text>
+  <h1 class="flex justify-content-start title-small">
+    {{ textErr }}
+ </h1>
 </div>
 
 <div *ngIf="isReady == false && isErr == false && isLoad == true" class="mat-typography mat-app-background container-box">

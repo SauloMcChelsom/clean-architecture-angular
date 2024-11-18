@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { ExpansionPanelComponent } from 'src/app/ui/components/expansion-panel/expansion-panel.component';
 
 @Component({
@@ -9,7 +10,8 @@ import { ExpansionPanelComponent } from 'src/app/ui/components/expansion-panel/e
   standalone: true,
   imports:[
     CommonModule,
-    ExpansionPanelComponent
+    ExpansionPanelComponent,
+    MatIconModule
   ]
 })
 export class ExpansionPanelShowcaseComponent implements OnInit {

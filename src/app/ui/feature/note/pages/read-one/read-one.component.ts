@@ -8,9 +8,7 @@ import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarComponent } from 'src/app/ui/components/nav-bar/nav-bar.component';
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { Flex, Tag, Title, TextComponent } from 'src/app/ui/components/text/text.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
-import { IS_EMAIL_ALREADY } from 'src/config/endpoints/endpoint';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -25,8 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
     TextareaComponent,
     InputComponent,
     NavBarComponent,
-    ButtonCancatComponent,
-    TextComponent
+    ButtonCancatComponent
 ]
 })
 export class PageReadOneComponent implements OnInit {
@@ -36,10 +33,7 @@ export class PageReadOneComponent implements OnInit {
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
   protected textErr:string = '';
-  ROOT = ROUTER_LINKS.ROOT
-  Tag=Tag;
-  Flex=Flex;
-  Title=Title;
+  ROOT = ROUTER_LINKS.ROOT;
 
   constructor(
     private findNoteByLink: FindNoteByLinkUseCase,

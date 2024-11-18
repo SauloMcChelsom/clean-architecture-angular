@@ -5,7 +5,9 @@
       <div class="container-box">
         <NavBar>
           <ButtonCancat  icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
-          <Text center [text]="'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default" [ariaLabel]="'NOTE.SCREEN_UPDATE_NOTE' | translate"></Text>
+          <div center class="flex align-items-center justify-content-center title-medium">
+            {{ 'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate }}
+         </div>
           <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()" [ariaLabel]="'NOTE.LABEL_UPDATE_THIS_NOTE' | translate"></ButtonCancat>
         </NavBar>
         <div class="pb-xmedium">

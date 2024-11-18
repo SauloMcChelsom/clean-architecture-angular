@@ -10,7 +10,9 @@
     <div class="ml-small mr-small">
       <NavBar>
         <ButtonCancat icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
-        <Text center [text]="'NOTE.SUBTITLE_ADD_NEW_NOTE' | translate" [tag]="Tag.div" [flex]="Flex.centerAndcenter" [title]="Title.default"></Text>
+        <div center class="flex flex align-items-center justify-content-center title-default">
+          {{ 'NOTE.SUBTITLE_ADD_NEW_NOTE' | translate }}
+        </div>
         <ButtonCancat icon="add" right [spinner]="spinner" (onClick)="add()" [ariaLabelSpinner]="'NOTE.BUTTON_SAVING' | translate"  [ariaLabel]="'NOTE.PAGE_ADD' | translate"></ButtonCancat>
       </NavBar>
       <div class="pb-xmedium">

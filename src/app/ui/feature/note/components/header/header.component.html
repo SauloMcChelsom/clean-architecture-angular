@@ -1,16 +1,7 @@
-<Text 
-    [text]="'NOTE.HOME.TITLE' | translate" 
-    [tag]="Tag.p" 
-    [flex]="Flex.centerAndcenter" 
-    [title]="Title.large" 
-    class="primary-300 mb-default mt-default"
->
-</Text>
-<Text 
-    [text]="'NOTE.HOME.SUBTITLE' | translate:{ NUM_FOLDER: folderCount, NUM_NOTE: noteCount }" 
-    [tag]="Tag.p" 
-    [flex]="Flex.centerAndcenter" 
-    [title]="Title.medium" 
-    class="primary-400 mb-default theme-dark-color-black-100"
->
-</Text>
+<p  class="flex flex align-items-center justify-content-center title-large primary-300 mb-default mt-default">
+    {{ 'NOTE.HOME.TITLE' | translate }}
+</p>
+
+<p  class="flex flex align-items-center justify-content-center title-medium primary-400 mb-default theme-dark-color-black-100">
+    {{ 'NOTE.HOME.SUBTITLE' | translate:{ NUM_FOLDER: folderCount, NUM_NOTE: noteCount } }}
+</p>

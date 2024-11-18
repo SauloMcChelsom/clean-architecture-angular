@@ -2,12 +2,12 @@
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Self aware panel
+        <ng-content select="[title]"></ng-content>
       </mat-panel-title>
       <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        <ng-content select="[description]"></ng-content>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <ng-content select="[content]"></ng-content>
   </mat-expansion-panel>
 </mat-accordion>

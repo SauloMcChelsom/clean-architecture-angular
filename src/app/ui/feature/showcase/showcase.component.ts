@@ -34,6 +34,9 @@ import { SpinnerShowcaseComponent } from './spinner-showcase/spinner-showcase.co
 import { ProgressBarShowcaseComponent } from './progress-bar-showcase/progress-bar-showcase.component';
 import { PaginatorShowcaseComponent } from './paginator-showcase/paginator-showcase.component';
 import { ExpansionPanelShowcaseComponent } from './expansion-panel-showcase/expansion-panel-showcase.component';
+import { TextShowcaseComponent } from './text-showcase/text-showcase.component';
+import { SnackBarAlertStaticShowcaseComponent } from './snack-bar-alert-static-showcase/snack-bar-alert-static-showcase.component';
+import { NavBarItensShowcaseComponent } from './nav-bar-itens-showcase/nav-bar-itens-showcase.component';
 
 @Component({
   selector: 'app-showcase',
@@ -76,7 +79,10 @@ import { ExpansionPanelShowcaseComponent } from './expansion-panel-showcase/expa
     SpinnerShowcaseComponent,
     ProgressBarShowcaseComponent,
     PaginatorShowcaseComponent,
-    ExpansionPanelShowcaseComponent
+    ExpansionPanelShowcaseComponent,
+    TextShowcaseComponent,
+    SnackBarAlertStaticShowcaseComponent,
+    NavBarItensShowcaseComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {

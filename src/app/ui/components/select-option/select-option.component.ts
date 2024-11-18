@@ -4,7 +4,6 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { TextComponent } from '../text/text.component';
 import { SelectionModel } from './models';
 
 @Component({
@@ -15,12 +14,10 @@ import { SelectionModel } from './models';
   imports: [
     MatSelectModule,
     MatFormFieldModule,
-    MatSelectModule,
     NgFor,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule,
-    TextComponent,
+    ReactiveFormsModule
   ],
 })
 export class SelectOptionComponent implements OnInit {
