@@ -1,0 +1,31 @@
+@import 'breakpoints.scss';
+
+.mat-drawer {
+    width: 20%;
+}
+
+@media (max-width: $tablet) {
+    .mat-drawer {
+        width: 50%;
+    }
+}
+
+.space-between {
+    display: flex; 
+    justify-content:space-between;
+}
+
+.center {
+    display: flex; 
+    align-items: center;
+}
+
+.nowrap-center {
+    display: flex; flex-wrap: nowrap; align-items: center;
+}
+
+.height-drawer-content {
+    height: calc(100vh - 100px); 
+    z-index: 50; 
+    padding: 16px;
+}

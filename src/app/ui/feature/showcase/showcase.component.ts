@@ -1,42 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { SelectOptionShowcaseComponent } from './select-option-showcase/select-option-showcase.component';
-import { DateInputShowcaseComponent } from './date-input-showcase/date-input-showcase.component';
-import { TextInputShowcaseComponent } from './text-input-showcase/text-input-showcase.component';
-import { TextareasInputShowcaseComponent } from './textareas-input-showcase/textareas-input-showcase.component';
-import { CardShowcaseComponent } from './card-showcase/card-showcase.component';
-import { RadioInputShowcaseComponent } from './radio-input-showcase/radio-input-showcase.component';
-import { MenuShowcaseComponent } from './menu-showcase/menu-showcase.component';
-import { CheckboxInputShowcaseComponent } from './checkbox-input-showcase/checkbox-input-showcase.component';
-import { ButtonToggleShowcaseComponent } from './button-toggle-showcase/button-toggle-showcase.component';
-import { ChipOptionShowcaseComponent } from './chip-option-showcase/chip-option-showcase.component';
-import { SlideToggleShowcaseComponent } from './slide-toggle-showcase/slide-toggle-showcase.component';
-import { TabsShowcaseComponent } from './tabs-showcase/tabs-showcase.component';
-import { BottomSheetComponent } from '../../components/bottom-sheet/bottom-sheet.component';
-import { DialogModalComponent } from '../../components/dialog/dialog.component';
-import { DrawerComponent } from '../../components/drawer/drawer.component';
-import { SnackBarPositionComponent } from '../../components/snack-bar-position/snack-bar-position.component';
-import { BottomSheetShowcaseComponent } from './bottom-sheet-showcase/bottom-sheet-showcase.component';
-import { SnackBarPositionShowcaseComponent } from './snack-bar-position-showcase/snack-bar-position-showcase.component';
-import { DrawerShowcaseComponent } from './drawer-showcase/drawer-showcase.component';
-import { DialogModalShowcaseComponent } from './dialog-modal-showcase/dialog-modal-showcase.component';
-import { ButtonStrokedShowcaseComponent } from './button-stroked-showcase/button-stroked-showcase.component';
-import { ButtonRaisedShowcaseComponent } from './button-raised-showcase/button-raised-showcase.component';
-import { ButtonFlatShowcaseComponent } from './button-flat-showcase/button-flat-showcase.component';
-import { ButtonBasicShowcaseComponent } from './button-basic-showcase/button-basic-showcase.component';
-import { ButtonCancatShowcaseComponent } from './button-cancat-showcase/button-cancat-showcase.component';
-import { ButtonFabShowcaseComponent } from './button-fab-showcase/button-fab-showcase.component';
-import { ButtonIconShowcaseComponent } from './button-icon-showcase/button-icon-showcase.component';
-import { ButtonIconSpinnerShowcaseComponent } from './button-icon-spinner-showcase/button-icon-spinner-showcase.component';
-import { SliderShowcaseComponent } from './slider-showcase/slider-showcase.component';
-import { IconShowcaseComponent } from './icon-showcase/icon-showcase.component';
-import { SpinnerShowcaseComponent } from './spinner-showcase/spinner-showcase.component';
-import { ProgressBarShowcaseComponent } from './progress-bar-showcase/progress-bar-showcase.component';
-import { PaginatorShowcaseComponent } from './paginator-showcase/paginator-showcase.component';
-import { ExpansionPanelShowcaseComponent } from './expansion-panel-showcase/expansion-panel-showcase.component';
-import { TextShowcaseComponent } from './text-showcase/text-showcase.component';
-import { SnackBarAlertStaticShowcaseComponent } from './snack-bar-alert-static-showcase/snack-bar-alert-static-showcase.component';
-import { NavBarItensShowcaseComponent } from './nav-bar-itens-showcase/nav-bar-itens-showcase.component';
+import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
+import { ButtonIconComponent } from '../../components/button-icon/button-icon.component';
+import { ItemButtonMenuComponent } from '../../components/list-item/item-button-menu/item-button-menu.component';
+import { ItemCoolComponent } from '../../components/list-item/item-cool/item-cool.component';
+import { NavListColumnComponent } from '../../components/list-item/nav-list-column/nav-list-column.component';
+import { NavListRowComponent } from '../../components/list-item/nav-list-row/nav-list-row.component';
 
 @Component({
   selector: 'app-showcase',
@@ -45,47 +22,235 @@ import { NavBarItensShowcaseComponent } from './nav-bar-itens-showcase/nav-bar-i
   standalone: true,
   imports: [
     CommonModule,
-    SelectOptionShowcaseComponent,
-    DateInputShowcaseComponent,
-    TextInputShowcaseComponent,
-    TextareasInputShowcaseComponent,
-    CardShowcaseComponent,
-    RadioInputShowcaseComponent,
-    MenuShowcaseComponent,
-    CheckboxInputShowcaseComponent,
-    ButtonToggleShowcaseComponent,
-    ChipOptionShowcaseComponent,
-    SlideToggleShowcaseComponent,
-    TabsShowcaseComponent,
-    BottomSheetComponent,
-    DialogModalComponent,
-    DrawerComponent,
-    SnackBarPositionComponent,
-    BottomSheetShowcaseComponent,
-    SnackBarPositionShowcaseComponent,
-    DrawerShowcaseComponent,
-    DialogModalShowcaseComponent,
-    BottomSheetShowcaseComponent,
-    ButtonStrokedShowcaseComponent,
-    ButtonRaisedShowcaseComponent,
-    ButtonFlatShowcaseComponent,
-    ButtonBasicShowcaseComponent,
-    ButtonCancatShowcaseComponent,
-    ButtonFabShowcaseComponent,
-    ButtonIconShowcaseComponent,
-    ButtonIconSpinnerShowcaseComponent,
-    SliderShowcaseComponent,
-    IconShowcaseComponent,
-    SpinnerShowcaseComponent,
-    ProgressBarShowcaseComponent,
-    PaginatorShowcaseComponent,
-    ExpansionPanelShowcaseComponent,
-    TextShowcaseComponent,
-    SnackBarAlertStaticShowcaseComponent,
-    NavBarItensShowcaseComponent
+    NavListRowComponent,
+    RouterModule,
+    MatToolbarModule,
+    MatSidenavModule, 
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatButtonModule,
+    ItemCoolComponent,
+    MatIconModule,
+    MatButtonModule,
+    ButtonIconComponent,
+    NavListColumnComponent,
+    MatListModule,
+    ItemButtonMenuComponent
   ]
 })
 export class ShowcaseComponent implements OnInit {
-  constructor() { }
-  ngOnInit() { }
+
+  @ViewChild('drawer', { static: true }) public sidenav!: MatSidenav;
+
+  public currentRoute: string = '';
+
+  public themeType = 'light';
+
+  public menus:any[] = [];
+
+  public typeMenu = 'Home';
+
+  public toggleDisable = false;
+
+
+  public menusComponent = [
+    {
+      routerLink: '/showcase/components/bottom-sheet',
+      text: 'Bottom Sheet'
+    },
+    {
+      routerLink: '/showcase/components/drawer',
+      text: 'Drawer'
+    },
+    {
+      routerLink: '/showcase/components/select-option',
+      text: 'Select Option'
+    },
+    {
+      routerLink: '/showcase/components/date-input',
+      text: 'Date Input'
+    },
+    {
+      routerLink: '/showcase/components/text-input',
+      text: 'Text Input'
+    },
+    {
+      routerLink: '/showcase/components/textareas-input',
+      text: 'Textareas Input'
+    },
+    {
+      routerLink: '/showcase/components/card',
+      text: 'Card'
+    },
+    {
+      routerLink: '/showcase/components/radio-input',
+      text: 'Radio Input'
+    },
+    {
+      routerLink: '/showcase/components/menu',
+      text: 'Menu'
+    },
+    {
+      routerLink: '/showcase/components/checkbox-input',
+      text: 'Checkbox Input'
+    },
+    {
+      routerLink: '/showcase/components/button-toggle',
+      text: 'Button Toggle'
+    },
+    {
+      routerLink: '/showcase/components/chip-option',
+      text: 'Chip Option'
+    },
+    {
+      routerLink: '/showcase/components/slide-toggle',
+      text: 'Slide Toggle'
+    },
+    {
+      routerLink: '/showcase/components/tabs',
+      text: 'Tabs'
+    },
+    {
+      routerLink: '/showcase/components/dialog-modal',
+      text: 'Dialog Modal'
+    },
+    {
+      routerLink: '/showcase/components/snack-bar-position',
+      text: 'Snack Bar Position'
+    },
+    {
+      routerLink: '/showcase/components/button-stroked',
+      text: 'Button Stroked'
+    },
+    {
+      routerLink: '/showcase/components/button-raised',
+      text: 'Button Raised'
+    },
+    {
+      routerLink: '/showcase/components/button-flat',
+      text: 'Button Flat'
+    },
+    {
+      routerLink: '/showcase/components/button-basic',
+      text: 'Button Basic'
+    },
+    {
+      routerLink: '/showcase/components/button-cancat',
+      text: 'Button Cancat'
+    },
+    {
+      routerLink: '/showcase/components/button-fab',
+      text: 'Button FAB'
+    },
+    {
+      routerLink: '/showcase/components/button-icon',
+      text: 'Button Icon'
+    },
+    {
+      routerLink: '/showcase/components/button-icon-spinner',
+      text: 'Button Icon Spinner'
+    },
+    {
+      routerLink: '/showcase/components/slider',
+      text: 'Slider'
+    },
+    {
+      routerLink: '/showcase/components/icon',
+      text: 'Icon'
+    },
+    {
+      routerLink: '/showcase/components/spinner',
+      text: 'Spinner'
+    },
+    {
+      routerLink: '/showcase/components/progress-bar',
+      text: 'Progress Bar'
+    },
+    {
+      routerLink: '/showcase/components/text',
+      text: 'Text'
+    },
+    {
+      routerLink: '/showcase/components/expansion-panel',
+      text: 'Expansion Panel'
+    },
+    {
+      routerLink: '/showcase/components/paginator',
+      text: 'Paginator'
+    },
+    {
+      routerLink: '/showcase/components/navbar-itens',
+      text: 'NavBar Itens'
+    },
+    {
+      routerLink: '/showcase/components/snackbar-alert-static',
+      text: 'SnackBar Alert Static'
+    },
+  ];
+
+  public menusDocument = [
+    {
+      routerLink: '/showcase/components/showcase/components/bottom-sheet',
+      text: 'Primeiro passo'
+    },
+    {
+      routerLink: '/showcase/components/showcase/components/drawer',
+      text: 'Sobre Projeto'
+    },
+  ];
+  
+  public menus_top = [
+    {
+      routerLink: 'components',
+      text: 'Componentes'
+    },
+    {
+      routerLink: 'documents',
+      text: 'Documentação'
+    }
+  ];
+
+  constructor(private renderer: Renderer2, private router: Router) { }
+
+  ngOnInit() { 
+    this.startMenu()
+    this.listenRouterEvents()
+  }
+
+  theme() {
+    this.renderer.removeClass(document.body, this.themeType);
+    this.themeType = this.themeType === 'dark' ? 'light' : 'dark';
+    this.renderer.addClass(document.body, this.themeType);
+  }
+
+  listenRouterEvents() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        this.currentRoute = event.urlAfterRedirects;
+        console.log('Rota atual:', this.currentRoute);
+        this.setMenu(this.currentRoute)
+      });
+  }
+
+  startMenu() {
+    this.currentRoute = this.router.url;
+    this.setMenu(this.currentRoute)
+  }
+
+  setMenu(url:string) {
+    if(url == '/showcase/components'){
+      this.menus = this.menusComponent
+      this.typeMenu = 'Componentes'
+      this.sidenav.open();
+      this.toggleDisable = false;
+    }
+
+    if(url == '/showcase/documents'){
+      this.menus = []//this.menus_document
+      this.typeMenu = 'Documentação'
+      this.sidenav.close();
+      this.toggleDisable = true;
+    }
+  }
 }

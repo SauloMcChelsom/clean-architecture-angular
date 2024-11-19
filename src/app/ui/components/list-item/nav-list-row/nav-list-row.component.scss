@@ -1,0 +1,21 @@
+
+mat-nav-list {
+  margin: 8px;
+}
+mat-nav-list {
+  display: flex;
+  flex-direction: row;
+}
+.horizontal-nav-list {
+    display: flex; /* Torna os itens horizontais */
+    flex-direction: row; /* Alinha os itens em uma linha */
+    gap: 16px; /* Espaçamento entre os itens */
+  }
+  
+  .horizontal-nav-list a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+  }
+  
+  .horizontal-nav-list .mat-list-item {
+    flex: none; /* Garante que cada item tenha tamanho próprio */
+  }

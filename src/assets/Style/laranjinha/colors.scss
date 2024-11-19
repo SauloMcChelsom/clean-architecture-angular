@@ -1,6 +1,7 @@
 :root {
     --app-primary: #FF9800;
     --app-background: #FFF;
+    --app-background-active: #EEEEEE;
     --app-on-background: #212121;
     --app-inverse: #FFF3E0;
     --app-neutral: #BDBDBD;
@@ -139,6 +140,7 @@
 .laranjinha.dark{
     --app-primary: #FF9800;
     --app-background: #303030;
+    --app-background-active: #303030;
     --app-on-background: #FFF3E0;
     --app-inverse: #212121;
     --app-neutral: #9E9E9E;

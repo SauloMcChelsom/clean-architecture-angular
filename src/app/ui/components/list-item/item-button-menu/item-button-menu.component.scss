@@ -1,0 +1,15 @@
+.active {
+    background-color: var(--app-primary-200);
+    a {
+        font-weight: bolder;
+        color: var(--app-secondary-50);
+    }
+}
+
+mat-list-item {
+    border-radius: 5px;
+    cursor: pointer !important;
+    a {
+        color: var(--app-secondary-50);
+    }
+}

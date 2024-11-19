@@ -51,16 +51,16 @@
 
 $laranjinha-light: mat.define-light-theme((
   color: (
-    primary: mat.define-palette(mat.$blue-palette),
-    accent: mat.define-palette(mat.$blue-palette),
+    primary: mat.define-palette(mat.$orange-palette),
+    accent: mat.define-palette(mat.$orange-palette),
     warn: mat.define-palette(mat.$red-palette)
   )
 ));
 
 $laranjinha-dark: mat.define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$blue-palette),
-    accent: mat.define-palette(mat.$blue-palette),
+    primary: mat.define-palette(mat.$orange-palette),
+    accent: mat.define-palette(mat.$orange-palette),
     warn: mat.define-palette(mat.$red-palette)
   )
 ));
