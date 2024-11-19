@@ -1,10 +1,26 @@
-<mat-form-field>
-    <mat-label>What's your name?</mat-label>
-    <input matInput [(ngModel)]="name">
-</mat-form-field>
-<br/>
-<button mat-raised-button (click)="openBottomSheet()">Open BottomSheet</button>
-<br/>
-<div *ngIf="animal">
-    You chose: <em>{{animal}}</em>
+<div class="container">
+    <h1>BottomSheet</h1>
+    <p>
+        O <strong>BottomSheet</strong> é um pop-up que se abre a partir da borda inferior da tela e pode conter informações, opções ou ações relacionadas ao contexto atual.
+    </p>
+    
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+    
+    
+    <h1>Tente você mesmo</h1>
+    <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <br />
+    <button mat-raised-button (click)="openBottomSheet()">Open BottomSheet</button>
+    <br />
+    <div *ngIf="animal">
+        <h1>  You chose: <em>{{animal}}</em></h1>
+    </div>
 </div>

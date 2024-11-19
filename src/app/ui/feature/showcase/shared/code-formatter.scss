@@ -1,0 +1,28 @@
+.container {
+    margin-bottom: 24px;
+}
+
+pre {
+    background: #bababa11;
+    border: 1px solid #8b8b8b11;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+strong {
+    color: var(--app-primary);;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--app-primary);;
+}
+
+code {
+    color: var(--app-primary-300);
+    font-weight: bold;
+    font-size: larger;
+}
