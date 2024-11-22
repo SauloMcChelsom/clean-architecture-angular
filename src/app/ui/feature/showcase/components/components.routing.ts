@@ -33,6 +33,7 @@ import { ProgressBarShowcaseComponent } from './progress-bar-showcase/progress-b
 import { TextShowcaseComponent } from './text-showcase/text-showcase.component';
 import { ExpansionPanelShowcaseComponent } from './expansion-panel-showcase/expansion-panel-showcase.component';
 import { PaginatorShowcaseComponent } from './paginator-showcase/paginator-showcase.component';
+import { FlexGridShowcaseComponent } from './flex-grid-showcase/flex-grid-showcase.component';
 
 
 const routes: Routes = [
@@ -205,6 +206,11 @@ const routes: Routes = [
       path: 'snackbar-alert-static', 
       component: SnackBarAlertStaticShowcaseComponent,
       data: { title: 'SnackBar Alert Static' } 
+    },
+    { 
+      path: 'flex-grid', 
+      component: FlexGridShowcaseComponent,
+      data: { title: 'Flex Grid' } 
     },
 ];
 

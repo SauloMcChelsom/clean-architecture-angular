@@ -164,6 +164,10 @@ export class ShowcaseComponent {
     {
       routerLink: '/showcase/textareas-input',
       text: 'Textareas Input'
+    },
+    {
+      routerLink: '/showcase/flex-grid',
+      text: 'Flex Grid'
     }
   ];
 }

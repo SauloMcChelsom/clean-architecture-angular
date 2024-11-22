@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),
   },
   {
-    path: ROUTER_LINKS.FLEX_GRID,
-    loadChildren: () => import('./feature/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
-  },
-  {
     path: ROUTER_LINKS.CHANGE_LANGUAGE,
     loadChildren: () => import('./feature/change-language/change-language.module').then(m => m.ChangeLanguageModule),
   },
