@@ -13,7 +13,14 @@ import { ButtonIconSpinnerComponent } from 'src/app/ui/components/button-icon-sp
   ]
 })
 export class ButtonIconSpinnerShowcaseComponent implements OnInit {
-
+  codes = [
+    `
+    import { ButtonIconSpinnerComponent } from 'src/app/ui/components/button-icon-spinner/button-icon-spinner.component';
+    `,
+    `
+    <ButtonIconSpinner></ButtonIconSpinner>
+    `,
+  ]
   constructor() { }
 
   ngOnInit() {

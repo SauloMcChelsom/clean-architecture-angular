@@ -15,6 +15,26 @@ import { IconComponent } from 'src/app/ui/components/icon/icon.component';
   ]
 })
 export class ButtonStrokedShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonStrokedComponent } from 'src/app/ui/components/button-stroked/button-stroked.component';
+    `,
+    `
+    <ButtonStroked color="primary">
+      <div class="flex flex-row flex-wrap align-items-center">
+        <Icon fontIcon="home"></Icon>
+        <div class="text-medium">
+          Texto simples para exemplificar
+        </div>
+      </div>
+    </ButtonStroked>
+    `,
+    `
+    <button mat-stroked-button>
+      Texto simples para exemplificar
+    </button>
+    `,
+  ]
   constructor() { }
 
   ngOnInit() {

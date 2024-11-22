@@ -1,17 +1,32 @@
-<SpinnerSteps 
-    [title]="title" 
-    [subtitle]="subtitle" 
-    [currentStep]="currentStep" 
-    [totalSteps]="totalSteps"
-></SpinnerSteps>
-<br />
-<button (click)="decrement()">
-    <Icon fontIcon="remove"></Icon>
-</button>
-&nbsp;&nbsp;&nbsp;
-<button (click)="increment()">
-    <Icon fontIcon="add"></Icon>
-</button>
-<p>
-    Valor de saida: {{ currentStep }}
-</p>
+<div class="container">
+    <h1>SpinnerSteps</h1>
+    <p>
+        O <strong>SpinnerSteps</strong> é um componente que exibe um spinner de progresso com dois círculos concêntricos. O spinner exibe visualmente o progresso de uma tarefa com base em um valor percentual e também mostra um número atual e o total de etapas no centro. Além disso, o componente suporta a exibição de título e subtítulo adicionais.
+    </p>
+
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+
+    <h1>Tente você mesmo</h1>
+    <SpinnerSteps 
+        [title]="title" 
+        [subtitle]="subtitle" 
+        [currentStep]="currentStep" 
+        [totalSteps]="totalSteps"
+    ></SpinnerSteps>
+    <br />
+    <button mat-raised-button (click)="decrement()">
+        <Icon fontIcon="remove"></Icon>
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button  (click)="increment()">
+        <Icon fontIcon="add"></Icon>
+    </button>
+    <p>
+        Valor de saida: {{ currentStep }}
+    </p>
+</div>

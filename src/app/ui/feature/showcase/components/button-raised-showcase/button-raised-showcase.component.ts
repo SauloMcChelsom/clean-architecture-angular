@@ -15,6 +15,26 @@ import { IconComponent } from 'src/app/ui/components/icon/icon.component';
   ]
 })
 export class ButtonRaisedShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonRaisedComponent } from 'src/app/ui/components/button-raised/button-raised.component';
+    `,
+    `
+    <ButtonRaised color="primary">
+      <div class="flex flex-row flex-wrap align-items-center">
+        <Icon fontIcon="home"></Icon>
+        <div class="text-medium">
+          Texto simples para exemplificar
+        </div>  
+      </div>
+    </ButtonRaised>
+    `,
+    `
+    <button mat-raised-button>
+      Texto simples para exemplificar
+    </button>
+    `,
+  ]
   constructor() { }
 
   ngOnInit() {

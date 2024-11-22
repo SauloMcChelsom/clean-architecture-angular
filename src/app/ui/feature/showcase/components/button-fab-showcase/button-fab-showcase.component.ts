@@ -13,7 +13,20 @@ import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.
   ]
 })
 export class ButtonFabShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.component';
 
+    `,
+    `
+    <ButtonFab icon="add"></ButtonFab>
+    `,
+    `
+    <button mat-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+    `,
+  ]
   constructor() { }
 
   ngOnInit() {

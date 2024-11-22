@@ -15,6 +15,37 @@ import { ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/co
   ]
 })
 export class SnackBarAlertStaticShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
+    `,
+    `
+    <SnackBarAlertStatic     
+      [openSnackBar]="openSnackBar" 
+      [closeSnackBar]="closeSnackBar"
+    >
+    </SnackBarAlertStatic>
+    `,
+    `
+    protected openSnackBar!: SnackBarModel;
+    protected closeSnackBar!: any;
+    `,
+    `
+    errSnackBar() {
+      this.openSnackBar = {
+        mensagem:  "Error em processar",
+        typeScoreboardColor: ScoreboardColor.WARN
+      }
+    }
+
+    sucsessSnackBar() {
+      this.openSnackBar = {
+        mensagem:  "Parabens voce acertou",
+        typeScoreboardColor: ScoreboardColor.SUCCESS
+      }
+    }
+    `,
+  ];
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   constructor() { }

@@ -1,14 +1,30 @@
-
-<div *ngIf="config">
-  <Radio
-    [formControl]="config.formControl" 
-    [options]="config.options" 
-    [initialSelection]="config.initialSelection"
-    (onSelect)="onSelect($event)"
-    [isRequired]="true"
-  ></Radio>
+<div class="container">
+  <h1>Radio</h1>
   <p>
-      Valor de saida: {{config.formControl.getRawValue() | json}} {{config.formControl.status}}
+      O <strong>Radio</strong> fornece a mesma funcionalidade de um <input type="radio"> nativo aprimorado com estilo e animações do Material Design.
   </p>
-  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <div *ngIf="config">
+    <Radio
+      [formControl]="config.formControl" 
+      [options]="config.options" 
+      [initialSelection]="config.initialSelection"
+      (onSelect)="onSelect($event)"
+      [isRequired]="true"
+    ></Radio>
+    <p>
+        Valor de saida: {{config.formControl.getRawValue() | json}} {{config.formControl.status}}
+    </p>
+    <button mat-raised-button (click)="reset()">reset</button> 
+    <button mat-raised-button (click)="disable()">disable</button> 
+    <button mat-raised-button (click)="enable()">enable</button>
+  </div>
 </div>

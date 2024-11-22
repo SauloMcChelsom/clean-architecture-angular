@@ -13,6 +13,21 @@ import { ButtonIconComponent } from 'src/app/ui/components/button-icon/button-ic
   ]
 })
 export class ButtonIconShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonIconComponent } from 'src/app/ui/components/button-icon/button-icon.component';
+    `,
+    `
+    <ButtonIcon icon="add"></ButtonIcon>
+    `,
+    `
+    <button mat-icon-button>
+      <mat-icon>
+        add
+      </mat-icon>
+    </button>
+    `,
+  ]
 
   constructor() { }
 

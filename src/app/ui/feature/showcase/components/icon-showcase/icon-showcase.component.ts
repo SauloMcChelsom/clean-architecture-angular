@@ -15,6 +15,14 @@ import { IconSizes } from 'src/app/ui/components/icon/models';
   ]
 })
 export class IconShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { IconSizes } from 'src/app/ui/components/icon/models';
+    `,
+    `
+    <Icon fontIcon="home" [size]="size"></Icon>
+    `
+  ];
   size: IconSizes = IconSizes.MEDIUM;
 
   constructor() { }

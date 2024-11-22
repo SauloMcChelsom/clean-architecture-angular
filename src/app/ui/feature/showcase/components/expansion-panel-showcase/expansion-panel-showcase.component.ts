@@ -15,7 +15,18 @@ import { ExpansionPanelComponent } from 'src/app/ui/components/expansion-panel/e
   ]
 })
 export class ExpansionPanelShowcaseComponent implements OnInit {
-
+  codes = [
+    `
+    import { ExpansionPanelComponent } from 'src/app/ui/components/expansion-panel/expansion-panel.component';
+    `,
+    `
+    <ExpansionPanel>
+      <mat-icon title color="warn" style=" transform: scale(0.6);">circle</mat-icon>
+      <span description>Informações do usuario</span>    
+      <span content>Descricao da informacao do usuario</span>
+    </ExpansionPanel>
+    `
+  ];
   constructor() { }
 
   ngOnInit() {

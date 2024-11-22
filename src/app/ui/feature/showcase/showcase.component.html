@@ -1,28 +1,6 @@
-<mat-toolbar color="primary"  class="space-between">
-    <div class="nowrap-center">
-        <NavListRow *ngFor="let menu of menus_top">
-            <ItemButtonMenu
-                [routerLink]="menu.routerLink"
-                [text]="menu.text"
-            ></ItemButtonMenu>
-        </NavListRow>
-    </div>
-    <div>
-        <ButtonIcon icon="light_mode" (onClick)="theme()"></ButtonIcon>
-    </div>
-</mat-toolbar>
-<mat-toolbar class="space-between">
-    <div class="center">
-        {{ typeMenu }} 
-        <button [disabled]="toggleDisable" mat-icon-button (click)="drawer.toggle()">
-            <mat-icon>
-                menu
-            </mat-icon>
-        </button>
-   </div>
-</mat-toolbar>
+
 <mat-drawer-container  [hasBackdrop]="false">
-    <mat-drawer #drawer [mode]="'side'" opened>
+    <mat-drawer #drawer [mode]="'side'" opened class="height-fixed">
         <NavListColumn *ngFor="let menu of menus">
             <ItemCool
                 [routerLink]="menu.routerLink"
@@ -31,7 +9,33 @@
             ></ItemCool>
         </NavListColumn>
     </mat-drawer>
-    <mat-drawer-content class="height-drawer-content">
-        <router-outlet></router-outlet>
+    <mat-drawer-content class="height-fixed">
+        <mat-toolbar color="primary"  class="space-between">
+            <div class="nowrap-center">
+                <NavListRow *ngFor="let menu of menus_top">
+                    <ItemButtonMenu
+                        [routerLink]="menu.routerLink"
+                        [text]="menu.text"
+                    ></ItemButtonMenu>
+                </NavListRow>
+            </div>
+            <div>
+                <ButtonIcon icon="light_mode" (onClick)="theme()"></ButtonIcon>
+            </div>
+        </mat-toolbar>
+        <mat-toolbar class="space-between">
+            <div class="center">
+                {{ typeMenu }} 
+                <button [disabled]="toggleDisable" mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon>
+                        menu
+                    </mat-icon>
+                </button>
+           </div>
+        </mat-toolbar>
+        <div class="drawer-content">
+            <router-outlet></router-outlet>
+        </div>
+       
     </mat-drawer-content>
 </mat-drawer-container>

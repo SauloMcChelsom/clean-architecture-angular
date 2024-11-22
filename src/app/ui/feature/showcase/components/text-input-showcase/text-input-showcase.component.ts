@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { TextInputConfig } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
+import { Component, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { InputComponent } from 'src/app/ui/components/input/input.component';
 
 @Component({
@@ -12,10 +12,38 @@ import { InputComponent } from 'src/app/ui/components/input/input.component';
   imports: [
     CommonModule,
     InputComponent,
+    MatButtonModule
   ]
 })
 export class TextInputShowcaseComponent {
-
+  codes = [
+    `
+    import { InputComponent } from 'src/app/ui/components/input/input.component';
+    `,
+    `
+    <Inputs 
+      [formControl]="config.formControl" 
+      [title]="config.title" 
+      [placeholder]="config.placeholder"
+      [erroFill]="config.erroFill" 
+      [erroRequired]="config.erroRequired" 
+      [isRequired]="true" 
+      [minLength]="5"
+    ></Inputs>
+    `,
+    `
+    config = {
+      formControl: new FormControl<string | undefined>(""),
+      title: 'Titulo',
+      placeholder: 'Informe o titulo do seu note',
+      erroFill: "O nome deve ter pelo menos 5 caracteres",
+      erroRequired: "Preenchimento obrigatório"
+    };
+    `,
+    `
+    
+    `,
+  ];
   config = {
     formControl: new FormControl<string | undefined>(""),
     title: 'Titulo',

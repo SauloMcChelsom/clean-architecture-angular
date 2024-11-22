@@ -1,10 +1,25 @@
-<mat-form-field>
-    <mat-label>What's your name?</mat-label>
-    <input matInput [(ngModel)]="name">
-</mat-form-field>
-<br/>
-<button mat-raised-button (click)="openDialog()">Open DialogModal</button>
-<br/>
-<div *ngIf="animal">
-    You chose: <em>{{animal}}</em>
+<div class="container">
+    <h1>DialogService</h1>
+    <p>
+        O serviço <strong>DialogService</strong> pode ser usado para abrir caixas de diálogo modais com estilo e animações do Material Design.
+    </p>
+  
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+  
+    <h1>Tente você mesmo</h1>
+    <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button (click)="openDialog()">Open DialogModal</button>
+    <br/>
+    <div *ngIf="animal">
+        You chose: <em>{{animal}}</em>
+    </div>
 </div>

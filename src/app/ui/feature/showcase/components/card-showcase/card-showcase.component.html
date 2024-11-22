@@ -1,7 +1,22 @@
-<Card>
-  <div>
-    <TitleCard value="controle de contas"  class="white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head text-medium"></TitleCard>
-    <TimestampCard value="10/10/2024"  class="flex justify-content-end mat-card-timestamp text-default"></TimestampCard>
-    <TextCard  value="Hoje, quero compartilhar uma notícia boa com todos vocês, que estou embarcando em" class="mat-card-body text-small"></TextCard>
-  </div>
-</Card>
+<div class="container">
+  <h1>Card</h1>
+  <p>
+      O <strong>Card</strong> é um contêiner de conteúdo para texto, fotos e ações no contexto de um único assunto.
+  </p>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <Card>
+    <div>
+      <TitleCard value="controle de contas"  class="white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head text-medium"></TitleCard>
+      <TimestampCard value="10/10/2024"  class="flex justify-content-end mat-card-timestamp text-default"></TimestampCard>
+      <TextCard  value="Hoje, quero compartilhar uma notícia boa com todos vocês, que estou embarcando em" class="mat-card-body text-small"></TextCard>
+    </div>
+  </Card>
+</div>

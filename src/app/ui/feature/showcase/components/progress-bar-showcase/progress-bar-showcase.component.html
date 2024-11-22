@@ -1,31 +1,45 @@
-<ProgressBar
-    [mode]="mode" 
-    [percentage]='progress.current' 
-    [bufferValue]='progress.buffer'
-></ProgressBar>
-<br />
-<button (click)="determinate()">
-    <Icon fontIcon="linear_scale"></Icon>
-</button>
-<button (click)="indeterminate()">
-    <Icon fontIcon="sync"></Icon>
-</button>
-<button (click)="query()">
-    <Icon fontIcon="search"></Icon>
-</button>
-<button (click)="buffer()">
-    <Icon fontIcon="more_horiz"></Icon>
-</button>
+<div class="container">
+    <h1>ProgressBar</h1>
+    <p>
+        O <strong>ProgressBar</strong> é um componente que contem uma barra de progresso horizontal para indicar progresso e atividade.
+    </p>
+  
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+  
+    <h1>Tente você mesmo</h1>
+    <ProgressBar
+        [mode]="mode" 
+        [percentage]='progress.current' 
+        [bufferValue]='progress.buffer'
+    ></ProgressBar>
+    <br />
+    <button mat-raised-button (click)="determinate()">
+        <Icon fontIcon="linear_scale"></Icon>
+    </button>
+    <button mat-raised-button  (click)="indeterminate()">
+        <Icon fontIcon="sync"></Icon>
+    </button>
+    <button mat-raised-button (click)="query()">
+        <Icon fontIcon="search"></Icon>
+    </button>
+    <button mat-raised-button (click)="buffer()">
+        <Icon fontIcon="more_horiz"></Icon>
+    </button>
 
-
-<br />
-<button (click)="decrementProgress()">
-    <Icon fontIcon="remove"></Icon>
-</button>
-&nbsp;&nbsp;&nbsp;
-<button (click)="incrementProgress()">
-    <Icon fontIcon="add"></Icon>
-</button>
-<p>
-    Valor de saida: {{ progress.current }}
-</p>
+    <br />
+    <button mat-raised-button (click)="decrementProgress()">
+        <Icon fontIcon="remove"></Icon>
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button (click)="incrementProgress()">
+        <Icon fontIcon="add"></Icon>
+    </button>
+    <p>
+        Valor de saida: {{ progress.current }}
+    </p>
+</div>

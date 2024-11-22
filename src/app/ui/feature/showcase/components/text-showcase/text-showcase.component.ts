@@ -13,6 +13,36 @@ import { PrimaryColorDirective } from 'src/app/ui/directives/primary-color.direc
   ]
 })
 export class TextShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { PrimaryColorDirective } from 'src/app/ui/directives/primary-color.directive';
+    `,
+    `
+      <div appPrimaryColor class="text-small flex justify-content-start">
+          Texto simples para exemplificar
+      </div>
+      <div class="text-small flex justify-content-start">
+          Texto simples para exemplificar
+      </div>
+
+      <div class="text-default  flex justify-content-start">
+          Texto simples para exemplificar
+      </div>
+
+      <div class="text-medium flex justify-content-start">
+          Texto simples para exemplificar
+      </div>
+    `,
+    `
+    text-small 
+    text-default 
+    text-medium 
+    text-large 
+    text-large-big
+    text-large-huge
+    `
+  ];
+  
   constructor() { }
 
   ngOnInit() {

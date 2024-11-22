@@ -11,10 +11,29 @@ import { IconComponent } from 'src/app/ui/components/icon/icon.component';
   imports: [
     CommonModule,
     IconComponent,
-    ButtonBasicComponent
+    ButtonBasicComponent,
   ]
 })
 export class ButtonBasicShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonBasicComponent } from 'src/app/ui/components/button-basic/button-basic.component';
+    import { IconComponent } from 'src/app/ui/components/icon/icon.component';
+    `,
+    `
+    <ButtonBasic color="primary">
+      <div class="flex flex-row flex-wrap align-items-center">
+        <Icon fontIcon="home"></Icon>
+        <div class="text-medium">
+          Texto simples para exemplificar
+        </div>  
+      </div>
+    </ButtonBasic>
+    `,
+    `
+    <button mat-button>Texto simples para exemplificar</button>
+    `
+  ]
   constructor() { }
 
   ngOnInit() {

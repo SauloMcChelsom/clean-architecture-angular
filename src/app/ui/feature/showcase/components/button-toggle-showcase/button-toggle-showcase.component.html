@@ -1,41 +1,42 @@
-<ButtonToggle
-  #toggleGroup2
-  [groupName]="'group1'"
-  title="Single selection"
-  groupName="favoriteColor"
-  [multiple]="false"
-  [options]="[
+<div class="container">
+  <h1>ButtonToggle</h1>
+  <p>
+    O <strong>ButtonToggle</strong> são alternadores de ligar/desligar com a aparência de um botão. Esses alternadores podem ser configurados para se comportarem como botões de opção ou caixas de seleção. Embora possam ser autônomos, eles geralmente fazem parte de um mat-button-toggle-group.
+  </p>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <ButtonToggle #toggleGroup2 [groupName]="'group1'" title="Single selection" groupName="favoriteColor"
+    [multiple]="false" [options]="[
     { label: 'Red', value: 'red', disabled: true },
     { label: 'Green', value: 'green' },
     { label: 'Blue', value: 'blue' }
-  ]"
-   [formControl]="favoriteColorformControl"
-  (selectionChange)="onSingleSelectionChange($event)">
-</ButtonToggle>
+  ]" [formControl]="favoriteColorformControl" (selectionChange)="onSingleSelectionChange($event)">
+  </ButtonToggle>
 
-<ButtonToggle
-  #toggleGroup2
-  [groupName]="'group2'"
-  title="Multiple selection"
-  groupName="ingredients"
-  [multiple]="true"
-  [options]="[
+  <ButtonToggle #toggleGroup2 [groupName]="'group2'" title="Multiple selection" groupName="ingredients"
+    [multiple]="true" [options]="[
     { label: 'Flour', value: 'flour' },
     { label: 'Eggs', value: 'eggs' },
     { label: 'Sugar', value: 'sugar' }
-  ]"
-  [formControl]="ingredientsformControl"
-  (selectionChange)="onMultipleSelectionChange($event)">
-</ButtonToggle>
+  ]" [formControl]="ingredientsformControl" (selectionChange)="onMultipleSelectionChange($event)">
+  </ButtonToggle>
 
-<p>
+  <p>
     Valor de saida Single: {{favoriteColorformControl.getRawValue() | json}} {{favoriteColorformControl.status}}
-</p>
-<p>
-  Valor de saida Multiple: {{ingredientsformControl.getRawValue() | json}} {{ingredientsformControl.status}}
-</p>
-<button (click)="reset()">reset</button> 
-<button (click)="disableFavoriteColor(0)">Disable Group 1</button> 
-<button (click)="disableSpecific('group2')">Disable Group 2</button>
-<button (click)="disableAll()">disable</button> 
-<button (click)="enableAll()">enable</button>
+  </p>
+  <p>
+    Valor de saida Multiple: {{ingredientsformControl.getRawValue() | json}} {{ingredientsformControl.status}}
+  </p>
+  <button mat-raised-button (click)="reset()">reset</button>
+  <button mat-raised-button (click)="disableFavoriteColor(0)">Disable Group 1</button>
+  <button mat-raised-button (click)="disableSpecific('group2')">Disable Group 2</button>
+  <button mat-raised-button (click)="disableAll()">disable</button>
+  <button mat-raised-button (click)="enableAll()">enable</button>
+</div>

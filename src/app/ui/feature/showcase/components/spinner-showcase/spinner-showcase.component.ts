@@ -20,11 +20,64 @@ import { SpinnerStepsComponent } from 'src/app/ui/components/spinner-steps/spinn
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    NgIf,
     IconComponent
   ]
 })
 export class SpinnerShowcaseComponent {
+  codes = [
+    `
+    import { SpinnerStepsComponent } from 'src/app/ui/components/spinner-steps/spinner-steps.component';
+    `,
+    `
+    <SpinnerSteps 
+      [title]="title" 
+      [subtitle]="subtitle" 
+      [currentStep]="currentStep" 
+      [totalSteps]="totalSteps"
+    ></SpinnerSteps>
+    `,
+    `
+    info = [
+      {
+        title: "Seu Animal de Estimação",
+        subtitle: "",
+        current: 0
+      },
+      {
+        title: "Escolha seu Animal Favorito",
+        subtitle: "Selecione o animal que você ama",
+        current: 1
+      },
+      {
+        title: "Nome do seu Animal",
+        subtitle: "Informaremos seu nome para todos",
+        current: 2
+      },
+      {
+        title: "Localização do Resgate",
+        subtitle: "Informe a cidade onde o animal será resgatado",
+        current: 3
+      },
+      {
+        title: "Revisão dos Dados",
+        subtitle: "Verifique se todos os dados estão corretos",
+        current: 4
+      },
+      {
+        title: "Solicitação Concluída!",
+        subtitle: "Sua solicitação foi enviada com sucesso. Aguardaremos contato",
+        current: 5
+      }
+    ]
+    currentStep = 0;
+    totalSteps = 0;
+    title="" 
+    subtitle="" 
+    `,
+    `
+    
+    `,
+  ];
   info = [
     {
       title: "Seu Animal de Estimação",

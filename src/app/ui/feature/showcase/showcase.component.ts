@@ -52,83 +52,10 @@ export class ShowcaseComponent implements OnInit {
 
   public toggleDisable = false;
 
-
   public menusComponent = [
     {
       routerLink: '/showcase/components/bottom-sheet',
       text: 'Bottom Sheet'
-    },
-    {
-      routerLink: '/showcase/components/drawer',
-      text: 'Drawer'
-    },
-    {
-      routerLink: '/showcase/components/select-option',
-      text: 'Select Option'
-    },
-    {
-      routerLink: '/showcase/components/date-input',
-      text: 'Date Input'
-    },
-    {
-      routerLink: '/showcase/components/text-input',
-      text: 'Text Input'
-    },
-    {
-      routerLink: '/showcase/components/textareas-input',
-      text: 'Textareas Input'
-    },
-    {
-      routerLink: '/showcase/components/card',
-      text: 'Card'
-    },
-    {
-      routerLink: '/showcase/components/radio-input',
-      text: 'Radio Input'
-    },
-    {
-      routerLink: '/showcase/components/menu',
-      text: 'Menu'
-    },
-    {
-      routerLink: '/showcase/components/checkbox-input',
-      text: 'Checkbox Input'
-    },
-    {
-      routerLink: '/showcase/components/button-toggle',
-      text: 'Button Toggle'
-    },
-    {
-      routerLink: '/showcase/components/chip-option',
-      text: 'Chip Option'
-    },
-    {
-      routerLink: '/showcase/components/slide-toggle',
-      text: 'Slide Toggle'
-    },
-    {
-      routerLink: '/showcase/components/tabs',
-      text: 'Tabs'
-    },
-    {
-      routerLink: '/showcase/components/dialog-modal',
-      text: 'Dialog Modal'
-    },
-    {
-      routerLink: '/showcase/components/snack-bar-position',
-      text: 'Snack Bar Position'
-    },
-    {
-      routerLink: '/showcase/components/button-stroked',
-      text: 'Button Stroked'
-    },
-    {
-      routerLink: '/showcase/components/button-raised',
-      text: 'Button Raised'
-    },
-    {
-      routerLink: '/showcase/components/button-flat',
-      text: 'Button Flat'
     },
     {
       routerLink: '/showcase/components/button-basic',
@@ -143,6 +70,10 @@ export class ShowcaseComponent implements OnInit {
       text: 'Button FAB'
     },
     {
+      routerLink: '/showcase/components/button-flat',
+      text: 'Button Flat'
+    },
+    {
       routerLink: '/showcase/components/button-icon',
       text: 'Button Icon'
     },
@@ -151,41 +82,109 @@ export class ShowcaseComponent implements OnInit {
       text: 'Button Icon Spinner'
     },
     {
-      routerLink: '/showcase/components/slider',
-      text: 'Slider'
+      routerLink: '/showcase/components/button-raised',
+      text: 'Button Raised'
     },
     {
-      routerLink: '/showcase/components/icon',
-      text: 'Icon'
+      routerLink: '/showcase/components/button-stroked',
+      text: 'Button Stroked'
     },
     {
-      routerLink: '/showcase/components/spinner',
-      text: 'Spinner'
+      routerLink: '/showcase/components/button-toggle',
+      text: 'Button Toggle'
     },
     {
-      routerLink: '/showcase/components/progress-bar',
-      text: 'Progress Bar'
+      routerLink: '/showcase/components/card',
+      text: 'Card'
     },
     {
-      routerLink: '/showcase/components/text',
-      text: 'Text'
+      routerLink: '/showcase/components/checkbox-input',
+      text: 'Checkbox Input'
+    },
+    {
+      routerLink: '/showcase/components/chip-option',
+      text: 'Chip Option'
+    },
+    {
+      routerLink: '/showcase/components/date-input',
+      text: 'Date Input'
+    },
+    {
+      routerLink: '/showcase/components/dialog-modal',
+      text: 'Dialog Modal'
+    },
+    {
+      routerLink: '/showcase/components/drawer',
+      text: 'Drawer'
     },
     {
       routerLink: '/showcase/components/expansion-panel',
       text: 'Expansion Panel'
     },
     {
-      routerLink: '/showcase/components/paginator',
-      text: 'Paginator'
+      routerLink: '/showcase/components/icon',
+      text: 'Icon'
+    },
+    {
+      routerLink: '/showcase/components/menu',
+      text: 'Menu'
     },
     {
       routerLink: '/showcase/components/navbar-itens',
       text: 'NavBar Itens'
     },
     {
+      routerLink: '/showcase/components/paginator',
+      text: 'Paginator'
+    },
+    {
+      routerLink: '/showcase/components/progress-bar',
+      text: 'Progress Bar'
+    },
+    {
+      routerLink: '/showcase/components/radio-input',
+      text: 'Radio Input'
+    },
+    {
+      routerLink: '/showcase/components/select-option',
+      text: 'Select Option'
+    },
+    {
+      routerLink: '/showcase/components/slide-toggle',
+      text: 'Slide Toggle'
+    },
+    {
+      routerLink: '/showcase/components/slider',
+      text: 'Slider'
+    },
+    {
+      routerLink: '/showcase/components/snack-bar-position',
+      text: 'Snack Bar Position'
+    },
+    {
       routerLink: '/showcase/components/snackbar-alert-static',
       text: 'SnackBar Alert Static'
     },
+    {
+      routerLink: '/showcase/components/spinner',
+      text: 'Spinner'
+    },
+    {
+      routerLink: '/showcase/components/tabs',
+      text: 'Tabs'
+    },
+    {
+      routerLink: '/showcase/components/text',
+      text: 'Text'
+    },
+    {
+      routerLink: '/showcase/components/text-input',
+      text: 'Text Input'
+    },
+    {
+      routerLink: '/showcase/components/textareas-input',
+      text: 'Textareas Input'
+    }
   ];
 
   public menusDocument = [
@@ -229,26 +228,26 @@ export class ShowcaseComponent implements OnInit {
       .subscribe((event: any) => {
         this.currentRoute = event.urlAfterRedirects;
         console.log('Rota atual:', this.currentRoute);
-        this.setMenu(this.currentRoute)
+        this.setMenu(this.currentRoute);
       });
   }
 
   startMenu() {
     this.currentRoute = this.router.url;
-    this.setMenu(this.currentRoute)
+    this.setMenu(this.currentRoute);
   }
 
-  setMenu(url:string) {
-    if(url == '/showcase/components'){
-      this.menus = this.menusComponent
-      this.typeMenu = 'Componentes'
+  setMenu(url: string) {
+    if (/^\/showcase\/components\/?/.test(url)) {
+      this.menus = this.menusComponent;
+      this.typeMenu = 'Componentes';
       this.sidenav.open();
       this.toggleDisable = false;
-    }
-
-    if(url == '/showcase/documents'){
-      this.menus = []//this.menus_document
-      this.typeMenu = 'Documentação'
+    } 
+    
+    if (/^\/showcase\/documents\/?/.test(url)) {
+      this.menus = [];
+      this.typeMenu = 'Documentação';
       this.sidenav.close();
       this.toggleDisable = true;
     }

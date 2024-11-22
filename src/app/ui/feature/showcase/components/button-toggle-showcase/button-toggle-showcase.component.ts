@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { ButtonToggleGroupComponent } from 'src/app/ui/components/button-toggle/button-toggle.component';
 
 @Component({
@@ -10,10 +11,38 @@ import { ButtonToggleGroupComponent } from 'src/app/ui/components/button-toggle/
   standalone: true,
   imports:[
     CommonModule,
-    ButtonToggleGroupComponent
+    ButtonToggleGroupComponent,
+    MatButtonModule
   ]
 })
 export class ButtonToggleShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonToggleGroupComponent } from 'src/app/ui/components/button-toggle/button-toggle.component';
+    `,
+    `
+    <ButtonToggle
+        [multiple]="false" 
+        [options]="[
+          { label: 'Red', value: 'red', disabled: true },
+          { label: 'Green', value: 'green' },
+          { label: 'Blue', value: 'blue' }
+        ]" 
+        [formControl]="favoriteColorformControl" 
+        (selectionChange)="onSingleSelectionChange($event)"
+    >
+    </ButtonToggle>
+    `,
+    `
+    favoriteColorformControl = new FormControl<string | undefined>("green");
+    `,
+
+    `
+    onSingleSelectionChange(value: any) {
+      console.log('Selected color:', value);
+    }
+    `,
+  ]
 
   constructor() { }
 

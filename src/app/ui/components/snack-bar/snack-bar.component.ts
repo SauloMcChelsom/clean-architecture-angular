@@ -21,7 +21,7 @@ export enum CloseSnackBarInNow {
 }
 
 @Component({
-  selector: 'SnackBar',
+  selector: 'SnackBarAlertStatic',
   templateUrl: './snack-bar.component.html',
   styleUrls: ['./snack-bar.component.scss'],
   standalone:true,

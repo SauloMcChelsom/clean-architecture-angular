@@ -1,13 +1,29 @@
-<div *ngIf="config">
-    <SlideToggle 
-    [formControl]="config.formControl"
-    label="Ativar recurso"
-    color="accent"
-    (toggleChange)="onToggleChange($event)">
-</SlideToggle>
-<p>
-    Valor de saida: {{ config.formControl.getRawValue() | json }} {{config.formControl.status}}
+<div class="container">
+  <h1>SlideToggle</h1>
+  <p>
+      O <strong>SlideToggle</strong> é um controle liga/desliga que pode ser alternado por meio de cliques.
   </p>
-  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
-  
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <div *ngIf="config">
+    <SlideToggle 
+      [formControl]="config.formControl"
+      label="Ativar recurso"
+      color="accent"
+      (toggleChange)="onToggleChange($event)">
+    </SlideToggle>
+    <p>
+      Valor de saida: {{ config.formControl.getRawValue() | json }} {{config.formControl.status}}
+    </p>
+    <button mat-raised-button (click)="reset()">reset</button> 
+    <button mat-raised-button (click)="disable()">disable</button> 
+    <button mat-raised-button (click)="enable()">enable</button>
+  </div>
 </div>

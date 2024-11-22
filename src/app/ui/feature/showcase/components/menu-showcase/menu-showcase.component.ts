@@ -19,7 +19,35 @@ import { MenuComponent } from 'src/app/ui/components/menu/menu.component';
   ]
 })
 export class MenuShowcaseComponent implements OnInit {
-
+  codes = [
+    `
+    import { MenuComponent } from 'src/app/ui/components/menu/menu.component';
+    `,
+    `
+    <Menu
+      [mainMenuLabel]="'Options'"
+      [menuItems]="menuOptions"
+      #dynamicMenu
+      (onSelect)="onSelect($event)"
+    >
+    </Menu>
+    `,
+    `
+    menuOptions: any = [
+      { label: 'Item 1', icon: 'home', cod: 'item1' },
+      { label: 'Item 2', icon: 'settings', disabled: true, cod: 'item2' },
+      {
+        label: 'Animals', children: [
+          { label: 'Gato', cod: 'Animals/Gato' },
+          { label: 'Cachorro', cod: 'Animals/Cachorro' }
+        ]
+      }
+    ];
+    `,
+    `
+    
+    `,
+  ];
   constructor() { }
 
   ngOnInit() {

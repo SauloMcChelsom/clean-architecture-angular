@@ -13,6 +13,14 @@ import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/butto
   ]
 })
 export class ButtonCancatShowcaseComponent implements OnInit {
+  codes = [
+    `
+    import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
+    `,
+    `
+    <ButtonCancat icon="add" [spinner]="spinner" (onClick)="add()"></ButtonCancat>
+    `,
+  ]
   protected spinner: boolean = false;
   constructor() { }
 

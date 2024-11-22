@@ -27,6 +27,47 @@ import { PageComponent } from './page/page.component';
   ]
 })
 export class DialogModalShowcaseComponent {
+  codes = [
+    `
+    export class PageComponent {
+      constructor(
+        private dialogRef: MatDialogRef<PageComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: { name: string; animal: string }
+      ) { }
+
+      onNoClick(): void {
+        this.dialogRef.close();
+      }
+
+      ngOnInit(){
+        console.log('ngOnInit')
+      }
+
+      ngOnDestroy() {
+        console.log('ngOnDestroy')
+      }
+    }
+    `,
+    `
+    import { DialogService } from 'src/app/ui/components/dialog/dialog.service';
+    `,
+    `
+    constructor(private dialogService: DialogService) {}
+    `,
+    `
+    openDialog(): void {
+      const data = { name: '', animal: '' };
+      this.dialogService.openDialog(PageComponent, data).subscribe(result => {
+        if (result) {
+          console.log('Diálogo fechado com dados:', result);
+        }
+      });
+    }
+    `,
+    `
+    
+    `,
+  ]
   animal!: string;
   name!: string;
   constructor(private dialogService: DialogService) {}

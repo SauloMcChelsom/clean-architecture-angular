@@ -1,16 +1,33 @@
-<div *ngIf="config">
-  <DynamicDate 
-    [formControl] = "config.formControl"
-    [locale] = "config.locale!"
-    [mask] = "config.mask"
-    [maxDate] = "config.maxDate"
-    [minDate] = "config.minDate"
-    placeholder = "config.placeholder"
-    [requiredField] = "config.requiredField"
-    [title] = "config.title"
-  ></DynamicDate>
+<div class="container">
+  <h1>DynamicDate</h1>
   <p>
-    Valor de saida: {{config.formControl.getRawValue() | json}}
+      O <strong>DynamicDate</strong> permite que os usuários insiram uma data por meio de entrada de texto ou escolhendo uma data no calendário.
   </p>
-  <button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <div *ngIf="config">
+    <DynamicDate 
+      [formControl] = "config.formControl"
+      [locale] = "config.locale!"
+      [mask] = "config.mask"
+      [maxDate] = "config.maxDate"
+      [minDate] = "config.minDate"
+      placeholder = "config.placeholder"
+      [requiredField] = "config.requiredField"
+      [title] = "config.title"
+    ></DynamicDate>
+    <p>
+      Valor de saida: {{config.formControl.getRawValue() | json}}
+    </p>
+    <button mat-raised-button  (click)="reset()">reset</button> 
+    <button mat-raised-button  (click)="disable()">disable</button> 
+    <button mat-raised-button  (click)="enable()">enable</button>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { IconComponent } from 'src/app/ui/components/icon/icon.component';
 import { ProgressBarComponent, ProgressBarModeEnum } from 'src/app/ui/components/progress-bar/progress-bar.component';
 
@@ -11,10 +12,34 @@ import { ProgressBarComponent, ProgressBarModeEnum } from 'src/app/ui/components
   imports: [
     CommonModule,
     ProgressBarComponent,
-    IconComponent
+    IconComponent,
+    MatButtonModule
   ]
 })
 export class ProgressBarShowcaseComponent {
+  codes = [
+    `
+    import { ProgressBarComponent, ProgressBarModeEnum } from 'src/app/ui/components/progress-bar/progress-bar.component';
+    `,
+    `
+    <ProgressBar
+      [mode]="mode" 
+      [percentage]='progress.current' 
+      [bufferValue]='progress.buffer'
+    ></ProgressBar>
+    `,
+    `
+    mode: ProgressBarModeEnum = ProgressBarModeEnum.BUFFER;
+    progress = {
+      current: 10,
+      buffer: 25,
+      total: 100
+    };
+    `,
+    `
+    
+    `,
+  ];
   mode: ProgressBarModeEnum = ProgressBarModeEnum.BUFFER;
   progress = {
     current: 10,

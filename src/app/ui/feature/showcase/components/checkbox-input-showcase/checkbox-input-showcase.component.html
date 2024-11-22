@@ -1,10 +1,22 @@
-<Checkbox 
-    [formControl]="formControl" 
-    [items]="task" 
-    (onSelect)="onSelect($event)"
-    [isRequired]="true"
-></Checkbox>
-<p>
-    Valor de saida: {{formControl.getRawValue() | json}} {{formControl.status}}
-</p>
-<button (click)="reset()">reset</button> <button (click)="disable()">disable</button> <button (click)="enable()">enable</button>
+<div class="container">
+    <h1>Checkbox</h1>
+    <p>
+        O <strong>Checkbox</strong> fornece a mesma funcionalidade de um nativo aprimorado com estilo e animações do Material Design.
+    </p>
+
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+
+    <h1>Tente você mesmo</h1>
+    <Checkbox [formControl]="formControl" [items]="task" (onSelect)="onSelect($event)" [isRequired]="true"></Checkbox>
+    <p>
+        Valor de saida: {{formControl.getRawValue() | json}} {{formControl.status}}
+    </p>
+    <button mat-raised-button (click)="reset()">reset</button>
+    <button mat-raised-button (click)="disable()">disable</button>
+    <button mat-raised-button (click)="enable()">enable</button>
+</div>

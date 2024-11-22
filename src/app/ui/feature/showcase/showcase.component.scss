@@ -1,5 +1,13 @@
 @import 'breakpoints.scss';
 
+.toolbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+  
 .mat-drawer {
     width: 20%;
 }
@@ -11,21 +19,26 @@
 }
 
 .space-between {
-    display: flex; 
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .center {
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
 .nowrap-center {
-    display: flex; flex-wrap: nowrap; align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
-.height-drawer-content {
-    height: calc(100vh - 100px); 
-    z-index: 50; 
+.drawer-content {
+    z-index: 50;
     padding: 16px;
+}
+
+.height-fixed {
+    height: 100vh;
 }
