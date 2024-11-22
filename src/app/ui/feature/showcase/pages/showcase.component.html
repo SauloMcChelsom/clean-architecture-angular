@@ -1,0 +1,16 @@
+<mat-drawer-container  [hasBackdrop]="false">
+    <mat-drawer #drawer [mode]="'side'" opened class="height-fixed">
+        <NavListColumn *ngFor="let menu of menus">
+            <ItemCool
+                [routerLink]="menu.routerLink"
+                [text]="menu.text"
+                style="width: 100% !important;"
+            ></ItemCool>
+        </NavListColumn>
+    </mat-drawer>
+    <mat-drawer-content class="height-fixed">
+        <div class="drawer-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

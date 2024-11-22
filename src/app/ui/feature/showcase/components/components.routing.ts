@@ -2,7 +2,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BottomSheetShowcaseComponent } from './bottom-sheet-showcase/bottom-sheet-showcase.component';
 import { DrawerShowcaseComponent } from './drawer-showcase/drawer-showcase.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
-import { HomeComponent } from '../home/home.component';
 import { NavBarItensShowcaseComponent } from './nav-bar-itens-showcase/nav-bar-itens-showcase.component';
 import { SnackBarAlertStaticShowcaseComponent } from './snack-bar-alert-static-showcase/snack-bar-alert-static-showcase.component';
 import { SelectOptionShowcaseComponent } from './select-option-showcase/select-option-showcase.component';
@@ -37,11 +36,11 @@ import { PaginatorShowcaseComponent } from './paginator-showcase/paginator-showc
 
 
 const routes: Routes = [
-    { 
-      path: ROUTER_LINKS.ROOT, 
-      component: HomeComponent, 
-      data: { title: 'Home' } 
-    },
+  { 
+    path: '', 
+    component: BottomSheetShowcaseComponent, 
+    data: { title: 'Bottom sheet' } 
+  },
     { 
       path: 'bottom-sheet', 
       component: BottomSheetShowcaseComponent, 

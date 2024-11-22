@@ -1,0 +1,20 @@
+@import 'breakpoints.scss';
+  
+.mat-drawer {
+    width: 20%;
+}
+
+@media (max-width: $tablet) {
+    .mat-drawer {
+        width: 50%;
+    }
+}
+
+.drawer-content {
+    z-index: 50;
+    padding: 16px;
+}
+
+.height-fixed {
+    height: 100vh;
+}
