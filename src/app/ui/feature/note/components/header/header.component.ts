@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -9,6 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   imports:[TranslateModule]
 })
 export class HeaderComponent {
-  folderCount: number = 5;
-  noteCount: number = 3;
+  @Input() folderCount: number = 0;
+  @Input() noteCount: number = 0;
 }

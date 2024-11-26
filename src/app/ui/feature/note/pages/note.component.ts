@@ -23,7 +23,8 @@ import {TranslateModule} from "@ngx-translate/core";
 })
 export class NoteComponent implements OnInit {
   public noteList: NoteEntity[] = [];
-  public linkRedirectToAddScreen = `${ROUTER_LINKS.NOTE_ADD}`
+  public linkRedirectToAddScreen = `${ROUTER_LINKS.NOTE_ADD}`;
+  public numberOfNote = 0;
 
   public note: NoteEntity = {
     is_favorite: false,
@@ -67,10 +68,12 @@ export class NoteComponent implements OnInit {
         if(!note){
           return;
         }
-        this.noteList = note.map((note) => {
+        
+        this.noteList = note.map((element) => {
+          this.numberOfNote = note.length;
           return {
-            ...note,
-            link: ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', note.link)
+            ...element,
+            link: ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', element.link)
           };
         })   
       },

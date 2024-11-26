@@ -1,6 +1,8 @@
 <body class="mat-app-background">
   <div class="container-box">
-    <Header></Header>
+    <Header
+    [noteCount]="numberOfNote"
+    ></Header>
     <div>
       <Notes
         [noteList]="noteList" 
