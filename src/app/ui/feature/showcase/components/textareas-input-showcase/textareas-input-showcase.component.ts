@@ -29,7 +29,6 @@ export class TextareasInputShowcaseComponent {
       [erroRequired]="config.erroRequired" 
       [isRequired]="true" 
       [minLength]="5"
-      [isHeightDynamic]="false"
     >
     </Textareas>
     `,

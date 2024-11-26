@@ -12,11 +12,13 @@
         </NavBarItens>
         <div class="pb-xmedium">
           <Inputs
+            [title]="config_title.title!"
             [ariaLabel]="config_title.title!"    
             [formControl] = "config_title.formControl"
             [placeholder] = "config_title.placeholder!"
-            [erroFill] = "config_title.erroFill!",
+            [erroFill] = "config_title.erroFill!"
             [erroRequired] = "config_title.erroRequired!"
+            [isRequired]="true" 
           ></Inputs>
         </div>
         <div>
@@ -29,6 +31,7 @@
             [isRequired]="true" 
             [minLength]="5"
             [ariaLabel]="config_description.placeholder!"
+            [height]="height"
           ></Textareas>
         </div>
       </div>

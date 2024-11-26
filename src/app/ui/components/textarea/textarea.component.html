@@ -1,8 +1,9 @@
-<mat-form-field appearance="outline" class="ett-field">
+<mat-form-field appearance="outline" style="width: 100%;">
     <mat-label>{{ title }}</mat-label>
     <textarea 
         id="textarea-content"
-        matInput 
+        #textareaContent
+        matInput
         [formControl]="formControl"
         [placeholder]="placeholder!"
         [attr.aria-label]="ariaLabel" 

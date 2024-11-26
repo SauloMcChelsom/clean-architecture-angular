@@ -38,7 +38,7 @@ export class PageAddComponent implements OnInit {
   protected spinner: boolean = false;
   ROOT = ROUTER_LINKS.ROOT;
   private charactersLong = 5;
-
+  height = 0
 
   constructor(
     private fb: FormBuilder,
@@ -50,6 +50,15 @@ export class PageAddComponent implements OnInit {
     this.createInputText();
     this.createInputTextarea();
     this.buildForm();
+    this.heightDynamic()
+  }
+
+  heightDynamic() {
+    const group_components_in_screen = 290;
+    const screen_height = window.innerHeight;
+    let scrollHeight = screen_height - group_components_in_screen;
+    console.log(scrollHeight)
+    this.height = scrollHeight;
   }
 
   buildForm() {

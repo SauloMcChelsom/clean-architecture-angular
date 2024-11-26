@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { TextareaInputConfig } from './enuns/dynamic-date-input.types';
 
 @Component({
   selector: 'Textareas',
@@ -20,6 +19,8 @@ import { TextareaInputConfig } from './enuns/dynamic-date-input.types';
   ]
 })
 export class TextareaComponent {
+  @ViewChild('textareaContent', { read: ViewContainerRef, static: false }) textareaContent!: ViewContainerRef;
+
   @Input() formControl!: FormControl<any>;
   @Input() title!: string;
   @Input() placeholder!: string;
@@ -28,24 +29,10 @@ export class TextareaComponent {
   @Input() ariaLabel!:string;
   @Input() isRequired: boolean = false;
   @Input() isDisabled: boolean = false;
-  @Input() isHeightDynamic: boolean = true;
+  @Input() height: number = 0;
   @Input() minLength!: number;
   @Input() maxLength!: number;
   public isReady: boolean = false;
-  
-  heightDynamic() {
-    if(!this.isHeightDynamic){
-      return;
-    }
-
-    const group_components_in_screen = 260;
-    const screen_height = window.innerHeight;
-    let scrollHeight = screen_height - group_components_in_screen;
-    const textarea = document.getElementById('textarea-content');
-    textarea!.style.height = 'auto';
-    textarea!.style.height = `${scrollHeight}px`; 
-  }
-
   private initialControlValue: any;
   private initialDisabledState!: boolean;
   private initialValidator: any;
@@ -55,7 +42,6 @@ export class TextareaComponent {
     this.initialDisabledState = this.isDisabled;
     this.initialValidator = this.isRequired ? Validators.required : null;
 
-    this.heightDynamic();
     this.applyDisabledState(this.isDisabled);
     this.applyMinLength(this.minLength);
     this.applyMaxLength(this.maxLength);
@@ -63,6 +49,20 @@ export class TextareaComponent {
 
     setTimeout(() => {
       this.isReady = true;
+    })
+  }
+
+  ngOnChanges() {
+    this.setHeight();
+  }
+
+  setHeight(){
+    if(!this.height){
+      return
+    }
+
+    setTimeout(()=>{
+      this.textareaContent.element.nativeElement.style.height = `${this.height}px`;
     })
   }
 

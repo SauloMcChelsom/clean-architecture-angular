@@ -44,6 +44,7 @@ export class PageUpdateComponent implements OnInit {
   protected ROOT = ROUTER_LINKS.ROOT;
   private titleLink:string = '';
   private charactersLong = 5;
+  height = 0
   
     constructor(
       private fb: FormBuilder,
@@ -56,6 +57,14 @@ export class PageUpdateComponent implements OnInit {
   
     ngOnInit() { 
       this.getNote();
+      this.heightDynamic();
+    }
+
+    heightDynamic() {
+      const group_components_in_screen = 290;
+      const screen_height = window.innerHeight;
+      let scrollHeight = screen_height - group_components_in_screen;
+      this.height = scrollHeight;
     }
 
     getNote() {

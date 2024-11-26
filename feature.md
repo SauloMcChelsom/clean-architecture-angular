@@ -63,13 +63,13 @@
 # [x] jasmine para jest
   1 - implementar esse funcionalidade 
 
-# [x] refatora o projeto para adequar ao padrão
+# [/] refatora o projeto para adequar ao padrão
   1 - implementar esse funcionalidade 
  
 # [ok] acessibilidade
   1 - implementar esse funcionalidade 
 
-# [/] resolver stilos no modo dark
+# [ok] resolver stilos no modo dark
   1 - implementar esse funcionalidade 
 
 # [ok] refatora Titlesemple para Text
