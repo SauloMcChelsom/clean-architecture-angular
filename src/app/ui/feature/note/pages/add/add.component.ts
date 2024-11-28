@@ -11,7 +11,7 @@ import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel }
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
 import { AutofocusDirective } from 'src/app/ui/directives/autofocus.directive';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNoteAdd',
@@ -36,7 +36,7 @@ export class PageAddComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   protected spinner: boolean = false;
-  ROOT = ROUTER_LINKS.ROOT;
+  ROOT = ROUTING.ROOT;
   private charactersLong = 5;
   height = 0
 

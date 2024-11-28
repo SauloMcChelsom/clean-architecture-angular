@@ -7,7 +7,7 @@ import { CardComponent } from 'src/app/ui/components/card/card.component';
 import { CardColorDirective } from 'src/app/ui/components/card/directive/button-toggle-label-style.directive';
 import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { LINKS } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,7 +27,7 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 export class SignInComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
-  protected REGISTER = ROUTER_LINKS.REGISTER;
+  protected REGISTER = LINKS.AUTH_REGISTER;
 
   config = {
     formControl: new FormControl<string | undefined>(""),

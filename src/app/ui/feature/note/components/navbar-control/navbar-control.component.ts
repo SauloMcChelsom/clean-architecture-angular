@@ -9,7 +9,7 @@ import { DrawerComponent } from 'src/app/ui/components/drawer/drawer.component';
 import { MenuComponent } from 'src/app/ui/components/menu/menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 
 @Component({
@@ -30,7 +30,7 @@ import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 })
 export class NavbarControlComponent implements OnInit {
 
-  protected searchLink = ROUTER_LINKS.NOTE_SEARCH;
+  protected searchLink = ROUTING.NOTE_SEARCH;
   
   public menuOptions: any = [
     { label: 'Editar', icon: 'edit_note', cod: 'item1' },

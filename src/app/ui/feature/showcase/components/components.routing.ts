@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { BottomSheetShowcaseComponent } from './bottom-sheet-showcase/bottom-sheet-showcase.component';
 import { DrawerShowcaseComponent } from './drawer-showcase/drawer-showcase.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 import { NavBarItensShowcaseComponent } from './nav-bar-itens-showcase/nav-bar-itens-showcase.component';
 import { SnackBarAlertStaticShowcaseComponent } from './snack-bar-alert-static-showcase/snack-bar-alert-static-showcase.component';
 import { SelectOptionShowcaseComponent } from './select-option-showcase/select-option-showcase.component';

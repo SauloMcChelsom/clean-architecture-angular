@@ -13,7 +13,7 @@ import { NavBarItensComponent } from 'src/app/ui/components/nav-bar/nav-bar-iten
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaInputConfig } from 'src/app/ui/components/textarea/enuns/dynamic-date-input.types';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNoteUpdate',
@@ -41,7 +41,7 @@ export class PageUpdateComponent implements OnInit {
   protected openSnackBar!:SnackBarModel;
   protected closeSnackBar!:any;
   protected spinner:boolean = false;
-  protected ROOT = ROUTER_LINKS.ROOT;
+  protected ROOT = ROUTING.ROOT;
   private titleLink:string = '';
   private charactersLong = 5;
   height = 0
@@ -107,7 +107,7 @@ export class PageUpdateComponent implements OnInit {
         return;
       }
 
-      this.router.navigate([ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', this.titleLink)])
+      this.router.navigate([ROUTING.NOTE_READ_BY_TITLE.replace(':title', this.titleLink)])
     }
 
     createInputText(title: string): void {

@@ -9,7 +9,7 @@ import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { NavBarItensComponent } from 'src/app/ui/components/nav-bar/nav-bar-itens.component';
 import { SnackBarComponent } from 'src/app/ui/components/snack-bar/snack-bar.component';
 import { TextareaComponent } from 'src/app/ui/components/textarea/textarea.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'PageNoteReadOne',
@@ -33,7 +33,7 @@ export class PageReadOneComponent implements OnInit {
   protected isErr:boolean = false;
   protected isLoad:boolean = true;
   protected textErr:string = '';
-  ROOT = ROUTER_LINKS.ROOT;
+  ROOT = ROUTING.ROOT;
 
   constructor(
     private findNoteByLink: FindNoteByLinkUseCase,
@@ -62,13 +62,13 @@ export class PageReadOneComponent implements OnInit {
   }
 
   edit() {
-    this.router.navigate([ROUTER_LINKS.NOTE_UPDATE_BY_TITLE.replace(':title', this.note.link)])
+    this.router.navigate([ROUTING.NOTE_UPDATE_BY_TITLE.replace(':title', this.note.link)])
   }
 
   delete() {
     this._delete.deleteNote(this.note.uid!).subscribe({
       complete: () => {
-        this.router.navigate([ROUTER_LINKS.NOTE]);
+        this.router.navigate([ROUTING.NOTE]);
       },
     }).unsubscribe()
   }

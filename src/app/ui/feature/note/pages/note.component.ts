@@ -6,7 +6,7 @@ import { GetAllNoteUseCase } from 'src/app/domain/usecases/note/note_usecase';
 import { NotesComponent } from '../components/notes/notes.component';
 import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.component';
 import { HeaderComponent } from '../components/header/header.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 import {TranslateModule} from "@ngx-translate/core";
 import { NavbarControlComponent } from '../components/navbar-control/navbar-control.component';
 import { NavbarSortComponent } from '../components/navbar-sort/navbar-sort.component';
@@ -27,7 +27,7 @@ import { NavbarSortComponent } from '../components/navbar-sort/navbar-sort.compo
 })
 export class NoteComponent implements OnInit {
   public noteList: NoteEntity[] = [];
-  public linkRedirectToAddScreen = `${ROUTER_LINKS.NOTE_ADD}`;
+  public linkRedirectToAddScreen = `${ROUTING.NOTE_ADD}`;
   public numberOfNote = 0;
 
   public note: NoteEntity = {
@@ -77,7 +77,7 @@ export class NoteComponent implements OnInit {
           this.numberOfNote = note.length;
           return {
             ...element,
-            link: ROUTER_LINKS.NOTE_READ_BY_TITLE.replace(':title', element.link)
+            link: ROUTING.NOTE_READ_BY_TITLE.replace(':title', element.link)
           };
         })   
       },

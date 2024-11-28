@@ -1,15 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ShowcaseComponent } from './pages/showcase.component';
-import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 const route: Routes = [
   {
-    path: ROUTER_LINKS.ROOT,
+    path: ROUTING.ROOT,
     component: ShowcaseComponent,
     data: { title: 'Showcase' },
     children: [
       {
-        path: ROUTER_LINKS.ROOT,
+        path: ROUTING.ROOT,
         loadChildren: () => import('./components/components.module').then(m => m.ComponentModule) 
       }
     ]

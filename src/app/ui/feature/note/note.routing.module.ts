@@ -4,32 +4,32 @@ import { NoteComponent } from './pages/note.component'
 import { PageAddComponent } from './pages/add/add.component'
 import { PageReadOneComponent } from './pages/read-one/read-one.component'
 import { PageUpdateComponent } from './pages/update/update.component'
-import { ROUTER_LINKS } from '../../../../config/endpoints/router-links'
+import { ROUTING } from '../../../../config/endpoints/router-links'
 import { SearchComponent } from './pages/search/search.component'
 
 export const ROUTES: Routes = [
     {
-        path: ROUTER_LINKS.ROOT,
+        path: ROUTING.ROOT,
         component: NoteComponent,
         data: { title: 'NOTE.HOME' }
     },
     {
-        path: ROUTER_LINKS.NOTE_ADD,
+        path: ROUTING.NOTE_ADD,
         component: PageAddComponent,
         data: { title: 'NOTE.PAGE_ADD' }
     },
     {
-        path: ROUTER_LINKS.NOTE_UPDATE_BY_TITLE,
+        path: ROUTING.NOTE_UPDATE_BY_TITLE,
         component: PageUpdateComponent,
         data: { title: 'NOTE.PAGE_UPDATE' }
     },
     {
-        path: ROUTER_LINKS.NOTE_READ_BY_TITLE,
+        path: ROUTING.NOTE_READ_BY_TITLE,
         component: PageReadOneComponent,
         data: { title: 'NOTE.PAGE_READ_ONE' }
     },
     {
-        path: ROUTER_LINKS.NOTE_SEARCH,
+        path: ROUTING.NOTE_SEARCH,
         component: SearchComponent,
         data: { title: 'NOTE.HOME' }
     },
