@@ -1,0 +1,55 @@
+<body class="mat-app-background grid flex-column align-items-center justify-content-center vertical-container background-blur" style="height: 100vh;">
+  <Card [appColor]="'--app-background'"  class="card-size">
+    <div>
+      <SnackBarAlertStatic     
+        [openSnackBar]="openSnackBar" 
+        [closeSnackBar]="closeSnackBar"
+      >
+      </SnackBarAlertStatic>
+      <div class="grid flex-column">
+        <div class="col">
+          <div class="box text-center text-large primary-300 mb-default mt-default">
+            Que bom que você voltou
+          </div>
+        </div>
+        <div class="col">
+          <Inputs 
+            [formControl]="config.formControl" 
+            [title]="config.title" 
+            [placeholder]="config.placeholder"
+            [erroFill]="config.erroFill" 
+            [erroRequired]="config.erroRequired" 
+            [isRequired]="true" 
+            [minLength]="5"
+          ></Inputs>
+        </div>
+        <div class="col">
+          <Inputs 
+            [formControl]="config.formControl" 
+            [title]="config.title" 
+            [placeholder]="config.placeholder"
+            [erroFill]="config.erroFill" 
+            [erroRequired]="config.erroRequired" 
+            [isRequired]="true" 
+            [minLength]="5"
+          ></Inputs>
+        </div>
+        <div class="col mb-xmedium">
+          <button color="primary" mat-raised-button style="width: 100%; height: 50px;" (click)="signIn()">
+            Entrar na sua conta
+          </button>
+        </div>
+        <div class="col">
+          <div class="text-center text-default color-default">
+             <span class="primary-300 link" [routerLink]="'/'">Esqueceu a senha?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Card>
+  <Card [appColor]="'--app-background'" class="card-size mt-default">
+    <div class="text-center text-default color-default">
+      Não tem uma conta? <span class="primary-300 link" [routerLink]="REGISTER">Cadastre-se</span>
+    </div>
+  </Card>
+</body>

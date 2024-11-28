@@ -19,7 +19,7 @@
     { label: 'Blue', value: 'blue' }
   ]" [formControl]="favoriteColorformControl" (selectionChange)="onSingleSelectionChange($event)">
   </ButtonToggle>
-
+  <br/>
   <ButtonToggle #toggleGroup2 [groupName]="'group2'" title="Multiple selection" groupName="ingredients"
     [multiple]="true" [options]="[
     { label: 'Flour', value: 'flour' },

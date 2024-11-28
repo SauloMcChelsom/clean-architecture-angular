@@ -8,6 +8,8 @@ import { ButtonFabComponent } from 'src/app/ui/components/button-fab/button-fab.
 import { HeaderComponent } from '../components/header/header.component';
 import { ROUTER_LINKS } from 'src/config/endpoints/router-links';
 import {TranslateModule} from "@ngx-translate/core";
+import { NavbarControlComponent } from '../components/navbar-control/navbar-control.component';
+import { NavbarSortComponent } from '../components/navbar-sort/navbar-sort.component';
 @Component({
   selector: 'PageNote',
   templateUrl: './note.component.html',
@@ -18,7 +20,9 @@ import {TranslateModule} from "@ngx-translate/core";
     TranslateModule,
     HeaderComponent,
     NotesComponent,
-    ButtonFabComponent
+    ButtonFabComponent,
+    NavbarControlComponent,
+    NavbarSortComponent
   ]
 })
 export class NoteComponent implements OnInit {

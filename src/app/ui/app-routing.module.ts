@@ -12,12 +12,12 @@ const routes: Routes = [
     loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),
   },
   {
-    path: ROUTER_LINKS.CHANGE_LANGUAGE,
-    loadChildren: () => import('./feature/change-language/change-language.module').then(m => m.ChangeLanguageModule),
-  },
-  {
     path: ROUTER_LINKS.SHOWCASE,
     loadChildren: () => import('./feature/showcase/showcase.module').then(m => m.ShowcaseModule),
+  },
+  {
+    path: ROUTER_LINKS.AUTH,
+    loadChildren: () => import('./feature/auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: ROUTER_LINKS.PAGE_NOT_FOUND,

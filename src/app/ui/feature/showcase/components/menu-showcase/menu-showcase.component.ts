@@ -22,6 +22,7 @@ export class MenuShowcaseComponent implements OnInit {
   codes = [
     `
     import { MenuComponent } from 'src/app/ui/components/menu/menu.component';
+    import { MatMenuModule } from '@angular/material/menu';
     `,
     `
     <Menu
@@ -31,6 +32,10 @@ export class MenuShowcaseComponent implements OnInit {
       (onSelect)="onSelect($event)"
     >
     </Menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="dynamicMenu.menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
     `,
     `
     menuOptions: any = [

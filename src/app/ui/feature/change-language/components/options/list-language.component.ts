@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SelectOptionComponent } from 'src/app/ui/components/select-option/select-option.component';
-import { TranslationService } from '../../internationalization/translation.service';
+import { TranslationService } from '../../../internationalization/translation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectionModel } from 'src/app/ui/components/select-option/models';
 import { FormControl } from '@angular/forms';

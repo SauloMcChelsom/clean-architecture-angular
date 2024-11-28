@@ -16,6 +16,7 @@ export interface SnackBarModel {
 
 export enum CloseSnackBarInNow {
   in_5_seconds = 1000*5,
+  in_10_seconds = 1000*10,
   in_1_minutes = 1000*60,
   in_5_minutes = (1000*60)*5,
 }

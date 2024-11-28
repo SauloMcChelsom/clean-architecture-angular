@@ -44,8 +44,12 @@ export class DrawerShowcaseComponent {
       }
     }
     `,
+    `HTML
+        <drawer></drawer>
+    `,
     `
     import { DrawerService } from 'src/app/ui/components/drawer/drawer.service';
+    import { DrawerComponent } from 'src/app/ui/components/drawer/drawer.component';
     `,
     `
     outputEmitter = new EventEmitter<string>();

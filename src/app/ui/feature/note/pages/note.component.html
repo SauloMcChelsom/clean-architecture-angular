@@ -3,12 +3,18 @@
     <Header
     [noteCount]="numberOfNote"
     ></Header>
-    <div>
-      <Notes
-        [noteList]="noteList" 
-        (onClickEvent)="addItem($event)"
-      ></Notes>
+    <div class="grid flex-column">
+      <div class="col-12 pb-0">
+        <NavbarControl></NavbarControl>
+      </div>
+      <div class="col-12 pt-0 pb-0">
+        <NavbarSort></NavbarSort>
+      </div>
     </div>
+    <Notes
+      [noteList]="noteList" 
+      (onClickEvent)="addItem($event)"
+    ></Notes>
     <div class="container-button-add flex">
       <ButtonFab 
         icon="add" 

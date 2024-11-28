@@ -6,28 +6,15 @@ import { ToggleOptionModel } from './models';
 
 @Component({
   selector: 'ButtonToggle',
-  template: `
-  <div class="container">
-      <h3>{{ title }}</h3>
-      <mat-button-toggle-group
-        [formControl]="formControl"
-        [name]="groupName"
-        [multiple]="multiple"
-        (change)="onSelectionChange($event)">
-        
-        <mat-button-toggle 
-          *ngFor="let option of options" 
-          [value]="option.value" 
-          [disabled]="option.disabled">
-          {{ option.label }}
-        </mat-button-toggle>
-        
-      </mat-button-toggle-group>
-  </div>
-  `,
+  templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss'],
   standalone: true,
-  imports: [MatButtonToggleModule, ReactiveFormsModule, CommonModule],
+  imports: [
+    MatButtonToggleModule, 
+    ReactiveFormsModule, 
+    CommonModule
+  ],
+
 })
 export class ButtonToggleGroupComponent implements OnInit {
   @Input() title: string = '';

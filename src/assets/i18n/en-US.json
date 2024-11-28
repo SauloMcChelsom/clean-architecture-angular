@@ -12,7 +12,7 @@
   "NOTE.PAGE_READ_ONE": "Read your note",
   "NOTE.TITLE_CHANGE_LANG": "Change language",
   "NOTE.OPTION_EMPY": "No Index Selected",
-  "NOTE.HOME.TITLE": "Todas las notas",
+  "NOTE.HOME.TITLE": "All notes",
   "NOTE.HOME.SUBTITLE": "{{NUM_FOLDER}} Folders, {{NUM_NOTE}} Notes",
   "NOTE.SUBTITLE_UPDATE_NEW_NOTE": "Update a new note",
   "NOTE.SUBTITLE_ADD_NEW_NOTE": "Add a new note",

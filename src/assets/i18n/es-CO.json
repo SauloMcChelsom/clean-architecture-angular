@@ -12,7 +12,7 @@
     "NOTE.PAGE_READ_ONE": "Lee tu libreta",
     "NOTE.TITLE_CHANGE_LANG": "Cambiar idioma",
     "NOTE.OPTION_EMPY": "Ningún índice seleccionado",
-    "NOTE.HOME.TITLE": "All notes",
+    "NOTE.HOME.TITLE": "Todas las notas",
     "NOTE.HOME.SUBTITLE": "{{NUM_FOLDER}} Carpetas, {{NUM_NOTE}} Notas",
     "NOTE.SUBTITLE_UPDATE_NEW_NOTE": "Actualizar nueva nota",
     "NOTE.SUBTITLE_ADD_NEW_NOTE": "Agregar una nueva nota",

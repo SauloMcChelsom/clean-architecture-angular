@@ -1,0 +1,20 @@
+<Menu
+    [mainMenuLabel]="'Options'"
+    [menuItems]="menuOptions"
+    #dynamicMenu
+    (onSelect)="onSelect($event)"
+  >
+</Menu>
+
+<mat-toolbar style="background-color: initial;">
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="dynamicMenu.menu">
+    <mat-icon>sort</mat-icon>
+    {{ type_sort }} 
+  </button>
+  |
+  <button mat-icon-button (click)="sort()">
+    <mat-icon>{{mode_sort}}</mat-icon>
+</button>
+
+</mat-toolbar>
