@@ -1,0 +1,10 @@
+<mat-form-field appearance="outline" class="ett-field" style="width: 100%;">
+    <mat-select [formControl]="formControl">
+        <mat-option disabled value="">{{ placeholder }}</mat-option>
+        <mat-option (click)="onClickEvent(selection.cod)" *ngFor="let selection of options" [value]="selection.cod">
+            <div  class="color-white white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head text-medium">
+                {{ selection.description }}
+            </div>
+        </mat-option>
+    </mat-select>
+</mat-form-field>

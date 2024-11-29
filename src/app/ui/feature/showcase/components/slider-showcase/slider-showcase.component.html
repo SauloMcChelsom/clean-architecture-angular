@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Slider</h1>
+  <p>
+      O <strong>Slider</strong> permite a seleção de um valor de um intervalo via mouse, toque ou teclado, semelhante a <input type="range">.
+  </p>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <Slider 
+    [formControl]="sliderControl" 
+    [min]="0" 
+    [max]="100" 
+    [step]="10"
+    [isRequired]="true"
+    [initialValue]="30"
+  ></Slider>
+  <p>
+    Valor de saida: {{ sliderControl.getRawValue() | json }} {{ sliderControl.status }}
+  </p>
+  <button mat-raised-button (click)="reset()">reset</button> 
+  <button mat-raised-button (click)="disable()">disable</button> 
+  <button mat-raised-button (click)="enable()">enable</button>
+</div>

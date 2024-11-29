@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularMaterialModule } from '../ui/theme/angular-material.module';
 import { InjectModule } from 'src/config/injector/inject.module';
+import { TranslateModuleConfig } from './feature/internationalization/translate-module-config';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { InjectModule } from 'src/config/injector/inject.module';
     InjectModule,
     BrowserModule,
     HttpClientModule,
+    TranslateModuleConfig,
     ReactiveFormsModule,
     NoopAnimationsModule,
     FormsModule,
@@ -22,5 +24,6 @@ import { InjectModule } from 'src/config/injector/inject.module';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
+  providers:[]
 })
 export class AppModule { }

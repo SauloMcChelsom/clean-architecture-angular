@@ -1,0 +1,26 @@
+@import '../../shared/styles/code-formatter.scss';
+
+.hidden-container {
+    width: 0px;
+    height: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+.full-screen-drawer {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.full-screen-container {
+    @extend .hidden-container;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #ffffff00;
+}

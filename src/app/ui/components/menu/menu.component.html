@@ -1,0 +1,28 @@
+<div class="container input">
+    <ng-content></ng-content>
+    <mat-menu #menu="matMenu" class="matMenu">
+      <ng-container *ngFor="let item of menuItems">
+        <ng-container *ngIf="!item.children; else nestedMenu">
+          <button mat-menu-item [disabled]="item.disabled" (click)="onClickEvent(item.cod)">
+            <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+            {{ item.label }}
+          </button>
+        </ng-container>
+
+        <ng-template #nestedMenu>
+          <button mat-menu-item [matMenuTriggerFor]="subMenu" [disabled]="item.disabled">
+            <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
+            {{ item.label }}
+          </button>
+          <mat-menu #subMenu="matMenu" class="matMenu">
+            <ng-container *ngFor="let child of item.children">
+              <button mat-menu-item [disabled]="child.disabled" (click)="onClickEvent(child.cod)">
+                <mat-icon *ngIf="child.icon">{{ child.icon }}</mat-icon>
+                {{ child.label }}
+              </button>
+            </ng-container>
+          </mat-menu>
+        </ng-template>
+      </ng-container>
+    </mat-menu>
+  </div>

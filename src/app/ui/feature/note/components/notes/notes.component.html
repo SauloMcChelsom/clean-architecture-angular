@@ -1,0 +1,14 @@
+<div class="grid">
+  <div class="col-12 md:col-6 lg:col-3 pt-xxsmall pt-xxsmall md:pt-default lg:pt-default" 
+     *ngFor="let note of noteList;">
+     <div>
+      <Card [link]="note.link">
+        <div>
+          <TitleCard [value]="note.title"  class="white-space-nowrap overflow-hidden text-overflow-ellipsis mat-card-head text-medium"></TitleCard>
+          <TimestampCard [value]="note.timestamp!"  class="flex justify-content-end mat-card-timestamp text-default"></TimestampCard>
+          <TextCard [value]="note.text" class="mat-card-body text-small"></TextCard>
+        </div>
+      </Card>
+     </div>
+  </div>
+</div>

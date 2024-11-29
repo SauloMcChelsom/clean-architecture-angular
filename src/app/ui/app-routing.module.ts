@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { NoPreloading, RouterModule, Routes } from '@angular/router';
+import { ROUTING } from '../../config/endpoints/router-links';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),  
+    path: ROUTING.ROOT,
+    loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),  
   },
   {
-    path: 'note',
-    loadChildren: () => import('./pages/note/note.module').then(m => m.NoteModule),
+    path: ROUTING.NOTE,
+    loadChildren: () => import('./feature/note/note.module').then(m => m.NoteModule),
   },
   {
-    path: 'flex-grid',
-    loadChildren: () => import('./pages/flex-grid/flex-grid.module').then(m => m.FlexGridModule),
+    path: ROUTING.SHOWCASE,
+    loadChildren: () => import('./feature/showcase/showcase.module').then(m => m.ShowcaseModule),
   },
   {
-    path: '**',
+    path: ROUTING.AUTH,
+    loadChildren: () => import('./feature/auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: ROUTING.PAGE_NOT_FOUND,
     redirectTo: 'page-not-found'
   }
 ];

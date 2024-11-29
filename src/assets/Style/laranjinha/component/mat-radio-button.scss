@@ -1,0 +1,16 @@
+.theme-mat-radio-button {
+    .mat-mdc-radio-button.mat-accent {
+        --mdc-radio-selected-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-focus-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-hover-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-pressed-icon-color: var(--app-primary) !important;
+
+        --mdc-radio-selected-focus-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-hover-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-icon-color: var(--app-primary) !important;
+        --mdc-radio-selected-pressed-icon-color: var(--app-primary) !important;
+        --mat-radio-checked-ripple-color: var(--app-primary) !important;
+    }
+
+}

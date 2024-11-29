@@ -1,0 +1,15 @@
+<ButtonIcon 
+  [icon]="icon"
+  *ngIf="!spinner" 
+  [routerLink]="routerLink"
+  (click)="onClickEvent()"
+  [ariaLabel]="ariaLabel"
+>
+</ButtonIcon>
+<ButtonIconSpinner 
+  appAutofocus
+  *ngIf="spinner" 
+  diameter="24"
+  [ariaLabel]="ariaLabelSpinner"
+>
+</ButtonIconSpinner>

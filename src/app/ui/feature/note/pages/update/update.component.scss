@@ -1,0 +1,19 @@
+@import 'spacing.scss';
+
+form {
+    margin-top: $space-default;
+}
+
+label {
+    display: block;
+    margin-bottom: $space-xsmall;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    margin-top: $space-xsmall;
+    cursor: pointer;
+}

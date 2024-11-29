@@ -1,0 +1,6 @@
+<mat-drawer-container [hasBackdrop]="true" class="hidden-container"
+  [ngClass]="{'full-screen-container': isOpen === true}">
+  <mat-drawer #drawer mode="side" [(opened)]="isOpen" (openedStart)="open()" class="full-screen-drawer">
+    <ng-container #drawerContent></ng-container>
+  </mat-drawer>
+</mat-drawer-container>

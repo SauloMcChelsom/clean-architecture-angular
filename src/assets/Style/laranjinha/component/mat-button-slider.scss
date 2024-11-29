@@ -1,0 +1,14 @@
+.theme-mat-button-slider {
+    .mat-mdc-slider.mat-primary {
+        --mdc-slider-handle-color:  var(--app-primary) !important;
+        --mdc-slider-focus-handle-color:  var(--app-primary) !important;
+        --mdc-slider-hover-handle-color:  var(--app-primary) !important;
+        --mdc-slider-active-track-color:  var(--app-primary) !important;
+        --mdc-slider-inactive-track-color:  var(--app-primary) !important;
+        --mdc-slider-with-tick-marks-active-container-color: var(--app-surface) !important;
+        --mdc-slider-with-tick-marks-inactive-container-color:  var(--app-primary) !important;
+        --mat-mdc-slider-ripple-color:  var(--app-primary) !important;
+        --mat-mdc-slider-hover-ripple-color: var(--app-scrim) !important;
+        --mat-mdc-slider-focus-ripple-color: var(--app-shadowy) !important;
+    }
+}

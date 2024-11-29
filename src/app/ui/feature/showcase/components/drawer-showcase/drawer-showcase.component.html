@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Drawer</h1>
+    <p>
+        O <strong>Drawer</strong> é um componente de interface do usuário (UI) que se abre lateralmente, geralmente a partir da borda esquerda ou direita da tela. Ele é usado para fornecer acesso rápido a opções, menus ou informações adicionais.
+    </p>
+    
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+    
+    <h1>Tente você mesmo</h1>
+    <drawer></drawer>
+    <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button (click)="openDrawer()">Open Drawer</button>
+    <br/>
+    <div *ngIf="animal">
+        You chose: <em>{{animal}}</em>
+    </div>
+</div>

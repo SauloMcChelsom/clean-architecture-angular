@@ -1,0 +1,13 @@
+.theme-mat-menu {
+    .matMenu {
+        background-color: var(--app-primary) !important;
+    }
+
+    .mat-mdc-menu-item, .mat-mdc-menu-item:visited, .mat-mdc-menu-item:link {
+        color: var(--app-surface) !important;
+    }
+
+    .mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
+        color: var(--app-surface) !important;
+    }
+}

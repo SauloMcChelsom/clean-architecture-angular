@@ -4,7 +4,7 @@ import { AuthenticationEntity } from 'src/app/domain/entities/authentication_ent
 import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entity';
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { HttpAdapter } from 'src/app/infra/http/http_adapter';
-import { CREATE_NEW_ACCOUNT_ENDPOINT_CONFIG, FORGOT_PASSWORD_ENDPOINT_CONFIG, GET_CURRENT_ENDPOINT_CONFIG, GET_CURRENT_TOKEN_ENDPOINT_CONFIG, IS_EMAIL_ALREADY_ENDPOINT_CONFIG, LOGOUT_ENDPOINT_CONFIG, REFRESH_TPOKEN_ENDPOINT_CONFIG, REVOKE_TOKEN_ENDPOINT_CONFIG, SIGN_IN_WITH_EMAIL_AND_PASSWORD_ENDPOINT_CONFIG } from 'src/config/endpoints/endpoint';
+import { CREATE_NEW_ACCOUNT, FORGOT_PASSWORD, GET_CURRENT, GET_CURRENT_TOKEN, IS_EMAIL_ALREADY, LOGOUT, REFRESH_TOKEN, REVOKE_TOKEN, SIGN_IN_WITH_EMAIL_AND_PASSWORD } from 'src/config/endpoints/endpoint';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 @Injectable({ providedIn: 'root' })
@@ -21,17 +21,17 @@ export class AuthenticationRemotoDatasourceImp implements AuthenticationReposito
     }
 
     public refreshToken(content: AuthorizationEntity): Observable<AuthorizationEntity> {
-        return this.authorizationRequest.createAndStartRequest(REFRESH_TPOKEN_ENDPOINT_CONFIG)
+        return this.authorizationRequest.createAndStartRequest(REFRESH_TOKEN)
     }
 
     public createNewAccount(user: AuthenticationEntity): Observable<AuthorizationEntity> {
-        return this.authorizationRequest.createAndStartRequest(CREATE_NEW_ACCOUNT_ENDPOINT_CONFIG, '/', {
+        return this.authorizationRequest.createAndStartRequest(CREATE_NEW_ACCOUNT, '/', {
             body: user
         })
     }
 
     public signInWithEmailAndPassword(email: string, password: string): Observable<AuthorizationEntity> {
-        return this.authorizationRequest.createAndStartRequest(SIGN_IN_WITH_EMAIL_AND_PASSWORD_ENDPOINT_CONFIG, '/', {
+        return this.authorizationRequest.createAndStartRequest(SIGN_IN_WITH_EMAIL_AND_PASSWORD, '/', {
             body: {
                 email: email,
                 password: password
@@ -40,7 +40,7 @@ export class AuthenticationRemotoDatasourceImp implements AuthenticationReposito
     }
 
     public isEmailAlreadyExists(email: string): Observable<boolean> {
-        return this.isRequest.createAndStartRequest(IS_EMAIL_ALREADY_ENDPOINT_CONFIG, '/', {
+        return this.isRequest.createAndStartRequest(IS_EMAIL_ALREADY, '/', {
             body: {
                 email: email
             }
@@ -48,11 +48,11 @@ export class AuthenticationRemotoDatasourceImp implements AuthenticationReposito
     }
 
     public getCurrentUser(): Observable<UserEntity> {
-        return this.userRequest.createAndStartRequest(GET_CURRENT_ENDPOINT_CONFIG);
+        return this.userRequest.createAndStartRequest(GET_CURRENT);
     }
 
     public forgotPassword(email: string): Observable<boolean> {
-        return this.isRequest.createAndStartRequest(FORGOT_PASSWORD_ENDPOINT_CONFIG, '/', {
+        return this.isRequest.createAndStartRequest(FORGOT_PASSWORD, '/', {
             body: {
                 email: email
             }
@@ -60,18 +60,18 @@ export class AuthenticationRemotoDatasourceImp implements AuthenticationReposito
     }
 
     public validToken(content: AuthorizationEntity): Observable<boolean> {
-        return this.isRequest.createAndStartRequest(GET_CURRENT_ENDPOINT_CONFIG)
+        return this.isRequest.createAndStartRequest(GET_CURRENT)
     }
 
     public revokeToken(content: AuthorizationEntity): Observable<boolean> {
-        return this.isRequest.createAndStartRequest(REVOKE_TOKEN_ENDPOINT_CONFIG);
+        return this.isRequest.createAndStartRequest(REVOKE_TOKEN);
     }
 
     public getCurrentToken(): Observable<AuthorizationEntity> {
-        return this.authorizationRequest.createAndStartRequest(GET_CURRENT_TOKEN_ENDPOINT_CONFIG);
+        return this.authorizationRequest.createAndStartRequest(GET_CURRENT_TOKEN);
     }
 
     public logout(): Observable<boolean> {
-        return this.isRequest.createAndStartRequest(LOGOUT_ENDPOINT_CONFIG);
+        return this.isRequest.createAndStartRequest(LOGOUT);
     }
 }

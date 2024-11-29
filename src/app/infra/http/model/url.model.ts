@@ -6,11 +6,11 @@ export enum Port { default = ':80', _8080 = ':8080', _4200 = ':4200', _3000 = ':
 
 export interface Url {
     protocol: Protocol;
-    Subdomain?: string;
-    Domain: string;
-    Port?: Port;
+    subdomain?: string;
+    domain: string;
+    port?: Port;
     TLD?: TLD[]
     version?: version;
     preview?: preview;
-    Subdirectory: string;
+    subdirectory: string;
 }

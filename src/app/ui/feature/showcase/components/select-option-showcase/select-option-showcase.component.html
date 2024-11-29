@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>SelectOption</h1>
+  <p>
+      O <strong>SelectOption</strong> é um componente de interface do usuário (UI) que permite ao usuário selecionar uma opção entre várias alternativas. Ele é comumente usado em formulários, menus e listas para fornecer uma maneira fácil e intuitiva de escolher uma opção. O Select-Option pode ser apresentado em diferentes formatos, como uma lista suspensa, botões de opção ou caixas de seleção.
+  </p>
+  
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+  
+  <h1>Tente você mesmo</h1>
+  <SelectOption 
+    [formControl] = "config.formControl"
+    [placeholder] = "config.selectEmpy"
+    [isRequired] = "config.requiredField"
+    [isDisabled] = "config.disableField"
+    [options] = "config.selections"
+  ></SelectOption>
+  <p>
+    Valor de saida: {{ config.formControl.getRawValue() | json }}
+  </p>
+  <button mat-raised-button (click)="reset()">reset</button> 
+  <button mat-raised-button (click)="disable()">disable</button> 
+  <button mat-raised-button (click)="enable()">enable</button>
+</div>

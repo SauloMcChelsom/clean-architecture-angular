@@ -1,0 +1,9 @@
+<div *ngFor="let item of items">
+  <mat-checkbox 
+    [formControl]="formControls[item.cod]" 
+    [color]="item.color" 
+    [disabled]="item.disabled"
+    (change)="onClickEvent(item.cod)">
+    {{ item.name }} {{ item.disabled }}
+  </mat-checkbox>
+</div>

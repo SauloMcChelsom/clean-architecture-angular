@@ -1,0 +1,7 @@
+.theme-mat-button-fab {
+    .mat-mdc-fab.mat-primary {
+        --mdc-fab-container-color: var(--app-primary) !important;
+        --mdc-fab-icon-color: var(--app-on-surface-dual) !important;
+        --mat-mdc-fab-color: var(--app-on-surface-dual) !important;
+    }
+}

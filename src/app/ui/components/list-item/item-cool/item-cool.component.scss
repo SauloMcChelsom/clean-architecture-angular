@@ -1,0 +1,16 @@
+.active {
+    background-color: var(--app-background-active);
+    a {
+        font-weight: bolder;
+        color: var(--app-primary);
+    }
+   
+}
+
+mat-list-item {
+    border-radius: 10px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    padding-left: 24px;
+    cursor: pointer !important;
+}

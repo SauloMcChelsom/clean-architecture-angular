@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Menu</h1>
+    <p>
+        O <strong>Menu</strong> é um painel flutuante contendo uma lista de opções.
+    </p>
+
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+
+    <h1>Tente você mesmo</h1>
+    <Menu
+        [mainMenuLabel]="'Options'"
+        [menuItems]="menuOptions"
+        #dynamicMenu
+        (onSelect)="onSelect($event)"
+    >
+    </Menu>
+    <button mat-button [matMenuTriggerFor]="dynamicMenu.menu">
+        Menu
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dynamicMenu.menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <p>
+        Valor de saida: {{selected}}
+    </p>
+</div>

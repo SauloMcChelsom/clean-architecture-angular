@@ -1,0 +1,48 @@
+<div *ngIf="isReady">
+  <SnackBarAlertStatic [openSnackBar]="openSnackBar" [closeSnackBar]="closeSnackBar"></SnackBarAlertStatic>
+  <body class="mat-typography mat-app-background">
+    <div class="ml-small mr-small">
+      <div class="container-box">
+        <NavBarItens>
+          <ButtonCancat  icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
+          <div center class="flex align-items-center justify-content-center text-medium">
+            {{ 'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate }}
+         </div>
+          <ButtonCancat icon="edit" right [spinner]="spinner" (onClick)="update()" [ariaLabel]="'NOTE.LABEL_UPDATE_THIS_NOTE' | translate"></ButtonCancat>
+        </NavBarItens>
+        <div class="pb-xmedium">
+          <Inputs
+            [title]="config_title.title!"
+            [ariaLabel]="config_title.title!"    
+            [formControl] = "config_title.formControl"
+            [placeholder] = "config_title.placeholder!"
+            [erroFill] = "config_title.erroFill!"
+            [erroRequired] = "config_title.erroRequired!"
+            [isRequired]="true" 
+          ></Inputs>
+        </div>
+        <div>
+          <Textareas 
+            [formControl]="config_description.formControl" 
+            [title]="config_description.title" 
+            [placeholder]="config_description.placeholder!"
+            [erroFill]="config_description.erroFill!" 
+            [erroRequired]="config_description.erroRequired!" 
+            [isRequired]="true" 
+            [minLength]="5"
+            [ariaLabel]="config_description.placeholder!"
+            [height]="height"
+          ></Textareas>
+        </div>
+      </div>
+    </div>
+  </body>
+</div>
+
+<div *ngIf="isReady == false && isErr == true">
+  <h1>{{ textErr }}</h1>
+</div>
+
+<body class="mat-typography mat-app-background container-box" *ngIf="isReady == false && isErr == false && isLoad == true">
+  <h1>Carregando....</h1>
+</body>

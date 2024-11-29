@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage --watch",
     "lint": "ng lint",
+    "build:lib": "ng-packagr -p src/app/ui/components/full/card-p/ng-package.json",
     "format": "npx prettier 'src/app/**/*.{ts,html,scss}' --write",
     "extract-translations": "ngx-translate-extract --input ./src --output ./src/assets/i18n/*.json --clean --sort --format namespaced-json --marker _"
   },
@@ -28,6 +29,8 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "crypto-js": "^4.2.0",
+    "ng-packagr": "^16.2.0",
+    "ngx-mask": "^14.2.4",
     "primeflex": "^3.3.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

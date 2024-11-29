@@ -1,8 +1,11 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-@import '../node_modules/primeflex/primeflex.scss';
-@import "./assets/styles/laranjinha/theme.scss";
-@import './assets/styles/costume-material.scss';
-@import './assets/styles/standard-class.scss';
-@import './assets/styles/costume-color-components-material.scss';
+@import './assets/Style/grid.scss';
+@import './assets/Style/breakpoints.scss';
+@import './assets/Style/elevation.scss';
+@import './assets/Style/radius.scss';
+@import './assets/Style/spacing.scss';
+@import './assets/Style/typography.scss';
+@import './assets/Style/standard-class.scss';
+@import './assets/Style/laranjinha/theme.scss';

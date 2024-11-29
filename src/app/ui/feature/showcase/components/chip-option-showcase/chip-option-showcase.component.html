@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>ChipOption</h1>
+    <p>
+        O <strong>ChipOption</strong> permitem que os usuários visualizem informações, façam seleções, filtrem conteúdo e insiram dados.
+    </p>
+
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+
+    <h1>Tente você mesmo</h1>
+    <div *ngIf="config">
+        <ChipOption 
+            [chips]="chipList" 
+            [formControl]="config.formControl"
+            [isRequired]="true"
+            [isDisabled]="false"
+        ></ChipOption>
+        <p>
+            Valor de saida: {{config.formControl.getRawValue() | json}} {{config.formControl.status}}
+        </p>
+        <button mat-raised-button (click)="reset()">reset</button> 
+        <button mat-raised-button (click)="disable()">disable</button> 
+        <button mat-raised-button (click)="enable()">enable</button>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp');
+@import '../Style/typography.scss';
+@import 'spacing.scss';
+
+* {
+  font-family: $font-family-Roboto;
+  font-size: var(--body-font-size-default);
+  font-weight: var(--body-font-weight-300);
+  line-height: var(--body-line-height);
+  margin: 0px;
+  padding: 0px;
+}
+
+.box {
+  padding-top: $space-default;;
+  padding-bottom: $space-default;;
+  border-radius: $radius-medium;
+  margin: $space-default;
+}
+
+.container-box {
+  @extend .conteiner-margin;
+  height: 100vh;
+}
+
+.text-small {
+  font-size: var(--body-font-size-default);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-100);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+
+.text-default {
+  font-size: var(--body-font-size-default);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.text-medium {
+  font-size: var(--body-font-size-medium);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-500);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.text-large {
+  font-size: var(--body-font-size-big);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height-big);
+}
+
+.text-large-big {
+  font-size: var(--body-font-size-xbig);
+  font-family: $font-family-Roboto;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+.text-large-huge {
+  font-size: var(--body-font-size-huge);
+  font-family: $font-family-comfortaa;
+  font-weight: var(--body-font-weight-bolder);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}

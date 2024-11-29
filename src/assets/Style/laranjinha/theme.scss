@@ -1,0 +1,74 @@
+@use '@angular/material' as mat;
+
+@import "./colors.scss";
+@import "./component/mat-select.scss";
+@import "./component/mat-input.scss";
+@import "./component/mat-textareas.scss";
+@import "./component/mat-card.scss";
+@import "./component/mat-menu.scss";
+@import "./component/mat-checkbox.scss";
+@import "./component/mat-button-toggle-group.scss";
+@import "./component/mat-radio-button.scss";
+@import "./component/mat-switch-selected.scss";
+@import "./component/mat-chip-option.scss";
+@import "./component/mat-progress-bar.scss";
+@import "./component/mat-button-slider.scss";
+@import "./component/mat-tab-group.scss";
+@import "./component/mat-button-fab.scss";
+@import "./component/mat-button-basic.scss";
+@import "./component/mat-button-raised.scss";
+@import "./component/mat-button-stroked.scss";
+@import "./component/mat-button-flat.scss";
+
+@mixin theme-mat-extensions {
+  @extend .theme-mat-select;
+  @extend .theme-mat-input;
+  @extend .theme-mat-textareas;
+  @extend .theme-mat-card;
+  @extend .theme-mat-menu;
+  @extend .theme-mat-checkbox;
+  @extend .theme-mat-button-toggle-group;
+  @extend .theme-mat-radio-button;
+  @extend .theme-mat-switch-selected;
+  @extend .theme-mat-chip-option;
+  @extend .theme-mat-progress-bar;
+  @extend .theme-mat-button-slider;
+  @extend .theme-mat-tab-group;
+  @extend .theme-mat-button-fab;
+  @extend .theme-mat-button-basic;
+  @extend .theme-mat-button-raised;
+  @extend .theme-mat-button-stroked;
+  @extend .theme-mat-button-flat;
+}
+
+.laranjinha.light {
+  @include theme-mat-extensions;
+}
+
+.laranjinha.dark {
+  @include theme-mat-extensions;
+}
+
+$laranjinha-light: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$orange-palette),
+    accent: mat.define-palette(mat.$orange-palette),
+    warn: mat.define-palette(mat.$red-palette)
+  )
+));
+
+$laranjinha-dark: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$orange-palette),
+    accent: mat.define-palette(mat.$orange-palette),
+    warn: mat.define-palette(mat.$red-palette)
+  )
+));
+
+.laranjinha.light {
+  @include mat.all-component-themes($laranjinha-light);
+}
+
+.laranjinha.dark {
+  @include mat.all-component-themes($laranjinha-dark);
+}

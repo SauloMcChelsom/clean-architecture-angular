@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Textareas</h1>
+  <p>
+      O <strong>Textareas</strong> é um componente que permite ao usuários insiram dados em um campo de texto
+  </p>
+
+  <h1>Exemplo de Uso</h1>
+  <pre>
+      <code *ngFor="let code of codes">
+          {{ code }}
+      </code>
+  </pre>
+
+  <h1>Tente você mesmo</h1>
+  <div *ngIf="config">
+    <Textareas 
+      [formControl]="config.formControl" 
+      [title]="config.title" 
+      [placeholder]="config.placeholder"
+      [erroFill]="config.erroFill" 
+      [erroRequired]="config.erroRequired" 
+      [isRequired]="true" 
+      [minLength]="5"
+    >
+    </Textareas>
+    <p>
+        Valor de saida: {{config.formControl.getRawValue() | json}}
+    </p>
+    <button mat-raised-button (click)="reset()">reset</button> 
+    <button mat-raised-button (click)="disable()">disable</button> 
+    <button mat-raised-button (click)="enable()">enable</button>
+  </div>
+</div>

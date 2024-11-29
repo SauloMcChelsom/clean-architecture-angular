@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>SnackBarPosition</h1>
+    <p>
+        O <strong>SnackBarPosition</strong> é um componente que exibe notificações fora do container
+    </p>
+
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+
+    <h1>Tente você mesmo</h1>
+    <SnackBarPosition></SnackBarPosition>
+    <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button (click)="openSnackBar()">Open SnackBar</button>
+    <br/>
+</div>

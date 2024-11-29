@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Paginator</h1>
+    <p>
+        O <strong>Paginator</strong> é um componente de interface do usuário (UI) que permite ao usuário navegar por uma lista de itens paginados. Ele é usado para dividir uma grande quantidade de dados em páginas menores e mais gerenciáveis.
+    </p>
+    
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+    
+    <h1>Tente você mesmo</h1>
+    <Paginator
+        [totalItems]="items.length"
+        [itemsPerPage]="itemsPerPage"
+        [currentPage]="currentPage"
+        [pagesToShow]="3"
+        (pageChange)="onPageChange($event)"
+    ></Paginator>
+
+</div>

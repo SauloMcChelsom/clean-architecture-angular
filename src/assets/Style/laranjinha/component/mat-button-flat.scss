@@ -1,0 +1,6 @@
+.theme-mat-button-flat {
+    .mat-mdc-unelevated-button.mat-primary {
+        --mdc-filled-button-container-color: var(--app-primary) !important;
+        --mdc-filled-button-label-text-color: var(--app-on-surface-dual) !important;
+    }
+}

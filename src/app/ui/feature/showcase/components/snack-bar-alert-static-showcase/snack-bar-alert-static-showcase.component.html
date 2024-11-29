@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>SnackBarAlertStatic</h1>
+    <p>
+        O <strong>SnackBarAlertStatic</strong> é um componente que exibe notificações fixa em um container
+    </p>
+  
+    <h1>Exemplo de Uso</h1>
+    <pre>
+        <code *ngFor="let code of codes">
+            {{ code }}
+        </code>
+    </pre>
+  
+    <h1>Tente você mesmo</h1>
+    <SnackBarAlertStatic     
+        [openSnackBar]="openSnackBar" 
+        [closeSnackBar]="closeSnackBar"
+    >
+    </SnackBarAlertStatic>
+
+    <div style="display: flex;">
+        <button mat-raised-button (click)="sucsessSnackBar()">Sucesso</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button (click)="errSnackBar()">Error</button>
+    </div>
+</div>

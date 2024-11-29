@@ -1,0 +1,6 @@
+.theme-mat-button-raised {
+    .mat-mdc-raised-button.mat-primary {
+        --mdc-protected-button-container-color: var(--app-primary) !important;
+        --mdc-protected-button-label-text-color: var(--app-on-surface-dual) !important;
+    }
+}

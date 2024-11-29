@@ -1,0 +1,11 @@
+<div class="spinner-container">
+  <mat-progress-spinner
+    mode="determinate"
+    [value]="progressValue"
+    [diameter]="100"
+    class="custom-spinner">
+  </mat-progress-spinner>
+  <div class="progress-number">
+    {{ currentStep }} / {{ totalSteps }}
+  </div>
+</div>

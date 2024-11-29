@@ -1,0 +1,26 @@
+.theme-mat-input {
+
+    inputs {
+        .mdc-text-field--outlined {
+            background-color: var(--app-background) !important;
+
+        }
+    }
+
+    --mat-select-focused-arrow-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-outline-width: 1px;
+    --mdc-outlined-text-field-focus-outline-color: var(--app-primary) !important;
+    
+    --mdc-outlined-text-field-container-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-caret-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-focus-outline-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-focus-label-text-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-outline-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-hover-outline-color: var(--app-primary) !important;
+
+    --mdc-outlined-text-field-label-text-color: var(--app-primary) !important;
+    --mdc-outlined-text-field-input-text-color: var(--app-primary) !important;
+    
+}

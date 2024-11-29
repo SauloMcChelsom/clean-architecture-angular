@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$font-family-Roboto: "Roboto", sans-serif;
+$font-family-comfortaa: 'Comfortaa', sans-serif;
+
+:root {
+  --body-font-size-xxsmall: 4px;
+  --body-font-size-xsmall: 8px;
+  --body-font-size-small: 12px;
+  --body-font-size-default: 16px;
+  --body-font-size-medium: 20px;
+  --body-font-size-xmedium: 24px;
+  --body-font-size-big: 32px;
+  --body-font-size-xbig: 40px;
+  --body-font-size-xxbig: 48px;
+  --body-font-size-huge: 56px;
+  --body-font-size-xhuge: 64px;
+  --body-font-size-xxhuge: 72px;
+  --body-font-weight-bolder: bolder;
+  --body-font-weight-500: 500;
+  --body-font-weight-400: 400;
+  --body-font-weight-300: 300;
+  --body-font-weight-100: 100;
+  --body-letter-spacing: 0px;
+  --body-line-height: 20px;
+  --body-line-height-big: 30px;
+  --h1-font-size: 40px;
+  --h1-font-weight: 700;
+  --h1-letter-spacing: 0px;
+  --h1-line-height: 130%;
+  --inputs-font-size: 14px;
+  --inputs-font-weight: 400;
+  --inputs-letter-spacing: 0px;
+  --inputs-line-height: 150%;
+  --labels-font-size: 14px;
+  --labels-font-weight: 400;
+  --labels-letter-spacing: 0px;
+  --labels-line-height: 150%;
+}

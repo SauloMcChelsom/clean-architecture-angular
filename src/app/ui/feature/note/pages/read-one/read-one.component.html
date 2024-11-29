@@ -1,0 +1,31 @@
+<body class="mat-typography mat-app-background">
+  <div class="mx-3">
+    <div class="container-box" *ngIf="isReady">
+      <NavBarItens>
+        <ButtonCancat icon="west" left [routerLink]="ROOT" [ariaLabel]="'NOTE.BUTTON_BACK' | translate"></ButtonCancat>
+        <ButtonCancat icon="delete" center  (onClick)="delete()" [ariaLabel]="'NOTE.BUTTON_DELETE' | translate"></ButtonCancat>
+        <ButtonCancat icon="edit" right  (onClick)="edit()" [ariaLabel]="'NOTE.SUBTITLE_UPDATE_NEW_NOTE' | translate"></ButtonCancat>
+      </NavBarItens>
+      <div [attr.aria-label]="'NOTE.LABEL_NAME_TITLE_NOTE' | translate" tabindex="0">
+        <div class="flex justify-content-start text-default mb-default">
+          {{ note.title }}
+        </div>
+      </div>
+      <div [attr.aria-label]="'NOTE.LABEL_NAME_DESCRIPTION_NOTE' | translate" tabindex="0">
+        <div class="flex justify-content-start text-small">
+          {{ note.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<div *ngIf="isReady == false && isErr == true" class="mat-typography mat-app-background container-box">
+  <h1 class="flex justify-content-start text-small">
+    {{ textErr }}
+ </h1>
+</div>
+
+<div *ngIf="isReady == false && isErr == false && isLoad == true" class="mat-typography mat-app-background container-box">
+  <h1>{{ 'NOTE.LABEL_LOADING' | translate }}</h1>
+</div>

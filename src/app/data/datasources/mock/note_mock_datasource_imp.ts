@@ -92,7 +92,6 @@ export class NoteMockDatasourceImp implements NoteRepository {
         this._note$.next(this._note);
       
       
-        console.log(this._note)
         return of(_note).pipe(
             delay(200),
         );

@@ -1,0 +1,21 @@
+<drawer></drawer>  
+<Menu
+    [mainMenuLabel]="'Options'"
+    [menuItems]="menuOptions"
+    #dynamicMenu
+    (onSelect)="onSelect($event)"
+  >
+  </Menu>
+<mat-toolbar style="background-color: initial;">
+  <button mat-icon-button (click)="openMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button [routerLink]="searchLink" >
+    <mat-icon>search</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="dynamicMenu.menu">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+</mat-toolbar>

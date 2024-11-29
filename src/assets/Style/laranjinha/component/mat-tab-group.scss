@@ -1,0 +1,12 @@
+.theme-mat-tab-group {
+    .mat-mdc-tab-group {
+        --mdc-tab-indicator-active-indicator-color: var(--app-primary) !important;
+        --mat-tab-header-active-label-text-color: var(--app-primary) !important;
+        --mat-tab-header-active-ripple-color: var(--app-primary) !important;
+        --mat-tab-header-inactive-ripple-color: var(--app-primary) !important;
+        --mat-tab-header-active-focus-label-text-color: var(--app-primary) !important;
+        --mat-tab-header-active-hover-label-text-color: var(--app-primary) !important;
+        --mat-tab-header-active-focus-indicator-color: var(--app-primary) !important;
+        --mat-tab-header-active-hover-indicator-color: var(--app-primary) !important;
+    }
+}

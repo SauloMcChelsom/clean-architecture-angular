@@ -1,0 +1,328 @@
+$space-xxsmall: 8px;
+$space-xsmall: 10px;
+$space-small: 12px;
+$space-default: 16px;
+$space-xmedium: 24px;
+$space-big: 80px;
+$space-extra: 150px;
+$space-plus: 200px;
+
+.m-xxsmall {
+    margin: $space-xxsmall;
+}
+
+.m-xsmall {
+    margin: $space-xsmall;
+}
+
+.m-small {
+    margin: $space-small;
+}
+
+.m-default {
+    margin: $space-default;
+}
+
+.m-xmedium {
+    margin: $space-xmedium;
+}
+
+.m-big {
+    margin: $space-big;
+}
+
+.mb-xxsmall {
+    margin-bottom: $space-xxsmall;
+}
+
+.mb-xsmall {
+    margin-bottom: $space-xsmall;
+}
+
+.mb-small {
+    margin-bottom: $space-small;
+}
+
+.mb-default {
+    margin-bottom: $space-default;
+}
+
+.mb-xmedium {
+    margin-bottom: $space-xmedium;
+}
+
+.mb-big {
+    margin-bottom: $space-big;
+}
+
+.mt-xxsmall {
+    margin-top: $space-xxsmall;
+}
+
+.mt-xsmall {
+    margin-top: $space-xsmall;
+}
+
+.mt-small {
+    margin-top: $space-small;
+}
+
+.mt-default {
+    margin-top: $space-default;
+}
+
+.mt-xmedium {
+    margin-top: $space-xmedium;
+}
+
+.mt-big {
+    margin-top: $space-big;
+}
+
+.ml-xxsmall {
+    margin-left: $space-xxsmall;
+}
+
+.ml-xsmall {
+    margin-left: $space-xsmall;
+}
+
+.ml-small {
+    margin-left: $space-small;
+}
+
+.ml-default {
+    margin-left: $space-default;
+}
+
+.ml-xmedium {
+    margin-left: $space-xmedium;
+}
+
+.ml-big {
+    margin-left: $space-big;
+}
+
+.mr-xxsmall {
+    margin-right: $space-xxsmall;
+}
+
+.mr-xsmall {
+    margin-right: $space-xsmall;
+}
+
+.mr-small {
+    margin-right: $space-small;
+}
+
+.mr-default {
+    margin-right: $space-default;
+}
+
+.mr-xmedium {
+    margin-right: $space-xmedium;
+}
+
+.mr-big {
+    margin-right: $space-big;
+}
+
+.m-extra {
+    margin: $space-extra;
+}
+
+.m-plus {
+    margin: $space-plus;
+}
+
+.mb-extra {
+    margin-bottom: $space-extra;
+}
+
+.mb-plus {
+    margin-bottom: $space-plus;
+}
+
+.mt-extra {
+    margin-top: $space-extra;
+}
+
+.mt-plus {
+    margin-top: $space-plus;
+}
+
+.ml-extra {
+    margin-left: $space-extra;
+}
+
+.ml-plus {
+    margin-left: $space-plus;
+}
+
+.mr-extra {
+    margin-right: $space-extra;
+}
+
+.mr-plus {
+    margin-right: $space-plus;
+}
+
+.p-xxsmall {
+    padding: $space-xxsmall;
+}
+
+.p-xsmall {
+    padding: $space-xsmall;
+}
+
+.p-small {
+    padding: $space-small;
+}
+
+.p-default {
+    padding: $space-default;
+}
+
+.p-xmedium {
+    padding: $space-xmedium;
+}
+
+.p-big {
+    padding: $space-big;
+}
+
+.pb-xxsmall {
+    padding-bottom: $space-xxsmall;
+}
+
+.pb-xsmall {
+    padding-bottom: $space-xsmall;
+}
+
+.pb-small {
+    padding-bottom: $space-small;
+}
+
+.pb-default {
+    padding-bottom: $space-default;
+}
+
+.pb-xmedium {
+    padding-bottom: $space-xmedium;
+}
+
+.pb-big {
+    padding-bottom: $space-big;
+}
+
+.pt-xxsmall {
+    padding-top: $space-xxsmall;
+}
+
+.pt-xsmall {
+    padding-top: $space-xsmall;
+}
+
+.pt-small {
+    padding-top: $space-small;
+}
+
+.pt-default {
+    padding-top: $space-default;
+}
+
+.pt-xmedium {
+    padding-top: $space-xmedium;
+}
+
+.pt-big {
+    padding-top: $space-big;
+}
+
+.pl-xxsmall {
+    padding-left: $space-xxsmall;
+}
+
+.pl-xsmall {
+    padding-left: $space-xsmall;
+}
+
+.pl-small {
+    padding-left: $space-small;
+}
+
+.pl-default {
+    padding-left: $space-default;
+}
+
+.pl-xmedium {
+    padding-left: $space-xmedium;
+}
+
+.pl-big {
+    padding-left: $space-big;
+}
+
+.pr-xxsmall {
+    padding-right: $space-xxsmall;
+}
+
+.pr-xsmall {
+    padding-right: $space-xsmall;
+}
+
+.pr-small {
+    padding-right: $space-small;
+}
+
+.pr-default {
+    padding-right: $space-default;
+}
+
+.pr-xmedium {
+    padding-right: $space-xmedium;
+}
+
+.pr-big {
+    padding-right: $space-big;
+}
+
+.p-extra {
+    padding: $space-extra;
+}
+
+.p-plus {
+    padding: $space-plus;
+}
+
+.pb-extra {
+    padding-bottom: $space-extra;
+}
+
+.pb-plus {
+    padding-bottom: $space-plus;
+}
+
+.pt-extra {
+    padding-top: $space-extra;
+}
+
+.pt-plus {
+    padding-top: $space-plus;
+}
+
+.pl-extra {
+    padding-left: $space-extra;
+}
+
+.pl-plus {
+    padding-left: $space-plus;
+}
+
+.pr-extra {
+    padding-right: $space-extra;
+}
+
+.pr-plus {
+    padding-right: $space-plus;
+}

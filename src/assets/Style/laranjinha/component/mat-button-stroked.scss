@@ -1,0 +1,10 @@
+.theme-mat-button-stroked {
+    .mat-mdc-outlined-button.mat-primary {
+        --mdc-outlined-button-label-text-color: var(--app-primary) !important;
+    }
+
+    .mat-mdc-outlined-button.mat-primary {
+        --mat-mdc-button-persistent-ripple-color: var(--app-primary) !important;
+        --mat-mdc-button-ripple-color: var(--app-shadow) !important;
+    }
+}

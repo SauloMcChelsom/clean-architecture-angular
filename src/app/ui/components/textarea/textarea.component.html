@@ -1,0 +1,18 @@
+<mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>{{ title }}</mat-label>
+    <textarea 
+        id="textarea-content"
+        #textareaContent
+        matInput
+        [formControl]="formControl"
+        [placeholder]="placeholder!"
+        [attr.aria-label]="ariaLabel" 
+        tabindex="0"
+    ></textarea>
+    <mat-error tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
+        {{ erroRequired }}
+    </mat-error>
+    <mat-error tabindex="0" *ngIf="formControl.hasError('minlength') && formControl.touched">
+        {{ erroFill }}
+    </mat-error>
+</mat-form-field>
