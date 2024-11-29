@@ -1,3 +1,15 @@
-<p>
-  search works!
-</p>
+<body class="mat-app-background ggrid align-items-start vertical-container" style="height: 100vh;">
+  <div class="col ml-big mr-big ">
+    <NavBarItens>
+      <ButtonCancat icon="west" left [routerLink]="ROOT" class="mr-default"></ButtonCancat>
+      <div center style="padding-left: 10px; padding-right: 10px; padding-top: 20px;">
+        <Search ></Search>
+      </div>
+      <div right></div>
+    </NavBarItens>
+  </div>
+
+  <div class="col ml-big mr-big">
+    <div class="box text-start">Nemhuma pesquisa recente</div>
+  </div>
+</body>

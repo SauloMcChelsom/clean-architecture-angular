@@ -22,5 +22,10 @@
 
     --mdc-outlined-text-field-label-text-color: var(--app-primary) !important;
     --mdc-outlined-text-field-input-text-color: var(--app-primary) !important;
-    
+
+    .mdc-text-field--filled {
+        --mdc-filled-text-field-active-indicator-height: 0px !important;
+        --mdc-filled-text-field-focus-active-indicator-height: 0px !important;
+        --mdc-filled-text-field-container-shape: 0px !important;
+    }
 }
