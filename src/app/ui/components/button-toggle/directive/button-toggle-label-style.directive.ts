@@ -10,11 +10,15 @@ export class ButtonToggleLabelStyleWidthFullDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const group = this.el.nativeElement.querySelector('mat-button-toggle-group');
-    const content = this.el.nativeElement.querySelector('mat-button-toggle');
+
     
-    if (group && content) {
+    if (group) {
       this.renderer.setStyle(group, 'width', '100%');
-      this.renderer.setStyle(content, 'width', '100%');
+    
+      const toggles = group.querySelectorAll('mat-button-toggle');
+      toggles.forEach((toggle: HTMLElement) => {
+        this.renderer.setStyle(toggle, 'width', '100%');
+      });
     }
   }
 

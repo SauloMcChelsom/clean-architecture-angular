@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from 'src/app/ui/components/card/card.component';
 import { CardColorDirective } from 'src/app/ui/components/card/directive/button-toggle-label-style.directive';
+import { InputTypes } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
 import { InputComponent } from 'src/app/ui/components/input/input.component';
 import { CloseSnackBarInNow, ScoreboardColor, SnackBarComponent, SnackBarModel } from 'src/app/ui/components/snack-bar/snack-bar.component';
-import { LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,14 +28,28 @@ import { LINKS } from 'src/config/endpoints/router-links';
 export class SignInComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
-  protected REGISTER = LINKS.AUTH_REGISTER;
+  protected REGISTER = ROUTING.AUTH_REGISTER;
 
-  config = {
-    formControl: new FormControl<string | undefined>(""),
-    title: 'Titulo',
-    placeholder: 'Informe o titulo do seu note',
-    erroFill: "O nome deve ter pelo menos 5 caracteres",
-    erroRequired: "Preenchimento obrigatório"
+  emailUser = {
+    formControl: new FormControl<string | undefined>("", Validators.email),
+    title: 'E-mail',
+    placeholder: 'Digite seu e-mail',
+    erroFill: "Por favor, insira um e-mail válido.",
+    erroRequired: "O e-mail é obrigatório.",
+    type: 'email' as InputTypes,
+    isRequired: true,
+    minLength: 5
+  };
+
+  passwordUser = {
+    formControl: new FormControl<string | undefined>("", Validators.email),
+    title: 'Senha',
+    placeholder: 'Digite seu senha',
+    erroFill: "Insira uma combinação de pelo menos seis números, letras, sinais de pontuação e símbolos (como ! e &).",
+    erroRequired: "O senha é obrigatório.",
+    type: 'password' as InputTypes,
+    isRequired: true,
+    minLength: 6
   };
   constructor() { }
 

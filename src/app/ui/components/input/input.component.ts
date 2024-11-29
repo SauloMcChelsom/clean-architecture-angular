@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { InputTypes } from './enuns/dynamic-date-input.types';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class InputComponent {
   @Input() isDisabled: boolean = false;
   @Input() minLength!: number;
   @Input() maxLength!: number;
+  @Input() type: InputTypes = 'text';
   public isReady: boolean = false;
   
   ngOnChanges() {

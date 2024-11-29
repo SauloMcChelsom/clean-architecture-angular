@@ -1,0 +1,80 @@
+@import '../../../../../assets/Style/breakpoints.scss';
+
+.primary-300 {
+    color: var(--app-primary)
+}
+
+.card-size {
+    width: 600px;
+}
+
+
+.color-default {
+    color: var(--app-on-background)
+}
+
+.link {
+    cursor: pointer;
+}   
+
+.mat-app-background {
+    background-color: transparent !important
+}
+
+.background-blur::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fad0c4);
+    background-size: 400% 400%;
+    filter: blur(80px);
+    animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: $tablet) {
+
+    .card-size {
+        width: 100%;
+    }
+
+    body {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+}
+
+::ng-deep body {
+    &.dark {
+        .background-blur::before {
+            position: absolute;
+            background: var(--app-inverse) !important;
+            filter: none
+        }
+        background-color: #212121;
+    }
+  
+    &.light {
+      background-color: white;
+      color: black;
+    }
+  }
+

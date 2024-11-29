@@ -7,6 +7,7 @@
             [placeholder]="placeholder!"
             [attr.aria-label]="ariaLabel" 
             tabindex="0"
+            [type]="type"
         >
         <mat-error  tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
             {{ erroRequired }}

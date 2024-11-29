@@ -1,3 +1,100 @@
-<p>
-  register works!
-</p>
+<body class="mat-app-background background-blur pt-default pb-default">
+  <div class="grid flex-column" style="align-content: center;">
+    <Card [appColor]="'--app-background'"  class="card-size">
+      <div>
+        <SnackBarAlertStatic     
+          [openSnackBar]="openSnackBar" 
+          [closeSnackBar]="closeSnackBar"
+        >
+        </SnackBarAlertStatic>
+        <div class="grid flex-column">
+          <div class="col">
+            <div class="box text-center text-large primary-300 mb-default mt-default">
+              Criar uma nova conta
+            </div>
+          </div>
+          <div class="col">
+            <Inputs 
+              [formControl]="nameUser.formControl" 
+              [title]="nameUser.title" 
+              [placeholder]="nameUser.placeholder"
+              [erroFill]="nameUser.erroFill" 
+              [erroRequired]="nameUser.erroRequired" 
+              [type]="nameUser.type" 
+              [isRequired]="nameUser.isRequired" 
+              [minLength]="nameUser.minLength"
+            ></Inputs>
+          </div>
+          <div class="col">
+            <Inputs 
+              [formControl]="lastNameUser.formControl" 
+              [title]="lastNameUser.title" 
+              [placeholder]="lastNameUser.placeholder"
+              [erroFill]="lastNameUser.erroFill" 
+              [erroRequired]="lastNameUser.erroRequired" 
+              [type]="lastNameUser.type" 
+              [isRequired]="lastNameUser.isRequired" 
+              [minLength]="lastNameUser.minLength"
+            ></Inputs>
+          </div>
+          <div class="col">
+            <DynamicDate 
+              [formControl] = "birthdayUser.formControl"
+              [locale] = "birthdayUser.locale!"
+              [mask] = "birthdayUser.mask"
+              [maxDate] = "birthdayUser.maxDate"
+              [minDate] = "birthdayUser.minDate"
+              placeholder = "birthdayUser.placeholder"
+              [requiredField] = "birthdayUser.requiredField"
+              [title] = "birthdayUser.title"
+            ></DynamicDate>
+          </div>
+          <div class="col">
+            <ButtonToggle
+                appButtonToggLabelStyleWidthFull
+                [multiple]="genderUser.multiple" 
+                [options]="genderUser.options" 
+                [formControl]="genderUser.formControl" 
+                (selectionChange)="onSingleSelectionChange($event)"
+            >
+            </ButtonToggle>
+          </div>
+          <div class="col">
+            <Inputs 
+              [formControl]="emailUser.formControl" 
+              [title]="emailUser.title" 
+              [placeholder]="emailUser.placeholder"
+              [erroFill]="emailUser.erroFill" 
+              [erroRequired]="emailUser.erroRequired" 
+              [type]="emailUser.type" 
+              [isRequired]="emailUser.isRequired" 
+              [minLength]="emailUser.minLength"
+            ></Inputs>
+          </div>
+          <div class="col">
+            <Inputs 
+              [formControl]="passwordUser.formControl" 
+              [title]="passwordUser.title" 
+              [placeholder]="passwordUser.placeholder"
+              [erroFill]="passwordUser.erroFill" 
+              [erroRequired]="passwordUser.erroRequired" 
+              [type]="passwordUser.type" 
+              [isRequired]="passwordUser.isRequired" 
+              [minLength]="passwordUser.minLength"
+            ></Inputs>
+          </div>
+          <div class="col mb-xmedium">
+            <button color="primary" mat-raised-button style="width: 100%; height: 50px;" (click)="signIn()">
+              Cadastre-se
+            </button>
+          </div>
+        </div>
+      </div>
+    </Card>
+    <Card [appColor]="'--app-background'" class="card-size mt-default">
+      <div class="text-center text-default color-default">
+        Já sou cadastrado, <span class="primary-300 link" [routerLink]="SIGN_IN">quero entrar!</span>
+      </div>
+    </Card>
+  </div>
+</body>

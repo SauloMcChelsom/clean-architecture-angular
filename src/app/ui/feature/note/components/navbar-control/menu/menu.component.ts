@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { ListLanguageComponent } from 'src/app/ui/feature/change-language/components/options/list-language.component';
 import { ModeThemeFlipComponent } from 'src/app/ui/feature/change-theme/components/mode-theme-flip/mode-theme-flip.component';
-import { LINKS } from 'src/config/endpoints/router-links';
+import { ROUTING } from 'src/config/endpoints/router-links';
 
 @Component({
   selector: 'Menu',
@@ -20,7 +20,7 @@ import { LINKS } from 'src/config/endpoints/router-links';
   ]
 })
 export class MenuComponent implements OnInit {
-  protected SIGN_IN = LINKS.AUTH_SIGN_IN;
+  protected SIGN_IN = ROUTING.AUTH_SIGN_IN;
   constructor() { }
 
   ngOnInit() {
