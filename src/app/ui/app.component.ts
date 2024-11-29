@@ -11,7 +11,7 @@ import { TitleService } from './feature/internationalization/title.service';
 export class AppComponent  {
   constructor(private renderer: Renderer2, private titleService: TitleService, private translationService:TranslationService) {
     this.renderer.addClass(document.body, 'laranjinha');
-    this.renderer.addClass(document.body, 'light');//dark/light
+    this.renderer.addClass(document.body, 'dark');//dark/light
   }
 
   ngOnInit() {

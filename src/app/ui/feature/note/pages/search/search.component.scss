@@ -1,0 +1,17 @@
+@import '../../../../../../assets/Style/breakpoints.scss';
+
+@media (max-width: $mobile) {
+
+    .ml-big {
+        margin-left: 0px !important;
+    }
+
+    .mr-big {
+        margin-right: 0px !important;;
+    }
+
+    .mr-default {
+        margin-right: 0px !important;;
+    }
+
+}

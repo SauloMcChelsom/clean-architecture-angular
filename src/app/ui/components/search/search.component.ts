@@ -5,27 +5,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { TranslateModule } from '@ngx-translate/core';
-import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
-import { NavBarItensComponent } from 'src/app/ui/components/nav-bar/nav-bar-itens.component';
-import { ROUTING } from 'src/config/endpoints/router-links';
-import { SearchComponent as SearchModule } from 'src/app/ui/components/search/search.component';
+import { ButtonCancatComponent } from '../button-cancat/button-cancat.component';
 
 @Component({
-  selector: 'app-search',
+  selector: 'Search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
-    TranslateModule,
-    NavBarItensComponent,
     ButtonCancatComponent,
-    SearchModule
+    MatFormFieldModule, 
+    MatInputModule, 
+    FormsModule, 
+    MatButtonModule, 
+    MatIconModule
   ]
 })
 export class SearchComponent implements OnInit {
-  ROOT = ROUTING.ROOT;
   value = '';
   protected spinner: boolean = false;
   constructor() { }
@@ -40,5 +37,4 @@ export class SearchComponent implements OnInit {
       this.spinner = false;
     },2000)
   }
-
 }
