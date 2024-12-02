@@ -1,7 +1,0 @@
-@import '../../../../../../assets/Style/breakpoints.scss';
-
-::ng-deep body {
-    &.dark {
-        background-color:  var(--app-background) !important;
-    }
-}
