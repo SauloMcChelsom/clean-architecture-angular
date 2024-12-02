@@ -80,6 +80,174 @@ export class NoteMockDatasourceImp implements NoteRepository {
                 timestamp: "2024-06-02",
                 uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
             }).subscribe().unsubscribe()
+            this.createNewNote({
+                title: 'controle de contas',
+                link: 'controle-de-contas',
+                text: "1.500,00 - inter bank✅"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "--total de debitos:  4.882"+
+                "--entrada:  "+
+                "--saldo: "+
+                "--caixa: 0,00 ❎ ✅",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'nome-do-criador-do-note',
+                title: 'Nome do criador do note',
+                text: "Saulo McChelson",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'controle-de-contas',
+                title: 'controle de contas',
+                text: "1.500,00 - inter bank✅"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "--total de debitos:  4.882"+
+                "--entrada:  "+
+                "--saldo: "+
+                "--caixa: 0,00 ❎ ✅",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'noticia-boa-trabalhando-na-toei-animation',
+                title: 'Noticia boa, trabalhando na Toei Animation',
+                text: "Hoje, quero compartilhar uma notícia boa com todos vocês, que estou embarcando em uma nova jornada profissional na Sênior, é uma honra ter a oportunidade de fazer parte de uma empresa tão importante e influente no mercado, estou feliz e motivado para contribuir com meus conhecimentos e experiência."+
+                "Gostaria de agradecer a todos os envolvidos no processo de seleção em especial ao Goku e o Brolly que me acompanharam em toda etapa."+
+                "Hoje, desejo dividir uma excelente novidade com cada um de vocês. Estou iniciando uma emocionante trajetória profissional na Sênior, uma empresa de grande relevância e influência no mercado. Sinto-me honrado por ter a chance de fazer parte desse time extraordinário e estou animado e determinado a compartilhar meus saberes e vivências."+
+                "Quero expressar minha gratidão a todos os que participaram do processo de seleção, especialmente ao Goku e ao Brolly, que estiveram ao meu lado em todas as fases desse caminho."+
+                "00020101021126580014br.gov.bcb.pix0136ebd3f7c5-f577-48bd-9f04-dbe27eac38ab5204000053039865802BR5918saulo Silva santos6009SAO PAULO62070503***6304BC0B",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                title: 'controle de contas',
+                link: 'controle-de-contas',
+                text: "1.500,00 - inter bank✅"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "--total de debitos:  4.882"+
+                "--entrada:  "+
+                "--saldo: "+
+                "--caixa: 0,00 ❎ ✅",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'nome-do-criador-do-note',
+                title: 'Nome do criador do note',
+                text: "Saulo McChelson",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'controle-de-contas',
+                title: 'controle de contas',
+                text: "1.500,00 - inter bank✅"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "--total de debitos:  4.882"+
+                "--entrada:  "+
+                "--saldo: "+
+                "--caixa: 0,00 ❎ ✅",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'noticia-boa-trabalhando-na-toei-animation',
+                title: 'Noticia boa, trabalhando na Toei Animation',
+                text: "Hoje, quero compartilhar uma notícia boa com todos vocês, que estou embarcando em uma nova jornada profissional na Sênior, é uma honra ter a oportunidade de fazer parte de uma empresa tão importante e influente no mercado, estou feliz e motivado para contribuir com meus conhecimentos e experiência."+
+                "Gostaria de agradecer a todos os envolvidos no processo de seleção em especial ao Goku e o Brolly que me acompanharam em toda etapa."+
+                "Hoje, desejo dividir uma excelente novidade com cada um de vocês. Estou iniciando uma emocionante trajetória profissional na Sênior, uma empresa de grande relevância e influência no mercado. Sinto-me honrado por ter a chance de fazer parte desse time extraordinário e estou animado e determinado a compartilhar meus saberes e vivências."+
+                "Quero expressar minha gratidão a todos os que participaram do processo de seleção, especialmente ao Goku e ao Brolly, que estiveram ao meu lado em todas as fases desse caminho."+
+                "00020101021126580014br.gov.bcb.pix0136ebd3f7c5-f577-48bd-9f04-dbe27eac38ab5204000053039865802BR5918saulo Silva santos6009SAO PAULO62070503***6304BC0B",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                title: 'controle de contas',
+                link: 'controle-de-contas',
+                text: "1.500,00 - inter bank✅"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "0,00 - mercado pago"+
+                "850,00 - aluguel✅"+
+                "95,00 - internet✅"+
+                "1.098,25  - fies✅"+
+                "0,00 - nubank"+
+                "189,90 - celular❎"+
+                "--total de debitos:  4.882"+
+                "--entrada:  "+
+                "--saldo: "+
+                "--caixa: 0,00 ❎ ✅",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
+            this.createNewNote({
+                link: 'nome-do-criador-do-note',
+                title: 'Nome do criador do note',
+                text: "Saulo McChelson",
+                is_favorite: true,
+                timestamp: "2024-06-02",
+                uid:"df89d86-dfdsfds8jkuk-f87gf8hgf"
+            }).subscribe().unsubscribe()
         },100)
     }
 

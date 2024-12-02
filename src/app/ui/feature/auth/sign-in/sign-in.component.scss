@@ -71,11 +71,11 @@
             background: var(--app-inverse) !important;
             filter: none
         }
+       background-color: var(--app-inverse) !important;;
     }
   
     &.light {
       background-color: white;
-      color: black;
     }
   }
 

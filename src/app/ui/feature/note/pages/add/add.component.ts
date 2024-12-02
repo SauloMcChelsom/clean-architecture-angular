@@ -107,7 +107,7 @@ export class PageAddComponent implements OnInit {
   adicionarNota() {
     this.spinner = true;
 
-    this.create.createNewNote(this.notaForm.value).pipe(delay(5000)).subscribe({
+    this.create.createNewNote(this.notaForm.value).pipe(delay(500)).subscribe({
       next: (v) => {
         this.notaForm.reset({
           current_position: 0,
