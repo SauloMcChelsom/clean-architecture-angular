@@ -5,10 +5,29 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputTypes } from './enuns/dynamic-date-input.types';
 
-
 @Component({
   selector: 'Inputs',
-  templateUrl: './input.component.html',
+  template: `
+    <div *ngIf="isReady">
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>{{ title }}</mat-label>
+          <input 
+              matInput 
+              [formControl]="formControl"
+              [placeholder]="placeholder!"
+              [attr.aria-label]="ariaLabel" 
+              tabindex="0"
+              [type]="type"
+          >
+          <mat-error tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
+              {{ erroRequired }}
+          </mat-error>
+          <mat-error tabindex="0" *ngIf="formControl.hasError('minlength') && formControl.touched">
+              {{ erroFill }}
+          </mat-error>
+      </mat-form-field>
+    </div>
+  `,
   styleUrls: ['./input.component.scss'],
   standalone: true,
   imports: [
@@ -60,15 +79,19 @@ export class InputComponent {
       return;
     }
 
-    this.formControl.setValidators(Validators.minLength(min))
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
+    this.formControl.setValidators([...existingValidators, Validators.minLength(min)]);
+    this.formControl.updateValueAndValidity();
   }
 
-  private applyMaxLength(max:number) {
+  private applyMaxLength(max: number) {
     if (max == null || max <= 0) {
       return;
     }
-
-    this.formControl.setValidators(Validators.maxLength(max));
+  
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
+    this.formControl.setValidators([...existingValidators, Validators.maxLength(max)]);
+    this.formControl.updateValueAndValidity();
   }
 
   public resetToInitialState(): void {
@@ -92,10 +115,11 @@ export class InputComponent {
   }
 
   private applyRequiredValidator(isRequired: boolean): void {
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
     if (isRequired) {
-      this.formControl.setValidators(Validators.required);
+      this.formControl.setValidators([...existingValidators, Validators.required]);
     } else {
-      this.formControl.clearValidators();
+      this.formControl.setValidators(existingValidators.filter(v => v !== Validators.required));
     }
     this.formControl.updateValueAndValidity();
   }

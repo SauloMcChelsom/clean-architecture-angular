@@ -1,5 +1,10 @@
-<body class="mat-app-background grid flex-column align-items-center justify-content-center vertical-container background-blur" style="height: 100vh;">
-  <Card [appColor]="'--app-background'"  class="card-size">
+<div class="sign-in grid flex-column align-items-center justify-content-center background-blur" style="height: 100vh;">
+  <div class="card-size">
+    <div class="mat-app-background pt-xxsmall pb-xxsmall">
+      <ButtonCancat icon="west" (click)="back()"></ButtonCancat>
+    </div>
+  </div>
+  <Card [appColor]="'--app-neutral-10'"  class="card-size">
     <div>
       <SnackBarAlertStatic     
         [openSnackBar]="openSnackBar" 
@@ -49,9 +54,9 @@
       </div>
     </div>
   </Card>
-  <Card [appColor]="'--app-background'" class="card-size mt-default">
+  <Card [appColor]="'--app-neutral-10'" class="card-size mt-default">
     <div class="text-center text-default color-default">
       Não tem uma conta? <span class="primary-300 link" [routerLink]="REGISTER">Cadastre-se</span>
     </div>
   </Card>
-</body>
+</div>

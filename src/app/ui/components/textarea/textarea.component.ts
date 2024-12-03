@@ -71,15 +71,19 @@ export class TextareaComponent {
       return;
     }
 
-    this.formControl.setValidators(Validators.minLength(min))
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
+    this.formControl.setValidators([...existingValidators, Validators.minLength(min)]);
+    this.formControl.updateValueAndValidity();
   }
 
-  private applyMaxLength(max:number) {
+  private applyMaxLength(max: number) {
     if (max == null || max <= 0) {
       return;
     }
-
-    this.formControl.setValidators(Validators.maxLength(max));
+  
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
+    this.formControl.setValidators([...existingValidators, Validators.maxLength(max)]);
+    this.formControl.updateValueAndValidity();
   }
 
   public resetToInitialState(): void {
@@ -103,10 +107,11 @@ export class TextareaComponent {
   }
 
   private applyRequiredValidator(isRequired: boolean): void {
+    const existingValidators = this.formControl.validator ? [this.formControl.validator] : [];
     if (isRequired) {
-      this.formControl.setValidators(Validators.required);
+      this.formControl.setValidators([...existingValidators, Validators.required]);
     } else {
-      this.formControl.clearValidators();
+      this.formControl.setValidators(existingValidators.filter(v => v !== Validators.required));
     }
     this.formControl.updateValueAndValidity();
   }

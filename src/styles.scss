@@ -9,3 +9,8 @@
 @import './assets/Style/typography.scss';
 @import './assets/Style/standard-class.scss';
 @import './assets/Style/laranjinha/theme.scss';
+
+body.app {
+    background-color: var(--app-background) !important;
+}
+  

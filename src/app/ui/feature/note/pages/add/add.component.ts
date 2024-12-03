@@ -37,8 +37,9 @@ export class PageAddComponent implements OnInit {
   protected closeSnackBar!: any;
   protected spinner: boolean = false;
   ROOT = ROUTING.ROOT;
-  private charactersLong = 5;
+  protected charactersLong = 5;
   height = 0
+  configTitle: FormControl<any> = new FormControl('',Validators.minLength(5))
 
   constructor(
     private fb: FormBuilder,
@@ -57,7 +58,6 @@ export class PageAddComponent implements OnInit {
     const group_components_in_screen = 290;
     const screen_height = window.innerHeight;
     let scrollHeight = screen_height - group_components_in_screen;
-    console.log(scrollHeight)
     this.height = scrollHeight;
   }
 
@@ -72,6 +72,7 @@ export class PageAddComponent implements OnInit {
 
   add() {
     this.notaForm.markAllAsTouched();
+    console.log(this.config_title.formControl.hasError('minlength'))
 
     if (this.notaForm.valid === false) {
       this.openSnackBar = {
@@ -107,7 +108,7 @@ export class PageAddComponent implements OnInit {
   adicionarNota() {
     this.spinner = true;
 
-    this.create.createNewNote(this.notaForm.value).pipe(delay(5000)).subscribe({
+    this.create.createNewNote(this.notaForm.value).pipe(delay(500)).subscribe({
       next: (v) => {
         this.notaForm.reset({
           current_position: 0,

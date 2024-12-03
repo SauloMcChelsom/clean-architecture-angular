@@ -1,8 +1,11 @@
 .container-button-add {
-    position: absolute;
+    position: fixed;
     bottom: 70px;
     right: 70px;
-    button {
-        position: fixed;
+}
+
+::ng-deep body {
+    &.dark {
+        background-color:  var(--app-background) !important;
     }
 }

@@ -16,6 +16,7 @@ import { DynamicDateInputComponent } from 'src/app/ui/components/dynamic-date-in
 import { DateInputConfig } from 'src/app/ui/components/dynamic-date-input/enuns/dynamic-date-input.types';
 import { ButtonToggleGroupComponent } from 'src/app/ui/components/button-toggle/button-toggle.component';
 import { ButtonToggleLabelStyleWidthFullDirective } from 'src/app/ui/components/button-toggle/directive/button-toggle-label-style.directive';
+import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -32,7 +33,8 @@ import { ButtonToggleLabelStyleWidthFullDirective } from 'src/app/ui/components/
     SnackBarComponent,
     DynamicDateInputComponent,
     ButtonToggleGroupComponent,
-    ButtonToggleLabelStyleWidthFullDirective
+    ButtonToggleLabelStyleWidthFullDirective,
+    ButtonCancatComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-br'},
@@ -158,6 +160,10 @@ export class RegisterComponent implements OnInit {
       mensagem: "Parabens voce acertou",
       typeScoreboardColor: ScoreboardColor.SUCCESS
     }
+  }
+
+  back() {
+    history.back()
   }
 
 }

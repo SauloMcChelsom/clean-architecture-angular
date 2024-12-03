@@ -1,28 +1,30 @@
 <body class="mat-app-background">
-  <div class="container-box">
-    <Header
-    [noteCount]="numberOfNote"
-    ></Header>
-    <div class="grid flex-column">
-      <div class="col-12 pb-0">
-        <NavbarControl></NavbarControl>
-      </div>
-      <div class="col-12 pt-0 pb-0">
-        <NavbarSort></NavbarSort>
-      </div>
+  <div class="grid flex-column">
+    <div class="col">
+      <Header
+        [noteCount]="numberOfNote"
+      ></Header>
     </div>
-    <Notes
-      [noteList]="noteList" 
-      (onClickEvent)="addItem($event)"
-    ></Notes>
-    <div class="container-button-add flex">
-      <ButtonFab 
-        icon="add" 
-        color="primary" 
-        [routerLink]="linkRedirectToAddScreen"
-        [ariaLabel]="'NOTE.PAGE_ADD' | translate"
-        >
-      </ButtonFab>
+    <div class="col">
+      <NavbarControl></NavbarControl>
+      <NavbarSort></NavbarSort>
+    </div>
+    <div class="col-12">
+      <Notes
+        [noteList]="noteList" 
+        (onClickEvent)="addItem($event)"
+      ></Notes>
+    </div>
+    <div class="col">
+      <div class="container-button-add flex">
+        <ButtonFab 
+          icon="add" 
+          color="primary" 
+          [routerLink]="linkRedirectToAddScreen"
+          [ariaLabel]="'NOTE.PAGE_ADD' | translate"
+          >
+        </ButtonFab>
+      </div>
     </div>
   </div>
 </body>
