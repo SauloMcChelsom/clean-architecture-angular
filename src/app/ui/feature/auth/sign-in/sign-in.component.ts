@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
 import { CardComponent } from 'src/app/ui/components/card/card.component';
 import { CardColorDirective } from 'src/app/ui/components/card/directive/button-toggle-label-style.directive';
 import { InputTypes } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
@@ -22,14 +23,15 @@ import { ROUTING } from 'src/config/endpoints/router-links';
     CardColorDirective,
     InputComponent,
     RouterModule,
-    SnackBarComponent
+    SnackBarComponent,
+    ButtonCancatComponent
   ]
 })
 export class SignInComponent implements OnInit {
   protected openSnackBar!: SnackBarModel;
   protected closeSnackBar!: any;
   protected REGISTER = ROUTING.AUTH_REGISTER;
-
+  ROOT = ROUTING.ROOT;
   emailUser = {
     formControl: new FormControl<string | undefined>("", Validators.email),
     title: 'E-mail',
@@ -73,5 +75,9 @@ export class SignInComponent implements OnInit {
       mensagem: "Parabens voce acertou",
       typeScoreboardColor: ScoreboardColor.SUCCESS
     }
+  }
+
+  back() {
+    history.back()
   }
 }
