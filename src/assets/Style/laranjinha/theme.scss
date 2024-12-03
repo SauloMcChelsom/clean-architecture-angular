@@ -23,7 +23,7 @@
 @mixin theme-mat-extensions {
   @extend .theme-mat-select;
   @extend .theme-mat-input;
-  @extend .theme-mat-textareas;
+  //@extend .theme-mat-textareas;
   @extend .theme-mat-card;
   @extend .theme-mat-menu;
   @extend .theme-mat-checkbox;
