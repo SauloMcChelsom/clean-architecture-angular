@@ -8,9 +8,16 @@
             [attr.aria-label]="ariaLabel" 
             tabindex="0"
             [type]="type"
+            [type]="hide ? 'password' : 'text'"
         >
+        <button *ngIf="type == 'password'" mat-icon-button color="accent"  matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
         <mat-error tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
             {{ erroRequired }}
+        </mat-error>
+        <mat-error tabindex="0" *ngIf="formControl.hasError('email') && formControl.touched">
+            {{ erroFill }}
         </mat-error>
         <mat-error tabindex="0" *ngIf="formControl.hasError('minlength') && formControl.touched">
             {{ erroFill }}

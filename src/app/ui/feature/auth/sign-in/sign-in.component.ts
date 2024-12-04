@@ -44,7 +44,7 @@ export class SignInComponent implements OnInit {
   };
 
   passwordUser = {
-    formControl: new FormControl<string | undefined>("", Validators.email),
+    formControl: new FormControl<string | undefined>(""),
     title: 'Senha',
     placeholder: 'Digite seu senha',
     erroFill: "Insira uma combinação de pelo menos seis números, letras, sinais de pontuação e símbolos (como ! e &).",
