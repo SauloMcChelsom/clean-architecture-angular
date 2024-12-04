@@ -4,30 +4,12 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputTypes } from './enuns/dynamic-date-input.types';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'Inputs',
-  template: `
-    <div *ngIf="isReady">
-      <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>{{ title }}</mat-label>
-          <input 
-              matInput 
-              [formControl]="formControl"
-              [placeholder]="placeholder!"
-              [attr.aria-label]="ariaLabel" 
-              tabindex="0"
-              [type]="type"
-          >
-          <mat-error tabindex="0" *ngIf="formControl.hasError('required') && formControl.touched">
-              {{ erroRequired }}
-          </mat-error>
-          <mat-error tabindex="0" *ngIf="formControl.hasError('minlength') && formControl.touched">
-              {{ erroFill }}
-          </mat-error>
-      </mat-form-field>
-    </div>
-  `,
+  templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   standalone: true,
   imports: [
@@ -37,6 +19,8 @@ import { InputTypes } from './enuns/dynamic-date-input.types';
     MatInputModule,
     CommonModule,
     MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule
   ]
 })
 export class InputComponent {
@@ -52,6 +36,7 @@ export class InputComponent {
   @Input() maxLength!: number;
   @Input() type: InputTypes = 'text';
   public isReady: boolean = false;
+  hide = false;
   
   ngOnChanges() {
     setTimeout(() => {
@@ -72,6 +57,10 @@ export class InputComponent {
     this.applyMinLength(this.minLength);
     this.applyMaxLength(this.maxLength);
     this.applyRequiredValidator(this.isRequired);
+
+    if(this.type == 'password'){
+      this.hide = true;
+    }
   }
 
   private applyMinLength(min:number) {

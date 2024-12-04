@@ -55,14 +55,16 @@
             ></DynamicDate>
           </div>
           <div class="col">
-            <ButtonToggle
+            <div class="pb-xmedium">
+              <ButtonToggle
                 appButtonToggLabelStyleWidthFull
                 [multiple]="genderUser.multiple" 
                 [options]="genderUser.options" 
                 [formControl]="genderUser.formControl" 
                 (selectionChange)="onSingleSelectionChange($event)"
-            >
-            </ButtonToggle>
+              >
+              </ButtonToggle>
+            </div>
           </div>
           <div class="col">
             <Inputs 

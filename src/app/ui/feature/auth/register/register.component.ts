@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
   protected form!: FormGroup;
  
   nameUser = {
-    formControl: new FormControl<string | undefined>(""),
+    formControl: new FormControl<string | undefined>(undefined),
     title: 'Nome',
     placeholder: 'Digite seu nome',
     erroFill: "O nome deve ter pelo menos 3 caracteres.",
@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit {
   };
 
   passwordUser = {
-    formControl: new FormControl<string | undefined>("", Validators.email),
+    formControl: new FormControl<string | undefined>(""),
     title: 'Senha',
     placeholder: 'Digite seu senha',
     erroFill: "Insira uma combinação de pelo menos seis números, letras, sinais de pontuação e símbolos (como ! e &).",
@@ -101,8 +101,8 @@ export class RegisterComponent implements OnInit {
     formControl: new FormControl(''),
     locale: "pt-br",
     mask: "dd/mm/yyyy",
-    maxDate: new Date('Thu Oct 10 2024 00:00:00 GMT-0300'),
-    minDate: new Date('Wed Oct 10 1990 00:00:00 GMT-0300 '),
+    maxDate: new Date(),
+    minDate: new Date('01/01/1910'),
     placeholder: "Informe sua data",
     requiredField: true,
     showHint: false,
@@ -135,8 +135,7 @@ export class RegisterComponent implements OnInit {
 
   signIn() {
     this.errSnackBar()
-    console.log(this.form.value)
-    console.log(this.form.status)
+    console.log(this.emailUser)
   }
 
   onSubmit() {

@@ -12,12 +12,11 @@
     [attr.placeholder]="placeholder || null"
     [matDatepicker]="picker"
     matInput
-    >
+  >
   <mat-hint *ngIf="showHint" class="hint">
     {{mask}}
   </mat-hint>
   <mat-datepicker-toggle [for]="picker" matSuffix>
-    <!--<fa-icon class="icon" matDatepickerToggleIcon [icon]="['fas', 'calendar-alt']"></fa-icon>-->
   </mat-datepicker-toggle>
   <mat-datepicker 
     #picker  

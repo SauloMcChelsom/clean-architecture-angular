@@ -74,10 +74,9 @@ export class DynamicDateInputComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.mask = this.mask;
-    this.insertTranslationInCalendar()
-    this.insertMaskInTheField()
-    this.minDateOrMaxDateIsFilled()
-    this.setIntervalDateTime()
+    this.insertTranslationInCalendar();
+    this.insertMaskInTheField();
+    this.setIntervalDateTime();
     
 
 
@@ -98,24 +97,12 @@ export class DynamicDateInputComponent implements OnInit, AfterViewInit {
 
   insertMaskInTheField() {
     const DATE_FORMAT = this.mask.toUpperCase();
-    this._formats.parse.dateInput = DATE_FORMAT
-    this._formats.display.dateInput = DATE_FORMAT
-  }
-
-  minDateOrMaxDateIsFilled() {
-    if (this.minDate != undefined || this.maxDate != undefined) {
-      if (this.fieldIsRequired()) {
-        this.showBordeRedInField()
-      }
-    }
-  }
-
-  showBordeRedInField() {
-    this.formControl.markAsTouched();
+    this._formats.parse.dateInput = DATE_FORMAT;
+    this._formats.display.dateInput = DATE_FORMAT;
   }
 
   fieldIsRequired(): boolean {
-    return this.requiredField
+    return this.requiredField;
   }
 
   setIntervalDateTime() {
@@ -132,7 +119,7 @@ export class DynamicDateInputComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this._locale = this.locale!
+    this._locale = this.locale!;
     Inputmask('datetime', {
       inputFormat: this.mask,
       placeholder: this.mask.toUpperCase(),
