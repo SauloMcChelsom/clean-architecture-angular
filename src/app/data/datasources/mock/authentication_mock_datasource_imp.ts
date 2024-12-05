@@ -20,7 +20,7 @@ export class AuthenticationMockDatasourceImp implements AuthenticationRepository
     private tokenInCloud!: AuthorizationEntity | undefined;
     private userInCloud!: UserEntity | undefined;
     private user: UserDataBase[] = [];
-    private tokenRevoked:string[]= []
+    private tokenRevoked:string[]= [];
 
     public createNewAccount(user: AuthenticationEntity): Observable<AuthorizationEntity> {
         const isExist = this.user.find(

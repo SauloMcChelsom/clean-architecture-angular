@@ -42,9 +42,8 @@
           ></Inputs>
         </div>
         <div class="col mb-xmedium">
-          <button color="primary" mat-raised-button style="width: 100%; height: 50px;" (click)="signIn()">
-            Entrar na sua conta
-          </button>
+          <ButtonForm label="Entrar na sua conta" [load]="buttonFormLoad" (click)="onSubmit()">
+          </ButtonForm>
         </div>
         <div class="col">
           <div class="text-center text-default color-default">

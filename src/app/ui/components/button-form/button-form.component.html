@@ -1,0 +1,13 @@
+<button *ngIf="load" color="primary" mat-stroked-button style="width: 100%; height: 50px; background-color: #30303017;">
+  <mat-icon style="width: 24px;
+height: 24px;">
+    <mat-spinner [diameter]="24"></mat-spinner>
+  </mat-icon>
+</button>
+
+<button  *ngIf="!load" color="primary" mat-raised-button style="width: 100%; height: 50px;" (click)="onClickEvent()">
+    <mat-icon *ngIf="icon">
+      {{icon}}
+    </mat-icon>
+    {{label}}
+</button>

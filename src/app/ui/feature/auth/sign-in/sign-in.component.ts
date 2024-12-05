@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { delay } from 'rxjs';
+import { CreateNewAccountUseCase, SignInWithEmailAndPassworUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
 import { ButtonCancatComponent } from 'src/app/ui/components/button-cancat/button-cancat.component';
+import { ButtonFormComponent } from 'src/app/ui/components/button-form/button-form.component';
 import { CardComponent } from 'src/app/ui/components/card/card.component';
 import { CardColorDirective } from 'src/app/ui/components/card/directive/button-toggle-label-style.directive';
 import { InputTypes } from 'src/app/ui/components/input/enuns/dynamic-date-input.types';
@@ -24,7 +27,8 @@ import { ROUTING } from 'src/config/endpoints/router-links';
     InputComponent,
     RouterModule,
     SnackBarComponent,
-    ButtonCancatComponent
+    ButtonCancatComponent,
+    ButtonFormComponent
   ]
 })
 export class SignInComponent implements OnInit {
@@ -32,6 +36,9 @@ export class SignInComponent implements OnInit {
   protected closeSnackBar!: any;
   protected REGISTER = ROUTING.AUTH_REGISTER;
   ROOT = ROUTING.ROOT;
+  protected form!: FormGroup;
+  protected buttonFormLoad: boolean = false;
+
   emailUser = {
     formControl: new FormControl<string | undefined>("", Validators.email),
     title: 'E-mail',
@@ -53,26 +60,59 @@ export class SignInComponent implements OnInit {
     isRequired: true,
     minLength: 6
   };
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private auth: SignInWithEmailAndPassworUseCase
+  ) { 
+    this.form = this.fb.group({
+      email: this.emailUser.formControl,
+      password: this.passwordUser.formControl,
+    });
+  }
 
   ngOnInit() {
   }
 
   signIn() {
-    this.errSnackBar()
+
   }
 
-  errSnackBar() {
+  onSubmit() {
+    this.emailUser.formControl.markAsTouched();
+    this.passwordUser.formControl.markAsTouched();
+
+    if (!this.form.valid) {
+      this.errSnackBar('Formulario deve ser preenchido');
+      return;
+    }
+    this.buttonFormLoad = true;
+    this.auth.signInWithEmailAndPassword(this.emailUser.formControl.value!, this.passwordUser.formControl.value!).pipe(delay(2000)).subscribe({
+      next: (res) => {
+        this.buttonFormLoad = false;
+        this.sucsessSnackBar('Logando com sucesso!');
+        console.log(res);
+      },
+      error: (err) => {
+        this.errSnackBar(err);
+        this.buttonFormLoad = false;
+      },
+      complete: () => {
+        this.buttonFormLoad = false;
+      },
+    })
+  }
+
+  errSnackBar(mensagem: string) {
     this.openSnackBar = {
-      mensagem: "Error em processar",
+      mensagem: mensagem,
       typeScoreboardColor: ScoreboardColor.WARN,
       time: CloseSnackBarInNow.in_10_seconds
     }
   }
 
-  sucsessSnackBar() {
+  sucsessSnackBar(mensagem: string) {
     this.openSnackBar = {
-      mensagem: "Parabens voce acertou",
+      mensagem: mensagem,
       typeScoreboardColor: ScoreboardColor.SUCCESS
     }
   }

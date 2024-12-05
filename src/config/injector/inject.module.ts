@@ -42,6 +42,7 @@ import { UserCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/user_
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session_storage_adapter_imp';
 import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
+import { AuthenticationMockDatasourceImp } from 'src/app/data/datasources/mock/authentication_mock_datasource_imp';
 
 @NgModule({
     providers: [
@@ -70,6 +71,10 @@ import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
             useClass: GetCurrentUserUseCaseImp,
         },
         {
+            provide: AuthenticationRepository,
+            useClass: AuthenticationMockDatasourceImp,
+        },
+        {
             provide: CreateNewAccountUseCase,
             useClass: CreateNewAccountUseCaseImp,
         },
@@ -77,10 +82,7 @@ import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
             provide: SignInWithEmailAndPassworUseCase,
             useClass: SignInWithEmailAndPasswordUseCaseImp,
         },
-        {
-            provide: AuthenticationRepository,
-            useClass: AuthenticationRepositoryImp,
-        },
+
         {
             provide: "STOREGE",
             useClass: StorageAdapterImp
