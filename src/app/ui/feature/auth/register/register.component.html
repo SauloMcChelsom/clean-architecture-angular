@@ -91,9 +91,8 @@
             ></Inputs>
           </div>
           <div class="col mb-xmedium">
-            <button color="primary" mat-raised-button style="width: 100%; height: 50px;" (click)="signIn()">
-              Cadastre-se
-            </button>
+            <ButtonForm label="Cadastre-se" [load]="buttonFormLoad" (click)="onSubmit()">
+            </ButtonForm>
           </div>
         </div>
       </div>

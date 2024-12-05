@@ -1,6 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { tap } from 'rxjs';
+import { LanguageRepository } from 'src/app/domain/repositories/language_repository';
 import { DEFAULT_LANG } from 'src/config/constant';
 
 @Injectable({
@@ -11,26 +13,34 @@ export class TranslationService {
 
     constructor(
         private translateService: TranslateService,
-        @Inject(PLATFORM_ID) private platformId: Object
+        @Inject(PLATFORM_ID) private platformId: Object,
+        private lang: LanguageRepository
     ) {
         if (isPlatformBrowser(this.platformId)) {
-            const savedLang = localStorage.getItem('lng');
-            if (savedLang) {
-                this.defaultLang = savedLang;
-            }
-            this.translateService.setDefaultLang(this.defaultLang);
-            this.translateService.use(this.defaultLang);
+            this.lang.getLanguage().pipe(
+                tap((savedLang)=>{
+                    if (savedLang) {
+                        this.defaultLang = savedLang.prefix;
+                    }
+                    this.translateService.setDefaultLang(this.defaultLang);
+                    this.translateService.use(this.defaultLang);
+                })
+            ).subscribe({})
         }
     }
 
     changeLang(lang: string) {
         this.translateService.use(lang);
         if (isPlatformBrowser(this.platformId)) {
-            localStorage.setItem('lng', lang);
+            this.lang.addLanguage(lang).subscribe({})
         }
     }
 
     getDefaultLang(): string {
-        return localStorage.getItem('lng') ?? this.defaultLang;
+        const language$ = this.lang.getLanguage();
+  
+        let defaultLang = '';
+        language$.subscribe(lang => defaultLang = lang.prefix).unsubscribe();
+        return defaultLang;
     }
 }
