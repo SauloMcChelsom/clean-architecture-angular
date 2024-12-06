@@ -52,7 +52,7 @@ import { GetLanguagUseCaseeImp } from 'src/app/domain/usecases/language/implemen
 import { AddLanguageUseCaseImp } from 'src/app/domain/usecases/language/implements/add_language_usecase';
 import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/language_cache_NgRx_datasource_imp';
 import { TokenRepository } from 'src/app/data/models/toke.model';
-import { AuthenticationDatasource, LanguageDatasource } from 'src/app/data/datasources/datasource';
+import { AuthenticationDatasource, LanguageDatasource, NoteDatasource } from 'src/app/data/datasources/datasource';
 
 @NgModule({
     providers: [
@@ -159,7 +159,7 @@ import { AuthenticationDatasource, LanguageDatasource } from 'src/app/data/datas
             useClass: NoteRepositoryImp
         },
         {
-            provide: NoteRepository,
+            provide: NoteDatasource,
             useClass: NoteMockDatasourceImp
         },
         {

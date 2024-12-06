@@ -3,9 +3,10 @@ import { Observable, ReplaySubject, Subject, delay, find, of, switchMap, tap, th
 import { NoteEntity } from 'src/app/domain/entities/note.entity';
 import { v4 as uuidv4 } from 'uuid';
 import { NoteRepository } from 'src/app/domain/repositories/note_repository';
+import { NoteDatasource } from '../datasource';
 
 @Injectable({ providedIn: 'root' })
-export class NoteMockDatasourceImp implements NoteRepository {
+export class NoteMockDatasourceImp implements NoteDatasource {
 
     private _note: NoteEntity[] = [];
     private _note$: ReplaySubject<NoteEntity[]> = new ReplaySubject()
