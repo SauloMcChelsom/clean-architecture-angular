@@ -45,7 +45,7 @@ import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
 import { AuthenticationMockDatasourceImp } from 'src/app/data/datasources/mock/authentication_mock_datasource_imp';
 import { LanguageRepository } from 'src/app/domain/repositories/language_repository';
 import { LanguageRepositoryImp } from 'src/app/data/repositories/language_repository_imp';
-import { GetAllLanguageUseCaseImp } from 'src/app/domain/usecases/language/implements/get_All_Language_usecase';
+import { GetAllLanguageUseCaseImp } from 'src/app/domain/usecases/language/implements/get_all_language_usecase';
 import { AddLanguageUseCase, GetAllLanguageUseCase, GetLanguagUseCase } from 'src/app/domain/usecases/language/language_usecase';
 import { LanguageMockDatasourceImp } from 'src/app/data/datasources/mock/language_mock_datasource_imp';
 import { GetLanguagUseCaseeImp } from 'src/app/domain/usecases/language/implements/get_languag_usecase';
