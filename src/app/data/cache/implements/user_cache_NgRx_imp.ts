@@ -10,7 +10,7 @@ import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 interface AppStateUser extends AppState<UserEntity> { }
 
 @Injectable()
-export class UserCacheNgRxDatasourceImp implements StoreRepository<UserEntity> {
+export class UserCacheNgRxImp implements StoreRepository<UserEntity> {
 
   constructor(private store: StoreAdapter<AppStateUser>) {
     this.store = new NgRxAdapterImp<AppStateUser>({

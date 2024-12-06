@@ -10,7 +10,7 @@ import { environment } from 'src/assets/environments/enviroment';
 interface AppStateUser extends AppState<LanguageEntity> { }
 
 @Injectable()
-export class LanguageCacheNgRxDatasourceImp implements StoreRepository<LanguageEntity> {
+export class LanguageCacheImp implements StoreRepository<LanguageEntity> {
 
   constructor(private store: StoreAdapter<AppStateUser>) {
     this.store = new NgRxAdapterImp<AppStateUser>({

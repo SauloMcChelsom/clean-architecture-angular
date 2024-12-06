@@ -12,27 +12,28 @@ import { AuthenticationDatasource } from '../datasources/datasource';
 export class AuthenticationRepositoryImp implements AuthenticationRepository {
 
     constructor(
-        private auth: AuthenticationDatasource, 
-        private user: UserRepository
+        private datasource: AuthenticationDatasource, 
+        //private user: UserRepository
     ) { }
 
     createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity> {
-        return this.auth.createNewAccount(content)
+        return this.datasource.createNewAccount(content)
             //.pipe(tap((token) => this.toke.addToken(token)));
     }
 
     signInWithEmailAndPassword(email: string, password: string): Observable<AuthorizationEntity> {
         console.log('createNewAccount')
-        return this.auth.signInWithEmailAndPassword(email, password)
+        return this.datasource.signInWithEmailAndPassword(email, password)
             //.pipe(tap((token) => this.toke.addToken(token)));
     }
 
     validToken(content: AuthorizationEntity): Observable<boolean> {
-        return this.auth.validToken(content);
+        return this.datasource.validToken(content);
     }
 
     isAuthenticated(): Observable<boolean> {
-        return of([]).pipe(
+        return of();
+        /*return of([]).pipe(
             switchMap(() => {
                 return this.user.results().pipe(
                     switchMap((token) => {
@@ -44,11 +45,11 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                     })
                 )
             })
-        )
+        )*/
     }
 
     isEmailAlreadyExists(content: string): Observable<boolean> {
-        return this.auth.isEmailAlreadyExists(content);
+        return this.datasource.isEmailAlreadyExists(content);
     }
 
     getCurrentUser(): Observable<UserEntity> {
@@ -92,7 +93,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
     }
 
     forgotPassword(content: string): Observable<boolean> {
-        return this.auth.forgotPassword(content);
+        return this.datasource.forgotPassword(content);
     }
 
     getCurrentToken(): Observable<AuthorizationEntity> {
