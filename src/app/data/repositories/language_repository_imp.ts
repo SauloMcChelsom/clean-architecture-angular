@@ -4,12 +4,13 @@ import { LanguageEntity } from "src/app/domain/entities/language_entity";
 import { LanguageRepository } from "src/app/domain/repositories/language_repository";
 import { StoreRepository } from "src/app/infra/store/store_repository";
 import { LanguageMockDatasourceImp } from "../datasources/mock/language_mock_datasource_imp";
+import { LanguageDatasource } from "../datasources/datasource";
 
 @Injectable({ providedIn: 'root' })
 export class LanguageRepositoryImp implements LanguageRepository {
 
     constructor(
-        private datasource: LanguageMockDatasourceImp,
+        private datasource: LanguageDatasource,
         private cache: StoreRepository<LanguageEntity>
     ) { }
 

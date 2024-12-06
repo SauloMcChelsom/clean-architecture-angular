@@ -5,10 +5,10 @@ import { AuthorizationEntity } from 'src/app/domain/entities/authorization_entit
 import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { HttpAdapter } from 'src/app/infra/http/http_adapter';
 import { CREATE_NEW_ACCOUNT, FORGOT_PASSWORD, GET_CURRENT, GET_CURRENT_TOKEN, IS_EMAIL_ALREADY, LOGOUT, REFRESH_TOKEN, REVOKE_TOKEN, SIGN_IN_WITH_EMAIL_AND_PASSWORD } from 'src/config/endpoints/endpoint';
-import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationDatasource } from '../datasource';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationRemotoDatasourceImp implements AuthenticationRepository {
+export class AuthenticationRemotoDatasourceImp implements AuthenticationDatasource {
 
     constructor(
         private userRequest: HttpAdapter<UserEntity>,

@@ -8,13 +8,14 @@ import { UserTypeEnum } from 'src/app/domain/helpers/enums/user_type_enum';
 import { v4 as uuidv4 } from 'uuid';
 import { RESPONSE_STATUS_CODE } from 'src/app/domain/helpers/enums/response_status_code.enum';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
+import { AuthenticationDatasource } from '../datasource';
 
 interface UserDataBase extends UserEntity {
     password:string,
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationMockDatasourceImp implements AuthenticationRepository {
+export class AuthenticationMockDatasourceImp implements AuthenticationDatasource {
 
 
     private tokenInCloud!: AuthorizationEntity | undefined;

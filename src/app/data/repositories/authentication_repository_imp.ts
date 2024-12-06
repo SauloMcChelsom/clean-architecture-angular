@@ -6,24 +6,25 @@ import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { UserRepository } from '../models/user.model';
 import { TokenRepository } from '../models/toke.model';
+import { AuthenticationDatasource } from '../datasources/datasource';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationRepositoryImp implements AuthenticationRepository {
 
     constructor(
-        private auth: AuthenticationRepository, 
-        private user: UserRepository,
-        private toke: TokenRepository
+        private auth: AuthenticationDatasource, 
+        private user: UserRepository
     ) { }
 
     createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity> {
         return this.auth.createNewAccount(content)
-            .pipe(tap((token) => this.toke.addToken(token)));
+            //.pipe(tap((token) => this.toke.addToken(token)));
     }
 
     signInWithEmailAndPassword(email: string, password: string): Observable<AuthorizationEntity> {
+        console.log('createNewAccount')
         return this.auth.signInWithEmailAndPassword(email, password)
-            .pipe(tap((token) => this.toke.addToken(token)));
+            //.pipe(tap((token) => this.toke.addToken(token)));
     }
 
     validToken(content: AuthorizationEntity): Observable<boolean> {
@@ -51,7 +52,8 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
     }
 
     getCurrentUser(): Observable<UserEntity> {
-        return of([]).pipe(
+        return of();
+        /*return of([]).pipe(
             switchMap(() => {
                 return this.toke.getToken().pipe(
                     switchMap((token) => {
@@ -86,7 +88,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                 this.user.delete()
                 return error;
             }))
-        );
+        );*/
     }
 
     forgotPassword(content: string): Observable<boolean> {
@@ -94,18 +96,20 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
     }
 
     getCurrentToken(): Observable<AuthorizationEntity> {
-        return this.toke.getToken().pipe(
+        return of();
+        /*return this.toke.getToken().pipe(
             switchMap((token) => {
                 if (!token) {
                     return throwError(() => 'Você deve logar')
                 }
                 return of(token);
             })
-        )
+        )*/
     }
 
     revokeToken(content: AuthorizationEntity): Observable<boolean> {
-        return of([]).pipe(
+        return of();
+        /*return of([]).pipe(
             switchMap(() => {
                 return this.toke.getToken().pipe(
                     switchMap((value) => {
@@ -119,11 +123,12 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                     })
                 )
             })
-        );
+        );*/
     }
 
     refreshToken(content: AuthorizationEntity): Observable<AuthorizationEntity> {
-        return of([]).pipe(
+        return of();
+        /*return of([]).pipe(
             switchMap(() => {
                 return this.toke.getToken().pipe(
                     switchMap((value) => {
@@ -135,11 +140,12 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                     })
                 )
             }),
-        );
+        );*/
     }
 
     logout(): Observable<boolean> {
-        return of([]).pipe(
+        return of();
+       /* return of([]).pipe(
             switchMap(() => {
                 return this.toke.getToken().pipe(
                     switchMap((value) => {
@@ -154,6 +160,6 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                     })
                 )
             })
-        );
+        );*/
     }
 }
