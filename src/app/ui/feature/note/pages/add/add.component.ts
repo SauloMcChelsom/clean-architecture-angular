@@ -72,7 +72,6 @@ export class PageAddComponent implements OnInit {
 
   add() {
     this.notaForm.markAllAsTouched();
-    console.log(this.config_title.formControl.hasError('minlength'))
 
     if (this.notaForm.valid === false) {
       this.openSnackBar = {

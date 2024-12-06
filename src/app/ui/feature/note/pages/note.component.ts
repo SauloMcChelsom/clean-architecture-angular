@@ -10,6 +10,7 @@ import { ROUTING } from 'src/config/endpoints/router-links';
 import {TranslateModule} from "@ngx-translate/core";
 import { NavbarControlComponent } from '../components/navbar-control/navbar-control.component';
 import { NavbarSortComponent } from '../components/navbar-sort/navbar-sort.component';
+import { MenuProfileComponent } from '../components/menu-profile/menu-profile.component';
 @Component({
   selector: 'PageNote',
   templateUrl: './note.component.html',

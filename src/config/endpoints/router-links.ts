@@ -4,6 +4,7 @@ export const ROUTING = {
     NOTE_SEARCH: 'note/search',
     NOTE_ADD: 'note/add',
     NOTE_UPDATE: 'note/update',
+    NOTE_PROFILE: 'note/profile',
     NOTE_UPDATE_BY_TITLE: 'note/update/:title',
     READ: 'note/read',
     NOTE_READ_BY_TITLE: 'note/read/:title',

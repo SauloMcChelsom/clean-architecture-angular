@@ -6,6 +6,7 @@ import { PageReadOneComponent } from './pages/read-one/read-one.component'
 import { PageUpdateComponent } from './pages/update/update.component'
 import { ROUTING } from '../../../../config/endpoints/router-links'
 import { SearchComponent } from './pages/search/search.component'
+import { ProfileComponent } from './pages/profile/profile.component'
 
 export const ROUTES: Routes = [
     {
@@ -31,6 +32,11 @@ export const ROUTES: Routes = [
     {
         path: ROUTING.NOTE_SEARCH,
         component: SearchComponent,
+        data: { title: 'NOTE.HOME' }
+    },
+    {
+        path: ROUTING.NOTE_PROFILE,
+        component: ProfileComponent,
         data: { title: 'NOTE.HOME' }
     },
 ]
