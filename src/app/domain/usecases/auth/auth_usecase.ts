@@ -35,6 +35,10 @@ export abstract class GetCurrentUserUseCase {
     abstract getCurrentUser(): Observable<UserEntity>;
 }
 
+export abstract class GetUserByUIDUseCase {
+    abstract getUserByUID(uid: string): Observable<UserEntity|undefined>;
+}
+
 export abstract class IForgotPasswordUseCase {
     abstract forgotPassword(content: string): Observable<boolean>;
 }

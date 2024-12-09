@@ -10,16 +10,16 @@ import { StoreAdapter } from 'src/app/infra/store/store_adapter';
 interface AppStateUser extends AppState<UserEntity> { }
 
 @Injectable()
-export class UserCacheNgRxDatasourceImp implements StoreRepository<UserEntity> {
+export class UserCacheDataBaseImp implements StoreRepository<UserEntity> {
 
   constructor(private store: StoreAdapter<AppStateUser>) {
     this.store = new NgRxAdapterImp<AppStateUser>({
       items: [],
       callState: LoadingState.INIT,
       storage: {
-        encryptionKey: environment.payloadStorage.user.encryptionKey,
-        tableName: environment.payloadStorage.user.tableName,
-        storageStrategy: environment.payloadStorage.user.storageStrategy
+        encryptionKey: environment.payloadStorage.userDatabase.encryptionKey,
+        tableName: environment.payloadStorage.userDatabase.tableName,
+        storageStrategy: environment.payloadStorage.userDatabase.storageStrategy
       }
     })
   }

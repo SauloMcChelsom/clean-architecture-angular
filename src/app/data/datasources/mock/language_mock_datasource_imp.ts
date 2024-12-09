@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LanguageEntity } from 'src/app/domain/entities/language_entity';
-import { LanguageRepository } from 'src/app/domain/repositories/language_repository';
+import { LanguageDatasource } from '../datasource';
 
 @Injectable({ providedIn: 'root' })
-export class LanguageMockDatasourceImp implements LanguageRepository {
+export class LanguageMockDatasourceImp implements LanguageDatasource {
 
     private _lang$!: BehaviorSubject<LanguageEntity[]>;
     private _favorite$!: BehaviorSubject<LanguageEntity>;

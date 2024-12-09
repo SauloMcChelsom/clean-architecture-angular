@@ -1,0 +1,9 @@
+<mat-card class="profile-card">
+  <div class="profile-avatar">
+    <img [src]="imageUrl" alt="Avatar do Usuário" />
+  </div>
+  <div class="profile-details">
+    <h2 class="profile-name">{{ name }}</h2>
+  </div>
+  <button  mat-stroked-button style="width: 100%; height: 55px;" (click)="onClickEvent()">Gerenciar Conta</button>
+</mat-card>

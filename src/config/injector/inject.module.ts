@@ -33,12 +33,11 @@ import { NoteRepositoryImp } from 'src/app/data/repositories/note_repository_imp
 import { GetAllNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/get_all_note_usecase';
 import { FindNoteByLinkUseCaseImp } from 'src/app/domain/usecases/note/implements/find_note_by_link_usecase';
 import { UpdateNoteUseCaseImp } from 'src/app/domain/usecases/note/implements/update_note_usecase';
-import { UserCacheCustomeDatasourceImp } from 'src/app/data/datasources/cache/user_cache_custome_datasource_imp';
+import { UserCacheCustomeImp } from 'src/app/data/cache/implements/user_cache_custome_imp';
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { StoreAdapter } from 'src/app/infra/store/store_adapter';
-import { UserRepository } from 'src/app/data/models/user.model';
-import { UserCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/user_cache_NgRx_datasource_imp';
+import { UserCacheNgRxImp } from 'src/app/data/cache/implements/user_cache_NgRx_imp';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session_storage_adapter_imp';
 import { StorageAdapter } from 'src/app/infra/storage/storage_adapter';
@@ -50,10 +49,31 @@ import { AddLanguageUseCase, GetAllLanguageUseCase, GetLanguagUseCase } from 'sr
 import { LanguageMockDatasourceImp } from 'src/app/data/datasources/mock/language_mock_datasource_imp';
 import { GetLanguagUseCaseeImp } from 'src/app/domain/usecases/language/implements/get_languag_usecase';
 import { AddLanguageUseCaseImp } from 'src/app/domain/usecases/language/implements/add_language_usecase';
-import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/language_cache_NgRx_datasource_imp';
+import { LanguageCacheImp } from 'src/app/data/cache/implements/language_cache_imp';
+import { AuthenticationDatasource, LanguageDatasource, NoteDatasource } from 'src/app/data/datasources/datasource';
+import { LanguageCache, TokenCache, UserCache, UserDatabaseCache } from 'src/app/data/cache/cache';
+import { TokenCacheImp } from 'src/app/data/cache/implements/token_cache_imp';
+import { UserCacheDataBaseImp } from 'src/app/data/cache/implements/user_cache_database_imp';
+import { UserCacheImp } from 'src/app/data/cache/implements/user_cache_imp';
 
 @NgModule({
     providers: [
+        {
+            provide: AuthenticationRepository,
+            useClass: AuthenticationRepositoryImp,
+        },
+        {
+            provide: AuthenticationDatasource,
+            useClass: AuthenticationMockDatasourceImp,//AuthenticationRemotoDatasourceImp
+        },
+        {
+            provide: CreateNewAccountUseCase,
+            useClass: CreateNewAccountUseCaseImp,
+        },
+        {
+            provide: SignInWithEmailAndPassworUseCase,
+            useClass: SignInWithEmailAndPasswordUseCaseImp,
+        },
         {
             provide: LogoutUseCase,
             useClass: LogoutUseCaseImp,
@@ -78,13 +98,14 @@ import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/l
             provide: GetCurrentUserUseCase,
             useClass: GetCurrentUserUseCaseImp,
         },
-        {
-            provide: AuthenticationRepository,
-            useClass: AuthenticationMockDatasourceImp,//AuthenticationRemotoDatasourceImp
-        },
+        
         {
             provide:LanguageRepository,
-            useClass:LanguageRepositoryImp//LanguageMockDatasourceImp
+            useClass:LanguageRepositoryImp
+        },
+        {
+            provide:LanguageDatasource,
+            useClass:LanguageMockDatasourceImp
         },
         {
             provide:GetAllLanguageUseCase,
@@ -99,16 +120,8 @@ import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/l
             useClass:AddLanguageUseCaseImp
         },
         {
-            provide:StoreRepository,
-            useClass:LanguageCacheNgRxDatasourceImp
-        },
-        {
-            provide: CreateNewAccountUseCase,
-            useClass: CreateNewAccountUseCaseImp,
-        },
-        {
-            provide: SignInWithEmailAndPassworUseCase,
-            useClass: SignInWithEmailAndPasswordUseCaseImp,
+            provide:LanguageCache,
+            useClass:LanguageCacheImp
         },
 
         {
@@ -148,7 +161,7 @@ import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/l
             useClass: NoteRepositoryImp
         },
         {
-            provide: NoteRepository,
+            provide: NoteDatasource,
             useClass: NoteMockDatasourceImp
         },
         {
@@ -156,9 +169,17 @@ import { LanguageCacheNgRxDatasourceImp } from 'src/app/data/datasources/cache/l
             useClass: NgRxAdapterImp //CustomAdapterImp
         },
         {
-            provide: UserRepository,
-            useClass: UserCacheNgRxDatasourceImp //UserCacheCustomeDatasourceImp
+            provide: TokenCache,
+            useClass: TokenCacheImp
         },
+        {
+            provide: UserDatabaseCache,
+            useClass: UserCacheDataBaseImp
+        },
+        {
+            provide: UserCache,
+            useClass: UserCacheImp
+        }
 
     ]
 })

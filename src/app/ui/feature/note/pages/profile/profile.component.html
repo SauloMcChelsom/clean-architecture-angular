@@ -1,0 +1,33 @@
+<body class="mat-app-background">
+  <div class="grid flex-column">
+    <div class="col">
+      <NavBarItens>
+        <ButtonCancat icon="west" left (onClick)="back()"></ButtonCancat>
+        <div center class="flex flex align-items-center justify-content-center text-default"></div>
+        <ButtonCancat icon="logout" right [spinner]="spinner" (onClick)="logOut()"></ButtonCancat>
+      </NavBarItens>
+    </div>
+    <div class="col">
+      <div class="profile-page">
+        <mat-card class="profile-info">
+          <div style="display: flex ; align-items: center; justify-content: center;">
+            <div class="profile-avatar">
+              <img [src]="imageUrl" alt="Avatar do Usuário" />
+            </div>
+            <div class="profile-details">
+              <div class="text-medium">{{ name }}</div>
+            </div>
+          </div>
+          <div class="text-default pb-xmedium">
+            Bem-vindo à sua página de perfil! Aqui você pode gerenciar suas informações e personalizar sua conta.
+          </div>
+          <ExpansionPanel>
+            <mat-icon title color="primary" style=" transform: scale(0.6);">circle</mat-icon>
+            <span description>Informações do usuario</span>    
+            <span content>Descricao da informacao do usuario</span>
+          </ExpansionPanel>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</body>
