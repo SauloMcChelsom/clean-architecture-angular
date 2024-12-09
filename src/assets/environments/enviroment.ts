@@ -12,13 +12,25 @@ export const environment = {
   payloadStorage: {
     user:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
-      tableName: 'c3e79ae0b160',
+      tableName: 'user',
+      stateKey: '0242ac120003',
+      storageStrategy: StorageStrategy.LOCAL_STORAGE
+    },
+    userDatabase:{
+      encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
+      tableName: 'user-database',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
     language:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
       tableName: 'language',
+      stateKey: '0242ac120003',
+      storageStrategy: StorageStrategy.LOCAL_STORAGE
+    },
+    authorization:{
+      encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
+      tableName: 'authorization',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     }

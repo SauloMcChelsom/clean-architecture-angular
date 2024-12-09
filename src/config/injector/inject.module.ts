@@ -37,7 +37,6 @@ import { UserCacheCustomeImp } from 'src/app/data/cache/implements/user_cache_cu
 import { StoreRepository } from 'src/app/infra/store/store_repository';
 import { CustomAdapterImp } from 'src/app/infra/store/implements/custom/custom_adapter_imp';
 import { StoreAdapter } from 'src/app/infra/store/store_adapter';
-import { UserRepository } from 'src/app/data/models/user.model';
 import { UserCacheNgRxImp } from 'src/app/data/cache/implements/user_cache_NgRx_imp';
 import { NgRxAdapterImp } from 'src/app/infra/store/implements/NgRx/ngrx_adapter_imp';
 import { SessionAdapterImp } from 'src/app/infra/storage/session_storage/session_storage_adapter_imp';
@@ -51,9 +50,11 @@ import { LanguageMockDatasourceImp } from 'src/app/data/datasources/mock/languag
 import { GetLanguagUseCaseeImp } from 'src/app/domain/usecases/language/implements/get_languag_usecase';
 import { AddLanguageUseCaseImp } from 'src/app/domain/usecases/language/implements/add_language_usecase';
 import { LanguageCacheImp } from 'src/app/data/cache/implements/language_cache_imp';
-import { TokenRepository } from 'src/app/data/models/toke.model';
 import { AuthenticationDatasource, LanguageDatasource, NoteDatasource } from 'src/app/data/datasources/datasource';
-import { LanguageCache } from 'src/app/data/cache/cache';
+import { LanguageCache, TokenCache, UserCache, UserDatabaseCache } from 'src/app/data/cache/cache';
+import { TokenCacheImp } from 'src/app/data/cache/implements/token_cache_imp';
+import { UserCacheDataBaseImp } from 'src/app/data/cache/implements/user_cache_database_imp';
+import { UserCacheImp } from 'src/app/data/cache/implements/user_cache_imp';
 
 @NgModule({
     providers: [
@@ -166,6 +167,18 @@ import { LanguageCache } from 'src/app/data/cache/cache';
         {
             provide: StoreAdapter,
             useClass: NgRxAdapterImp //CustomAdapterImp
+        },
+        {
+            provide: TokenCache,
+            useClass: TokenCacheImp
+        },
+        {
+            provide: UserDatabaseCache,
+            useClass: UserCacheDataBaseImp
+        },
+        {
+            provide: UserCache,
+            useClass: UserCacheImp
         }
 
     ]

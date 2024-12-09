@@ -6,6 +6,9 @@ import { ListLanguageComponent } from 'src/app/ui/feature/change-language/compon
 import { ModeThemeFlipComponent } from 'src/app/ui/feature/change-theme/components/mode-theme-flip/mode-theme-flip.component';
 import { ROUTING } from 'src/config/endpoints/router-links';
 import { MenuProfileComponent } from '../../menu-profile/menu-profile.component';
+import { GetCurrentUserUseCase } from 'src/app/domain/usecases/auth/auth_usecase';
+import { UserEntity } from 'src/app/domain/entities/user.entity';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'Menu',
@@ -23,9 +26,11 @@ import { MenuProfileComponent } from '../../menu-profile/menu-profile.component'
 })
 export class MenuComponent implements OnInit {
   protected SIGN_IN = ROUTING.AUTH_SIGN_IN;
-  constructor( private router: Router) { }
+  protected user:UserEntity|undefined = undefined;
+  constructor( private router: Router, private currentUser:GetCurrentUserUseCase) { }
 
   ngOnInit() {
+    this.currentUser.getCurrentUser().pipe(take(1)).subscribe(r=>this.user = r)
   }
 
   goPageProfile() {

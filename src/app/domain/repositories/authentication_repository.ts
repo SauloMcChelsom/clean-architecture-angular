@@ -22,6 +22,8 @@ export abstract class AuthenticationRepository {
     abstract isEmailAlreadyExists(content: string): Observable<boolean>;
 
     abstract getCurrentUser(): Observable<UserEntity>;
+    
+    abstract getUserByUID(uid: string): Observable<UserEntity|undefined>;
 
     abstract forgotPassword(content: string): Observable<boolean>;
     

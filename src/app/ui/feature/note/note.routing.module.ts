@@ -7,6 +7,7 @@ import { PageUpdateComponent } from './pages/update/update.component'
 import { ROUTING } from '../../../../config/endpoints/router-links'
 import { SearchComponent } from './pages/search/search.component'
 import { ProfileComponent } from './pages/profile/profile.component'
+import { AuthGuard } from '../../guard/auth.guard'
 
 export const ROUTES: Routes = [
     {
@@ -37,7 +38,8 @@ export const ROUTES: Routes = [
     {
         path: ROUTING.NOTE_PROFILE,
         component: ProfileComponent,
-        data: { title: 'NOTE.HOME' }
+        data: { title: 'NOTE.HOME' },
+        canActivate: [AuthGuard],
     },
 ]
 
