@@ -16,9 +16,15 @@ export const environment = {
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
-    userDatabase:{
+    UserMockDatasource:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
-      tableName: 'user-database',
+      tableName: 'user-mock-datasource',
+      stateKey: '0242ac120003',
+      storageStrategy: StorageStrategy.LOCAL_STORAGE
+    },
+    noteDatabase:{
+      encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
+      tableName: 'note-database',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
