@@ -10,7 +10,8 @@ import { RESPONSE_STATUS_CODE } from 'src/app/domain/helpers/enums/response_stat
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 import { AuthenticationDatasource } from '../datasource';
 import { UserCacheCustomeImp } from '../../cache/implements/user_cache_custome_imp';
-import { UserDatabaseCache } from '../../cache/cache';
+import { UserMock } from '../../cache/cache';
+
 
 interface UserDataBase extends UserEntity {
     password:string,
@@ -25,7 +26,7 @@ export class AuthenticationMockDatasourceImp implements AuthenticationDatasource
     private user: UserDataBase[] = [];
     private tokenRevoked:string[]= [];
 
-    constructor(private database: UserDatabaseCache){
+    constructor(private database: UserMock){
         this.database.results().pipe(take(3)).subscribe((user:any)=>{
             this.user = user;
         })

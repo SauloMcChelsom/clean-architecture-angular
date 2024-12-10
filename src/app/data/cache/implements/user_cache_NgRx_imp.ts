@@ -17,9 +17,9 @@ export class UserCacheNgRxImp implements StoreRepository<UserEntity> {
       items: [],
       callState: LoadingState.INIT,
       storage: {
-        encryptionKey: environment.payloadStorage.user.encryptionKey,
-        tableName: environment.payloadStorage.user.tableName,
-        storageStrategy: environment.payloadStorage.user.storageStrategy
+        encryptionKey: environment.payloadStorage.currentUser.encryptionKey,
+        tableName: environment.payloadStorage.currentUser.tableName,
+        storageStrategy: environment.payloadStorage.currentUser.storageStrategy
       }
     })
   }

@@ -17,9 +17,9 @@ export class NoteTableImp implements StoreRepository<UserEntity> {
       items: [],
       callState: LoadingState.INIT,
       storage: {
-        encryptionKey: environment.payloadStorage.noteDatabase.encryptionKey,
-        tableName: environment.payloadStorage.noteDatabase.tableName,
-        storageStrategy: environment.payloadStorage.noteDatabase.storageStrategy
+        encryptionKey: environment.payloadStorage.noteTable.encryptionKey,
+        tableName: environment.payloadStorage.noteTable.tableName,
+        storageStrategy: environment.payloadStorage.noteTable.storageStrategy
       }
     })
   }

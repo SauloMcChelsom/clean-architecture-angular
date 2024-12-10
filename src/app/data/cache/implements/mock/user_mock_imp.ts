@@ -17,9 +17,9 @@ export class UserMockImp implements StoreRepository<UserEntity> {
       items: [],
       callState: LoadingState.INIT,
       storage: {
-        encryptionKey: environment.payloadStorage.UserMockDatasource.encryptionKey,
-        tableName: environment.payloadStorage.UserMockDatasource.tableName,
-        storageStrategy: environment.payloadStorage.UserMockDatasource.storageStrategy
+        encryptionKey: environment.payloadStorage.userMock.encryptionKey,
+        tableName: environment.payloadStorage.userMock.tableName,
+        storageStrategy: environment.payloadStorage.userMock.storageStrategy
       }
     })
   }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { LanguageCache, NoteTable, TokenCache, UserCache, UserMock } from 'src/app/data/cache/cache';
-import { LanguageCacheImp } from 'src/app/data/cache/implements/cache/language_cache_imp';
+import { CurrentSystemLanguageCache, CurrentUserCache, NoteTable, TokenCache, UserMock } from 'src/app/data/cache/cache';
+import { CurrentUserCacheImp } from 'src/app/data/cache/implements/cache/current_user_cache_imp';
+import { CurrentSystemLanguageCacheImp } from 'src/app/data/cache/implements/cache/language_cache_imp';
 import { TokenCacheImp } from 'src/app/data/cache/implements/cache/token_cache_imp';
-import { UserCacheImp } from 'src/app/data/cache/implements/cache/user_cache_imp';
 import { UserMockImp } from 'src/app/data/cache/implements/mock/user_mock_imp';
 import { NoteTableImp } from 'src/app/data/cache/implements/table/note_table_imp';
 import { AuthenticationDatasource, LanguageDatasource, NoteDatasource } from 'src/app/data/datasources/datasource';
@@ -105,8 +105,8 @@ import { StoreAdapter } from 'src/app/infra/store/store_adapter';
             useClass: AddLanguageUseCaseImp
         },
         {
-            provide: LanguageCache,
-            useClass: LanguageCacheImp
+            provide: CurrentSystemLanguageCache,
+            useClass: CurrentSystemLanguageCacheImp
         },
 
         {
@@ -166,8 +166,8 @@ import { StoreAdapter } from 'src/app/infra/store/store_adapter';
             useClass: NoteTableImp
         },
         {
-            provide: UserCache,
-            useClass: UserCacheImp
+            provide: CurrentUserCache,
+            useClass: CurrentUserCacheImp
         }
 
     ]

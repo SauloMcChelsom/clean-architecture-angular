@@ -6,7 +6,7 @@ import { UserEntity } from 'src/app/domain/entities/user.entity';
 import { AuthenticationRepository } from 'src/app/domain/repositories/authentication_repository';
 
 import { AuthenticationDatasource } from '../datasources/datasource';
-import { TokenCache, UserCache } from '../cache/cache';
+import { CurrentUserCache, TokenCache } from '../cache/cache';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationRepositoryImp implements AuthenticationRepository {
@@ -14,7 +14,7 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
     constructor(
         private datasource: AuthenticationDatasource, 
         private tokenCache: TokenCache,
-        private userCache:UserCache
+        private userCache:CurrentUserCache
     ) { }
 
     createNewAccount(content: AuthenticationEntity): Observable<AuthorizationEntity> {

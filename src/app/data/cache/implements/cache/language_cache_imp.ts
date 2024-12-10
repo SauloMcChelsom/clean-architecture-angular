@@ -10,16 +10,16 @@ import { environment } from 'src/assets/environments/enviroment';
 interface AppStateUser extends AppState<LanguageEntity> { }
 
 @Injectable()
-export class LanguageCacheImp implements StoreRepository<LanguageEntity> {
+export class CurrentSystemLanguageCacheImp implements StoreRepository<LanguageEntity> {
 
   constructor(private store: StoreAdapter<AppStateUser>) {
     this.store = new NgRxAdapterImp<AppStateUser>({
       items: [],
       callState: LoadingState.INIT,
       storage: {
-        encryptionKey: environment.payloadStorage.language.encryptionKey,
-        tableName: environment.payloadStorage.language.tableName,
-        storageStrategy: environment.payloadStorage.language.storageStrategy
+        encryptionKey: environment.payloadStorage.systemLanguage.encryptionKey,
+        tableName: environment.payloadStorage.systemLanguage.tableName,
+        storageStrategy: environment.payloadStorage.systemLanguage.storageStrategy
       }
     })
   }

@@ -2,17 +2,15 @@ import { Injectable } from "@angular/core";
 import { catchError, combineLatest, map, Observable, take, throwError } from "rxjs";
 import { LanguageEntity } from "src/app/domain/entities/language_entity";
 import { LanguageRepository } from "src/app/domain/repositories/language_repository";
-import { StoreRepository } from "src/app/infra/store/store_repository";
-import { LanguageMockDatasourceImp } from "../datasources/mock/language_mock_datasource_imp";
+import { CurrentSystemLanguageCache } from "../cache/cache";
 import { LanguageDatasource } from "../datasources/datasource";
-import { LanguageCache } from "../cache/cache";
 
 @Injectable({ providedIn: 'root' })
 export class LanguageRepositoryImp implements LanguageRepository {
 
     constructor(
         private datasource: LanguageDatasource,
-        private cache: LanguageCache
+        private cache: CurrentSystemLanguageCache
     ) { }
 
     public getAllLanguage(): Observable<LanguageEntity[]> {

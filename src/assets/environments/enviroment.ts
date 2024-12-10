@@ -10,27 +10,27 @@ export const environment = {
   port: Port._3000,
 
   payloadStorage: {
-    user:{
+    currentUser:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
-      tableName: 'user',
+      tableName: 'current-user',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
-    UserMockDatasource:{
+    userMock:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
       tableName: 'user-mock-datasource',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
-    noteDatabase:{
+    noteTable:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
-      tableName: 'note-database',
+      tableName: 'note-nosql-database-in-memory',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
-    language:{
+    systemLanguage:{
       encryptionKey: '',//'5a203b97-53d6-406a-9909-89883e217abb',
-      tableName: 'language',
+      tableName: 'current-system-language',
       stateKey: '0242ac120003',
       storageStrategy: StorageStrategy.LOCAL_STORAGE
     },
