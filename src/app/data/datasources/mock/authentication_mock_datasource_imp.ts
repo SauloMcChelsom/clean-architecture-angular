@@ -190,7 +190,7 @@ export class AuthenticationMockDatasourceImp implements AuthenticationDatasource
 
     private generateTokenRoot(refresh_token?: string, uid?:string) {
         let currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() + 1)
+        currentDate.setMinutes(currentDate.getMinutes() + 60)
         let expires_in = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
         const jwt = this.generateToken({ uid: 'uid', email: 'email', is_active: 'is_active' }, expires_in);
 

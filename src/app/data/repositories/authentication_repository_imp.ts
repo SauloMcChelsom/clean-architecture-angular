@@ -88,9 +88,8 @@ export class AuthenticationRepositoryImp implements AuthenticationRepository {
                     })
                 ).pipe(
                     catchError(err => {
-                      this.userCache.delete().subscribe({});
-                      this.tokenCache.delete().subscribe({});
-                      console.error('cache excluido:', err);
+                      this.userCache.delete()
+                      this.tokenCache.delete()
                       throw err;
                     })
                 )
